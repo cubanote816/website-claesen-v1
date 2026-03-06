@@ -81,16 +81,16 @@ export default function ModernPortfolio({ lang = defaultLang }: ModernPortfolioP
                 ))}
             </div>
 
-            {/* Masonry Grid */}
+            {/* Uniform Grid */}
             {loading ? (
                 <div className="flex justify-center py-32">
                     <div className="w-12 h-12 border-2 border-lux-gold border-t-transparent rounded-full animate-spin"></div>
                 </div>
             ) : (
-                <div className="columns-1 md:columns-3 xl:columns-4 gap-6 space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-6">
                     <AnimatePresence mode="popLayout">
                         {filteredProjects.map((project, index) => (
-                            <div key={project.id} className="break-inside-avoid mb-6">
+                            <div key={project.id} className="w-full">
                                 <ModernProjectCard
                                     project={project}
                                     index={index}
