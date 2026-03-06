@@ -1,0 +1,202 @@
+{
+  "id": 4,
+  "slug": "ghelamcos-arenas",
+  "category": "sport",
+  "location": {
+    "en": "Gent",
+    "nl": "Gent"
+  },
+  "year": 2016,
+  "client": {
+    "en": "Ghelamco",
+    "nl": "Ghelamco"
+  },
+  "title": {
+    "en": "Ghelamcos Arenas",
+    "nl": "Ghelamcos Arenas"
+  },
+  "description": {
+    "en": "<p>Het stadion van het het jaar: de ‘Ghelamco Arena’ kreeg extra veel bekijks door de Dynamic LED Lighting. Met 80.000 Wall-pixels en 500.000 LED’s kan je niet naast deze arena kijken. De pitchlighting in het stadion voldoet aan de normen van de Champions League. Count</p>",
+    "nl": "<p>Het stadion van het het jaar: de ‘Ghelamco Arena’ kreeg extra veel bekijks door de Dynamic LED Lighting. Met 80.000 Wall-pixels en 500.000 LED’s kan je niet naast deze arena kijken. De pitchlighting in het stadion voldoet aan de normen van de Champions League.</p>"
+  },
+  "content": null,
+  "primary_image": null,
+  "seo_tags": null,
+  "published": true,
+  "featured": true,
+  "order_index": 0,
+  "published_at": null,
+  "created_at": "2026-02-08T08:42:01.000000Z",
+  "updated_at": "2026-02-24T16:06:29.000000Z",
+  "deleted_at": null,
+  "api_featured_image_url": "http://localhost:8001/storage/6/01KGY6MFHDA2CFW4DM983W0R32.jpg",
+  "api_gallery": [
+    {
+      "id": 7,
+      "name": "Ghelamco-Arena-by-night-de-laatste-testen-foto-Yves-Masscho2",
+      "file_name": "01KGY6MFJZZCJEQ7QYBZHJ7WQS.jpg",
+      "url": "http://localhost:8001/storage/7/01KGY6MFJZZCJEQ7QYBZHJ7WQS.jpg",
+      "thumb": "http://localhost:8001/storage/7/conversions/01KGY6MFJZZCJEQ7QYBZHJ7WQS-thumb.jpg",
+      "gallery": "http://localhost:8001/storage/7/conversions/01KGY6MFJZZCJEQ7QYBZHJ7WQS-gallery.jpg",
+      "caption": null,
+      "alt": null
+    },
+    {
+      "id": 8,
+      "name": "Ghelamco-Arena-by-night-de-laatste-testen-foto-Yves-Masscho3",
+      "file_name": "01KGY6MFKFZ3XM0JGJXP4R9C38.jpg",
+      "url": "http://localhost:8001/storage/8/01KGY6MFKFZ3XM0JGJXP4R9C38.jpg",
+      "thumb": "http://localhost:8001/storage/8/conversions/01KGY6MFKFZ3XM0JGJXP4R9C38-thumb.jpg",
+      "gallery": "http://localhost:8001/storage/8/conversions/01KGY6MFKFZ3XM0JGJXP4R9C38-gallery.jpg",
+      "caption": null,
+      "alt": null
+    },
+    {
+      "id": 9,
+      "name": "maxresdefault",
+      "file_name": "01KGY6MFKV68W9ZM4FBQ3SVP0F.jpg",
+      "url": "http://localhost:8001/storage/9/01KGY6MFKV68W9ZM4FBQ3SVP0F.jpg",
+      "thumb": "http://localhost:8001/storage/9/conversions/01KGY6MFKV68W9ZM4FBQ3SVP0F-thumb.jpg",
+      "gallery": "http://localhost:8001/storage/9/conversions/01KGY6MFKV68W9ZM4FBQ3SVP0F-gallery.jpg",
+      "caption": null,
+      "alt": null
+    },
+    {
+      "id": 10,
+      "name": "proj-72-8-5236c745a3c48-la",
+      "file_name": "01KGY6MFM9WJ50C1HJN5G0PT7T.jpg",
+      "url": "http://localhost:8001/storage/10/01KGY6MFM9WJ50C1HJN5G0PT7T.jpg",
+      "thumb": "http://localhost:8001/storage/10/conversions/01KGY6MFM9WJ50C1HJN5G0PT7T-thumb.jpg",
+      "gallery": "http://localhost:8001/storage/10/conversions/01KGY6MFM9WJ50C1HJN5G0PT7T-gallery.jpg",
+      "caption": null,
+      "alt": null
+    }
+  ],
+  "media": [
+    {
+      "id": 6,
+      "model_type": "Modules\\Website\\Models\\Project",
+      "model_id": "4",
+      "uuid": "3fc5fa0d-9b3b-43d1-9531-b6e4883197a5",
+      "collection_name": "featured_image",
+      "name": "Ghelamco-Arena-by-night-de-laatste-testen-foto-Yves-Masscho",
+      "file_name": "01KGY6MFHDA2CFW4DM983W0R32.jpg",
+      "mime_type": "image/jpeg",
+      "disk": "public",
+      "conversions_disk": "public",
+      "size": 247290,
+      "manipulations": [],
+      "custom_properties": [],
+      "generated_conversions": {
+        "thumb": true,
+        "gallery": true
+      },
+      "responsive_images": [],
+      "order_column": 1,
+      "created_at": "2026-02-08T08:42:01.000000Z",
+      "updated_at": "2026-02-08T10:06:29.000000Z",
+      "original_url": "http://localhost:8001/storage/6/01KGY6MFHDA2CFW4DM983W0R32.jpg",
+      "preview_url": ""
+    },
+    {
+      "id": 7,
+      "model_type": "Modules\\Website\\Models\\Project",
+      "model_id": "4",
+      "uuid": "bff54a69-efb2-4d5d-8582-e7c7f17b05e6",
+      "collection_name": "gallery",
+      "name": "Ghelamco-Arena-by-night-de-laatste-testen-foto-Yves-Masscho2",
+      "file_name": "01KGY6MFJZZCJEQ7QYBZHJ7WQS.jpg",
+      "mime_type": "image/jpeg",
+      "disk": "public",
+      "conversions_disk": "public",
+      "size": 293275,
+      "manipulations": [],
+      "custom_properties": [],
+      "generated_conversions": {
+        "thumb": true,
+        "gallery": true
+      },
+      "responsive_images": [],
+      "order_column": 1,
+      "created_at": "2026-02-08T08:42:01.000000Z",
+      "updated_at": "2026-02-08T10:06:29.000000Z",
+      "original_url": "http://localhost:8001/storage/7/01KGY6MFJZZCJEQ7QYBZHJ7WQS.jpg",
+      "preview_url": ""
+    },
+    {
+      "id": 8,
+      "model_type": "Modules\\Website\\Models\\Project",
+      "model_id": "4",
+      "uuid": "8be3dce6-5ae3-4a04-bdd0-b903e69b3dd1",
+      "collection_name": "gallery",
+      "name": "Ghelamco-Arena-by-night-de-laatste-testen-foto-Yves-Masscho3",
+      "file_name": "01KGY6MFKFZ3XM0JGJXP4R9C38.jpg",
+      "mime_type": "image/jpeg",
+      "disk": "public",
+      "conversions_disk": "public",
+      "size": 166437,
+      "manipulations": [],
+      "custom_properties": [],
+      "generated_conversions": {
+        "thumb": true,
+        "gallery": true
+      },
+      "responsive_images": [],
+      "order_column": 2,
+      "created_at": "2026-02-08T08:42:01.000000Z",
+      "updated_at": "2026-02-08T10:06:30.000000Z",
+      "original_url": "http://localhost:8001/storage/8/01KGY6MFKFZ3XM0JGJXP4R9C38.jpg",
+      "preview_url": ""
+    },
+    {
+      "id": 9,
+      "model_type": "Modules\\Website\\Models\\Project",
+      "model_id": "4",
+      "uuid": "035ee083-d7a9-43b1-8361-b3d1380f44ea",
+      "collection_name": "gallery",
+      "name": "maxresdefault",
+      "file_name": "01KGY6MFKV68W9ZM4FBQ3SVP0F.jpg",
+      "mime_type": "image/jpeg",
+      "disk": "public",
+      "conversions_disk": "public",
+      "size": 50339,
+      "manipulations": [],
+      "custom_properties": [],
+      "generated_conversions": {
+        "thumb": true,
+        "gallery": true
+      },
+      "responsive_images": [],
+      "order_column": 3,
+      "created_at": "2026-02-08T08:42:01.000000Z",
+      "updated_at": "2026-02-08T10:06:31.000000Z",
+      "original_url": "http://localhost:8001/storage/9/01KGY6MFKV68W9ZM4FBQ3SVP0F.jpg",
+      "preview_url": ""
+    },
+    {
+      "id": 10,
+      "model_type": "Modules\\Website\\Models\\Project",
+      "model_id": "4",
+      "uuid": "e446706c-1f0d-43e6-879d-583ce3b0663c",
+      "collection_name": "gallery",
+      "name": "proj-72-8-5236c745a3c48-la",
+      "file_name": "01KGY6MFM9WJ50C1HJN5G0PT7T.jpg",
+      "mime_type": "image/jpeg",
+      "disk": "public",
+      "conversions_disk": "public",
+      "size": 301683,
+      "manipulations": [],
+      "custom_properties": [],
+      "generated_conversions": {
+        "thumb": true,
+        "gallery": true
+      },
+      "responsive_images": [],
+      "order_column": 4,
+      "created_at": "2026-02-08T08:42:01.000000Z",
+      "updated_at": "2026-02-08T10:06:32.000000Z",
+      "original_url": "http://localhost:8001/storage/10/01KGY6MFM9WJ50C1HJN5G0PT7T.jpg",
+      "preview_url": ""
+    }
+  ]
+}

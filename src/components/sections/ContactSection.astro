@@ -1,0 +1,99 @@
+---
+import PageHeader from '../PageHeader';
+import ContactForm from '../ContactForm';
+import { MapPin, Phone, Mail } from 'lucide-react';
+import { ui, defaultLang } from '../../i18n/ui';
+
+export interface Props {
+    lang?: keyof typeof ui;
+}
+
+const { lang = defaultLang } = Astro.props;
+const t = ui[lang] || ui[defaultLang];
+---
+
+<section id="contact" class="min-h-screen py-20 px-6 relative">
+  <div class="max-w-7xl mx-auto">
+    <PageHeader 
+      client:visible 
+      title={t['contact.title']} 
+      subtitle={t['contact.subtitle']}
+    />
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      {/* Contact Info */}
+      <div class="space-y-8">
+        <div class="prose prose-invert">
+          <h3 class="font-display text-2xl font-bold mb-8">{t['contact.info.title']}</h3>
+        </div>
+
+        <div class="space-y-6">
+          {/* Phone */}
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-lux-gold rounded-full flex items-center justify-center text-obsidian shrink-0">
+              <Phone className="w-5 h-5" />
+            </div>
+            <div>
+              <p class="text-white font-medium">T 089 41 32 40 / F 089 49 10 42</p>
+            </div>
+          </div>
+
+          {/* Email */}
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-lux-gold rounded-full flex items-center justify-center text-obsidian shrink-0">
+              <Mail className="w-5 h-5" />
+            </div>
+            <div>
+              <a href="mailto:info@claesen-verlichting.be" class="text-white font-medium hover:text-lux-gold transition-colors">
+                info@claesen-verlichting.be
+              </a>
+            </div>
+          </div>
+
+          {/* Address */}
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-lux-gold rounded-full flex items-center justify-center text-obsidian shrink-0">
+              <MapPin className="w-5 h-5" />
+            </div>
+            <div>
+              <p class="text-white font-medium">3740 Mopertingen-Bilzen, {t['contact.country']}</p>
+            </div>
+          </div>
+
+          {/* Hours */}
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-lux-gold rounded-full flex items-center justify-center text-obsidian shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <p class="text-white font-medium">{t['contact.hours.text']}</p>
+            </div>
+          </div>
+          
+          <div class="pt-4 flex gap-4">
+             <a href="tel:+3289413240" class="flex-1 bg-lux-gold/10 border border-lux-gold text-lux-gold font-bold py-3 rounded-lg text-center hover:bg-lux-gold hover:text-obsidian transition-all">
+                {t['contact.call']}
+             </a>
+             <a href="mailto:info@claesen-verlichting.be" class="flex-1 bg-white/5 border border-white/10 text-white font-bold py-3 rounded-lg text-center hover:bg-white/10 transition-all">
+                {t['contact.email']}
+             </a>
+          </div>
+        </div>
+
+        {/* Map Placeholder */}
+        <div class="aspect-video w-full rounded-3xl bg-gunmetal border border-white/5 overflow-hidden relative group">
+           <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2074&auto=format&fit=crop')] bg-cover bg-center opacity-50 grayscale group-hover:grayscale-0 transition-all duration-500"></div>
+           <div class="absolute inset-0 flex items-center justify-center">
+              <a href="https://www.google.com/maps/search/?api=1&query=3740+Mopertingen-Bilzen,+België" target="_blank" class="px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full font-medium hover:bg-lux-gold hover:text-obsidian transition-colors text-center">
+                  <span class="block font-bold">Mopertingen</span>
+                  <span class="text-xs opacity-80">{t['contact.map.view']}</span>
+              </a>
+           </div>
+        </div>
+      </div>
+
+      {/* Contact Form */}
+      <ContactForm client:visible lang={lang} />
+    </div>
+  </div>
+</section>

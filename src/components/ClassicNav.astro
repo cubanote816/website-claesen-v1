@@ -1,0 +1,304 @@
+---
+import { twMerge } from 'tailwind-merge';
+import { ui, defaultLang } from '../i18n/ui';
+
+interface Props {
+    lang?: string;
+}
+
+const { lang = defaultLang } = Astro.props;
+
+// Translation helper
+// @ts-ignore
+const t = ui[lang] || ui[defaultLang];
+
+// Link helper
+const baseUrl = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
+const gl = (path: string) => {
+    const route = lang === defaultLang ? path : `/${lang}${path}`;
+    return `${baseUrl}${route}`;
+};
+
+const navItems = [
+    { name: t['nav.home'], href: gl('/#home'), section: 'home' },
+    { name: t['nav.projects'], href: gl('/#projects'), section: 'projects' },
+    { name: t['nav.services'], href: gl('/#services'), section: 'services' },
+    { name: t['nav.about'], href: gl('/#about'), section: 'about' },
+];
+---
+
+<nav
+    id="classic-nav"
+    class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-white/5 bg-transparent py-4 md:py-6"
+>
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-full">
+        {/* Brand */}
+        <a href={gl("/#home")} class="flex items-center gap-2 group nav-link-home z-[70] relative">
+            <img src="/v1/brand-logo-dark.png" alt="Claesen Verlichting" class="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity" />
+        </a>
+
+        {/* Desktop Navigation Links */}
+        <div class="hidden md:flex items-center gap-8">
+            {navItems.map((item) => (
+                <a
+                    href={item.href}
+                    data-section={item.section}
+                    class="nav-item text-sm font-medium tracking-wide uppercase relative py-1 transition-colors text-white/70 hover:text-white"
+                >
+                    {item.name}
+                    <span class="nav-underline absolute bottom-0 left-0 w-full h-[2px] bg-lux-gold scale-x-0 transition-transform duration-300 origin-left"></span>
+                </a>
+            ))}
+        </div>
+
+        {/* Right Side: Language & CTA (Desktop) */}
+        <div class="hidden md:flex items-center gap-6">
+            <div class="flex items-center gap-1 border-r border-white/10 pr-6 mr-1">
+                <a href={`${baseUrl}/`} class={twMerge("text-xs font-bold px-2 py-1 rounded hover:bg-white/10", lang === 'nl' ? "text-lux-gold" : "text-white/50")}>NL</a>
+                <a href={`${baseUrl}/en/`} class={twMerge("text-xs font-bold px-2 py-1 rounded hover:bg-white/10", lang === 'en' ? "text-lux-gold" : "text-white/50")}>EN</a>
+                <a href={`${baseUrl}/fr/`} class={twMerge("text-xs font-bold px-2 py-1 rounded hover:bg-white/10", lang === 'fr' ? "text-lux-gold" : "text-white/50")}>FR</a>
+            </div>
+
+            <a
+                href={gl("/#contact")}
+                class="bg-lux-gold text-obsidian px-6 py-2.5 text-sm font-bold uppercase tracking-wider rounded-sm hover:bg-white hover:text-obsidian transition-colors duration-300"
+            >
+                {t['nav.cta']}
+            </a>
+        </div>
+
+        {/* Mobile Toggle Button */}
+        <button 
+            id="mobile-toggle"
+            class="md:hidden z-[70] relative p-4 -mr-2 text-white hover:text-lux-gold transition-colors focus:outline-none touch-manipulation"
+            aria-label="Toggle Menu"
+            aria-expanded="false"
+        >
+            <div class="w-6 h-5 flex flex-col justify-between pointer-events-none">
+                <span class="w-full h-0.5 bg-white transform transition-transform duration-300 origin-center" id="hamburger-top"></span>
+                <span class="w-full h-0.5 bg-white transition-opacity duration-300" id="hamburger-mid"></span>
+                <span class="w-full h-0.5 bg-white transform transition-transform duration-300 origin-center" id="hamburger-bot"></span>
+            </div>
+        </button>
+    </div>
+</nav>
+
+{/* Mobile Menu Overlay - Moved outside nav to avoid backdrop-filter containing block issues */}
+<div 
+    id="mobile-menu"
+    class="fixed inset-0 bg-obsidian/98 backdrop-blur-xl z-[9999] flex flex-col justify-center items-center opacity-0 pointer-events-none transition-all duration-300"
+>
+    {/* Mobile Links */}
+    <div class="flex flex-col items-center gap-8 mb-12">
+        {navItems.map((item) => (
+            <a
+                href={item.href}
+                class="mobile-nav-link text-3xl font-display font-medium text-white/80 hover:text-lux-gold transition-colors"
+                data-section={item.section}
+            >
+                {item.name}
+            </a>
+        ))}
+    </div>
+
+    {/* Mobile Language Switcher */}
+    <div class="flex items-center gap-4 mb-10">
+        <a href={`${baseUrl}/`} class={twMerge("text-lg font-bold px-3 py-2 rounded border border-white/10", lang === 'nl' ? "bg-lux-gold text-obsidian border-lux-gold" : "text-white/50")}>NL</a>
+        <a href={`${baseUrl}/en/`} class={twMerge("text-lg font-bold px-3 py-2 rounded border border-white/10", lang === 'en' ? "bg-lux-gold text-obsidian border-lux-gold" : "text-white/50")}>EN</a>
+        <a href={`${baseUrl}/fr/`} class={twMerge("text-lg font-bold px-3 py-2 rounded border border-white/10", lang === 'fr' ? "bg-lux-gold text-obsidian border-lux-gold" : "text-white/50")}>FR</a>
+    </div>
+
+    <a
+        href={gl("/#contact")}
+        class="mobile-cta bg-lux-gold text-obsidian px-10 py-4 text-xl font-bold uppercase tracking-wider rounded-sm shadow-lg shadow-lux-gold/20"
+    >
+        {t['nav.cta']}
+    </a>
+</div>
+
+<style>
+    /* 
+      We remove the global height: 100vh rule as it causes scroll jumping.
+      We will handle scroll locking in JS via position: fixed on body.
+    */
+</style>
+
+<script>
+    let isMenuOpen = false;
+    let scrollPosition = 0;
+    let scrollHandlerAttached = false;
+
+    function initNav() {
+        const nav = document.getElementById('classic-nav');
+        const navItems = document.querySelectorAll('.nav-item');
+        const logoLink = document.querySelector('.nav-link-home');
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link, .mobile-cta');
+        const hamburgerTop = document.getElementById('hamburger-top');
+        const hamburgerMid = document.getElementById('hamburger-mid');
+        const hamburgerBot = document.getElementById('hamburger-bot');
+
+        // Toggle Mobile Menu
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            const body = document.body;
+
+            if (isMenuOpen) {
+                scrollPosition = window.scrollY;
+                mobileMenu?.classList.remove('opacity-0', 'pointer-events-none');
+                mobileMenu?.classList.add('opacity-100', 'pointer-events-auto');
+                nav?.classList.remove('z-50');
+                nav?.classList.add('z-[10000]');
+
+                body.style.position = 'fixed';
+                body.style.top = `-${scrollPosition}px`;
+                body.style.width = '100%';
+                body.style.overflow = 'hidden';
+                
+                mobileToggle?.setAttribute('aria-expanded', 'true');
+
+                if (hamburgerTop && hamburgerMid && hamburgerBot) {
+                    hamburgerTop.classList.add('rotate-45', 'translate-y-2');
+                    hamburgerMid.classList.add('opacity-0');
+                    hamburgerBot.classList.add('-rotate-45', '-translate-y-2.5');
+                }
+                
+                mobileToggle?.classList.add('text-white');
+                mobileToggle?.classList.remove('text-obsidian');
+            } else {
+                mobileMenu?.classList.add('opacity-0', 'pointer-events-none');
+                mobileMenu?.classList.remove('opacity-100', 'pointer-events-auto');
+                nav?.classList.add('z-50');
+                nav?.classList.remove('z-[10000]');
+                
+                body.style.position = '';
+                body.style.top = '';
+                body.style.width = '';
+                body.style.overflow = '';
+                
+                window.scrollTo(0, scrollPosition);
+                mobileToggle?.setAttribute('aria-expanded', 'false');
+
+                 if (hamburgerTop && hamburgerMid && hamburgerBot) {
+                    hamburgerTop.classList.remove('rotate-45', 'translate-y-2');
+                    hamburgerMid.classList.remove('opacity-0');
+                    hamburgerBot.classList.remove('-rotate-45', '-translate-y-2.5');
+                 }
+            }
+        }
+
+        mobileToggle?.addEventListener('click', toggleMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                 if (isMenuOpen) toggleMenu();
+            });
+        });
+
+        function handleScroll() {
+            // Re-query nav dynamically to ensure we always have the mounted element
+            const currentNav = document.getElementById('classic-nav');
+            if (!currentNav) return;
+            
+            const currentScroll = isMenuOpen ? scrollPosition : window.scrollY;
+
+            if (currentScroll > 20) {
+                currentNav.classList.add('bg-obsidian/90', 'backdrop-blur-md', 'shadow-md');
+                currentNav.classList.remove('bg-transparent', 'py-6');
+                currentNav.classList.add('py-4');
+            } else {
+                currentNav.classList.remove('bg-obsidian/90', 'backdrop-blur-md', 'shadow-md');
+                currentNav.classList.add('bg-transparent', 'py-6');
+                currentNav.classList.remove('py-4');
+            }
+        }
+
+        function handleScrollSpy() {
+            let currentSection = 'home';
+            const scrollY = isMenuOpen ? scrollPosition : window.scrollY;
+            
+            if (isMenuOpen) return; 
+
+            const sections = ['home', 'projects', 'services', 'about', 'contact'];
+            for (const sectionId of sections) {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= window.innerHeight / 3 && rect.bottom >= 100) {
+                        currentSection = sectionId;
+                        break;
+                    }
+                }
+            }
+
+            // Re-query dynamically to avoid detached DOM references
+            const currentNavItems = document.querySelectorAll('.nav-item');
+            currentNavItems.forEach((item) => {
+                const section = item.getAttribute('data-section');
+                const underline = item.querySelector('.nav-underline');
+                
+                if (section === currentSection) {
+                    item.classList.add('text-lux-gold');
+                    item.classList.remove('text-white/70');
+                    if (underline) underline.classList.remove('scale-x-0');
+                } else {
+                    item.classList.remove('text-lux-gold');
+                    item.classList.add('text-white/70');
+                    if (underline) underline.classList.add('scale-x-0');
+                }
+            });
+        }
+        
+        function smoothScroll(e: Event) {
+            e.preventDefault();
+            const target = e.currentTarget as HTMLAnchorElement;
+            const href = target.getAttribute('href');
+            if (!href) return;
+            
+            const hashIndex = href.indexOf('#');
+            if (hashIndex !== -1) {
+                const hash = href.substring(hashIndex);
+                const currentPath = window.location.pathname;
+                const targetPath = href.substring(0, hashIndex);
+                
+                const cleanCurrent = currentPath.endsWith('/') && currentPath.length > 1 ? currentPath.slice(0, -1) : currentPath;
+                const cleanTarget = targetPath.endsWith('/') && targetPath.length > 1 ? targetPath.slice(0, -1) : targetPath;
+
+                const isSamePage = (cleanCurrent === cleanTarget) || (cleanCurrent === '/v1' && cleanTarget === '/v1') || (targetPath === '' && hash);
+
+                if (isSamePage) {
+                     const element = document.querySelector(hash);
+                     if (element) {
+                         if (isMenuOpen) toggleMenu();
+                         setTimeout(() => {
+                             element.scrollIntoView({ behavior: 'smooth' });
+                             history.pushState(null, '', hash);
+                         }, 10);
+                     }
+                } else {
+                     window.location.href = href;
+                }
+            } else {
+                 window.location.href = href;
+            }
+        }
+
+        if (!scrollHandlerAttached) {
+            window.addEventListener('scroll', () => {
+                handleScroll();
+                handleScrollSpy();
+            }, { passive: true });
+            scrollHandlerAttached = true;
+        }
+
+        handleScroll();
+        handleScrollSpy();
+        
+        navItems.forEach(item => item.addEventListener('click', smoothScroll));
+        if (logoLink) logoLink.addEventListener('click', smoothScroll);
+        mobileLinks.forEach(item => item.addEventListener('click', smoothScroll));
+    }
+
+    document.addEventListener('astro:page-load', initNav);
+</script>

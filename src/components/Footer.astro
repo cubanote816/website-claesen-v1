@@ -1,0 +1,138 @@
+---
+import { ArrowUpRight, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { ui, defaultLang } from '../i18n/ui';
+
+export interface Props {
+    lang?: keyof typeof ui;
+}
+
+const { lang = defaultLang } = Astro.props;
+const t = ui[lang] || ui[defaultLang];
+const currentYear = new Date().getFullYear();
+
+const baseUrl = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
+const gl = (path: string) => {
+    const route = lang === defaultLang ? path : `/${lang}${path}`;
+    return `${baseUrl}${route}`;
+};
+
+const footerLinks = [
+  {
+    title: t['footer.nav'],
+    links: [
+      { name: t['nav.home'], href: gl("/#home") },
+      { name: t['nav.projects'], href: gl("/#projects") },
+      { name: t['nav.services'], href: gl("/#services") },
+      { name: t['nav.about'], href: gl("/#about") },
+      { name: t['nav.contact'], href: gl("/#contact") }
+    ]
+  },
+  {
+    title: t['footer.services'],
+    links: [
+      { name: t['services.relighting.title'], href: gl("/#services") },
+      { name: t['services.newprojects.title'], href: gl("/#services") },
+      { name: t['services.studies.title'], href: gl("/#services") },
+      { name: t['services.maintenance.title'], href: gl("/#services") }
+    ]
+  }
+];
+
+const socialLinks = [
+  { name: "LinkedIn", icon: Linkedin, href: "#" },
+  { name: "Instagram", icon: Instagram, href: "#" },
+  { name: "Facebook", icon: Facebook, href: "https://www.facebook.com/profile.php?id=100086067557307" },
+  { name: "Twitter", icon: Twitter, href: "#" }
+];
+---
+
+<footer class="bg-black border-t border-white/10 pt-20 pb-10 relative overflow-hidden">
+  {/* Ambient Glow */}
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    {/* Top Highlight Line */}
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-lux-gold/60 to-transparent"></div>
+    
+    {/* Core Horizon Glow */}
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[300px] bg-lux-gold/10 blur-[80px] rounded-[100%] origin-top"></div>
+    
+    {/* Intense Top Center Source */}
+    <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-96 h-32 bg-lux-gold/20 blur-[50px] rounded-full"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+      
+      {/* Brand Column */}
+      <div class="md:col-span-4 space-y-6">
+        <a href={gl("/#home")} class="block w-fit">
+             <img src={`${import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL}/brand-logo-dark.png`} alt="Claesen Verlichting" class="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity" />
+        </a>
+        <p class="text-cool-slate leading-relaxed max-w-sm">
+          {t['footer.legacy']}
+        </p>
+        <div class="flex gap-4">
+          {socialLinks.map(social => (
+            <a href={social.href} class="p-2 rounded-full border border-white/10 text-cool-slate hover:text-lux-gold hover:border-lux-gold/30 hover:bg-lux-gold/5 transition-all duration-300 group">
+              <social.icon className="w-5 h-5" />
+              <span class="sr-only">{social.name}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* Links Columns */}
+      <div class="md:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-8">
+        {footerLinks.map(section => (
+          <div class="space-y-6">
+            <h4 class="font-display font-bold text-white text-lg tracking-wide">{section.title}</h4>
+            <ul class="space-y-4">
+              {section.links.map(link => (
+                <li>
+                  <a href={link.href} class="text-cool-slate hover:text-white transition-colors flex items-center gap-2 group w-fit">
+                    <span class="w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-lux-gold transition-colors"></span>
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+
+        {/* Contact Column (Simplified) */}
+        <div class="space-y-6">
+          <h4 class="font-display font-bold text-white text-lg tracking-wide">{t['footer.legal']}</h4>
+          <ul class="space-y-4">
+            <li>
+                <a href={gl("/privacy")} class="text-cool-slate hover:text-white transition-colors flex items-center gap-2 group w-fit">
+                    <span class="w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-lux-gold transition-colors"></span>
+                    {t['footer.privacy']}
+                </a>
+            </li>
+            <li>
+                <a href={gl("/terms")} class="text-cool-slate hover:text-white transition-colors flex items-center gap-2 group w-fit">
+                    <span class="w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-lux-gold transition-colors"></span>
+                    {t['footer.terms']}
+                </a>
+            </li>
+             <li>
+                <a href={gl("/cookies")} class="text-cool-slate hover:text-white transition-colors flex items-center gap-2 group w-fit">
+                    <span class="w-1.5 h-1.5 rounded-full bg-white/10 group-hover:bg-lux-gold transition-colors"></span>
+                    {t['footer.cookies']}
+                </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {/* Bottom Bar */}
+    <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-cool-slate/60 text-sm">
+        &copy; {currentYear} Claesen Verlichting. {t['footer.rights']}
+      </p>
+      <div class="flex items-center gap-6">
+         <span class="text-cool-slate/40 text-xs uppercase tracking-widest">{t['footer.licensed']}</span>
+      </div>
+    </div>
+  </div>
+</footer>

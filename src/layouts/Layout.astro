@@ -1,0 +1,57 @@
+---
+import '../styles/global.css';
+import '@fontsource/unbounded';
+import '@fontsource/inter';
+import SpotlightCursor from '../components/SpotlightCursor';
+import ClassicNav from '../components/ClassicNav.astro';
+import CookieConsent from '../components/CookieConsent';
+import { ClientRouter } from 'astro:transitions';
+
+interface Props {
+	title: string;
+    showGlobalCursor?: boolean;
+    lang?: string;
+}
+
+const { title, showGlobalCursor = true, lang = 'nl' } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/v1/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+        <ClientRouter />
+
+        <!-- SEO -->
+		<meta name="description" content="Claesen Verlichting - Licensed Engineering & Industrial Lighting Specialists. Creative technical solutions for sport, industry, and public spaces." />
+        <meta name="keywords" content="lighting, engineering, industrial lighting, sport lighting, architectural lighting, claesen" />
+        <meta name="author" content="Claesen Verlichting" />
+
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://claesen.be/" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content="Licensed Engineering & Industrial Lighting Specialists. Creating high-performance illumination structures." />
+        <meta property="og:image" content="/v1/og-image.jpg" />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://claesen.be/" />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content="Licensed Engineering & Industrial Lighting Specialists." />
+        <meta property="twitter:image" content="/v1/og-image.jpg" />
+	</head>
+	<body class="bg-obsidian text-white selection:bg-lux-gold selection:text-black">
+		{showGlobalCursor && <SpotlightCursor client:load />}
+
+		<ClassicNav lang={lang} />
+		<CookieConsent client:load />
+		<main>
+			<slot />
+		</main>
+	</body>
+</html>

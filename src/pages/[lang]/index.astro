@@ -1,0 +1,16 @@
+---
+import LandingPage from '../../components/pages/LandingPage.astro';
+import { ui } from '../../i18n/ui';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'nl' } }, // Optional, if we want /nl explicit
+  ];
+}
+
+const { lang } = Astro.params;
+---
+
+<LandingPage lang={lang as keyof typeof ui} />

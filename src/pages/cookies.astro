@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import PageHeader from '../components/PageHeader';
+---
+
+<Layout title="Cookie Policy - Claesen Verlichting">
+    {/* Background Grid/Noise (Fixed) */}
+    <div class="fixed inset-0 z-0 pointer-events-none opacity-20"
+         style={{
+           backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")'
+         }}
+    ></div>
+
+    <div class="pt-32 relative z-10">
+        <PageHeader 
+            client:load 
+            title="Cookie Policy" 
+            subtitle="Understanding how we use cookies."
+        />
+    </div>
+
+    <section class="py-20 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto glass-panel rounded-3xl p-8 md:p-12">
+            <div class="prose prose-invert prose-lg max-w-none prose-headings:font-display prose-headings:text-white prose-p:text-cool-slate prose-a:text-lux-gold hover:prose-a:text-white transition-colors">
+                <p class="text-sm text-cool-slate/60 mb-8 border-b border-white/10 pb-4">Last updated: {new Date().toLocaleDateString()}</p>
+
+            <h3>1. Use of Cookies</h3>
+            <p>
+                Claesen Verlichting ("we", "us", or "our") may use cookies, web beacons, tracking pixels, and other tracking technologies when you visit our website claesen.be, including any other media form, media channel, mobile website, or mobile application related or connected thereto (collectively, the "Site") to help customize the Site and improve your experience.
+            </p>
+
+            <h3>2. Use of Cookies</h3>
+            <p>
+                A "cookie" is a string of information which assigns you a unique identifier that we store on your computer. Your browser then provides that unique identifier to use each time you submit a query to the Site. We use cookies on the Site to, among other things, keep track of services you have used, record registration information, record your user preferences, keep you logged into the Site, facilitate purchase procedures, and track the pages you visit. Cookies help us understand how the Site is being used and improve your user experience.
+            </p>
+
+            <h3>3. Types of Cookies</h3>
+            <p>
+                The following types of cookies may be used when you visit the Site:
+            </p>
+            <ul>
+                <li><strong>Advertising Cookies:</strong> Advertising cookies are placed on your computer by advertisers and ad servers in order to display advertisements that are most likely to be of interest to you. These cookies allow advertisers and ad servers to gather information about your visits to the Site and other websites, alternate the ads sent to a specific computer, and track how often an ad has been viewed and by whom.</li>
+                <li><strong>Analytics Cookies:</strong> Analytics cookies monitor how users reached the Site, and how they interact with and move around once on the Site. These cookies let us know what features on the Site are working the best and what features on the Site can be improved.</li>
+                <li><strong>Personalization Cookies:</strong> Personalization cookies are used to recognize repeat visitors to the Site. We use these cookies to record your browsing history, the pages you have visited, and your settings and preferences each time you visit the Site.</li>
+                <li><strong>Security Cookies:</strong> Security cookies help identify and prevent security risks. We use these cookies to authenticate users and protect user data from unauthorized parties.</li>
+            </ul>
+
+            <h3>4. Control of Cookies</h3>
+            <p>
+                Most browsers are set to accept cookies by default. However, you can remove or reject cookies in your browser's settings. Please be aware that such action could affect the availability and functionality of the Site.
+            </p>
+             <p>
+                For more information on how to control cookies, check your browser or device's settings for how you can control or reject cookies.
+            </p>
+
+            <h3>5. Contact Us</h3>
+            <p>
+                If you have questions or comments about this Cookie Policy, please contact us at:
+            </p>
+             <p>
+                <strong>Claesen Verlichting</strong><br/>
+                Toekomstlaan 41<br/>
+                3600 Genk, Belgium<br/>
+                info@claesen.be
+            </p>
+            </div>
+        </div>
+    </section>
+
+    <Footer />
+</Layout>

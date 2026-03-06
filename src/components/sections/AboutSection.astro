@@ -1,0 +1,84 @@
+---
+import PageHeader from '../PageHeader';
+import { Award, Users, Globe, Shield } from 'lucide-react';
+import { ui, defaultLang } from '../../i18n/ui';
+
+export interface Props {
+    lang?: keyof typeof ui;
+}
+
+const { lang = defaultLang } = Astro.props;
+const t = ui[lang] || ui[defaultLang];
+---
+
+<section id="about" class="min-h-screen py-20 px-6 relative">
+  <div class="max-w-7xl mx-auto">
+    <PageHeader 
+      client:visible 
+      title={t['about.title']} 
+      subtitle={t['about.subtitle']}
+    />
+
+    {/* Story Section */}
+    <div class="mb-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="relative group rounded-3xl overflow-hidden border border-white/5">
+              <div class="absolute inset-0 bg-lux-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <img 
+                  src="/v1/assets/owners.jpg" 
+                  alt="Claesen Engineering Team" 
+                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0"
+              />
+          </div>
+          
+          <div class="space-y-6">
+              <h2 class="font-display text-3xl font-bold">{t['about.heading']}</h2>
+              <div class="prose prose-invert text-cool-slate">
+                  <p>
+                      {t['about.p1']}
+                  </p>
+                  <p>
+                      {t['about.p2']}
+                  </p>
+                  <p set:html={t['about.p3']}></p>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    {/* Stats / Values */}
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div class="p-8 rounded-3xl bg-gunmetal border border-white/5 flex flex-col items-center text-center group hover:bg-white/5 transition-colors">
+          <div class="text-lux-gold mb-4 group-hover:scale-110 transition-transform">
+              <Award className="w-8 h-8" />
+          </div>
+          <h3 class="font-bold text-3xl mb-2">45+</h3>
+          <p class="text-sm text-cool-slate">{t['about.stats.years']}</p>
+      </div>
+
+      <div class="p-8 rounded-3xl bg-gunmetal border border-white/5 flex flex-col items-center text-center group hover:bg-white/5 transition-colors">
+          <div class="text-blue-400 mb-4 group-hover:scale-110 transition-transform">
+              <Users className="w-8 h-8" />
+          </div>
+          <h3 class="font-bold text-3xl mb-2">1000+</h3>
+          <p class="text-sm text-cool-slate">{t['about.stats.projects']}</p>
+      </div>
+
+      <div class="p-8 rounded-3xl bg-gunmetal border border-white/5 flex flex-col items-center text-center group hover:bg-white/5 transition-colors">
+          <div class="text-green-400 mb-4 group-hover:scale-110 transition-transform">
+              <Globe className="w-8 h-8" />
+          </div>
+          <h3 class="font-bold text-3xl mb-2">EU</h3>
+          <p class="text-sm text-cool-slate">{t['about.stats.cert']}</p>
+      </div>
+
+      <div class="p-8 rounded-3xl bg-gunmetal border border-white/5 flex flex-col items-center text-center group hover:bg-white/5 transition-colors">
+          <div class="text-purple-400 mb-4 group-hover:scale-110 transition-transform">
+              <Shield className="w-8 h-8" />
+          </div>
+          <h3 class="font-bold text-3xl mb-2">10Yr</h3>
+          <p class="text-sm text-cool-slate">{t['about.stats.warranty']}</p>
+      </div>
+    </div>
+  </div>
+</section>

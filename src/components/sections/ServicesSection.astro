@@ -1,0 +1,80 @@
+---
+import PageHeader from '../PageHeader';
+import { Lightbulb, Settings, FileText, Activity } from 'lucide-react';
+import { ui, defaultLang } from '../../i18n/ui';
+
+export interface Props {
+    lang?: keyof typeof ui;
+}
+
+const { lang = defaultLang } = Astro.props;
+const t = ui[lang] || ui[defaultLang];
+---
+
+<section id="services" class="min-h-screen py-20 px-6 relative">
+  <div class="max-w-7xl mx-auto">
+    <PageHeader 
+      client:visible 
+      title={t['services.title']}
+      subtitle={t['services.subtitle']}
+    />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Service 1: Relighting */}
+      <div class="group relative p-8 rounded-3xl bg-gunmetal border border-white/5 overflow-hidden hover:border-lux-gold/30 transition-colors duration-500">
+        <div class="absolute inset-0 bg-gradient-to-br from-lux-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10">
+          <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 text-lux-gold group-hover:scale-110 transition-transform duration-300">
+            <Lightbulb className="w-6 h-6" />
+          </div>
+          <h3 class="font-display text-2xl font-bold mb-4">{t['services.relighting.title']}</h3>
+          <p class="text-cool-slate leading-relaxed mb-6">
+            {t['services.relighting.desc']}
+          </p>
+        </div>
+      </div>
+
+      {/* Service 2: New Projects */}
+      <div class="group relative p-8 rounded-3xl bg-gunmetal border border-white/5 overflow-hidden hover:border-lux-gold/30 transition-colors duration-500">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10">
+          <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 text-blue-400 group-hover:scale-110 transition-transform duration-300">
+            <Settings className="w-6 h-6" />
+          </div>
+          <h3 class="font-display text-2xl font-bold mb-4">{t['services.newprojects.title']}</h3>
+          <p class="text-cool-slate leading-relaxed mb-6">
+            {t['services.newprojects.desc']}
+          </p>
+        </div>
+      </div>
+
+      {/* Service 3: Light Studies */}
+      <div class="group relative p-8 rounded-3xl bg-gunmetal border border-white/5 overflow-hidden hover:border-lux-gold/30 transition-colors duration-500">
+        <div class="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10">
+          <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 text-green-400 group-hover:scale-110 transition-transform duration-300">
+            <FileText className="w-6 h-6" />
+          </div>
+          <h3 class="font-display text-2xl font-bold mb-4">{t['services.studies.title']}</h3>
+          <p class="text-cool-slate leading-relaxed mb-6">
+            {t['services.studies.desc']}
+          </p>
+        </div>
+      </div>
+
+      {/* Service 4: Maintenance */}
+      <div class="group relative p-8 rounded-3xl bg-gunmetal border border-white/5 overflow-hidden hover:border-lux-gold/30 transition-colors duration-500">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10">
+          <div class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center mb-6 text-purple-400 group-hover:scale-110 transition-transform duration-300">
+            <Activity className="w-6 h-6" />
+          </div>
+          <h3 class="font-display text-2xl font-bold mb-4">{t['services.maintenance.title']}</h3>
+          <p class="text-cool-slate leading-relaxed mb-6">
+            {t['services.maintenance.desc']}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

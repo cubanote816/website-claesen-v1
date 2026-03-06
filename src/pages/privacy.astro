@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import PageHeader from '../components/PageHeader';
+---
+
+<Layout title="Privacy Policy - Claesen Verlichting">
+    {/* Background Grid/Noise (Fixed) */}
+    <div class="fixed inset-0 z-0 pointer-events-none opacity-20"
+         style={{
+           backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")'
+         }}
+    ></div>
+
+    <div class="pt-32 relative z-10">
+        <PageHeader 
+            client:load 
+            title="Privacy Policy" 
+            subtitle="How we handle your data."
+        />
+    </div>
+
+    <section class="py-20 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto glass-panel rounded-3xl p-8 md:p-12">
+            <div class="prose prose-invert prose-lg max-w-none prose-headings:font-display prose-headings:text-white prose-p:text-cool-slate prose-a:text-lux-gold hover:prose-a:text-white transition-colors">
+                <p class="text-sm text-cool-slate/60 mb-8 border-b border-white/10 pb-4">Last updated: {new Date().toLocaleDateString()}</p>
+
+            <h3>1. Introduction</h3>
+            <p>
+                Claesen Verlichting ("we", "our", "us") values your privacy. This Privacy policy explains how we collect, use, disclose, and safeguard your information when you visit our website claesen.be.
+            </p>
+
+            <h3>2. Collection of Information</h3>
+            <p>
+                We may collect information about you in a variety of ways. The information we may collect on the Site includes:
+            </p>
+            <ul>
+                <li><strong>Personal Data:</strong> Personally identifiable information, such as your name, shipping address, email address, and telephone number, that you voluntarily give to us when you register with the Site or when you choose to participate in various activities related to the Site.</li>
+                <li><strong>Derivative Data:</strong> Information our servers automatically collect when you access the Site, such as your IP address, your browser type, your operating system, your access times, and the pages you have viewed directly before and after accessing the Site.</li>
+            </ul>
+
+            <h3>3. Use of Your Information</h3>
+            <p>
+                Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the Site to:
+            </p>
+            <ul>
+                <li>Compile anonymous statistical data and analysis for use internally or with third parties.</li>
+                <li>Deliver targeted advertising, coupons, newsletters, and other information regarding promotions and the Site to you.</li>
+                <li>Email you regarding your account or order.</li>
+                <li>Fulfill and manage purchases, orders, payments, and other transactions related to the Site.</li>
+            </ul>
+
+            <h3>4. Disclosure of Your Information</h3>
+            <p>
+                We may share information we have collected about you in certain situations. Your information may be disclosed as follows:
+            </p>
+            <ul>
+                <li><strong>By Law or to Protect Rights:</strong> If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, and safety of others, we may share your information as permitted or required by any applicable law, rule, or regulation.</li>
+            </ul>
+
+            <h3>5. Contact Us</h3>
+            <p>
+                If you have questions or comments about this Privacy Policy, please contact us at:
+            </p>
+            <p>
+                <strong>Claesen Verlichting</strong><br/>
+                Toekomstlaan 41<br/>
+                3600 Genk, Belgium<br/>
+                info@claesen.be
+            </p>
+            </div>
+        </div>
+    </section>
+
+    <Footer />
+</Layout>

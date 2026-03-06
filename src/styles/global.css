@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+    --color-obsidian: #0B0B0F;
+    --color-gunmetal: #1A1A22;
+    --color-lux-gold: #FCD34D;
+    --color-electric-amber: #F59E0B;
+    --color-cool-slate: #64748B;
+
+    --font-display: "Unbounded", sans-serif;
+    --font-body: "Inter", sans-serif;
+
+    --animate-float: float 6s ease-in-out infinite;
+    --animate-spotlight: spotlight 2s ease-in-out infinite alternate;
+
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    @keyframes spotlight {
+        0% {
+            opacity: 0.5;
+            transform: scale(0.9);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+    }
+}
+
+@layer utilities {
+    .glass-panel {
+        @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-xl;
+    }
+
+    .text-glow {
+        text-shadow: 0 0 20px rgba(252, 211, 77, 0.3);
+    }
+
+    .mask-gradient {
+        mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    }
+}
+
+html,
+body {
+    @apply bg-obsidian text-white font-body antialiased overflow-x-hidden;
+    cursor: none;
+    /* Hide default cursor for SpotlightCursor */
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-obsidian);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-gunmetal);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-lux-gold);
+}

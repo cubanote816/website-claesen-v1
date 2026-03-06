@@ -1,0 +1,26 @@
+---
+import PageHeader from '../PageHeader';
+import ModernPortfolio from '../ModernPortfolio';
+import { ui, defaultLang } from '../../i18n/ui';
+
+interface Props {
+  lang?: keyof typeof ui;
+}
+
+const { lang = defaultLang } = Astro.props;
+const t = ui[lang as keyof typeof ui] || ui[defaultLang];
+---
+
+<section id="projects" class="min-h-screen py-20 px-6 relative bg-obsidian">
+  <div class="max-w-7xl mx-auto">
+    {/* Header */}
+    <PageHeader 
+      client:visible
+      title={t['portfolio.title']}
+      subtitle={t['portfolio.subtitle']}
+    />
+
+    {/* Grid */}
+    <ModernPortfolio client:visible lang={lang} />
+  </div>
+</section>
