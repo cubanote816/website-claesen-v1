@@ -30,11 +30,11 @@ jobs:
       - name: Build Project
         run: npm run build:prod
         
-      - name: Deploy to FTP
-        uses: Creepios/sftp-action@v1.0.5
+      - name: Deploy to FTP (Secure)
+        uses: Kikobeats/lftp-action@v1.1.0
         with:
-          host: ${{ secrets.FTP_SERVER }}
+          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          remote-dir: /
-          local-dir: ./dist/
+          remote_dir: /
+          local_dir: ./dist/
