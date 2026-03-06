@@ -30,13 +30,12 @@ jobs:
       - name: Build Project
         run: npm run build:prod
         
-      - name: Deploy to FTPS
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          port: 21
-          server-dir: /
-          local-dir: ./dist/
+      - name: Deploy via LFTP (Strict FTPS Bypass)
+        env:
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+          FTP_HOST: ${{ secrets.FTP_SERVER }}
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -yqq lftp
+          lftp -c "set ftp:ssl-allow yes; set ftp:ssl-protect-data yes; set ftp:ssl-protect-list yes; set ssl:verify-certificate no; open -u $FTP_USER,'$FTP_PASS' $FTP_HOST; mirror -Rve ./dist /"
