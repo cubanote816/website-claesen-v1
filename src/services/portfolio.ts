@@ -67,9 +67,21 @@ export class PortfolioService {
                             return cat === filters.category;
                         });
                     }
+                    const mappedProjects = filtered.map((project: any) => ({
+                        ...project,
+                        featured_image_url: this.formatImageUrl(project.featured_image_url || project.api_featured_image_url || project.featured_image),
+                        gallery_images: (Array.isArray(project.gallery) ? project.gallery : (Array.isArray(project.api_gallery) ? project.api_gallery : [])).map((img: any) => ({
+                            id: img.id,
+                            url: this.formatImageUrl(img.original_url || img.url),
+                            thumb: this.formatImageUrl(img.thumb_url || img.thumb || img.original_url || img.url),
+                            alt: img.alt || '',
+                            caption: img.caption || ''
+                        })),
+                    }))
+
                     // Start of API fallback or normal execution
                     return {
-                        projects: filtered,
+                        projects: mappedProjects,
                         filters: { categories: {}, years: [] }
                     };
                 } catch (e) {

@@ -23,6 +23,7 @@ export default function ProjectCard({ project, onClick, index }: ProjectCardProp
     };
 
     const categoryLabel = typeof project.category === 'string' ? project.category : 'Project';
+    const placeholderImg = `${import.meta.env.BASE_URL || ''}/placeholder-project.jpg`.replace(/\/\//g, '/');
 
     return (
         <motion.div
@@ -37,7 +38,7 @@ export default function ProjectCard({ project, onClick, index }: ProjectCardProp
             {/* Background Image */}
             <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40"
-                style={{ backgroundImage: `url(${project.featured_image_url || '/placeholder-project.jpg'})` }}
+                style={{ backgroundImage: `url(${project.featured_image_url || placeholderImg})` }}
             />
 
             {/* Gradient Overlay */}

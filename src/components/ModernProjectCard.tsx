@@ -12,8 +12,8 @@ interface ModernProjectCardProps {
 
 export default function ModernProjectCard({ project, onClick, index }: ModernProjectCardProps) {
     const getLocalized = (content: any) => portfolioService.getLocalizedValue(content);
-
     const categoryLabel = typeof project.category === 'string' ? project.category : 'Project';
+    const placeholderImg = `${import.meta.env.BASE_URL || ''}/placeholder-project.jpg`.replace(/\/\//g, '/');
 
     return (
         <motion.div
@@ -29,7 +29,7 @@ export default function ModernProjectCard({ project, onClick, index }: ModernPro
                 {/* Background Image */}
                 <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110"
-                    style={{ backgroundImage: `url(${project.featured_image_url || '/placeholder-project.jpg'})` }}
+                    style={{ backgroundImage: `url(${project.featured_image_url || placeholderImg})` }}
                 />
 
                 {/* Overlays */}

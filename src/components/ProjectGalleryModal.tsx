@@ -59,6 +59,7 @@ export default function ProjectGalleryModal({ isOpen, onClose, project, lang = d
     };
 
     const getLocalized = (content: any) => portfolioService.getLocalizedValue(content, lang);
+    const placeholderImg = `${import.meta.env.BASE_URL || ''}/placeholder-project.jpg`.replace(/\/\//g, '/');
 
     return (
         <AnimatePresence>
@@ -89,7 +90,7 @@ export default function ProjectGalleryModal({ isOpen, onClose, project, lang = d
                             <AnimatePresence mode="wait">
                                 <motion.img
                                     key={currentImage?.url}
-                                    src={currentImage?.url || '/placeholder-project.jpg'}
+                                    src={currentImage?.url || placeholderImg}
                                     alt={currentImage?.alt || getLocalized(project.title)}
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
