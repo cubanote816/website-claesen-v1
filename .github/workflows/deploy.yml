@@ -30,11 +30,13 @@ jobs:
       - name: Build Project
         run: npm run build:prod
         
-      - name: Deploy to FTP (Secure)
-        uses: Kikobeats/lftp-action@v1.1.0
+      - name: Deploy to FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          remote_dir: /
-          local_dir: ./dist/
+          protocol: ftps
+          port: 21
+          server-dir: /
+          local-dir: ./dist/
