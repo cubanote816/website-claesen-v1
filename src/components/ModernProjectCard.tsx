@@ -63,12 +63,14 @@ export default function ModernProjectCard({ project, onClick, index }: ModernPro
                             {getLocalized(project.title)}
                         </h3>
 
-                        <div className="flex items-center gap-2 text-cool-slate text-sm opacity-80 group-hover:opacity-100 transition-opacity">
-                            <MapPin className="w-3 h-3 text-lux-gold" />
-                            <p className="line-clamp-1 font-medium">
-                                {getLocalized(project.location)}
-                            </p>
-                        </div>
+                        {getLocalized(project.location) && (
+                            <div className="flex items-center gap-2 text-cool-slate text-sm opacity-80 group-hover:opacity-100 transition-opacity">
+                                <MapPin className="w-3 h-3 text-lux-gold" />
+                                <p className="line-clamp-1 font-medium">
+                                    {getLocalized(project.location)}
+                                </p>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

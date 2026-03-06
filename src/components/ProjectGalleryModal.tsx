@@ -139,18 +139,24 @@ export default function ProjectGalleryModal({ isOpen, onClose, project, lang = d
                                 <div className="w-12 h-1 bg-lux-gold rounded-full mb-6"></div>
 
                                 <div className="space-y-3 text-sm text-cool-slate">
-                                    <div className="flex items-center gap-3">
-                                        <MapPin className="w-4 h-4 text-lux-gold" />
-                                        <span>{getLocalized(project.location)}</span>
-                                    </div>
-                                    <div className="flex items-center gap-3">
-                                        <Calendar className="w-4 h-4 text-lux-gold" />
-                                        <span>{project.year}</span>
-                                    </div>
-                                    <div className="flex items-center gap-3">
-                                        <Users className="w-4 h-4 text-lux-gold" />
-                                        <span>{getLocalized(project.client)}</span>
-                                    </div>
+                                    {getLocalized(project.location) && (
+                                        <div className="flex items-center gap-3">
+                                            <MapPin className="w-4 h-4 text-lux-gold" />
+                                            <span>{getLocalized(project.location)}</span>
+                                        </div>
+                                    )}
+                                    {project.year && (
+                                        <div className="flex items-center gap-3">
+                                            <Calendar className="w-4 h-4 text-lux-gold" />
+                                            <span>{project.year}</span>
+                                        </div>
+                                    )}
+                                    {getLocalized(project.client) && (
+                                        <div className="flex items-center gap-3">
+                                            <Users className="w-4 h-4 text-lux-gold" />
+                                            <span>{getLocalized(project.client)}</span>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
 

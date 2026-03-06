@@ -60,12 +60,14 @@ export default function ProjectCard({ project, onClick, index }: ProjectCardProp
                     {getLocalized(project.title)}
                 </h3>
 
-                <div className="flex items-center gap-2 text-cool-slate text-sm">
-                    <MapPin className="w-3 h-3" />
-                    <p className="line-clamp-1">
-                        {getLocalized(project.location)}
-                    </p>
-                </div>
+                {getLocalized(project.location) && (
+                    <div className="flex items-center gap-2 text-cool-slate text-sm">
+                        <MapPin className="w-3 h-3" />
+                        <p className="line-clamp-1">
+                            {getLocalized(project.location)}
+                        </p>
+                    </div>
+                )}
 
                 {/* Action Icon */}
                 <div className="absolute bottom-8 right-8 bg-white/10 backdrop-blur-md p-3 rounded-full text-white opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 border border-white/10 group-hover:bg-lux-gold group-hover:text-obsidian group-hover:border-lux-gold">
