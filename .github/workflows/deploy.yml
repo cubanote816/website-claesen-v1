@@ -38,5 +38,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 2222
           source: "dist/*"
-          target: "/"
+          target: "/v1"
           strip_components: 1
