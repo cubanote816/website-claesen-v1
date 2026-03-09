@@ -112,22 +112,25 @@ async function syncContent() {
 
             // Process Featured Image
             let featuredLocalPath = null;
-            if (project.featured_image_url) {
-                const ext = getExtension(project.featured_image_url);
+            const featuredSourceUrl = project.featured_image_url || project.api_featured_image_url || project.featured_image;
+            if (featuredSourceUrl) {
+                const ext = getExtension(featuredSourceUrl);
                 const filename = `featured${ext}`;
                 const localFilePath = path.join(projectDir, filename);
-                await downloadImage(project.featured_image_url, localFilePath);
+                await downloadImage(featuredSourceUrl, localFilePath);
                 featuredLocalPath = `/assets/cache/${project.id}/${filename}`;
             }
 
             // Process Gallery Images
             const processedGallery = [];
-            if (Array.isArray(project.gallery)) {
-                for (const img of project.gallery) {
-                    const ext = getExtension(img.url);
+            const gallerySource = Array.isArray(project.gallery) && project.gallery.length > 0 ? project.gallery : (Array.isArray(project.api_gallery) ? project.api_gallery : []);
+
+            if (gallerySource.length > 0) {
+                for (const img of gallerySource) {
+                    const ext = getExtension(img.url || img.original_url || '');
                     const filename = `gallery_${img.id}${ext}`;
                     const localFilePath = path.join(projectDir, filename);
-                    await downloadImage(img.url, localFilePath);
+                    await downloadImage(img.url || img.original_url, localFilePath);
 
                     processedGallery.push({
                         ...img,
@@ -139,7 +142,7 @@ async function syncContent() {
 
             processedProjects.push({
                 ...project,
-                featured_image_url: featuredLocalPath || project.featured_image_url,
+                featured_image_url: featuredLocalPath || project.featured_image_url || project.api_featured_image_url,
                 gallery: processedGallery,
                 gallery_images: processedGallery // Keep compatibility
             });
