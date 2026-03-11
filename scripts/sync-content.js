@@ -104,21 +104,18 @@ async function syncContent() {
         for (const project of projects) {
             console.log(`   Processing: ${project.title?.en || project.title?.nl || project.id}`);
 
-            // Create folder for project images
-            const projectDir = path.join(CACHE_DIR, project.id.toString());
-            if (!fs.existsSync(projectDir)) {
-                fs.mkdirSync(projectDir, { recursive: true });
-            }
+            // Use flat structure to avoid 'mkdir' failures on strict SFTP server
+            const filenamePrefix = `p${project.id}_`;
 
             // Process Featured Image
             let featuredLocalPath = null;
             const featuredSourceUrl = project.featured_image_url || project.api_featured_image_url || project.featured_image;
             if (featuredSourceUrl) {
                 const ext = getExtension(featuredSourceUrl);
-                const filename = `featured${ext}`;
-                const localFilePath = path.join(projectDir, filename);
+                const filename = `${filenamePrefix}featured${ext}`;
+                const localFilePath = path.join(CACHE_DIR, filename);
                 await downloadImage(featuredSourceUrl, localFilePath);
-                featuredLocalPath = `/assets/cache/${project.id}/${filename}`;
+                featuredLocalPath = `/assets/cache/${filename}`;
             }
 
             // Process Gallery Images
@@ -128,14 +125,14 @@ async function syncContent() {
             if (gallerySource.length > 0) {
                 for (const img of gallerySource) {
                     const ext = getExtension(img.url || img.original_url || '');
-                    const filename = `gallery_${img.id}${ext}`;
-                    const localFilePath = path.join(projectDir, filename);
+                    const filename = `${filenamePrefix}g_${img.id}${ext}`;
+                    const localFilePath = path.join(CACHE_DIR, filename);
                     await downloadImage(img.url || img.original_url, localFilePath);
 
                     processedGallery.push({
                         ...img,
-                        url: `/assets/cache/${project.id}/${filename}`,
-                        thumb: `/assets/cache/${project.id}/${filename}` // Use same for thumb in static mode
+                        url: `/assets/cache/${filename}`,
+                        thumb: `/assets/cache/${filename}` // Use same for thumb in static mode
                     });
                 }
             }
