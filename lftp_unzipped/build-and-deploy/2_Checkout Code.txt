@@ -1,0 +1,72 @@
+﻿2026-03-12T21:54:33.7943797Z ##[group]Run actions/checkout@v4
+2026-03-12T21:54:33.7944659Z with:
+2026-03-12T21:54:33.7945132Z   repository: cubanote816/website-claesen-v1
+2026-03-12T21:54:33.7945899Z   token: ***
+2026-03-12T21:54:33.7946342Z   ssh-strict: true
+2026-03-12T21:54:33.7947033Z   ssh-user: git
+2026-03-12T21:54:33.7947477Z   persist-credentials: true
+2026-03-12T21:54:33.7947936Z   clean: true
+2026-03-12T21:54:33.7948342Z   sparse-checkout-cone-mode: true
+2026-03-12T21:54:33.7948831Z   fetch-depth: 1
+2026-03-12T21:54:33.7949230Z   fetch-tags: false
+2026-03-12T21:54:33.7949632Z   show-progress: true
+2026-03-12T21:54:33.7950044Z   lfs: false
+2026-03-12T21:54:33.7950425Z   submodules: false
+2026-03-12T21:54:33.7950842Z   set-safe-directory: true
+2026-03-12T21:54:33.7951597Z ##[endgroup]
+2026-03-12T21:54:33.9038639Z Syncing repository: cubanote816/website-claesen-v1
+2026-03-12T21:54:33.9040656Z ##[group]Getting Git version info
+2026-03-12T21:54:33.9041504Z Working directory is '/home/runner/work/website-claesen-v1/website-claesen-v1'
+2026-03-12T21:54:33.9042691Z [command]/usr/bin/git version
+2026-03-12T21:54:33.9111356Z git version 2.53.0
+2026-03-12T21:54:33.9137323Z ##[endgroup]
+2026-03-12T21:54:33.9158706Z Temporarily overriding HOME='/home/runner/work/_temp/75941938-53a5-41b9-88a9-a622231cae6b' before making global git config changes
+2026-03-12T21:54:33.9160135Z Adding repository directory to the temporary git global config as a safe directory
+2026-03-12T21:54:33.9163721Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/website-claesen-v1/website-claesen-v1
+2026-03-12T21:54:33.9201508Z Deleting the contents of '/home/runner/work/website-claesen-v1/website-claesen-v1'
+2026-03-12T21:54:33.9205188Z ##[group]Initializing the repository
+2026-03-12T21:54:33.9209471Z [command]/usr/bin/git init /home/runner/work/website-claesen-v1/website-claesen-v1
+2026-03-12T21:54:33.9318883Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-03-12T21:54:33.9320583Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-03-12T21:54:33.9322536Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-03-12T21:54:33.9323904Z hint: call:
+2026-03-12T21:54:33.9324536Z hint:
+2026-03-12T21:54:33.9325240Z hint: 	git config --global init.defaultBranch <name>
+2026-03-12T21:54:33.9325892Z hint:
+2026-03-12T21:54:33.9326498Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-03-12T21:54:33.9327691Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-03-12T21:54:33.9328488Z hint:
+2026-03-12T21:54:33.9328919Z hint: 	git branch -m <name>
+2026-03-12T21:54:33.9329403Z hint:
+2026-03-12T21:54:33.9330053Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-03-12T21:54:33.9331237Z Initialized empty Git repository in /home/runner/work/website-claesen-v1/website-claesen-v1/.git/
+2026-03-12T21:54:33.9339150Z [command]/usr/bin/git remote add origin https://github.com/cubanote816/website-claesen-v1
+2026-03-12T21:54:33.9379370Z ##[endgroup]
+2026-03-12T21:54:33.9380363Z ##[group]Disabling automatic garbage collection
+2026-03-12T21:54:33.9385005Z [command]/usr/bin/git config --local gc.auto 0
+2026-03-12T21:54:33.9419169Z ##[endgroup]
+2026-03-12T21:54:33.9420147Z ##[group]Setting up auth
+2026-03-12T21:54:33.9430150Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-03-12T21:54:33.9462904Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-03-12T21:54:33.9802787Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-03-12T21:54:33.9833061Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-03-12T21:54:34.0069612Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-03-12T21:54:34.0108492Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-03-12T21:54:34.0365353Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-03-12T21:54:34.0403668Z ##[endgroup]
+2026-03-12T21:54:34.0404923Z ##[group]Fetching the repository
+2026-03-12T21:54:34.0414367Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +bbb5d7b52b95d5e31bf1529f026a35705fddbc41:refs/remotes/origin/main
+2026-03-12T21:54:35.5689700Z From https://github.com/cubanote816/website-claesen-v1
+2026-03-12T21:54:35.5691599Z  * [new ref]         bbb5d7b52b95d5e31bf1529f026a35705fddbc41 -> origin/main
+2026-03-12T21:54:35.5728693Z ##[endgroup]
+2026-03-12T21:54:35.5730130Z ##[group]Determining the checkout info
+2026-03-12T21:54:35.5732101Z ##[endgroup]
+2026-03-12T21:54:35.5734271Z [command]/usr/bin/git sparse-checkout disable
+2026-03-12T21:54:35.5781222Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-03-12T21:54:35.5811244Z ##[group]Checking out the ref
+2026-03-12T21:54:35.5815551Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-03-12T21:54:35.6692702Z Switched to a new branch 'main'
+2026-03-12T21:54:35.6694129Z branch 'main' set up to track 'origin/main'.
+2026-03-12T21:54:35.6703076Z ##[endgroup]
+2026-03-12T21:54:35.6742471Z [command]/usr/bin/git log -1 --format=%H
+2026-03-12T21:54:35.6765460Z bbb5d7b52b95d5e31bf1529f026a35705fddbc41

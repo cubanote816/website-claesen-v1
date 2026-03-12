@@ -32,7 +32,7 @@ try {
 }
 
 const API_URL = process.env.PUBLIC_API_URL || envApiUrl || 'https://backend.claesen-verlichting.be/v1/website';
-const CACHE_DIR = path.join(__dirname, '../public/assets');
+const CACHE_DIR = path.join(__dirname, '../public/portfolio-media');
 const DATA_FILE = path.join(__dirname, '../src/data/projects-cache.json');
 
 // Ensure directories exist
@@ -115,7 +115,7 @@ async function syncContent() {
                 const filename = `${filenamePrefix}featured${ext}`;
                 const localFilePath = path.join(CACHE_DIR, filename);
                 await downloadImage(featuredSourceUrl, localFilePath);
-                featuredLocalPath = `/assets/${filename}`;
+                featuredLocalPath = `/portfolio-media/${filename}`;
             }
 
             // Process Gallery Images
@@ -131,8 +131,8 @@ async function syncContent() {
 
                     processedGallery.push({
                         ...img,
-                        url: `/assets/${filename}`,
-                        thumb: `/assets/${filename}` // Use same for thumb in static mode
+                        url: `/portfolio-media/${filename}`,
+                        thumb: `/portfolio-media/${filename}` // Use same for thumb in static mode
                     });
                 }
             }
