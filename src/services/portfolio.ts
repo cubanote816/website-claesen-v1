@@ -72,8 +72,8 @@ export class PortfolioService {
                         featured_image_url: this.formatImageUrl(project.featured_image_url || project.api_featured_image_url || project.featured_image),
                         gallery_images: ((Array.isArray(project.gallery) && project.gallery.length > 0) ? project.gallery : (Array.isArray(project.api_gallery) ? project.api_gallery : [])).map((img: any) => ({
                             id: img.id,
-                            url: this.formatImageUrl(img.original_url || img.url),
-                            thumb: this.formatImageUrl(img.thumb_url || img.thumb || img.original_url || img.url),
+                            url: this.formatImageUrl(img.url || img.original_url),
+                            thumb: this.formatImageUrl(img.thumb || img.url || img.thumb_url || img.original_url),
                             alt: img.alt || '',
                             caption: img.caption || ''
                         })),
@@ -107,8 +107,8 @@ export class PortfolioService {
                 featured_image_url: this.formatImageUrl(project.featured_image_url || project.api_featured_image_url || project.featured_image),
                 gallery_images: ((Array.isArray(project.gallery) && project.gallery.length > 0) ? project.gallery : (Array.isArray(project.api_gallery) ? project.api_gallery : [])).map((img: any) => ({
                     id: img.id,
-                    url: this.formatImageUrl(img.original_url || img.url),
-                    thumb: this.formatImageUrl(img.thumb_url || img.thumb || img.original_url || img.url),
+                            url: this.formatImageUrl(img.url || img.original_url),
+                            thumb: this.formatImageUrl(img.thumb || img.url || img.thumb_url || img.original_url),
                     alt: img.alt || '',
                     caption: img.caption || ''
                 })),
@@ -141,8 +141,8 @@ export class PortfolioService {
                 featured_image_url: this.formatImageUrl(project.featured_image_url || project.api_featured_image_url || project.featured_image),
                 gallery_images: ((Array.isArray(project.gallery) && project.gallery.length > 0) ? project.gallery : (Array.isArray(project.api_gallery) ? project.api_gallery : [])).map((img: any) => ({
                     id: img.id,
-                    url: this.formatImageUrl(img.original_url || img.url),
-                    thumb: this.formatImageUrl(img.thumb_url || img.thumb || img.original_url || img.url),
+                    url: this.formatImageUrl(img.url || img.original_url),
+                    thumb: this.formatImageUrl(img.thumb || img.url || img.thumb_url || img.original_url),
                     alt: img.alt || '',
                     caption: img.caption || ''
                 })),
@@ -204,8 +204,8 @@ export class PortfolioService {
             featured_image_url: this.formatImageUrl(project.featured_image_url || project.api_featured_image_url || project.featured_image),
             gallery_images: ((Array.isArray(project.gallery) && project.gallery.length > 0) ? project.gallery : (Array.isArray(project.api_gallery) ? project.api_gallery : [])).map((img: any) => ({
                 id: img.id,
-                url: this.formatImageUrl(img.original_url || img.url),
-                thumb: this.formatImageUrl(img.thumb_url || img.thumb || img.original_url || img.url),
+                url: this.formatImageUrl(img.url || img.original_url),
+                thumb: this.formatImageUrl(img.thumb || img.url || img.thumb_url || img.original_url),
                 alt: img.alt || '',
                 caption: img.caption || ''
             })),
