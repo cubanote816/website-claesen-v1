@@ -55,37 +55,39 @@ export class PortfolioService {
             // Static Cache Implementation
             if (import.meta.env.PUBLIC_USE_STATIC_CACHE === 'true') {
                 try {
-                    // @ts-ignore
-                    const cachedData = await import('../data/projects-static.json');
-                    const allProjects = cachedData.default?.projects || cachedData.projects || [];
+                    const cacheRes = await fetch('/v1-media/projects-static.json');
+                    if (cacheRes.ok) {
+                        const cachedData = await cacheRes.json();
+                        const allProjects = cachedData.projects || cachedData.data || cachedData || [];
+                        
+                        let filtered = Array.isArray(allProjects) ? allProjects : [];
+                        if (filters?.category && filters.category !== 'all') {
+                            filtered = filtered.filter((p: any) => {
+                                const cat = typeof p.category === 'string' ? p.category : '';
+                                return cat === filters.category;
+                            });
+                        }
+                        const mappedProjects = filtered.map((project: any) => ({
+                            ...project,
+                            featured_image_url: this.formatImageUrl(project.featured_image_url || project.api_featured_image_url || project.featured_image),
+                            gallery_images: ((Array.isArray(project.gallery) && project.gallery.length > 0) ? project.gallery : (Array.isArray(project.api_gallery) ? project.api_gallery : [])).map((img: any) => ({
+                                id: img.id,
+                                url: this.formatImageUrl(img.url || img.original_url),
+                                thumb: this.formatImageUrl(img.thumb || img.url || img.thumb_url || img.original_url),
+                                alt: img.alt || '',
+                                caption: img.caption || ''
+                            })),
+                        }));
 
-                    // Simple client-side filtering since we have all data
-                    let filtered = allProjects;
-                    if (filters?.category && filters.category !== 'all') {
-                        filtered = filtered.filter((p: any) => {
-                            const cat = typeof p.category === 'string' ? p.category : '';
-                            return cat === filters.category;
-                        });
+                        if (mappedProjects.length > 0) {
+                            return {
+                                projects: mappedProjects,
+                                filters: { categories: {}, years: [] }
+                            };
+                        }
                     }
-                    const mappedProjects = filtered.map((project: any) => ({
-                        ...project,
-                        featured_image_url: this.formatImageUrl(project.featured_image_url || project.api_featured_image_url || project.featured_image),
-                        gallery_images: ((Array.isArray(project.gallery) && project.gallery.length > 0) ? project.gallery : (Array.isArray(project.api_gallery) ? project.api_gallery : [])).map((img: any) => ({
-                            id: img.id,
-                            url: this.formatImageUrl(img.url || img.original_url),
-                            thumb: this.formatImageUrl(img.thumb || img.url || img.thumb_url || img.original_url),
-                            alt: img.alt || '',
-                            caption: img.caption || ''
-                        })),
-                    }))
-
-                    // Start of API fallback or normal execution
-                    return {
-                        projects: mappedProjects,
-                        filters: { categories: {}, years: [] }
-                    };
                 } catch (e) {
-                    console.warn('⚠️ Static cache enabled but file not found. Falling back to API.');
+                    console.warn('⚠️ Static cache fetch failed, falling back to API:', e);
                 }
             }
 

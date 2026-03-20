@@ -25,4 +25,6 @@ pnpm-debug.log*
 
 # portfolio cache
 public/p*_*.*
+public/brand-new-test.jpg
 src/data/projects-static.json
+public/v1-media/

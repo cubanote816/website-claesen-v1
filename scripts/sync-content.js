@@ -32,8 +32,8 @@ try {
 }
 
 const API_URL = process.env.PUBLIC_API_URL || envApiUrl || 'https://backend.claesen-verlichting.be/v1/website';
-const CACHE_DIR = path.join(__dirname, '../public');
-const DATA_FILE = path.join(__dirname, '../src/data/projects-static.json');
+const CACHE_DIR = path.join(__dirname, '../public/v1-media');
+const DATA_FILE = path.join(__dirname, '../public/v1-media/projects-static.json');
 
 // Ensure directories exist
 if (!fs.existsSync(CACHE_DIR)) {
@@ -115,7 +115,7 @@ async function syncContent() {
                 const filename = `${filenamePrefix}featured${ext}`;
                 const localFilePath = path.join(CACHE_DIR, filename);
                 await downloadImage(featuredSourceUrl, localFilePath);
-                featuredLocalPath = `/${filename}`;
+                featuredLocalPath = `/v1-media/${filename}`;
             }
 
             // Process Gallery Images
@@ -131,8 +131,8 @@ async function syncContent() {
 
                     processedGallery.push({
                         ...img,
-                        url: `/${filename}`,
-                        thumb: `/${filename}` // Use same for thumb in static mode
+                        url: `/v1-media/${filename}`,
+                        thumb: `/v1-media/${filename}` // Use same for thumb in static mode
                     });
                 }
             }

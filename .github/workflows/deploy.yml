@@ -30,7 +30,7 @@ jobs:
       - name: Build Project
         run: |
           npm run build:prod
-          cp public/p*_*.* dist/ || true
+          cp -r public/v1-media dist/v1-media || true
         env:
           PUBLIC_API_URL: ${{ secrets.PUBLIC_API_URL || 'https://backend.claesen-verlichting.be/v1/website' }}
           PUBLIC_USE_STATIC_CACHE: 'true'
@@ -43,4 +43,4 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -yqq lftp
-          lftp -c "set sftp:auto-confirm yes; set net:max-retries 2; set net:timeout 20; open -u $FTP_USER,'$FTP_PASS' sftp://$FTP_HOST:2222; put public/brand-new-test.jpg -o /root-umask-test.jpg; cd /v1 || exit 1; set mirror:parallel-transfer-count 1; mirror -R --delete --verbose ./dist ./"
+          lftp -c "set sftp:auto-confirm yes; set net:timeout 20; open -u $FTP_USER,'$FTP_PASS' sftp://$FTP_HOST:2222; mkdir -p /v1-media || true; mirror -R --verbose ./dist/v1-media /v1-media; cd /v1 || exit 1; set mirror:parallel-transfer-count 1; mirror -R --delete --verbose --exclude '^v1-media/' ./dist ./"

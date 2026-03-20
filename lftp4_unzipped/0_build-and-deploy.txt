@@ -1,0 +1,572 @@
+﻿2026-03-20T15:39:00.9434571Z Current runner version: '2.332.0'
+2026-03-20T15:39:00.9458997Z ##[group]Runner Image Provisioner
+2026-03-20T15:39:00.9459871Z Hosted Compute Agent
+2026-03-20T15:39:00.9460391Z Version: 20260213.493
+2026-03-20T15:39:00.9460971Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+2026-03-20T15:39:00.9461630Z Build Date: 2026-02-13T00:28:41Z
+2026-03-20T15:39:00.9462305Z Worker ID: {6cb88c8b-30f4-4ce1-811c-3bc563a3b340}
+2026-03-20T15:39:00.9462887Z Azure Region: westus3
+2026-03-20T15:39:00.9463383Z ##[endgroup]
+2026-03-20T15:39:00.9465151Z ##[group]Operating System
+2026-03-20T15:39:00.9465680Z Ubuntu
+2026-03-20T15:39:00.9466170Z 24.04.3
+2026-03-20T15:39:00.9466648Z LTS
+2026-03-20T15:39:00.9467090Z ##[endgroup]
+2026-03-20T15:39:00.9467552Z ##[group]Runner Image
+2026-03-20T15:39:00.9468103Z Image: ubuntu-24.04
+2026-03-20T15:39:00.9468606Z Version: 20260309.50.1
+2026-03-20T15:39:00.9469747Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260309.50/images/ubuntu/Ubuntu2404-Readme.md
+2026-03-20T15:39:00.9471056Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260309.50
+2026-03-20T15:39:00.9471918Z ##[endgroup]
+2026-03-20T15:39:00.9472922Z ##[group]GITHUB_TOKEN Permissions
+2026-03-20T15:39:00.9475385Z Contents: read
+2026-03-20T15:39:00.9475901Z Metadata: read
+2026-03-20T15:39:00.9476361Z Packages: read
+2026-03-20T15:39:00.9476939Z ##[endgroup]
+2026-03-20T15:39:00.9479371Z Secret source: Actions
+2026-03-20T15:39:00.9480045Z Prepare workflow directory
+2026-03-20T15:39:00.9800758Z Prepare all required actions
+2026-03-20T15:39:00.9840337Z Getting action download info
+2026-03-20T15:39:01.4153899Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-03-20T15:39:01.5327392Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-03-20T15:39:01.7266122Z Complete job name: build-and-deploy
+2026-03-20T15:39:01.7889965Z ##[group]Run actions/checkout@v4
+2026-03-20T15:39:01.7890869Z with:
+2026-03-20T15:39:01.7891417Z   repository: cubanote816/website-claesen-v1
+2026-03-20T15:39:01.7892199Z   token: ***
+2026-03-20T15:39:01.7892705Z   ssh-strict: true
+2026-03-20T15:39:01.7893171Z   ssh-user: git
+2026-03-20T15:39:01.7893769Z   persist-credentials: true
+2026-03-20T15:39:01.7894322Z   clean: true
+2026-03-20T15:39:01.7894754Z   sparse-checkout-cone-mode: true
+2026-03-20T15:39:01.7895277Z   fetch-depth: 1
+2026-03-20T15:39:01.7895780Z   fetch-tags: false
+2026-03-20T15:39:01.7896237Z   show-progress: true
+2026-03-20T15:39:01.7896656Z   lfs: false
+2026-03-20T15:39:01.7897119Z   submodules: false
+2026-03-20T15:39:01.7897593Z   set-safe-directory: true
+2026-03-20T15:39:01.7898399Z ##[endgroup]
+2026-03-20T15:39:01.8926212Z Syncing repository: cubanote816/website-claesen-v1
+2026-03-20T15:39:01.8928172Z ##[group]Getting Git version info
+2026-03-20T15:39:01.8929145Z Working directory is '/home/runner/work/website-claesen-v1/website-claesen-v1'
+2026-03-20T15:39:01.8930511Z [command]/usr/bin/git version
+2026-03-20T15:39:01.8991541Z git version 2.53.0
+2026-03-20T15:39:01.9015963Z ##[endgroup]
+2026-03-20T15:39:01.9042203Z Temporarily overriding HOME='/home/runner/work/_temp/14544136-9a49-416d-9c7c-9ff88ccf56d5' before making global git config changes
+2026-03-20T15:39:01.9045723Z Adding repository directory to the temporary git global config as a safe directory
+2026-03-20T15:39:01.9050575Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/website-claesen-v1/website-claesen-v1
+2026-03-20T15:39:01.9088617Z Deleting the contents of '/home/runner/work/website-claesen-v1/website-claesen-v1'
+2026-03-20T15:39:01.9092372Z ##[group]Initializing the repository
+2026-03-20T15:39:01.9097330Z [command]/usr/bin/git init /home/runner/work/website-claesen-v1/website-claesen-v1
+2026-03-20T15:39:01.9180868Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-03-20T15:39:01.9182454Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-03-20T15:39:01.9184532Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-03-20T15:39:01.9185820Z hint: call:
+2026-03-20T15:39:01.9186574Z hint:
+2026-03-20T15:39:01.9187627Z hint: 	git config --global init.defaultBranch <name>
+2026-03-20T15:39:01.9188657Z hint:
+2026-03-20T15:39:01.9189719Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-03-20T15:39:01.9191300Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-03-20T15:39:01.9192453Z hint:
+2026-03-20T15:39:01.9193178Z hint: 	git branch -m <name>
+2026-03-20T15:39:01.9194205Z hint:
+2026-03-20T15:39:01.9195303Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-03-20T15:39:01.9197209Z Initialized empty Git repository in /home/runner/work/website-claesen-v1/website-claesen-v1/.git/
+2026-03-20T15:39:01.9201714Z [command]/usr/bin/git remote add origin https://github.com/cubanote816/website-claesen-v1
+2026-03-20T15:39:01.9232391Z ##[endgroup]
+2026-03-20T15:39:01.9233368Z ##[group]Disabling automatic garbage collection
+2026-03-20T15:39:01.9236625Z [command]/usr/bin/git config --local gc.auto 0
+2026-03-20T15:39:01.9262008Z ##[endgroup]
+2026-03-20T15:39:01.9263792Z ##[group]Setting up auth
+2026-03-20T15:39:01.9381550Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-03-20T15:39:01.9384016Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-03-20T15:39:01.9590225Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-03-20T15:39:01.9617830Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-03-20T15:39:01.9792971Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-03-20T15:39:01.9826244Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-03-20T15:39:02.0015321Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-03-20T15:39:02.0047410Z ##[endgroup]
+2026-03-20T15:39:02.0048531Z ##[group]Fetching the repository
+2026-03-20T15:39:02.0056599Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +5b04bea6dc713ab88407d840ca7de45d7d33af0d:refs/remotes/origin/main
+2026-03-20T15:39:03.0840240Z From https://github.com/cubanote816/website-claesen-v1
+2026-03-20T15:39:03.0844235Z  * [new ref]         5b04bea6dc713ab88407d840ca7de45d7d33af0d -> origin/main
+2026-03-20T15:39:03.0867624Z ##[endgroup]
+2026-03-20T15:39:03.0868755Z ##[group]Determining the checkout info
+2026-03-20T15:39:03.0870524Z ##[endgroup]
+2026-03-20T15:39:03.0874341Z [command]/usr/bin/git sparse-checkout disable
+2026-03-20T15:39:03.0908152Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-03-20T15:39:03.0931637Z ##[group]Checking out the ref
+2026-03-20T15:39:03.0935048Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-03-20T15:39:03.1772358Z Switched to a new branch 'main'
+2026-03-20T15:39:03.1773366Z branch 'main' set up to track 'origin/main'.
+2026-03-20T15:39:03.1778168Z ##[endgroup]
+2026-03-20T15:39:03.1812976Z [command]/usr/bin/git log -1 --format=%H
+2026-03-20T15:39:03.1831897Z 5b04bea6dc713ab88407d840ca7de45d7d33af0d
+2026-03-20T15:39:03.2111749Z ##[group]Run actions/setup-node@v4
+2026-03-20T15:39:03.2112553Z with:
+2026-03-20T15:39:03.2112995Z   node-version: 20
+2026-03-20T15:39:03.2113673Z   always-auth: false
+2026-03-20T15:39:03.2114249Z   check-latest: false
+2026-03-20T15:39:03.2115121Z   token: ***
+2026-03-20T15:39:03.2115595Z ##[endgroup]
+2026-03-20T15:39:03.4016823Z Found in cache @ /opt/hostedtoolcache/node/20.20.1/x64
+2026-03-20T15:39:03.4023058Z ##[group]Environment details
+2026-03-20T15:39:05.8180506Z node: v20.20.1
+2026-03-20T15:39:05.8180992Z npm: 10.8.2
+2026-03-20T15:39:05.8181340Z yarn: 1.22.22
+2026-03-20T15:39:05.8186147Z ##[endgroup]
+2026-03-20T15:39:05.8291907Z ##[group]Run npm ci
+2026-03-20T15:39:05.8292280Z [36;1mnpm ci[0m
+2026-03-20T15:39:05.8332784Z shell: /usr/bin/bash -e {0}
+2026-03-20T15:39:05.8333152Z ##[endgroup]
+2026-03-20T15:39:13.2305108Z 
+2026-03-20T15:39:13.2313715Z added 374 packages, and audited 375 packages in 7s
+2026-03-20T15:39:13.2314335Z 
+2026-03-20T15:39:13.2314729Z 168 packages are looking for funding
+2026-03-20T15:39:13.2315290Z   run `npm fund` for details
+2026-03-20T15:39:13.2441175Z 
+2026-03-20T15:39:13.2441933Z 4 vulnerabilities (1 moderate, 3 high)
+2026-03-20T15:39:13.2442378Z 
+2026-03-20T15:39:13.2442849Z To address all issues, run:
+2026-03-20T15:39:13.2443334Z   npm audit fix
+2026-03-20T15:39:13.2443775Z 
+2026-03-20T15:39:13.2444040Z Run `npm audit` for details.
+2026-03-20T15:39:13.2622443Z ##[group]Run npm run sync:prod
+2026-03-20T15:39:13.2622770Z [36;1mnpm run sync:prod[0m
+2026-03-20T15:39:13.2652656Z shell: /usr/bin/bash -e {0}
+2026-03-20T15:39:13.2652923Z env:
+2026-03-20T15:39:13.2653243Z   PUBLIC_API_URL: https://backend.claesen-verlichting.be/v1/website
+2026-03-20T15:39:13.2653771Z ##[endgroup]
+2026-03-20T15:39:13.3670966Z 
+2026-03-20T15:39:13.3671547Z > v4-version@0.0.1 sync:prod
+2026-03-20T15:39:13.3672043Z > node scripts/sync-content.js --mode production
+2026-03-20T15:39:13.3672268Z 
+2026-03-20T15:39:13.3982195Z ℹ️ Running in production mode
+2026-03-20T15:39:13.3990099Z 🔄 Starting Content Sync...
+2026-03-20T15:39:13.3991299Z 📡 Fetching data from https://backend.claesen-verlichting.be/v1/website/projects...
+2026-03-20T15:39:13.4345714Z (node:2377) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+2026-03-20T15:39:13.4347516Z (Use `node --trace-warnings ...` to show where the warning was created)
+2026-03-20T15:39:15.0926908Z ✅ Found 16 projects.
+2026-03-20T15:39:15.0927708Z    Processing: Westerlo
+2026-03-20T15:39:16.5570893Z    Processing: RSC Anderlecht
+2026-03-20T15:39:19.7978399Z    Processing: KV Kortrijk
+2026-03-20T15:39:21.6434830Z    Processing: Domaine des Sources ballenvangers
+2026-03-20T15:39:25.8901098Z    Processing: Tennisveld Merendree
+2026-03-20T15:39:27.8578545Z    Processing: C-Mine Genk
+2026-03-20T15:39:30.0398374Z    Processing: Herentals Kerk
+2026-03-20T15:39:30.7023861Z    Processing: PWC
+2026-03-20T15:39:33.8389837Z    Processing: Sint-Truiden Verlichte Stad
+2026-03-20T15:39:37.4076465Z    Processing: Stadhuis Vilvoorde
+2026-03-20T15:39:41.2709584Z    Processing: Waterschei
+2026-03-20T15:39:46.4889297Z    Processing: BIAC Zaventem
+2026-03-20T15:39:48.3602970Z    Processing: Infrabel
+2026-03-20T15:39:55.2640798Z    Processing: Masten allerhande
+2026-03-20T15:40:00.4394068Z    Processing: test_002
+2026-03-20T15:40:11.6444841Z    Processing: test_001
+2026-03-20T15:40:28.1993167Z 💾 Saved cache to /home/runner/work/website-claesen-v1/website-claesen-v1/src/data/projects-static.json
+2026-03-20T15:40:28.1994337Z ✨ Sync Complete!
+2026-03-20T15:40:28.2094897Z ##[group]Run npm run build:prod
+2026-03-20T15:40:28.2095191Z [36;1mnpm run build:prod[0m
+2026-03-20T15:40:28.2095450Z [36;1mcp public/p*_*.* dist/ || true[0m
+2026-03-20T15:40:28.2123060Z shell: /usr/bin/bash -e {0}
+2026-03-20T15:40:28.2123312Z env:
+2026-03-20T15:40:28.2123829Z   PUBLIC_API_URL: https://backend.claesen-verlichting.be/v1/website
+2026-03-20T15:40:28.2124191Z   PUBLIC_USE_STATIC_CACHE: true
+2026-03-20T15:40:28.2124415Z ##[endgroup]
+2026-03-20T15:40:28.3141020Z 
+2026-03-20T15:40:28.3141606Z > v4-version@0.0.1 build:prod
+2026-03-20T15:40:28.3142318Z > npm run sync:prod && astro build --mode production
+2026-03-20T15:40:28.3142698Z 
+2026-03-20T15:40:28.4161146Z 
+2026-03-20T15:40:28.4161661Z > v4-version@0.0.1 sync:prod
+2026-03-20T15:40:28.4162328Z > node scripts/sync-content.js --mode production
+2026-03-20T15:40:28.4163147Z 
+2026-03-20T15:40:28.4479842Z ℹ️ Running in production mode
+2026-03-20T15:40:28.4486775Z 🔄 Starting Content Sync...
+2026-03-20T15:40:28.4487991Z 📡 Fetching data from https://backend.claesen-verlichting.be/v1/website/projects...
+2026-03-20T15:40:28.4831837Z (node:2428) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+2026-03-20T15:40:28.4833457Z (Use `node --trace-warnings ...` to show where the warning was created)
+2026-03-20T15:40:29.9101457Z ✅ Found 16 projects.
+2026-03-20T15:40:29.9102088Z    Processing: Westerlo
+2026-03-20T15:40:31.9267066Z    Processing: RSC Anderlecht
+2026-03-20T15:40:35.9746327Z    Processing: KV Kortrijk
+2026-03-20T15:40:37.9484295Z    Processing: Domaine des Sources ballenvangers
+2026-03-20T15:40:42.1570746Z    Processing: Tennisveld Merendree
+2026-03-20T15:40:44.3006875Z    Processing: C-Mine Genk
+2026-03-20T15:40:46.4268733Z    Processing: Herentals Kerk
+2026-03-20T15:40:47.1223348Z    Processing: PWC
+2026-03-20T15:40:50.3096698Z    Processing: Sint-Truiden Verlichte Stad
+2026-03-20T15:40:53.9166296Z    Processing: Stadhuis Vilvoorde
+2026-03-20T15:40:58.0394142Z    Processing: Waterschei
+2026-03-20T15:41:03.9122245Z    Processing: BIAC Zaventem
+2026-03-20T15:41:05.8810664Z    Processing: Infrabel
+2026-03-20T15:41:13.4847830Z    Processing: Masten allerhande
+2026-03-20T15:41:16.6955755Z    Processing: test_002
+2026-03-20T15:41:27.3363281Z    Processing: test_001
+2026-03-20T15:41:43.9033398Z 💾 Saved cache to /home/runner/work/website-claesen-v1/website-claesen-v1/src/data/projects-static.json
+2026-03-20T15:41:43.9034444Z ✨ Sync Complete!
+2026-03-20T15:41:45.3229770Z [2m15:41:45[22m [34m[content][39m Syncing content
+2026-03-20T15:41:45.3261017Z [2m15:41:45[22m [34m[content][39m Synced content
+2026-03-20T15:41:45.3265997Z [2m15:41:45[22m [34m[types][39m Generated [2m159ms[22m
+2026-03-20T15:41:45.3269018Z [2m15:41:45[22m [34m[build][39m output: [34m"static"[39m
+2026-03-20T15:41:45.3269784Z [2m15:41:45[22m [34m[build][39m mode: [34m"static"[39m
+2026-03-20T15:41:45.3271055Z [2m15:41:45[22m [34m[build][39m directory: [34m/home/runner/work/website-claesen-v1/website-claesen-v1/dist/[39m
+2026-03-20T15:41:45.3272172Z [2m15:41:45[22m [34m[build][39m Collecting build info...
+2026-03-20T15:41:45.3274230Z [2m15:41:45[22m [34m[build][39m [32m✓ Completed in 176ms.[39m
+2026-03-20T15:41:45.3283660Z [2m15:41:45[22m [34m[build][39m Building static entrypoints...
+2026-03-20T15:41:46.6683837Z [2m15:41:46[22m [34m[vite][39m [32m✓ built in 1.30s[39m
+2026-03-20T15:41:46.6684788Z [2m15:41:46[22m [34m[build][39m [32m✓ Completed in 1.34s.[39m
+2026-03-20T15:41:46.6689427Z 
+2026-03-20T15:41:46.6689843Z [42m[30m building client (vite) [39m[49m
+2026-03-20T15:41:46.6800145Z [2m15:41:46[22m [34m[vite][39m transforming...
+2026-03-20T15:41:49.9018185Z [2m15:41:49[22m [34m[vite][39m [32m✓[39m 2189 modules transformed.
+2026-03-20T15:41:50.0354587Z [2m15:41:50[22m [34m[vite][39m rendering chunks...
+2026-03-20T15:41:50.1372668Z [2m15:41:50[22m [34m[vite][39m computing gzip size...
+2026-03-20T15:41:50.1459927Z [2m15:41:50[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mPageHeader.NOAVQRgD.js                                         [39m[1m[2m  0.87 kB[22m[1m[22m[2m │ gzip:  0.47 kB[22m
+2026-03-20T15:41:50.1462156Z [2m15:41:50[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mSpotlightCursor.DZmVtUFO.js                                    [39m[1m[2m  1.17 kB[22m[1m[22m[2m │ gzip:  0.65 kB[22m
+2026-03-20T15:41:50.1464097Z [2m15:41:50[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mjs.cookie.Cz0CWeBA.js                                          [39m[1m[2m  1.41 kB[22m[1m[22m[2m │ gzip:  0.72 kB[22m
+2026-03-20T15:41:50.1465259Z [2m15:41:50[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mVideoModal.DrM0zx91.js                                         [39m[1m[2m  1.54 kB[22m[1m[22m[2m │ gzip:  0.78 kB[22m
+2026-03-20T15:41:50.1466709Z [2m15:41:50[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mcreateLucideIcon.DdYR_W5z.js                                   [39m[1m[2m  2.58 kB[22m[1m[22m[2m │ gzip:  0.81 kB[22m
+2026-03-20T15:41:50.1467935Z [2m15:41:50[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mCookieConsent.C5grJKBS.js                                      [39m[1m[2m  2.85 kB[22m[1m[22m[2m │ gzip:  1.30 kB[22m
+2026-03-20T15:41:50.1469107Z [2m15:41:50[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mSpotlightError.CAdKV3cp.js                                     [39m[1m[2m  2.98 kB[22m[1m[22m[2m │ gzip:  1.42 kB[22m
+2026-03-20T15:41:50.1470260Z [2m15:41:50[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mx.CI-iXYQl.js                                                  [39m[1m[2m  4.16 kB[22m[1m[22m[2m │ gzip:  2.02 kB[22m
+2026-03-20T15:41:50.1471366Z [2m15:41:50[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mindex.DiEladB3.js                                              [39m[1m[2m  7.85 kB[22m[1m[22m[2m │ gzip:  3.05 kB[22m
+2026-03-20T15:41:50.1472511Z [2m15:41:50[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mContactForm.WdfEJ0kv.js                                        [39m[1m[2m  9.16 kB[22m[1m[22m[2m │ gzip:  2.54 kB[22m
+2026-03-20T15:41:50.1473900Z [2m15:41:50[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js  [39m[1m[2m 15.36 kB[22m[1m[22m[2m │ gzip:  5.28 kB[22m
+2026-03-20T15:41:50.1475159Z [2m15:41:50[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mModernPortfolio.BelPVcGp.js                                    [39m[1m[2m 17.31 kB[22m[1m[22m[2m │ gzip:  5.40 kB[22m
+2026-03-20T15:41:50.1476309Z [2m15:41:50[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mui.C3aHS2Mg.js                                                 [39m[1m[2m 52.63 kB[22m[1m[22m[2m │ gzip: 20.34 kB[22m
+2026-03-20T15:41:50.1477451Z [2m15:41:50[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mprojects-static.BX6M8BgH.js                                    [39m[1m[2m 92.73 kB[22m[1m[22m[2m │ gzip: 10.28 kB[22m
+2026-03-20T15:41:50.1478605Z [2m15:41:50[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mproxy.xzqzdQJB.js                                              [39m[1m[2m119.33 kB[22m[1m[22m[2m │ gzip: 39.32 kB[22m
+2026-03-20T15:41:50.1479746Z [2m15:41:50[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mclient.Dc9Vh3na.js                                             [39m[1m[2m186.62 kB[22m[1m[22m[2m │ gzip: 58.54 kB[22m
+2026-03-20T15:41:50.1480470Z [2m15:41:50[22m [34m[vite][39m [32m✓ built in 3.47s[39m
+2026-03-20T15:41:50.1630715Z 
+2026-03-20T15:41:50.1633013Z [42m[30m generating static routes [39m[49m
+2026-03-20T15:41:50.5529133Z [2m15:41:50[22m [32m▶[39m src/pages/404.astro
+2026-03-20T15:41:50.5826594Z [2m15:41:50[22m   [34m└─[39m [2m/404.html[22m [2m(+29ms)[22m 
+2026-03-20T15:41:50.5991836Z [2m15:41:50[22m [32m▶[39m src/pages/cookies.astro
+2026-03-20T15:41:50.6103115Z [2m15:41:50[22m   [34m└─[39m [2m/cookies/index.html[22m [2m(+11ms)[22m 
+2026-03-20T15:41:50.6129843Z [2m15:41:50[22m [32m▶[39m src/pages/privacy.astro
+2026-03-20T15:41:50.6185932Z [2m15:41:50[22m   [34m└─[39m [2m/privacy/index.html[22m [2m(+6ms)[22m 
+2026-03-20T15:41:50.6210722Z [2m15:41:50[22m [32m▶[39m src/pages/terms.astro
+2026-03-20T15:41:50.6259725Z [2m15:41:50[22m   [34m└─[39m [2m/terms/index.html[22m [2m(+5ms)[22m 
+2026-03-20T15:41:50.7047960Z API_BASE_URL: https://backend.claesen-verlichting.be/v1/website
+2026-03-20T15:41:50.7057385Z Environment variables: {
+2026-03-20T15:41:50.7057948Z   ASSETS_PREFIX: undefined,
+2026-03-20T15:41:50.7058399Z   BASE_URL: '/v1',
+2026-03-20T15:41:50.7058735Z   DEV: false,
+2026-03-20T15:41:50.7059134Z   MODE: 'production',
+2026-03-20T15:41:50.7059859Z   PROD: true,
+2026-03-20T15:41:50.7060441Z   PUBLIC_API_URL: 'https://backend.claesen-verlichting.be/v1/website',
+2026-03-20T15:41:50.7061132Z   PUBLIC_USE_STATIC_CACHE: 'true',
+2026-03-20T15:41:50.7061677Z   SITE: 'https://claesen-verlichting.be',
+2026-03-20T15:41:50.7062110Z   SSR: true,
+2026-03-20T15:41:50.7062532Z   _: '/opt/hostedtoolcache/node/20.20.1/x64/bin/npm'
+2026-03-20T15:41:50.7062974Z }
+2026-03-20T15:41:50.7070810Z [2m15:41:50[22m [32m▶[39m src/pages/[lang]/index.astro
+2026-03-20T15:41:50.7202279Z [2m15:41:50[22m   [34m├─[39m [2m/en/index.html[22m [2m(+12ms)[22m 
+2026-03-20T15:41:50.7284824Z [2m15:41:50[22m   [34m├─[39m [2m/fr/index.html[22m [2m(+8ms)[22m 
+2026-03-20T15:41:50.7373896Z [2m15:41:50[22m   [34m└─[39m [2m/nl/index.html[22m [2m(+9ms)[22m 
+2026-03-20T15:41:50.7400451Z [2m15:41:50[22m [32m▶[39m src/pages/index.astro
+2026-03-20T15:41:50.7509151Z [2m15:41:50[22m   [34m└─[39m [2m/index.html[22m [2m(+11ms)[22m 
+2026-03-20T15:41:50.7509973Z [2m15:41:50[22m [32m✓ Completed in 600ms.
+2026-03-20T15:41:50.7510484Z [39m
+2026-03-20T15:41:50.7549723Z [2m15:41:50[22m [34m[build][39m 8 page(s) built in [1m5.60s[22m
+2026-03-20T15:41:50.8178964Z [2m15:41:50[22m [34m[build][39m [1mComplete![22m
+2026-03-20T15:41:50.8201906Z ##[group]Run sudo apt-get update -qq
+2026-03-20T15:41:50.8202232Z [36;1msudo apt-get update -qq[0m
+2026-03-20T15:41:50.8202494Z [36;1msudo apt-get install -yqq lftp[0m
+2026-03-20T15:41:50.8203350Z [36;1mlftp -c "set sftp:auto-confirm yes; set net:max-retries 2; set net:timeout 20; set mirror:parallel-transfer-count 1; open -u $FTP_USER,'$FTP_PASS' sftp://$FTP_HOST:2222; cd /v1 || exit 1; mirror -R --delete --verbose ./dist ./"[0m
+2026-03-20T15:41:50.8232061Z shell: /usr/bin/bash -e {0}
+2026-03-20T15:41:50.8232305Z env:
+2026-03-20T15:41:50.8232625Z   FTP_USER: ***
+2026-03-20T15:41:50.8232827Z   FTP_PASS: ***
+2026-03-20T15:41:50.8233032Z   FTP_HOST: ***
+2026-03-20T15:41:50.8233205Z ##[endgroup]
+2026-03-20T15:41:59.2435078Z Selecting previously unselected package lftp.
+2026-03-20T15:41:59.2619368Z (Reading database ... 
+2026-03-20T15:41:59.2619774Z (Reading database ... 5%
+2026-03-20T15:41:59.2620031Z (Reading database ... 10%
+2026-03-20T15:41:59.2620340Z (Reading database ... 15%
+2026-03-20T15:41:59.2620576Z (Reading database ... 20%
+2026-03-20T15:41:59.2620797Z (Reading database ... 25%
+2026-03-20T15:41:59.2621134Z (Reading database ... 30%
+2026-03-20T15:41:59.2621474Z (Reading database ... 35%
+2026-03-20T15:41:59.2621835Z (Reading database ... 40%
+2026-03-20T15:41:59.2622178Z (Reading database ... 45%
+2026-03-20T15:41:59.2622421Z (Reading database ... 50%
+2026-03-20T15:41:59.2699114Z (Reading database ... 55%
+2026-03-20T15:41:59.3140468Z (Reading database ... 60%
+2026-03-20T15:41:59.3464563Z (Reading database ... 65%
+2026-03-20T15:41:59.3730658Z (Reading database ... 70%
+2026-03-20T15:41:59.4017158Z (Reading database ... 75%
+2026-03-20T15:41:59.5378915Z (Reading database ... 80%
+2026-03-20T15:41:59.7852380Z (Reading database ... 85%
+2026-03-20T15:42:00.0090709Z (Reading database ... 90%
+2026-03-20T15:42:00.1783735Z (Reading database ... 95%
+2026-03-20T15:42:00.1784361Z (Reading database ... 100%
+2026-03-20T15:42:00.1785087Z (Reading database ... 219144 files and directories currently installed.)
+2026-03-20T15:42:00.1832322Z Preparing to unpack .../lftp_4.9.2-2ubuntu1.1_amd64.deb ...
+2026-03-20T15:42:00.1853945Z Unpacking lftp (4.9.2-2ubuntu1.1) ...
+2026-03-20T15:42:00.2467696Z Setting up lftp (4.9.2-2ubuntu1.1) ...
+2026-03-20T15:42:00.2503326Z Processing triggers for hicolor-icon-theme (0.17-2) ...
+2026-03-20T15:42:00.8129472Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-03-20T15:42:00.8286084Z Not building database; man-db/auto-update is not 'true'.
+2026-03-20T15:42:01.8605637Z 
+2026-03-20T15:42:01.8606208Z Running kernel seems to be up-to-date.
+2026-03-20T15:42:01.8606575Z 
+2026-03-20T15:42:01.8606816Z No services need to be restarted.
+2026-03-20T15:42:01.8607091Z 
+2026-03-20T15:42:01.8607323Z No containers need to be restarted.
+2026-03-20T15:42:01.8607938Z 
+2026-03-20T15:42:01.8608107Z No user sessions are running outdated binaries.
+2026-03-20T15:42:01.8608308Z 
+2026-03-20T15:42:01.8608571Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-03-20T15:42:07.0153086Z Removing old file `404.html'
+2026-03-20T15:42:07.0153425Z Transferring file `404.html'
+2026-03-20T15:42:07.7209982Z Removing old file `brand-logo-dark.png'
+2026-03-20T15:42:07.7210405Z Transferring file `brand-logo-dark.png'
+2026-03-20T15:42:08.4270445Z Removing old file `brand_logo.png'
+2026-03-20T15:42:08.4270928Z Transferring file `brand_logo.png'
+2026-03-20T15:42:09.0032962Z Removing old file `favicon.ico'
+2026-03-20T15:42:09.0033455Z Transferring file `favicon.ico'
+2026-03-20T15:42:09.5790815Z Removing old file `favicon.svg'
+2026-03-20T15:42:09.5791410Z Transferring file `favicon.svg'
+2026-03-20T15:42:10.1541697Z Removing old file `hero-bg.jpg'
+2026-03-20T15:42:10.1542093Z Transferring file `hero-bg.jpg'
+2026-03-20T15:42:10.8641423Z Removing old file `hero-bg.png'
+2026-03-20T15:42:10.8646802Z Transferring file `hero-bg.png'
+2026-03-20T15:42:11.4408891Z Removing old file `hero-video.mp4'
+2026-03-20T15:42:11.4409278Z Transferring file `hero-video.mp4'
+2026-03-20T15:42:14.1351037Z Removing old file `index.html'
+2026-03-20T15:42:14.1351431Z Transferring file `index.html'
+2026-03-20T15:42:14.7111665Z Removing old file `logo.png'
+2026-03-20T15:42:14.7112030Z Transferring file `logo.png'
+2026-03-20T15:42:15.2862729Z Removing old file `p10_featured.png'
+2026-03-20T15:42:15.2863108Z Transferring file `p10_featured.png'
+2026-03-20T15:42:16.1309496Z Removing old file `p10_g_44.png'
+2026-03-20T15:42:16.1309857Z Transferring file `p10_g_44.png'
+2026-03-20T15:42:16.9699620Z Removing old file `p10_g_45.png'
+2026-03-20T15:42:16.9700019Z Transferring file `p10_g_45.png'
+2026-03-20T15:42:17.8089529Z Removing old file `p11_featured.png'
+2026-03-20T15:42:17.8089924Z Transferring file `p11_featured.png'
+2026-03-20T15:42:18.3819649Z Removing old file `p11_g_47.png'
+2026-03-20T15:42:18.3820060Z Transferring file `p11_g_47.png'
+2026-03-20T15:42:19.3549515Z Removing old file `p11_g_48.png'
+2026-03-20T15:42:19.3549893Z Transferring file `p11_g_48.png'
+2026-03-20T15:42:19.9318922Z Removing old file `p11_g_49.png'
+2026-03-20T15:42:19.9319293Z Transferring file `p11_g_49.png'
+2026-03-20T15:42:20.7772278Z Removing old file `p11_g_50.png'
+2026-03-20T15:42:20.7772826Z Transferring file `p11_g_50.png'
+2026-03-20T15:42:21.6201286Z Removing old file `p12_featured.png'
+2026-03-20T15:42:21.6201890Z Transferring file `p12_featured.png'
+2026-03-20T15:42:22.2278721Z Removing old file `p12_g_52.png'
+2026-03-20T15:42:22.2279099Z Transferring file `p12_g_52.png'
+2026-03-20T15:42:22.8050750Z Removing old file `p13_featured.png'
+2026-03-20T15:42:22.8051162Z Transferring file `p13_featured.png'
+2026-03-20T15:42:23.3829798Z Removing old file `p13_g_53.png'
+2026-03-20T15:42:23.3830168Z Transferring file `p13_g_53.png'
+2026-03-20T15:42:23.9608769Z Removing old file `p13_g_54.png'
+2026-03-20T15:42:23.9609243Z Transferring file `p13_g_54.png'
+2026-03-20T15:42:24.5370251Z Removing old file `p13_g_55.jpg'
+2026-03-20T15:42:24.5370615Z Transferring file `p13_g_55.jpg'
+2026-03-20T15:42:25.3790462Z Removing old file `p13_g_56.jpg'
+2026-03-20T15:42:26.4852412Z Transferring file `p13_g_56.jpg'
+2026-03-20T15:42:26.4852763Z Removing old file `p13_g_57.png'
+2026-03-20T15:42:27.0592639Z Transferring file `p13_g_57.png'
+2026-03-20T15:42:27.0593084Z Removing old file `p13_g_58.jpg'
+2026-03-20T15:42:27.0593480Z Transferring file `p13_g_58.jpg'
+2026-03-20T15:42:27.9000476Z Removing old file `p14_featured.png'
+2026-03-20T15:42:27.9000848Z Transferring file `p14_featured.png'
+2026-03-20T15:42:28.4770024Z Removing old file `p14_g_61.png'
+2026-03-20T15:42:28.4770406Z Transferring file `p14_g_61.png'
+2026-03-20T15:42:29.0802201Z Removing old file `p14_g_62.png'
+2026-03-20T15:42:29.6581633Z Transferring file `p14_g_62.png'
+2026-03-20T15:42:29.6582078Z Removing old file `p14_g_63.png'
+2026-03-20T15:42:29.6582786Z Transferring file `p14_g_63.png'
+2026-03-20T15:42:30.2354825Z Removing old file `p15_featured.png'
+2026-03-20T15:42:30.2355235Z Transferring file `p15_featured.png'
+2026-03-20T15:42:33.8652848Z Removing old file `p16_featured.png'
+2026-03-20T15:42:33.8653281Z Transferring file `p16_featured.png'
+2026-03-20T15:42:37.2242188Z Removing old file `p16_g_66.png'
+2026-03-20T15:42:37.2242564Z Transferring file `p16_g_66.png'
+2026-03-20T15:42:40.0543275Z Removing old file `p1_featured.jpg'
+2026-03-20T15:42:40.0543892Z Transferring file `p1_featured.jpg'
+2026-03-20T15:42:40.7641763Z Removing old file `p1_g_2.jpg'
+2026-03-20T15:42:40.7642126Z Transferring file `p1_g_2.jpg'
+2026-03-20T15:42:41.4713317Z Removing old file `p2_featured.png'
+2026-03-20T15:42:41.4713865Z Transferring file `p2_featured.png'
+2026-03-20T15:42:42.4461465Z Removing old file `p2_g_4.jpg'
+2026-03-20T15:42:42.4461959Z Transferring file `p2_g_4.jpg'
+2026-03-20T15:42:43.2869549Z Removing old file `p2_g_5.jpg'
+2026-03-20T15:42:43.8619764Z Transferring file `p2_g_5.jpg'
+2026-03-20T15:42:43.8620146Z Removing old file `p2_g_6.avif'
+2026-03-20T15:42:43.8620437Z Transferring file `p2_g_6.avif'
+2026-03-20T15:42:44.4358267Z Removing old file `p3_featured.jpg'
+2026-03-20T15:42:44.4358976Z Transferring file `p3_featured.jpg'
+2026-03-20T15:42:45.1432216Z Removing old file `p3_g_21.jpg'
+2026-03-20T15:42:45.1432557Z Transferring file `p3_g_21.jpg'
+2026-03-20T15:42:45.8542859Z Removing old file `p4_featured.jpg'
+2026-03-20T15:42:45.8543242Z Transferring file `p4_featured.jpg'
+2026-03-20T15:42:46.5650717Z Removing old file `p4_g_10.jpg'
+2026-03-20T15:42:46.5652761Z Transferring file `p4_g_10.jpg'
+2026-03-20T15:42:47.5374661Z Removing old file `p4_g_11.jpg'
+2026-03-20T15:42:47.5375037Z Transferring file `p4_g_11.jpg'
+2026-03-20T15:42:48.2451329Z Removing old file `p4_g_12.jpg'
+2026-03-20T15:42:48.2451882Z Transferring file `p4_g_12.jpg'
+2026-03-20T15:42:48.9930696Z Removing old file `p4_g_13.jpg'
+2026-03-20T15:42:48.9931075Z Transferring file `p4_g_13.jpg'
+2026-03-20T15:42:49.7031532Z Removing old file `p5_featured.jpg'
+2026-03-20T15:42:49.7031924Z Transferring file `p5_featured.jpg'
+2026-03-20T15:42:50.5453422Z Removing old file `p5_g_15.jpg'
+2026-03-20T15:42:50.5454053Z Transferring file `p5_g_15.jpg'
+2026-03-20T15:42:51.2561716Z Removing old file `p5_g_16.jpg'
+2026-03-20T15:42:51.2562084Z Transferring file `p5_g_16.jpg'
+2026-03-20T15:42:51.9661518Z Removing old file `p5_g_17.jpg'
+2026-03-20T15:42:51.9661890Z Transferring file `p5_g_17.jpg'
+2026-03-20T15:42:52.6760793Z Removing old file `p6_featured.jpg'
+2026-03-20T15:42:52.6761226Z Transferring file `p6_featured.jpg'
+2026-03-20T15:42:53.2519290Z Removing old file `p6_g_23.jpg'
+2026-03-20T15:42:53.2519838Z Transferring file `p6_g_23.jpg'
+2026-03-20T15:42:53.8260049Z Removing old file `p6_g_24.jpg'
+2026-03-20T15:42:53.8260576Z Transferring file `p6_g_24.jpg'
+2026-03-20T15:42:54.4018275Z Removing old file `p6_g_25.jpg'
+2026-03-20T15:42:54.4018716Z Transferring file `p6_g_25.jpg'
+2026-03-20T15:42:54.9747547Z Removing old file `p6_g_26.jpg'
+2026-03-20T15:42:54.9747949Z Transferring file `p6_g_26.jpg'
+2026-03-20T15:42:55.5494454Z Removing old file `p6_g_27.jpg'
+2026-03-20T15:42:55.5495204Z Transferring file `p6_g_27.jpg'
+2026-03-20T15:42:56.1252140Z Removing old file `p7_featured.jpg'
+2026-03-20T15:42:56.1252529Z Transferring file `p7_featured.jpg'
+2026-03-20T15:42:56.7001157Z Removing old file `p7_g_30.jpg'
+2026-03-20T15:42:56.7001502Z Transferring file `p7_g_30.jpg'
+2026-03-20T15:42:57.2749840Z Removing old file `p8_featured.jpg'
+2026-03-20T15:42:57.2750399Z Transferring file `p8_featured.jpg'
+2026-03-20T15:42:57.9819429Z Removing old file `p8_g_34.jpg'
+2026-03-20T15:42:57.9819788Z Transferring file `p8_g_34.jpg'
+2026-03-20T15:42:58.8201424Z Removing old file `p8_g_35.jpg'
+2026-03-20T15:42:58.8201796Z Transferring file `p8_g_35.jpg'
+2026-03-20T15:42:59.5303857Z Removing old file `p8_g_36.jpg'
+2026-03-20T15:42:59.5304295Z Transferring file `p8_g_36.jpg'
+2026-03-20T15:43:00.1072128Z Removing old file `p8_g_37.jpg'
+2026-03-20T15:43:00.1072901Z Transferring file `p8_g_37.jpg'
+2026-03-20T15:43:01.0812402Z Removing old file `p9_featured.jpg'
+2026-03-20T15:43:01.0812847Z Transferring file `p9_featured.jpg'
+2026-03-20T15:43:01.7891861Z Removing old file `p9_g_38.jpg'
+2026-03-20T15:43:01.7892259Z Transferring file `p9_g_38.jpg'
+2026-03-20T15:43:02.4961680Z Removing old file `p9_g_39.jpg'
+2026-03-20T15:43:02.4962086Z Transferring file `p9_g_39.jpg'
+2026-03-20T15:43:03.3368812Z Removing old file `p9_g_40.jpg'
+2026-03-20T15:43:03.3369190Z Transferring file `p9_g_40.jpg'
+2026-03-20T15:43:04.0440910Z Removing old file `p9_g_41.jpg'
+2026-03-20T15:43:04.0441444Z Transferring file `p9_g_41.jpg'
+2026-03-20T15:43:04.7553422Z Removing old file `p9_g_42.jpg'
+2026-03-20T15:43:04.7554000Z Transferring file `p9_g_42.jpg'
+2026-03-20T15:43:06.6082465Z Removing old file `_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js'
+2026-03-20T15:43:06.6083182Z Transferring file `_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js'
+2026-03-20T15:43:07.1839914Z Removing old file `_astro/ContactForm.WdfEJ0kv.js'
+2026-03-20T15:43:07.1840399Z Transferring file `_astro/ContactForm.WdfEJ0kv.js'
+2026-03-20T15:43:07.7591038Z Removing old file `_astro/CookieConsent.C5grJKBS.js'
+2026-03-20T15:43:07.7591879Z Transferring file `_astro/CookieConsent.C5grJKBS.js'
+2026-03-20T15:43:08.3329438Z Transferring file `_astro/ModernPortfolio.BelPVcGp.js'
+2026-03-20T15:43:08.7741856Z Removing old file `_astro/PageHeader.NOAVQRgD.js'
+2026-03-20T15:43:08.7742334Z Transferring file `_astro/PageHeader.NOAVQRgD.js'
+2026-03-20T15:43:09.3501542Z Removing old file `_astro/SpotlightCursor.DZmVtUFO.js'
+2026-03-20T15:43:09.3502061Z Transferring file `_astro/SpotlightCursor.DZmVtUFO.js'
+2026-03-20T15:43:09.9251078Z Removing old file `_astro/SpotlightError.CAdKV3cp.js'
+2026-03-20T15:43:09.9251575Z Transferring file `_astro/SpotlightError.CAdKV3cp.js'
+2026-03-20T15:43:10.5001152Z Removing old file `_astro/VideoModal.DrM0zx91.js'
+2026-03-20T15:43:10.5001627Z Transferring file `_astro/VideoModal.DrM0zx91.js'
+2026-03-20T15:43:11.0739604Z Removing old file `_astro/client.Dc9Vh3na.js'
+2026-03-20T15:43:11.0740046Z Transferring file `_astro/client.Dc9Vh3na.js'
+2026-03-20T15:43:11.6489313Z Removing old file `_astro/createLucideIcon.DdYR_W5z.js'
+2026-03-20T15:43:11.6489819Z Transferring file `_astro/createLucideIcon.DdYR_W5z.js'
+2026-03-20T15:43:12.2251035Z Removing old file `_astro/index.BktXjRUJ.css'
+2026-03-20T15:43:12.2251489Z Transferring file `_astro/index.BktXjRUJ.css'
+2026-03-20T15:43:12.7992499Z Removing old file `_astro/index.DiEladB3.js'
+2026-03-20T15:43:12.7992940Z Transferring file `_astro/index.DiEladB3.js'
+2026-03-20T15:43:13.3730865Z Removing old file `_astro/inter-cyrillic-400-normal.HOLc17fK.woff'
+2026-03-20T15:43:13.3731466Z Transferring file `_astro/inter-cyrillic-400-normal.HOLc17fK.woff'
+2026-03-20T15:43:13.9496340Z Removing old file `_astro/inter-cyrillic-400-normal.obahsSVq.woff2'
+2026-03-20T15:43:13.9497071Z Transferring file `_astro/inter-cyrillic-400-normal.obahsSVq.woff2'
+2026-03-20T15:43:14.5281697Z Removing old file `_astro/inter-cyrillic-ext-400-normal.BQZuk6qB.woff2'
+2026-03-20T15:43:14.5282334Z Transferring file `_astro/inter-cyrillic-ext-400-normal.BQZuk6qB.woff2'
+2026-03-20T15:43:15.1050246Z Removing old file `_astro/inter-cyrillic-ext-400-normal.DQukG94-.woff'
+2026-03-20T15:43:15.1050894Z Transferring file `_astro/inter-cyrillic-ext-400-normal.DQukG94-.woff'
+2026-03-20T15:43:15.6820926Z Removing old file `_astro/inter-greek-400-normal.B4URO6DV.woff2'
+2026-03-20T15:43:15.6821483Z Transferring file `_astro/inter-greek-400-normal.B4URO6DV.woff2'
+2026-03-20T15:43:16.2590610Z Removing old file `_astro/inter-greek-400-normal.q2sYcFCs.woff'
+2026-03-20T15:43:16.2591201Z Transferring file `_astro/inter-greek-400-normal.q2sYcFCs.woff'
+2026-03-20T15:43:16.8320367Z Removing old file `_astro/inter-greek-ext-400-normal.DGGRlc-M.woff2'
+2026-03-20T15:43:16.8321170Z Transferring file `_astro/inter-greek-ext-400-normal.DGGRlc-M.woff2'
+2026-03-20T15:43:17.4089975Z Removing old file `_astro/inter-greek-ext-400-normal.KugGGMne.woff'
+2026-03-20T15:43:17.4090879Z Transferring file `_astro/inter-greek-ext-400-normal.KugGGMne.woff'
+2026-03-20T15:43:17.9860386Z Removing old file `_astro/inter-latin-400-normal.C38fXH4l.woff2'
+2026-03-20T15:43:17.9860980Z Transferring file `_astro/inter-latin-400-normal.C38fXH4l.woff2'
+2026-03-20T15:43:18.5620853Z Removing old file `_astro/inter-latin-400-normal.CyCys3Eg.woff'
+2026-03-20T15:43:18.5621584Z Transferring file `_astro/inter-latin-400-normal.CyCys3Eg.woff'
+2026-03-20T15:43:19.1660324Z Removing old file `_astro/inter-latin-ext-400-normal.77YHD8bZ.woff'
+2026-03-20T15:43:19.1660931Z Transferring file `_astro/inter-latin-ext-400-normal.77YHD8bZ.woff'
+2026-03-20T15:43:19.7401215Z Removing old file `_astro/inter-latin-ext-400-normal.C1nco2VV.woff2'
+2026-03-20T15:43:19.7401817Z Transferring file `_astro/inter-latin-ext-400-normal.C1nco2VV.woff2'
+2026-03-20T15:43:20.3141309Z Removing old file `_astro/inter-vietnamese-400-normal.Bbgyi5SW.woff'
+2026-03-20T15:43:20.3141910Z Transferring file `_astro/inter-vietnamese-400-normal.Bbgyi5SW.woff'
+2026-03-20T15:43:20.8899563Z Removing old file `_astro/inter-vietnamese-400-normal.DMkecbls.woff2'
+2026-03-20T15:43:20.8900438Z Transferring file `_astro/inter-vietnamese-400-normal.DMkecbls.woff2'
+2026-03-20T15:43:21.4671979Z Removing old file `_astro/js.cookie.Cz0CWeBA.js'
+2026-03-20T15:43:21.4672419Z Transferring file `_astro/js.cookie.Cz0CWeBA.js'
+2026-03-20T15:43:22.0423901Z Transferring file `_astro/projects-static.BX6M8BgH.js'
+2026-03-20T15:43:22.4840770Z Removing old file `_astro/proxy.xzqzdQJB.js'
+2026-03-20T15:43:22.4841222Z Transferring file `_astro/proxy.xzqzdQJB.js'
+2026-03-20T15:43:23.0611617Z Removing old file `_astro/ui.C3aHS2Mg.js'
+2026-03-20T15:43:23.0612018Z Transferring file `_astro/ui.C3aHS2Mg.js'
+2026-03-20T15:43:23.6362528Z Removing old file `_astro/unbounded-cyrillic-400-normal.2GwyjskV.woff2'
+2026-03-20T15:43:23.6363204Z Transferring file `_astro/unbounded-cyrillic-400-normal.2GwyjskV.woff2'
+2026-03-20T15:43:24.2116270Z Removing old file `_astro/unbounded-cyrillic-400-normal.DqbLF2ou.woff'
+2026-03-20T15:43:24.2116940Z Transferring file `_astro/unbounded-cyrillic-400-normal.DqbLF2ou.woff'
+2026-03-20T15:43:24.7847698Z Removing old file `_astro/unbounded-latin-400-normal.CiSqyYx3.woff'
+2026-03-20T15:43:24.7848283Z Transferring file `_astro/unbounded-latin-400-normal.CiSqyYx3.woff'
+2026-03-20T15:43:25.3579531Z Removing old file `_astro/unbounded-latin-400-normal.DxT99aXF.woff2'
+2026-03-20T15:43:25.3580111Z Transferring file `_astro/unbounded-latin-400-normal.DxT99aXF.woff2'
+2026-03-20T15:43:25.9325265Z Removing old file `_astro/unbounded-latin-ext-400-normal.BRFNvR_h.woff'
+2026-03-20T15:43:26.5101355Z Transferring file `_astro/unbounded-latin-ext-400-normal.BRFNvR_h.woff'
+2026-03-20T15:43:26.5101954Z Removing old file `_astro/unbounded-latin-ext-400-normal.Dbd2QqjZ.woff2'
+2026-03-20T15:43:26.5102502Z Transferring file `_astro/unbounded-latin-ext-400-normal.Dbd2QqjZ.woff2'
+2026-03-20T15:43:27.0869913Z Removing old file `_astro/unbounded-vietnamese-400-normal.C52tX-jF.woff'
+2026-03-20T15:43:27.0870543Z Transferring file `_astro/unbounded-vietnamese-400-normal.C52tX-jF.woff'
+2026-03-20T15:43:27.6623237Z Removing old file `_astro/unbounded-vietnamese-400-normal.D7u77xXC.woff2'
+2026-03-20T15:43:27.6624095Z Transferring file `_astro/unbounded-vietnamese-400-normal.D7u77xXC.woff2'
+2026-03-20T15:43:28.2404235Z Removing old file `_astro/x.CI-iXYQl.js'
+2026-03-20T15:43:28.2404623Z Transferring file `_astro/x.CI-iXYQl.js'
+2026-03-20T15:43:28.8159479Z Removing old file `_astro/ModernPortfolio.G_i4DqPK.js'
+2026-03-20T15:43:28.9495980Z Removing old file `_astro/projects-static.D8GmZQo9.js'
+2026-03-20T15:43:35.2809395Z Removing old file `assets/owners.jpg'
+2026-03-20T15:43:35.2809893Z Transferring file `assets/owners.jpg'
+2026-03-20T15:43:46.3989418Z Removing old file `cookies/index.html'
+2026-03-20T15:43:46.3989955Z Transferring file `cookies/index.html'
+2026-03-20T15:43:48.1180309Z Removing old file `en/index.html'
+2026-03-20T15:43:48.1181129Z Transferring file `en/index.html'
+2026-03-20T15:43:49.8690723Z Removing old file `fr/index.html'
+2026-03-20T15:43:49.8691104Z Transferring file `fr/index.html'
+2026-03-20T15:43:51.5881331Z Removing old file `nl/index.html'
+2026-03-20T15:43:51.5881731Z Transferring file `nl/index.html'
+2026-03-20T15:43:53.3092726Z Removing old file `privacy/index.html'
+2026-03-20T15:43:53.3093152Z Transferring file `privacy/index.html'
+2026-03-20T15:43:55.0299581Z Removing old file `terms/index.html'
+2026-03-20T15:43:55.0299958Z Transferring file `terms/index.html'
+2026-03-20T15:44:05.0686281Z Post job cleanup.
+2026-03-20T15:44:05.2277595Z Post job cleanup.
+2026-03-20T15:44:05.3167378Z [command]/usr/bin/git version
+2026-03-20T15:44:05.3205673Z git version 2.53.0
+2026-03-20T15:44:05.3248370Z Temporarily overriding HOME='/home/runner/work/_temp/6ce442e2-da37-4f1b-bca5-b8ac1e2d1953' before making global git config changes
+2026-03-20T15:44:05.3249876Z Adding repository directory to the temporary git global config as a safe directory
+2026-03-20T15:44:05.3261288Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/website-claesen-v1/website-claesen-v1
+2026-03-20T15:44:05.3297595Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-03-20T15:44:05.3329192Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-03-20T15:44:05.3525558Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-03-20T15:44:05.3547808Z http.https://github.com/.extraheader
+2026-03-20T15:44:05.3559109Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-03-20T15:44:05.3587791Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-03-20T15:44:05.3781431Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-03-20T15:44:05.3812255Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-03-20T15:44:05.4092490Z Cleaning up orphan processes
+2026-03-20T15:44:05.4336713Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-node@v4. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
