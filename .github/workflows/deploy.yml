@@ -43,7 +43,7 @@ jobs:
           PUBLIC_API_URL: ${{ secrets.PUBLIC_API_URL || 'https://backend.claesen-verlichting.be/v1/website' }}
           PUBLIC_USE_STATIC_CACHE: 'true'
         
-      - name: Deploy via LFTP (Atomic Single-Path Sync)
+      - name: Deploy via LFTP (Non-Destructive Sync)
         env:
           FTP_USER: ${{ secrets.FTP_USERNAME }}
           FTP_PASS: ${{ secrets.FTP_PASSWORD }}
@@ -55,13 +55,18 @@ jobs:
           set sftp:auto-confirm yes;
           set sftp:chmod-ignore yes;
           set sftp:connect-program 'ssh -o StrictHostKeyChecking=no';
-          set net:timeout 30;
-          set net:max-retries 3;
+          set net:timeout 60;
+          set net:max-retries 10;
+          set net:reconnect-interval-base 5;
           open -u $FTP_USER,'$FTP_PASS' sftp://$FTP_HOST:2222;
           
-          # Force sync EVERYTHING into /v1 which is already validated and working.
-          # The code in portfolio.ts is already patched to find v1-media inside /v1/.
-          mirror -R --verbose --delete ./dist /v1;
+          # NO --delete flag here to avoid permission errors on removals.
+          # We simply overwrite and add new files.
+          # First, ensure the critical JSON is prioritize-uploaded.
+          put -O /v1/v1-media/ ./dist/v1-media/projects-static.json || echo 'Individual JSON upload failed, proceeding to mirror';
+          
+          # Then, mirror everything else.
+          mirror -R --verbose ./dist /v1;
           
           quit;
           "
