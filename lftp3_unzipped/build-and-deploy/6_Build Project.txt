@@ -1,0 +1,105 @@
+﻿2026-03-12T23:16:08.6738230Z ##[group]Run npm run build:prod
+2026-03-12T23:16:08.6738536Z [36;1mnpm run build:prod[0m
+2026-03-12T23:16:08.6788576Z shell: /usr/bin/bash -e {0}
+2026-03-12T23:16:08.6788819Z env:
+2026-03-12T23:16:08.6789113Z   PUBLIC_API_URL: https://backend.claesen-verlichting.be/v1/website
+2026-03-12T23:16:08.6789522Z   PUBLIC_USE_STATIC_CACHE: true
+2026-03-12T23:16:08.6789756Z ##[endgroup]
+2026-03-12T23:16:08.7879024Z 
+2026-03-12T23:16:08.7879501Z > v4-version@0.0.1 build:prod
+2026-03-12T23:16:08.7880001Z > npm run sync:prod && astro build --mode production
+2026-03-12T23:16:08.7880282Z 
+2026-03-12T23:16:08.8998410Z 
+2026-03-12T23:16:08.9000434Z > v4-version@0.0.1 sync:prod
+2026-03-12T23:16:08.9001746Z > node scripts/sync-content.js --mode production
+2026-03-12T23:16:08.9002170Z 
+2026-03-12T23:16:08.9395677Z ℹ️ Running in production mode
+2026-03-12T23:16:08.9404336Z 🔄 Starting Content Sync...
+2026-03-12T23:16:08.9406200Z 📡 Fetching data from https://backend.claesen-verlichting.be/v1/website/projects...
+2026-03-12T23:16:08.9720930Z (node:2440) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+2026-03-12T23:16:08.9722055Z (Use `node --trace-warnings ...` to show where the warning was created)
+2026-03-12T23:16:09.6460383Z ✅ Found 15 projects.
+2026-03-12T23:16:09.6460950Z    Processing: Westerlo
+2026-03-12T23:16:11.1025595Z    Processing: RSC Anderlecht
+2026-03-12T23:16:15.5020417Z    Processing: KV Kortrijk
+2026-03-12T23:16:18.4596193Z    Processing: Domaine des Sources ballenvangers
+2026-03-12T23:16:25.4041563Z    Processing: Tennisveld Merendree
+2026-03-12T23:16:28.4035552Z    Processing: C-Mine Genk
+2026-03-12T23:16:31.0955032Z    Processing: Herentals Kerk
+2026-03-12T23:16:31.9533278Z    Processing: PWC
+2026-03-12T23:16:36.5396229Z    Processing: Sint-Truiden Verlichte Stad
+2026-03-12T23:16:41.1293324Z    Processing: Stadhuis Vilvoorde
+2026-03-12T23:16:46.9642784Z    Processing: Waterschei
+2026-03-12T23:16:51.8357186Z    Processing: BIAC Zaventem
+2026-03-12T23:16:53.4525569Z    Processing: Infrabel
+2026-03-12T23:16:59.5211835Z    Processing: Masten allerhande
+2026-03-12T23:17:02.2530806Z    Processing: test
+2026-03-12T23:17:02.2546920Z 💾 Saved cache to /home/runner/work/website-claesen-v1/website-claesen-v1/src/data/projects-cache.json
+2026-03-12T23:17:02.2547994Z ✨ Sync Complete!
+2026-03-12T23:17:03.8236334Z [2m23:17:03[22m [34m[content][39m Syncing content
+2026-03-12T23:17:03.8269084Z [2m23:17:03[22m [34m[content][39m Synced content
+2026-03-12T23:17:03.8274711Z [2m23:17:03[22m [34m[types][39m Generated [2m158ms[22m
+2026-03-12T23:17:03.8278414Z [2m23:17:03[22m [34m[build][39m output: [34m"static"[39m
+2026-03-12T23:17:03.8279308Z [2m23:17:03[22m [34m[build][39m mode: [34m"static"[39m
+2026-03-12T23:17:03.8280336Z [2m23:17:03[22m [34m[build][39m directory: [34m/home/runner/work/website-claesen-v1/website-claesen-v1/dist/[39m
+2026-03-12T23:17:03.8281030Z [2m23:17:03[22m [34m[build][39m Collecting build info...
+2026-03-12T23:17:03.8283713Z [2m23:17:03[22m [34m[build][39m [32m✓ Completed in 177ms.[39m
+2026-03-12T23:17:03.8294154Z [2m23:17:03[22m [34m[build][39m Building static entrypoints...
+2026-03-12T23:17:05.2679858Z [2m23:17:05[22m [34m[vite][39m [32m✓ built in 1.31s[39m
+2026-03-12T23:17:05.2680915Z [2m23:17:05[22m [34m[build][39m [32m✓ Completed in 1.44s.[39m
+2026-03-12T23:17:05.2685336Z 
+2026-03-12T23:17:05.2685997Z [42m[30m building client (vite) [39m[49m
+2026-03-12T23:17:05.2792311Z [2m23:17:05[22m [34m[vite][39m transforming...
+2026-03-12T23:17:08.3335528Z [2m23:17:08[22m [34m[vite][39m [32m✓[39m 2189 modules transformed.
+2026-03-12T23:17:08.4668277Z [2m23:17:08[22m [34m[vite][39m rendering chunks...
+2026-03-12T23:17:08.5416726Z [2m23:17:08[22m [34m[vite][39m computing gzip size...
+2026-03-12T23:17:08.5509547Z [2m23:17:08[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mPageHeader.NOAVQRgD.js                                         [39m[1m[2m  0.87 kB[22m[1m[22m[2m │ gzip:  0.47 kB[22m
+2026-03-12T23:17:08.5580895Z [2m23:17:08[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mSpotlightCursor.DZmVtUFO.js                                    [39m[1m[2m  1.17 kB[22m[1m[22m[2m │ gzip:  0.65 kB[22m
+2026-03-12T23:17:08.5583935Z [2m23:17:08[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mjs.cookie.Cz0CWeBA.js                                          [39m[1m[2m  1.41 kB[22m[1m[22m[2m │ gzip:  0.72 kB[22m
+2026-03-12T23:17:08.5587121Z [2m23:17:08[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mVideoModal.DrM0zx91.js                                         [39m[1m[2m  1.54 kB[22m[1m[22m[2m │ gzip:  0.78 kB[22m
+2026-03-12T23:17:08.5589890Z [2m23:17:08[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mcreateLucideIcon.DdYR_W5z.js                                   [39m[1m[2m  2.58 kB[22m[1m[22m[2m │ gzip:  0.81 kB[22m
+2026-03-12T23:17:08.5592576Z [2m23:17:08[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mCookieConsent.C5grJKBS.js                                      [39m[1m[2m  2.85 kB[22m[1m[22m[2m │ gzip:  1.30 kB[22m
+2026-03-12T23:17:08.5594216Z [2m23:17:08[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mSpotlightError.CAdKV3cp.js                                     [39m[1m[2m  2.98 kB[22m[1m[22m[2m │ gzip:  1.42 kB[22m
+2026-03-12T23:17:08.5595771Z [2m23:17:08[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mx.CI-iXYQl.js                                                  [39m[1m[2m  4.16 kB[22m[1m[22m[2m │ gzip:  2.02 kB[22m
+2026-03-12T23:17:08.5597065Z [2m23:17:08[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mindex.DiEladB3.js                                              [39m[1m[2m  7.85 kB[22m[1m[22m[2m │ gzip:  3.05 kB[22m
+2026-03-12T23:17:08.5598364Z [2m23:17:08[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mContactForm.WdfEJ0kv.js                                        [39m[1m[2m  9.16 kB[22m[1m[22m[2m │ gzip:  2.54 kB[22m
+2026-03-12T23:17:08.5599705Z [2m23:17:08[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js  [39m[1m[2m 15.36 kB[22m[1m[22m[2m │ gzip:  5.28 kB[22m
+2026-03-12T23:17:08.5601047Z [2m23:17:08[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mModernPortfolio.sSUUhC8j.js                                    [39m[1m[2m 17.31 kB[22m[1m[22m[2m │ gzip:  5.40 kB[22m
+2026-03-12T23:17:08.5602313Z [2m23:17:08[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mui.C3aHS2Mg.js                                                 [39m[1m[2m 52.63 kB[22m[1m[22m[2m │ gzip: 20.34 kB[22m
+2026-03-12T23:17:08.5603558Z [2m23:17:08[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mprojects-cache.BiVAXT6m.js                                     [39m[1m[2m 92.06 kB[22m[1m[22m[2m │ gzip:  9.95 kB[22m
+2026-03-12T23:17:08.5604806Z [2m23:17:08[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mproxy.xzqzdQJB.js                                              [39m[1m[2m119.33 kB[22m[1m[22m[2m │ gzip: 39.32 kB[22m
+2026-03-12T23:17:08.5606213Z [2m23:17:08[22m [34m[vite][39m [2mdist/[22m[2m_astro/[22m[36mclient.Dc9Vh3na.js                                             [39m[1m[2m186.62 kB[22m[1m[22m[2m │ gzip: 58.54 kB[22m
+2026-03-12T23:17:08.5607003Z [2m23:17:08[22m [34m[vite][39m [32m✓ built in 3.29s[39m
+2026-03-12T23:17:08.5775527Z 
+2026-03-12T23:17:08.5776111Z [42m[30m generating static routes [39m[49m
+2026-03-12T23:17:09.0410038Z [2m23:17:09[22m [32m▶[39m src/pages/404.astro
+2026-03-12T23:17:09.0674721Z [2m23:17:09[22m   [34m└─[39m [2m/404.html[22m [2m(+26ms)[22m 
+2026-03-12T23:17:09.0842074Z [2m23:17:09[22m [32m▶[39m src/pages/cookies.astro
+2026-03-12T23:17:09.0953238Z [2m23:17:09[22m   [34m└─[39m [2m/cookies/index.html[22m [2m(+11ms)[22m 
+2026-03-12T23:17:09.0993208Z [2m23:17:09[22m [32m▶[39m src/pages/privacy.astro
+2026-03-12T23:17:09.1051501Z [2m23:17:09[22m   [34m└─[39m [2m/privacy/index.html[22m [2m(+6ms)[22m 
+2026-03-12T23:17:09.1075946Z [2m23:17:09[22m [32m▶[39m src/pages/terms.astro
+2026-03-12T23:17:09.1125448Z [2m23:17:09[22m   [34m└─[39m [2m/terms/index.html[22m [2m(+5ms)[22m 
+2026-03-12T23:17:09.2048928Z API_BASE_URL: https://backend.claesen-verlichting.be/v1/website
+2026-03-12T23:17:09.2058519Z Environment variables: {
+2026-03-12T23:17:09.2059010Z   ASSETS_PREFIX: undefined,
+2026-03-12T23:17:09.2059433Z   BASE_URL: '/v1',
+2026-03-12T23:17:09.2059791Z   DEV: false,
+2026-03-12T23:17:09.2060139Z   MODE: 'production',
+2026-03-12T23:17:09.2060523Z   PROD: true,
+2026-03-12T23:17:09.2061164Z   PUBLIC_API_URL: 'https://backend.claesen-verlichting.be/v1/website',
+2026-03-12T23:17:09.2061931Z   PUBLIC_USE_STATIC_CACHE: 'true',
+2026-03-12T23:17:09.2062912Z   SITE: 'https://claesen-verlichting.be',
+2026-03-12T23:17:09.2063423Z   SSR: true,
+2026-03-12T23:17:09.2063897Z   _: '/opt/hostedtoolcache/node/20.20.0/x64/bin/npm'
+2026-03-12T23:17:09.2064439Z }
+2026-03-12T23:17:09.2071970Z [2m23:17:09[22m [32m▶[39m src/pages/[lang]/index.astro
+2026-03-12T23:17:09.2201655Z [2m23:17:09[22m   [34m├─[39m [2m/en/index.html[22m [2m(+12ms)[22m 
+2026-03-12T23:17:09.2279124Z [2m23:17:09[22m   [34m├─[39m [2m/fr/index.html[22m [2m(+8ms)[22m 
+2026-03-12T23:17:09.2368120Z [2m23:17:09[22m   [34m└─[39m [2m/nl/index.html[22m [2m(+9ms)[22m 
+2026-03-12T23:17:09.2409648Z [2m23:17:09[22m [32m▶[39m src/pages/index.astro
+2026-03-12T23:17:09.2493442Z [2m23:17:09[22m   [34m└─[39m [2m/index.html[22m [2m(+8ms)[22m 
+2026-03-12T23:17:09.2494376Z [2m23:17:09[22m [32m✓ Completed in 686ms.
+2026-03-12T23:17:09.2494886Z [39m
+2026-03-12T23:17:09.2531652Z [2m23:17:09[22m [34m[build][39m 8 page(s) built in [1m5.60s[22m
+2026-03-12T23:17:09.2532620Z [2m23:17:09[22m [34m[build][39m [1mComplete![22m

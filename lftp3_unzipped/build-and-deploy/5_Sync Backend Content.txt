@@ -1,0 +1,33 @@
+﻿2026-03-12T23:15:29.0533327Z ##[group]Run npm run sync:prod
+2026-03-12T23:15:29.0533652Z [36;1mnpm run sync:prod[0m
+2026-03-12T23:15:29.0584372Z shell: /usr/bin/bash -e {0}
+2026-03-12T23:15:29.0584642Z env:
+2026-03-12T23:15:29.0584966Z   PUBLIC_API_URL: https://backend.claesen-verlichting.be/v1/website
+2026-03-12T23:15:29.0585551Z ##[endgroup]
+2026-03-12T23:15:29.1786092Z 
+2026-03-12T23:15:29.1786671Z > v4-version@0.0.1 sync:prod
+2026-03-12T23:15:29.1787214Z > node scripts/sync-content.js --mode production
+2026-03-12T23:15:29.1787494Z 
+2026-03-12T23:15:29.2131396Z ℹ️ Running in production mode
+2026-03-12T23:15:29.2140782Z 🔄 Starting Content Sync...
+2026-03-12T23:15:29.2142047Z 📡 Fetching data from https://backend.claesen-verlichting.be/v1/website/projects...
+2026-03-12T23:15:29.2463658Z (node:2398) Warning: Setting the NODE_TLS_REJECT_UNAUTHORIZED environment variable to '0' makes TLS connections and HTTPS requests insecure by disabling certificate verification.
+2026-03-12T23:15:29.2465844Z (Use `node --trace-warnings ...` to show where the warning was created)
+2026-03-12T23:15:30.1208295Z ✅ Found 15 projects.
+2026-03-12T23:15:30.1209351Z    Processing: Westerlo
+2026-03-12T23:15:31.4493178Z    Processing: RSC Anderlecht
+2026-03-12T23:15:34.4559748Z    Processing: KV Kortrijk
+2026-03-12T23:15:36.0375899Z    Processing: Domaine des Sources ballenvangers
+2026-03-12T23:15:39.6421292Z    Processing: Tennisveld Merendree
+2026-03-12T23:15:41.4248076Z    Processing: C-Mine Genk
+2026-03-12T23:15:43.1720435Z    Processing: Herentals Kerk
+2026-03-12T23:15:43.7582893Z    Processing: PWC
+2026-03-12T23:15:46.4226055Z    Processing: Sint-Truiden Verlichte Stad
+2026-03-12T23:15:49.4977475Z    Processing: Stadhuis Vilvoorde
+2026-03-12T23:15:52.9110782Z    Processing: Waterschei
+2026-03-12T23:15:57.5072380Z    Processing: BIAC Zaventem
+2026-03-12T23:15:59.1244985Z    Processing: Infrabel
+2026-03-12T23:16:05.9279100Z    Processing: Masten allerhande
+2026-03-12T23:16:08.6594703Z    Processing: test
+2026-03-12T23:16:08.6609192Z 💾 Saved cache to /home/runner/work/website-claesen-v1/website-claesen-v1/src/data/projects-cache.json
+2026-03-12T23:16:08.6611509Z ✨ Sync Complete!

@@ -56,7 +56,7 @@ export class PortfolioService {
             if (import.meta.env.PUBLIC_USE_STATIC_CACHE === 'true') {
                 try {
                     // @ts-ignore
-                    const cachedData = await import('../data/projects-cache.json');
+                    const cachedData = await import('../data/projects-static.json');
                     const allProjects = cachedData.default?.projects || cachedData.projects || [];
 
                     // Simple client-side filtering since we have all data

@@ -24,5 +24,5 @@ pnpm-debug.log*
 .idea/
 
 # portfolio cache
-public/portfolio-media/
-src/data/projects-cache.json
+public/p*_*.*
+src/data/projects-static.json
