@@ -44,6 +44,10 @@ export class PortfolioService {
     formatImageUrl(path: string | null | undefined): string {
         if (!path) return ''
         if (path.startsWith('http')) return path
+        // Bypass for static cache paths - make them relative to ensure they work in /v1/ or root
+        if (path.startsWith('/v1-media/')) {
+            return path.substring(1) // Return "v1-media/..." to let browser resolve based on current base
+        }
         // Remove leading slash if exists
         const cleanPath = path.startsWith('/') ? path.substring(1) : path
         return `${ASSET_URL}${cleanPath}`
@@ -55,7 +59,12 @@ export class PortfolioService {
             // Static Cache Implementation
             if (import.meta.env.PUBLIC_USE_STATIC_CACHE === 'true') {
                 try {
-                    const cacheRes = await fetch('/v1-media/projects-static.json');
+                    // Try nested /v1/ path first (safest for FileZilla), then absolute root
+                    let cacheRes = await fetch('/v1/v1-media/projects-static.json');
+                    if (!cacheRes.ok) {
+                        cacheRes = await fetch('/v1-media/projects-static.json');
+                    }
+                    
                     if (cacheRes.ok) {
                         const cachedData = await cacheRes.json();
                         const allProjects = cachedData.projects || cachedData.data || cachedData || [];
