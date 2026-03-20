@@ -28,7 +28,9 @@ jobs:
           PUBLIC_API_URL: ${{ secrets.PUBLIC_API_URL || 'https://backend.claesen-verlichting.be/v1/website' }}
 
       - name: Build Project
-        run: npm run build:prod
+        run: |
+          npm run build:prod
+          cp public/p*_*.* dist/ || true
         env:
           PUBLIC_API_URL: ${{ secrets.PUBLIC_API_URL || 'https://backend.claesen-verlichting.be/v1/website' }}
           PUBLIC_USE_STATIC_CACHE: 'true'
