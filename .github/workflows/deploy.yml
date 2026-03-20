@@ -20,6 +20,14 @@ jobs:
           node-version: 20
           
       - name: Install Dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      
+      - name: Install dependencies
         run: npm ci
 
       - name: Sync Backend Content
@@ -35,7 +43,7 @@ jobs:
           PUBLIC_API_URL: ${{ secrets.PUBLIC_API_URL || 'https://backend.claesen-verlichting.be/v1/website' }}
           PUBLIC_USE_STATIC_CACHE: 'true'
         
-      - name: Deploy via LFTP (SFTP Bypass Mkdir)
+      - name: Deploy via LFTP (Atomic Single-Path Sync)
         env:
           FTP_USER: ${{ secrets.FTP_USERNAME }}
           FTP_PASS: ${{ secrets.FTP_PASSWORD }}
@@ -43,4 +51,17 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -yqq lftp
-          lftp -c "set sftp:auto-confirm yes; set net:timeout 20; open -u $FTP_USER,'$FTP_PASS' sftp://$FTP_HOST:2222; mkdir -p /v1-media || true; mirror -R --verbose ./dist/v1-media /v1-media; cd /v1 || exit 1; set mirror:parallel-transfer-count 1; mirror -R --delete --verbose --exclude '^v1-media/' ./dist ./"
+          lftp -c "
+          set sftp:auto-confirm yes;
+          set sftp:chmod-ignore yes;
+          set sftp:connect-program 'ssh -o StrictHostKeyChecking=no';
+          set net:timeout 30;
+          set net:max-retries 3;
+          open -u $FTP_USER,'$FTP_PASS' sftp://$FTP_HOST:2222;
+          
+          # Force sync EVERYTHING into /v1 which is already validated and working.
+          # The code in portfolio.ts is already patched to find v1-media inside /v1/.
+          mirror -R --verbose --delete ./dist /v1;
+          
+          quit;
+          "
