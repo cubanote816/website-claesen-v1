@@ -15,7 +15,7 @@ export default function SpotlightError() {
     }, []);
 
     return (
-        <div className="relative w-full h-screen bg-obsidian overflow-hidden flex flex-col items-center justify-center text-center cursor-none">
+        <div className="relative w-full h-screen bg-obsidian overflow-hidden flex flex-col items-center justify-center text-center">
             {/* Dark Base Layer */}
             <div className="absolute inset-0 bg-obsidian z-0"></div>
 
@@ -69,16 +69,6 @@ export default function SpotlightError() {
                     </a>
                 </motion.div>
             </div>
-
-            {/* Custom Cursor Ring */}
-            <motion.div
-                className="fixed top-0 left-0 w-12 h-12 rounded-full border border-lux-gold/60 pointer-events-none z-50 mix-blend-difference"
-                animate={{
-                    x: mousePosition.x - 24,
-                    y: mousePosition.y - 24
-                }}
-                transition={{ type: "tween", ease: "linear", duration: 0 }}
-            />
         </div>
     );
 }

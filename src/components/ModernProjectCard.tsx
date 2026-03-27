@@ -22,10 +22,10 @@ export default function ModernProjectCard({ project, onClick, index }: ModernPro
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.6, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
-            className="group relative w-full mb-6 break-inside-avoid rounded-3xl overflow-hidden cursor-pointer"
+            className="group relative w-full mb-3 md:mb-6 break-inside-avoid rounded-2xl md:rounded-3xl overflow-hidden cursor-pointer"
             onClick={() => onClick(project)}
         >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl md:rounded-3xl">
                 {/* Background Image */}
                 <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110"
@@ -37,35 +37,35 @@ export default function ModernProjectCard({ project, onClick, index }: ModernPro
                 <div className="absolute inset-0 bg-obsidian/20 group-hover:bg-transparent transition-colors duration-500" />
 
                 {/* Border Glow */}
-                <div className="absolute inset-0 border border-white/10 rounded-3xl transition-colors duration-300 group-hover:border-lux-gold/50" />
+                <div className="absolute inset-0 border border-white/10 rounded-2xl md:rounded-3xl transition-colors duration-300 group-hover:border-lux-gold/50" />
 
                 {/* Content Container */}
-                <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                <div className="absolute inset-0 p-3 md:p-6 flex flex-col justify-end">
 
                     {/* Top Right Arrow */}
-                    <div className="absolute top-4 right-4 w-8 h-8 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/10 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-100">
+                    <div className="hidden md:flex absolute top-4 right-4 w-8 h-8 bg-white/10 backdrop-blur-md rounded-full items-center justify-center text-white border border-white/10 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-100">
                         <ArrowUpRight className="w-4 h-4 text-lux-gold" />
                     </div>
 
                     {/* Text Content */}
-                    <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                        <div className="flex items-center gap-3 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                            <span className="text-[10px] font-bold tracking-widest uppercase text-lux-gold">
+                    <div className="transform md:translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                        <div className="flex items-center gap-2 mb-1 md:mb-2 md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                            <span className="text-[8px] md:text-[10px] font-bold tracking-widest uppercase text-lux-gold">
                                 {categoryLabel}
                             </span>
-                            <span className="w-1 h-1 rounded-full bg-white/40"></span>
-                            <span className="text-[10px] font-mono tracking-wider text-cool-slate">
+                            <span className="hidden md:block w-1 h-1 rounded-full bg-white/40"></span>
+                            <span className="hidden md:block text-[10px] font-mono tracking-wider text-cool-slate">
                                 {project.year}
                             </span>
                         </div>
 
-                        <h3 className="text-xl md:text-2xl font-bold font-display text-white mb-1 leading-tight">
+                        <h3 className="text-base md:text-2xl font-bold font-display text-white mb-0.5 md:mb-1 leading-tight line-clamp-2 md:line-clamp-none">
                             {getLocalized(project.title)}
                         </h3>
 
                         {getLocalized(project.location) && (
-                            <div className="flex items-center gap-2 text-cool-slate text-sm opacity-80 group-hover:opacity-100 transition-opacity">
-                                <MapPin className="w-3 h-3 text-lux-gold" />
+                            <div className="flex items-center gap-1.5 md:gap-2 text-cool-slate text-[10px] md:text-sm md:opacity-80 group-hover:opacity-100 transition-opacity">
+                                <MapPin className="w-2.5 h-2.5 md:w-3 md:h-3 text-lux-gold shrink-0" />
                                 <p className="line-clamp-1 font-medium">
                                     {getLocalized(project.location)}
                                 </p>

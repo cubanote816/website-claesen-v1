@@ -2,18 +2,16 @@
 import '../styles/global.css';
 import '@fontsource/unbounded';
 import '@fontsource/inter';
-import SpotlightCursor from '../components/SpotlightCursor';
 import ClassicNav from '../components/ClassicNav.astro';
 import CookieConsent from '../components/CookieConsent';
 import { ClientRouter } from 'astro:transitions';
 
 interface Props {
 	title: string;
-    showGlobalCursor?: boolean;
     lang?: string;
 }
 
-const { title, showGlobalCursor = true, lang = 'nl' } = Astro.props;
+const { title, lang = 'nl' } = Astro.props;
 ---
 
 <!doctype html>
@@ -46,8 +44,6 @@ const { title, showGlobalCursor = true, lang = 'nl' } = Astro.props;
         <meta property="twitter:image" content="/v1/og-image.jpg" />
 	</head>
 	<body class="bg-obsidian text-white selection:bg-lux-gold selection:text-black">
-		{showGlobalCursor && <SpotlightCursor client:load />}
-
 		<ClassicNav lang={lang} />
 		<CookieConsent client:load />
 		<main>

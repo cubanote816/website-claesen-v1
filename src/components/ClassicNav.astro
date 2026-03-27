@@ -29,16 +29,16 @@ const navItems = [
 
 <nav
     id="classic-nav"
-    class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-white/5 bg-transparent py-4 md:py-6"
+    class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-white/5 bg-transparent py-3 md:py-6"
 >
-    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-full">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between h-full">
         {/* Brand */}
         <a href={gl("/#home")} class="flex items-center gap-2 group nav-link-home z-[70] relative">
-            <img src="/v1/brand-logo-dark.png" alt="Claesen Verlichting" class="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity" />
+            <img src="/v1/brand-logo-dark.png" alt="Claesen Verlichting" class="h-6 md:h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity" />
         </a>
 
         {/* Desktop Navigation Links */}
-        <div class="hidden md:flex items-center gap-8">
+        <div class="hidden lg:flex items-center gap-8">
             {navItems.map((item) => (
                 <a
                     href={item.href}
@@ -52,7 +52,7 @@ const navItems = [
         </div>
 
         {/* Right Side: Language & CTA (Desktop) */}
-        <div class="hidden md:flex items-center gap-6">
+        <div class="hidden lg:flex items-center gap-6">
             <div class="flex items-center gap-1 border-r border-white/10 pr-6 mr-1">
                 <a href={`${baseUrl}/`} class={twMerge("text-xs font-bold px-2 py-1 rounded hover:bg-white/10", lang === 'nl' ? "text-lux-gold" : "text-white/50")}>NL</a>
                 <a href={`${baseUrl}/en/`} class={twMerge("text-xs font-bold px-2 py-1 rounded hover:bg-white/10", lang === 'en' ? "text-lux-gold" : "text-white/50")}>EN</a>
@@ -70,7 +70,7 @@ const navItems = [
         {/* Mobile Toggle Button */}
         <button 
             id="mobile-toggle"
-            class="md:hidden z-[70] relative p-4 -mr-2 text-white hover:text-lux-gold transition-colors focus:outline-none touch-manipulation"
+            class="lg:hidden z-[70] relative p-4 -mr-2 text-white hover:text-lux-gold transition-colors focus:outline-none touch-manipulation"
             aria-label="Toggle Menu"
             aria-expanded="false"
         >
@@ -206,11 +206,11 @@ const navItems = [
             if (currentScroll > 20) {
                 currentNav.classList.add('bg-obsidian/90', 'backdrop-blur-md', 'shadow-md');
                 currentNav.classList.remove('bg-transparent', 'py-6');
-                currentNav.classList.add('py-4');
+                currentNav.classList.add('py-3');
             } else {
                 currentNav.classList.remove('bg-obsidian/90', 'backdrop-blur-md', 'shadow-md');
                 currentNav.classList.add('bg-transparent', 'py-6');
-                currentNav.classList.remove('py-4');
+                currentNav.classList.remove('py-3');
             }
         }
 

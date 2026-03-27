@@ -50,7 +50,7 @@ export default function ContactForm({ lang = defaultLang }: Props) {
     };
 
     return (
-        <div className="w-full bg-gunmetal/50 backdrop-blur-xl border border-white/5 text-white rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+        <div className="w-full bg-gunmetal/50 backdrop-blur-xl border border-white/5 text-white rounded-3xl p-6 md:p-8 shadow-2xl relative overflow-hidden">
             {/* Decorative Background Element */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-lux-gold/5 rounded-bl-[100px] pointer-events-none"></div>
 

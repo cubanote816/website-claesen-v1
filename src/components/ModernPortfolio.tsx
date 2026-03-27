@@ -87,7 +87,7 @@ export default function ModernPortfolio({ lang = defaultLang }: ModernPortfolioP
                     <div className="w-12 h-12 border-2 border-lux-gold border-t-transparent rounded-full animate-spin"></div>
                 </div>
             ) : (
-                <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
                     <AnimatePresence mode="popLayout">
                         {filteredProjects.map((project, index) => (
                             <div key={project.id} className="w-full">
