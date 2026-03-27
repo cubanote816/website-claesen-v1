@@ -67,7 +67,7 @@ const t = ui[lang] || ui[defaultLang];
             
             {/* Tooltip */}
             <span class="absolute right-full mr-4 px-2 py-1 bg-black/80 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-                {lang === 'nl' ? 'Wissel Weergave' : (lang === 'fr' ? 'Changer Vue' : 'Switch View')}
+                {lang === 'nl' ? 'Wissel Weergave' : (lang === 'fr' ? 'Changer Vue' : (lang === 'de' ? 'Ansicht wechseln' : 'Switch View'))}
             </span>
         </button>
     </div>

@@ -2,6 +2,7 @@ export const languages = {
     nl: 'Nederlands',
     en: 'English',
     fr: 'Français',
+    de: 'Deutsch',
 };
 
 export const defaultLang = 'nl';
@@ -303,5 +304,104 @@ export const ui = {
         '404.title': 'Lumières Éteintes!',
         '404.text': 'Cette vue est actuellement dans le noir. Utilisez votre lumière pour explorer ou retournez aux structures principales.',
         '404.button': 'Retour à la Lumière',
+    },
+    de: {
+        // Nav
+        'nav.home': 'Startseite',
+        'nav.projects': 'Projekte',
+        'nav.services': 'Dienstleistungen',
+        'nav.about': 'Über uns',
+        'nav.contact': 'Kontakt',
+        'nav.cta': 'Loslegen',
+
+        // Hero
+        'hero.title': 'INGENIEURWESEN LICHT',
+        'hero.subtitle': 'Wir sind spezialisiert auf lizenzierte Industrie- und Sportbeleuchtung. Wir schaffen hochleistungsfähige Beleuchtungsstrukturen mit brutaler Effizienz und Eleganz.',
+        'hero.explore': 'Projekte entdecken',
+        'hero.showreel': 'Showreel ansehen',
+
+        // Services
+        'services.title': 'Ingenieurdienstleistungen',
+        'services.subtitle': 'Umfassende Beleuchtungslösungen von Machbarkeitsstudien bis zur langfristigen Wartung.',
+        'services.relighting.title': 'LED Relighting',
+        'services.relighting.desc': 'Modernisieren Sie Ihre bestehende Infrastruktur mit hocheffizienten LED-Systemen. Wir kümmern uns um alles, von der Prüfung bis zur Installation.',
+        'services.newprojects.title': 'Gesamtprojekte',
+        'services.newprojects.desc': 'Schlüsselfertige Beleuchtungslösungen für Neubauten. Wir arbeiten mit Architekten und Bauunternehmern zusammen.',
+        'services.studies.title': 'Lichtstudien',
+        'services.studies.desc': 'Präzision ist oberstes Gebot. Unsere lizenzierten Ingenieure simulieren Beleuchtungsergebnisse, um die Einhaltung lokaler Vorschriften zu gewährleisten.',
+        'services.maintenance.title': 'Wartung & Support',
+        'services.maintenance.desc': 'Sicherstellung von Langlebigkeit und Leistung. Wir bieten maßgeschneiderte Wartungsverträge.',
+
+        // Contact
+        'contact.title': 'Kontaktieren Sie uns',
+        'contact.subtitle': 'Bereit, Ihr nächstes Projekt zu beleuchten? Lassen Sie uns die technischen Details besprechen.',
+        'contact.info.title': 'Kontaktinformationen',
+        'contact.call': 'Jetzt anrufen',
+        'contact.email': 'E-Mail senden',
+
+        // Form
+        'form.name': 'Name',
+        'form.name.placeholder': 'Ihr vollständiger Name',
+        'form.email': 'E-Mail',
+        'form.email.placeholder': 'ihre.email@beispiel.com',
+        'form.phone': 'Telefon',
+        'form.phone.placeholder': '089 41 32 40',
+        'form.company': 'Unternehmen',
+        'form.company.placeholder': 'Ihr Firmenname',
+        'form.projectType': 'Projekttyp',
+        'form.projectType.placeholder': 'Wählen Sie einen Projekttyp',
+        'form.projectType.sport': 'Sportbeleuchtung',
+        'form.projectType.industrial': 'Industriebeleuchtung',
+        'form.projectType.public': 'Öffentliche Räume',
+        'form.projectType.other': 'Allgemeine Anfrage',
+        'form.message': 'Nachricht',
+        'form.message.placeholder': 'Beschreiben Sie Ihr Projekt und Ihre spezifischen Anforderungen...',
+        'form.preferred': 'Bevorzugter Kontakt',
+        'form.submit': 'Anfrage senden',
+        'form.submitting': 'Senden...',
+        'form.success.title': 'Nachricht gesendet',
+        'form.success.text': 'Wir werden Sie so schnell wie möglich kontaktieren.',
+        'form.success.button': 'Weitere Nachricht senden',
+        'form.error': 'Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.',
+
+        // Portfolio & About & Contact Extras
+        'portfolio.title': 'Unser Portfolio',
+        'portfolio.subtitle': 'Entdecken Sie unsere umfangreiche Sammlung von Hochleistungs-Beleuchtungsprojekten in den Bereichen Sport, Industrie und im öffentlichen Sektor.',
+        'portfolio.cat.all': 'Alle Projekte',
+        'portfolio.cat.sport': 'Sport',
+        'portfolio.cat.industrial': 'Industrie',
+        'portfolio.cat.public': 'Öffentliche Räume',
+        'portfolio.empty.text': 'Keine Projekte in dieser Kategorie gefunden.',
+        'portfolio.empty.btn': 'Alle Projekte anzeigen',
+        'portfolio.modal.about': 'Über das Projekt',
+        'about.title': 'Unser Vermächtnis',
+        'about.subtitle': 'Drei Generationen von Ingenieurleistungen in der Sport- und Industriebeleuchtung.',
+        'about.heading': 'Mehr als nur Licht',
+        'about.p1': 'Gegründet im Jahr 1978, begann Claesen Verlichting mit einer einfachen Mission: zuverlässige, hochwertige Beleuchtung für lokale Sportvereine bereitzustellen. Heute sind wir ein führendes Ingenieurbüro, das sich auf komplexe Beleuchtungsstrukturen in ganz Europa spezialisiert hat.',
+        'about.p2': 'Wir verkaufen nicht nur Lampen; wir entwickeln Sichtbarkeit. Von der strukturellen Integrität eines 50 Meter hohen Mastes bis hin zu präzisen Lux-Werten auf einem professionellen Fußballfeld wird jedes Detail mit militärischer Präzision berechnet, simuliert und ausgeführt.',
+        'about.p3': 'Unsere Philosophie verbindet <strong>Brutale Effizienz</strong> mit <strong>Leuchtender Ästhetik</strong>. Wir glauben, dass industrielle Strukturen nicht nur einwandfrei funktionieren, sondern auch zur architektonischen Schönheit ihrer Umgebung beitragen sollten.',
+        'about.stats.years': 'Jahre Erfahrung',
+        'about.stats.projects': 'Abgeschlossene Projekte',
+        'about.stats.cert': 'Zertifizierte Operationen',
+        'about.stats.warranty': 'Jahre Garantie',
+        'contact.hours.text': 'Mo-Fr: 8:00 - 17:00',
+        'contact.map.view': 'Größere Karte ansehen',
+        'contact.country': 'Belgien',
+
+        // Footer
+        'footer.legacy': 'Drei Generationen von Ingenieurleistungen.',
+        'footer.rights': 'Alle Rechte vorbehalten.',
+        'footer.nav': 'Navigation',
+        'footer.services': 'Dienstleistungen',
+        'footer.legal': 'Rechtliches',
+        'footer.privacy': 'Datenschutzrichtlinie',
+        'footer.terms': 'Nutzungsbedingungen',
+        'footer.cookies': 'Cookie-Richtlinie',
+        'footer.licensed': 'Lizenzierte Technik',
+
+        // 404
+        '404.title': 'Licht aus!',
+        '404.text': 'Diese Ansicht liegt derzeit im Dunkeln. Nutzen Sie Ihr Licht zum Erkunden oder kehren Sie zu den leuchtenden Hauptstrukturen zurück.',
+        '404.button': 'Zurück ins Licht',
     },
 } as const;
