@@ -77,7 +77,7 @@ export default function ProjectGalleryModal({ isOpen, onClose, project, lang = d
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.95, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="w-full h-full max-w-7xl bg-gunmetal/50 border border-white/10 rounded-2xl overflow-hidden flex flex-col md:flex-row shadow-2xl relative"
+                        className="w-full h-[100dvh] md:h-full max-w-7xl bg-gunmetal/50 border border-white/10 rounded-none md:rounded-2xl overflow-hidden flex flex-col md:flex-row shadow-2xl relative"
                         onClick={e => e.stopPropagation()}
                     >
                         {/* Close Button Mobile */}
@@ -86,17 +86,24 @@ export default function ProjectGalleryModal({ isOpen, onClose, project, lang = d
                         </button>
 
                         {/* Image Section */}
-                        <div className="relative flex-1 bg-black flex items-center justify-center overflow-hidden group">
+                        <div className="relative h-[40vh] shrink-0 md:h-auto md:flex-1 bg-black flex items-center justify-center overflow-hidden group">
                             <AnimatePresence mode="wait">
                                 <motion.img
                                     key={currentImage?.url}
                                     src={currentImage?.url || placeholderImg}
                                     alt={currentImage?.alt || getLocalized(project.title)}
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
+                                    drag="x"
+                                    dragConstraints={{ left: 0, right: 0 }}
+                                    dragElastic={0.5}
+                                    onDragEnd={(e, { offset }) => {
+                                        if (offset.x < -40) showNext();
+                                        if (offset.x > 40) showPrev();
+                                    }}
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 0.95 }}
                                     transition={{ duration: 0.3 }}
-                                    className="max-w-full max-h-full object-contain"
+                                    className="relative max-w-full max-h-full object-contain touch-none cursor-grab active:cursor-grabbing z-20"
                                 />
                             </AnimatePresence>
 
@@ -121,10 +128,10 @@ export default function ProjectGalleryModal({ isOpen, onClose, project, lang = d
                         </div>
 
                         {/* Info Panel */}
-                        <div className="w-full md:w-[400px] bg-obsidian border-l border-white/5 flex flex-col">
+                        <div className="w-full md:w-[400px] bg-obsidian border-l border-white/5 flex flex-col flex-1 overflow-y-auto">
 
                             {/* Header */}
-                            <div className="p-8 border-b border-white/5 relative">
+                            <div className="p-6 md:p-8 border-b border-white/5 relative shrink-0">
                                 <button onClick={onClose} className="absolute top-6 right-6 hidden md:block hover:text-lux-gold transition-colors">
                                     <X className="w-6 h-6" />
                                 </button>
@@ -161,7 +168,7 @@ export default function ProjectGalleryModal({ isOpen, onClose, project, lang = d
                             </div>
 
                             {/* Description */}
-                            <div className="flex-1 p-8 overflow-y-auto">
+                            <div className="flex-1 p-6 md:p-8 overflow-y-visible">
                                 <h3 className="text-sm font-bold uppercase tracking-wider text-white mb-3">{t['portfolio.modal.about']}</h3>
                                 <div
                                     className="prose prose-invert prose-sm text-cool-slate"
