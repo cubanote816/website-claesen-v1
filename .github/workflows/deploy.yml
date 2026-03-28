@@ -69,7 +69,7 @@ jobs:
           put -O /v1/v1-media/ ./dist/v1-media/projects-static.json || echo 'Individual JSON upload failed, proceeding to mirror';
           
           # Then, mirror everything else.
-          mirror -R --verbose ./dist /v1;
+          mirror -R --verbose --no-perms ./dist /v1;
           
           quit;
           "
