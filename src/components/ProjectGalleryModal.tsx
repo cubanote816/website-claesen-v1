@@ -15,6 +15,7 @@ interface ProjectGalleryModalProps {
 export default function ProjectGalleryModal({ isOpen, onClose, project, lang = defaultLang }: ProjectGalleryModalProps) {
     const t = ui[lang as keyof typeof ui] || ui[defaultLang];
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
     const scrollPositionRef = useRef<number>(0);
 
     // Lock body scroll
@@ -31,6 +32,7 @@ export default function ProjectGalleryModal({ isOpen, onClose, project, lang = d
     // Reset index on project change
     useEffect(() => {
         setCurrentImageIndex(0);
+        setIsDescriptionExpanded(false);
     }, [project]);
 
     // Keyboard navigation
@@ -136,7 +138,7 @@ export default function ProjectGalleryModal({ isOpen, onClose, project, lang = d
                                     <X className="w-6 h-6" />
                                 </button>
 
-                                <div className="inline-flex items-center justify-center p-3 bg-white/5 rounded-xl mb-6 text-lux-gold">
+                                <div className="hidden md:inline-flex items-center justify-center p-3 bg-white/5 rounded-xl mb-6 text-lux-gold">
                                     <Camera className="w-6 h-6" />
                                 </div>
 
@@ -168,12 +170,22 @@ export default function ProjectGalleryModal({ isOpen, onClose, project, lang = d
                             </div>
 
                             {/* Description */}
-                            <div className="flex-1 p-6 md:p-8 overflow-y-visible">
-                                <h3 className="text-sm font-bold uppercase tracking-wider text-white mb-3">{t['portfolio.modal.about']}</h3>
+                            <div className="flex-1 p-6 md:p-8 overflow-y-visible flex flex-col">
+                                <h3 className="text-sm font-bold uppercase tracking-wider text-white mb-3 shrink-0">
+                                    {t['portfolio.modal.about']}
+                                </h3>
                                 <div
-                                    className="prose prose-invert prose-sm text-cool-slate"
+                                    className={`prose prose-invert prose-sm text-cool-slate transition-all duration-300 relative ${!isDescriptionExpanded ? 'line-clamp-4 overflow-hidden' : ''}`}
                                     dangerouslySetInnerHTML={{ __html: getLocalized(project.description) }}
                                 />
+                                <button
+                                    onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
+                                    className="mt-4 text-lux-gold text-sm font-semibold hover:text-white transition-colors self-start shrink-0"
+                                >
+                                    {isDescriptionExpanded 
+                                        ? (lang === 'nl' ? 'Lees minder' : lang === 'fr' ? 'Voir moins' : lang === 'de' ? 'Weniger anzeigen' : 'Read less') 
+                                        : (lang === 'nl' ? 'Lees meer' : lang === 'fr' ? 'Voir plus' : lang === 'de' ? 'Mehr anzeigen' : 'Read more')}
+                                </button>
                             </div>
 
                             {/* Thumbnails */}
