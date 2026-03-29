@@ -6,8 +6,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://claesen-verlichting.be',
-  base: '/v1',
+  site: process.env['ASTRO_SITE_URL'] || 'https://claesen-verlichting.be',
+  base: process.env['ASTRO_BASE_PATH'] || '/v1',
   i18n: {
     defaultLocale: "nl",
     locales: ["nl", "en", "fr"],
