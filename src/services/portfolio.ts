@@ -46,7 +46,8 @@ export class PortfolioService {
         if (path.startsWith('http')) return path
         // Bypass for static cache paths - make them relative to ensure they work in /v1/ or root
         if (path.startsWith('/v1-media/')) {
-            return path.substring(1) // Return "v1-media/..." to let browser resolve based on current base
+            const baseUrl = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
+            return `${baseUrl}${path}`;
         }
         // Remove leading slash if exists
         const cleanPath = path.startsWith('/') ? path.substring(1) : path
@@ -59,8 +60,9 @@ export class PortfolioService {
             // Static Cache Implementation
             if (import.meta.env.PUBLIC_USE_STATIC_CACHE === 'true') {
                 try {
-                    // Try nested /v1/ path first (safest for FileZilla), then absolute root
-                    let cacheRes = await fetch('/v1/v1-media/projects-static.json');
+                    // Fetch using dynamic BASE_URL
+                    const baseUrl = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
+                    let cacheRes = await fetch(`${baseUrl}/v1-media/projects-static.json`);
                     if (!cacheRes.ok) {
                         cacheRes = await fetch('/v1-media/projects-static.json');
                     }
