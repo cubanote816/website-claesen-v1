@@ -7,11 +7,21 @@
     --color-electric-amber: #F59E0B;
     --color-cool-slate: #64748B;
 
+    --color-logo-pink: #E6007E;
+    --color-logo-salmon: #FFB5D1;
+    --color-logo-lime: #A5D610;
+    --color-logo-cyan: #00AEEF;
+    --color-logo-teal: #0082B4;
+
     --font-display: "Unbounded", sans-serif;
     --font-body: "Inter", sans-serif;
 
     --animate-float: float 6s ease-in-out infinite;
     --animate-spotlight: spotlight 2s ease-in-out infinite alternate;
+    --animate-fade-in: fade-in 1s ease-out forwards;
+    --animate-fade-in-delayed: fade-in 1s ease-out 0.5s forwards;
+    --animate-fade-in-long: fade-in 1.5s ease-out 1s forwards;
+    --animate-fade-in-up: fade-in-up 1s ease-out forwards;
 
     @keyframes float {
 
@@ -34,6 +44,28 @@
         100% {
             opacity: 1;
             transform: scale(1.1);
+        }
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fade-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 }

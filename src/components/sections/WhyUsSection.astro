@@ -1,0 +1,55 @@
+---
+import PageHeader from '../PageHeader';
+import { Award, Layers, Truck, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { ui, defaultLang } from '../../i18n/ui';
+
+export interface Props {
+    lang?: keyof typeof ui;
+}
+
+const { lang = defaultLang } = Astro.props;
+const t = ui[lang] || ui[defaultLang];
+
+const points = [
+    { key: 'why.point1', icon: Award, color: 'text-logo-pink', border: 'hover:border-logo-pink/30' },
+    { key: 'why.point2', icon: Layers, color: 'text-logo-salmon', border: 'hover:border-logo-salmon/30' },
+    { key: 'why.point3', icon: Truck, color: 'text-logo-lime', border: 'hover:border-logo-lime/30' },
+    { key: 'why.point4', icon: ShieldCheck, color: 'text-logo-cyan', border: 'hover:border-logo-cyan/30' },
+    { key: 'why.point5', icon: CheckCircle2, color: 'text-logo-teal', border: 'hover:border-logo-teal/30' },
+];
+---
+
+<section id="why-us" class="py-24 px-6 relative overflow-hidden bg-obsidian">
+  {/* Background accents */}
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-logo-pink/5 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
+  <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-logo-cyan/5 rounded-full blur-[120px] pointer-events-none translate-y-1/2 -translate-x-1/3"></div>
+
+  <div class="max-w-7xl mx-auto relative z-10">
+    <PageHeader 
+      client:visible 
+      title={t['why.title']} 
+      subtitle={t['why.subtitle']}
+    />
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mt-16">
+      {points.map((point) => (
+        <div class={`group relative p-8 rounded-3xl bg-gunmetal border border-white/5 ${point.border} transition-all duration-500 hover:-translate-y-2 flex flex-col h-full`}>
+            <div class="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none rounded-3xl"></div>
+            
+            <div class={`w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-8 ${point.color} group-hover:scale-110 transition-transform duration-300 border border-white/10 group-hover:border-current shadow-lg`}>
+                <point.icon className="w-7 h-7" />
+            </div>
+
+            <h3 class="font-display text-lg font-bold leading-tight group-hover:text-white transition-colors">
+                {t[point.key as keyof typeof t]}
+            </h3>
+            
+            {/* Subtle line indicator */}
+            <div class="mt-auto pt-6">
+                <div class={`h-1 w-8 rounded-full bg-current opacity-20 ${point.color} group-hover:w-full transition-all duration-500`}></div>
+            </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

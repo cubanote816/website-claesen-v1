@@ -15,13 +15,33 @@ export const ui = {
         'nav.services': 'Diensten',
         'nav.about': 'Over Ons',
         'nav.contact': 'Contact',
-        'nav.cta': 'Starten',
+        'nav.cta': 'Offerte Aanvragen',
+        'nav.phone': '+32 (0)473 536 591',
 
         // Hero
-        'hero.title': 'ENGINEERING LUMINOUS',
-        'hero.subtitle': 'Wij zijn gespecialiseerd in gelicentieerde industriële en sportverlichting. Het creëren van hoogwaardige verlichtingsstructuren met brute efficiëntie en elegantie.',
+        'hero.title': 'Totaaloplossingen voor terreinverlichting',
+        'hero.subtitle': 'Dé Belgische specialist sinds 1970 — alles in eigen beheer.',
+        'hero.description': 'Wij zijn gespecialiseerd in gecertificeerde industriële en sportverlichting. Wij realiseren hoogwaardige infrastructuren met maximale efficiëntie en duurzaamheid.',
+        'hero.cta': 'Vraag offerte aan',
         'hero.explore': 'Bekijk Projecten',
         'hero.showreel': 'Bekijk Showreel',
+
+        // Quick Offerte
+        'offerte.title': 'Vraag gratis offerte aan',
+        'offerte.subtitle': 'Ontvang binnen 24 uur een vrijblijvende offerte op maat voor uw project.',
+        'offerte.button': 'Vraag gratis offerte aan',
+        'offerte.name': 'Naam',
+        'offerte.company': 'Bedrijf',
+        'offerte.projectType': 'Project Type',
+
+        // Why Us
+        'why.title': 'Waarom Claesen?',
+        'why.subtitle': 'De zekerheid van een specialist, van ontwerp tot onderhoud.',
+        'why.point1': '50+ jaar ervaring',
+        'why.point2': 'Alles in eigen beheer',
+        'why.point3': 'Eigen materieel & voertuigen',
+        'why.point4': 'Gecertificeerde installaties',
+        'why.point5': 'Van studie tot oplevering',
 
         // Services
         'services.title': 'Engineering Diensten',
@@ -48,7 +68,7 @@ export const ui = {
         'form.email': 'E-mail',
         'form.email.placeholder': 'uw.email@voorbeeld.com',
         'form.phone': 'Telefoon',
-        'form.phone.placeholder': '089 41 32 40',
+        'form.phone.placeholder': '+32 (0)473 536 591',
         'form.company': 'Bedrijf',
         'form.company.placeholder': 'Uw bedrijfsnaam',
         'form.projectType': 'Project Type',
@@ -114,13 +134,33 @@ export const ui = {
         'nav.services': 'Services',
         'nav.about': 'About',
         'nav.contact': 'Contact',
-        'nav.cta': 'Get Started',
+        'nav.cta': 'Request Quote',
+        'nav.phone': '+32 (0)473 536 591',
 
         // Hero
-        'hero.title': 'ENGINEERING LUMINOUS',
-        'hero.subtitle': 'We specialize in Licensed Industrial & Sports Lighting. Creating high-performance illumination structures with brutal efficiency and elegance.',
+        'hero.title': 'Complete Outdoor Lighting Solutions',
+        'hero.subtitle': 'The Belgian specialist since 1970 — 100% in-house execution.',
+        'hero.description': 'We specialize in certified industrial and sports lighting. We deliver high-performance infrastructures built for maximum efficiency and long-term durability.',
+        'hero.cta': 'Request a Quote',
         'hero.explore': 'Explore Projects',
         'hero.showreel': 'Watch Showreel',
+
+        // Quick Offerte
+        'offerte.title': 'Request a Free Quote',
+        'offerte.subtitle': 'Receive a custom, non-binding quote for your project within 24 hours.',
+        'offerte.button': 'Request Free Quote',
+        'offerte.name': 'Name',
+        'offerte.company': 'Company',
+        'offerte.projectType': 'Project Type',
+
+        // Why Us
+        'why.title': 'Why Claesen?',
+        'why.subtitle': 'The certainty of a specialist, from design to maintenance.',
+        'why.point1': '50+ years of experience',
+        'why.point2': 'Fully in-house execution',
+        'why.point3': 'Own equipment & vehicles',
+        'why.point4': 'Certified installations',
+        'why.point5': 'From study to completion',
 
         // Services
         'services.title': 'Engineering Services',
@@ -147,7 +187,7 @@ export const ui = {
         'form.email': 'Email',
         'form.email.placeholder': 'your.email@example.com',
         'form.phone': 'Phone',
-        'form.phone.placeholder': '+32 89 41 32 40',
+        'form.phone.placeholder': '+32 (0)473 536 591',
         'form.company': 'Company',
         'form.company.placeholder': 'Your company name',
         'form.projectType': 'Project Type',
@@ -213,13 +253,33 @@ export const ui = {
         'nav.services': 'Services',
         'nav.about': 'À Propos',
         'nav.contact': 'Contact',
-        'nav.cta': 'Commencer',
+        'nav.cta': 'Demander un Devis',
+        'nav.phone': '+32 (0)473 536 591',
 
         // Hero
-        'hero.title': 'INGÉNIERIE LUMINEUSE',
-        'hero.subtitle': 'Nous sommes spécialisés dans l\'éclairage industriel et sportif agréé. Création de structures d\'éclairage haute performance avec une efficacité brutale et une élégance.',
+        'hero.title': 'Solutions complètes d\'éclairage extérieur',
+        'hero.subtitle': 'Le spécialiste belge depuis 1970 — exécution 100 % en interne.',
+        'hero.description': 'Nous sommes spécialisés dans l\'éclairage industriel et sportif certifié.Nous concevons des infrastructures de haute performance alliant efficacité maximale et durabilité.',
+        'hero.cta': 'Demander un Devis',
         'hero.explore': 'Explorer les Projets',
         'hero.showreel': 'Voir la Démo',
+
+        // Quick Offerte
+        'offerte.title': 'Demandez un devis gratuit',
+        'offerte.subtitle': 'Recevez un devis sur mesure et sans engagement pour votre projet sous 24 heures.',
+        'offerte.button': 'Demander un devis gratuit',
+        'offerte.name': 'Nom',
+        'offerte.company': 'Entreprise',
+        'offerte.projectType': 'Type de Projet',
+
+        // Why Us
+        'why.title': 'Pourquoi Claesen ?',
+        'why.subtitle': 'La certitude d\'un spécialiste, de la conception à la maintenance.',
+        'why.point1': '50+ ans d\'expérience',
+        'why.point2': 'Exécution 100% interne',
+        'why.point3': 'Matériel et véhicules propres',
+        'why.point4': 'Installations certifiées',
+        'why.point5': 'De l\'étude à la livraison',
 
         // Services
         'services.title': 'Services d\'Ingénierie',
@@ -246,7 +306,7 @@ export const ui = {
         'form.email': 'E-mail',
         'form.email.placeholder': 'votre.email@exemple.com',
         'form.phone': 'Téléphone',
-        'form.phone.placeholder': '089 41 32 40',
+        'form.phone.placeholder': '+32 (0)473 536 591',
         'form.company': 'Entreprise',
         'form.company.placeholder': 'Nom de votre entreprise',
         'form.projectType': 'Type de Projet',
@@ -312,13 +372,33 @@ export const ui = {
         'nav.services': 'Dienstleistungen',
         'nav.about': 'Über uns',
         'nav.contact': 'Kontakt',
-        'nav.cta': 'Loslegen',
+        'nav.cta': 'Angebot Anfordern',
+        'nav.phone': '+32 (0)473 536 591',
 
         // Hero
-        'hero.title': 'INGENIEURWESEN LICHT',
-        'hero.subtitle': 'Wir sind spezialisiert auf lizenzierte Industrie- und Sportbeleuchtung. Wir schaffen hochleistungsfähige Beleuchtungsstrukturen mit brutaler Effizienz und Eleganz.',
+        'hero.title': 'Komplettlösungen für die Außenbeleuchtung',
+        'hero.subtitle': 'Der belgische Spezialist seit 1970 — alles aus einer Hand.',
+        'hero.description': 'Wir sind spezialisiert auf zertifizierte Industrie- und Sportbeleuchtung. Wir realisieren leistungsstarke Infrastrukturen mit maximaler Effizienz und Langlebigkeit.',
+        'hero.cta': 'Angebot anfordern',
         'hero.explore': 'Projekte entdecken',
         'hero.showreel': 'Showreel ansehen',
+
+        // Quick Offerte
+        'offerte.title': 'Kostenloses Angebot anfordern',
+        'offerte.subtitle': 'Erhalten Sie innerhalb von 24 Stunden ein maßgeschneidertes, unverbindliches Angebot für Ihr Projekt.',
+        'offerte.button': 'Kostenloses Angebot anfordern',
+        'offerte.name': 'Name',
+        'offerte.company': 'Unternehmen',
+        'offerte.projectType': 'Projekttyp',
+
+        // Why Us
+        'why.title': 'Warum Claesen?',
+        'why.subtitle': 'Die Sicherheit eines Spezialisten, von der Planung bis zur Wartung.',
+        'why.point1': '50+ Jahre Erfahrung',
+        'why.point2': 'Alles aus einer Hand',
+        'why.point3': 'Eigene Geräte & Fahrzeuge',
+        'why.point4': 'Zertifizierte Installationen',
+        'why.point5': 'Von der Studie bis zur Übergabe',
 
         // Services
         'services.title': 'Ingenieurdienstleistungen',
@@ -345,7 +425,7 @@ export const ui = {
         'form.email': 'E-Mail',
         'form.email.placeholder': 'ihre.email@beispiel.com',
         'form.phone': 'Telefon',
-        'form.phone.placeholder': '089 41 32 40',
+        'form.phone.placeholder': '+32 (0)473 536 591',
         'form.company': 'Unternehmen',
         'form.company.placeholder': 'Ihr Firmenname',
         'form.projectType': 'Projekttyp',
