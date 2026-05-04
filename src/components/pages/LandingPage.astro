@@ -6,6 +6,8 @@ import WhyUsSection from "../sections/WhyUsSection.astro";
 import AboutSection from "../sections/AboutSection.astro";
 import QuickOfferteSection from "../sections/QuickOfferteSection.astro";
 import ContactSection from "../sections/ContactSection.astro";
+import TrustSection from "../sections/TrustSection.astro";
+import TeamGallerySection from "../sections/TeamGallerySection.astro";
 import Footer from "../Footer.astro";
 import VideoModal from "../VideoModal";
 import { ArrowDown, Play } from "lucide-react";
@@ -162,10 +164,12 @@ const t = ui[lang] || ui[defaultLang];
   </script>
 
   <WhyUsSection lang={lang} />
-  <QuickOfferteSection lang={lang} />
   <PortfolioSection lang={lang} />
+  <QuickOfferteSection lang={lang} />
   <ServicesSection lang={lang} />
   <AboutSection lang={lang} />
+  <TrustSection lang={lang} />
+  <TeamGallerySection lang={lang} />
   <ContactSection lang={lang} />
   <Footer lang={lang} />
 

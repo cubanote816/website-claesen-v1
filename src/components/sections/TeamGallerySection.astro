@@ -1,0 +1,81 @@
+---
+import PageHeader from '../PageHeader';
+import { ui, defaultLang } from '../../i18n/ui';
+import { HardHat, Microscope, Drill } from 'lucide-react';
+
+export interface Props {
+    lang?: keyof typeof ui;
+}
+
+const { lang = defaultLang } = Astro.props;
+const t = ui[lang] || ui[defaultLang];
+
+const gallery = [
+    {
+        src: '/assets/team/installation.png',
+        title: 'Installation',
+        desc: 'Precision mast installation with heavy machinery.',
+        icon: HardHat,
+        size: 'md:col-span-2'
+    },
+    {
+        src: '/assets/team/engineering.png',
+        title: 'Engineering',
+        desc: 'Advanced light studies and technical planning.',
+        icon: Microscope,
+        size: 'md:col-span-1'
+    },
+    {
+        src: '/assets/team/logistics.png',
+        title: 'Logistics',
+        desc: 'Fully equipped fleet for rapid on-site intervention.',
+        icon: Drill,
+        size: 'md:col-span-3'
+    }
+];
+---
+
+<section id="team-gallery" class="py-24 px-6 relative bg-obsidian">
+    <div class="max-w-7xl mx-auto">
+        <PageHeader 
+            client:visible 
+            title={t['team.title']} 
+            subtitle={t['team.subtitle']}
+        />
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+            {gallery.map((item) => (
+                <div class={`relative group overflow-hidden rounded-3xl border border-white/10 aspect-[16/9] ${item.size}`}>
+                    <img 
+                        src={`${import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL}${item.src}`}
+                        alt={item.title}
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                    
+                    <div class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="p-2 rounded-lg bg-lux-gold text-obsidian">
+                                <item.icon className="w-5 h-5" />
+                            </div>
+                            <h3 class="text-xl font-bold text-white">{item.title}</h3>
+                        </div>
+                        <p class="text-white/70 text-sm max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                            {item.desc}
+                        </p>
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        {/* Call to Action or extra context */}
+        <div class="mt-16 text-center">
+            <div class="inline-block p-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+                <div class="px-6 py-2 flex items-center gap-3">
+                    <span class="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <p class="text-xs text-white/50 uppercase tracking-widest font-semibold">100% Eigen Beheer (In-house Execution)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
