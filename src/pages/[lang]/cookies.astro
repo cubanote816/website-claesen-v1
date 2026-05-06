@@ -1,12 +1,21 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Footer from '../components/Footer.astro';
-import PageHeader from '../components/PageHeader';
-import { legalContent } from '../i18n/legal';
-import { ui } from '../i18n/ui';
+import Layout from '../../layouts/Layout.astro';
+import Footer from '../../components/Footer.astro';
+import PageHeader from '../../components/PageHeader';
+import { legalContent } from '../../i18n/legal';
+import { ui } from '../../i18n/ui';
 
-const lang = 'nl';
-const content = legalContent[lang].terms;
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'nl' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const content = legalContent[lang as keyof typeof legalContent].cookies;
 ---
 
 <Layout title={`${content.title} - Claesen Verlichting`} lang={lang}>
@@ -27,26 +36,27 @@ const content = legalContent[lang].terms;
 
     <section class="py-20 px-6 relative z-10">
         <div class="max-w-4xl mx-auto glass-panel rounded-3xl p-8 md:p-12">
-             <div class="prose prose-invert prose-lg max-w-none prose-headings:font-display prose-headings:text-white prose-p:text-cool-slate prose-a:text-lux-gold hover:prose-a:text-white transition-colors">
+            <div class="prose prose-invert prose-lg max-w-none prose-headings:font-display prose-headings:text-white prose-p:text-cool-slate prose-a:text-lux-gold hover:prose-a:text-white transition-colors">
                 <p class="text-sm text-cool-slate/60 mb-8 border-b border-white/10 pb-4">Last updated: {new Date().toLocaleDateString()}</p>
 
                 <p>{content.content}</p>
 
-                {content.sections.map(section => (
-                    <>
-                        <h3>{section.title}</h3>
-                        <p>{section.content}</p>
-                    </>
-                ))}
+                <h3>{content.types.title}</h3>
+                <ul>
+                    {content.types.items.map(item => (
+                        <li><strong>{item.label}:</strong> {item.text}</li>
+                    ))}
+                </ul>
 
-                <h3>Contact</h3>
+                <h3>Contact Us</h3>
                 <p>
-                    For any legal inquiries, please contact info@claesen-verlichting.be.
+                    If you have questions about this policy, please contact us at info@claesen-verlichting.be.
                 </p>
                 <p>
                     <strong>Claesen Verlichting</strong><br/>
                     Benoit Jansenstraat 4<br/>
-                    2490 Balen, België
+                    2490 Balen, België<br/>
+                    info@claesen-verlichting.be
                 </p>
             </div>
         </div>
@@ -54,4 +64,3 @@ const content = legalContent[lang].terms;
 
     <Footer lang={lang as keyof typeof ui} />
 </Layout>
-

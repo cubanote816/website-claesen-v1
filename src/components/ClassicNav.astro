@@ -60,10 +60,38 @@ const navItems = [
                 </a>
 
                 <div class="flex items-center gap-1">
-                    <a href={`${baseUrl}/`} class={twMerge("text-xs font-bold px-2 py-1 rounded hover:bg-white/10", lang === 'nl' ? "text-lux-gold" : "text-white/50")}>NL</a>
-                    <a href={`${baseUrl}/en/`} class={twMerge("text-xs font-bold px-2 py-1 rounded hover:bg-white/10", lang === 'en' ? "text-lux-gold" : "text-white/50")}>EN</a>
-                    <a href={`${baseUrl}/fr/`} class={twMerge("text-xs font-bold px-2 py-1 rounded hover:bg-white/10", lang === 'fr' ? "text-lux-gold" : "text-white/50")}>FR</a>
-                    <a href={`${baseUrl}/de/`} class={twMerge("text-xs font-bold px-2 py-1 rounded hover:bg-white/10", lang === 'de' ? "text-lux-gold" : "text-white/50")}>DE</a>
+                    {['nl', 'en', 'fr', 'de'].map((l) => {
+                        // Logic to get current path relative to current language
+                        const languages = ['en', 'fr', 'de']; // nl is default
+                        let pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+                        
+                        // Remove base segments if they exist (e.g., ['v1'])
+                        const baseSegments = baseUrl.split('/').filter(Boolean);
+                        if (pathSegments.slice(0, baseSegments.length).join('/') === baseSegments.join('/')) {
+                            pathSegments = pathSegments.slice(baseSegments.length);
+                        }
+
+                        // Remove current language segment if it exists
+                        if (languages.includes(pathSegments[0])) {
+                            pathSegments.shift();
+                        }
+
+                        // Construct new path
+                        const finalSegments = l === 'nl' ? pathSegments : [l, ...pathSegments];
+                        const newPath = `${baseUrl}/${finalSegments.join('/')}`.replace(/\/+$/, '') || `${baseUrl}/`;
+
+                        return (
+                            <a 
+                                href={newPath} 
+                                class={twMerge(
+                                    "text-xs font-bold px-2 py-1 rounded hover:bg-white/10 transition-colors lang-switch", 
+                                    lang === l ? "text-lux-gold bg-white/5" : "text-white/50"
+                                )}
+                            >
+                                {l.toUpperCase()}
+                            </a>
+                        );
+                    })}
                 </div>
             </div>
 
@@ -112,10 +140,31 @@ const navItems = [
 
     {/* Mobile Language Switcher */}
     <div class="flex items-center gap-4 mb-10">
-        <a href={`${baseUrl}/`} class={twMerge("text-lg font-bold px-3 py-2 rounded border border-white/10", lang === 'nl' ? "bg-lux-gold text-obsidian border-lux-gold" : "text-white/50")}>NL</a>
-        <a href={`${baseUrl}/en/`} class={twMerge("text-lg font-bold px-3 py-2 rounded border border-white/10", lang === 'en' ? "bg-lux-gold text-obsidian border-lux-gold" : "text-white/50")}>EN</a>
-        <a href={`${baseUrl}/fr/`} class={twMerge("text-lg font-bold px-3 py-2 rounded border border-white/10", lang === 'fr' ? "bg-lux-gold text-obsidian border-lux-gold" : "text-white/50")}>FR</a>
-        <a href={`${baseUrl}/de/`} class={twMerge("text-lg font-bold px-3 py-2 rounded border border-white/10", lang === 'de' ? "bg-lux-gold text-obsidian border-lux-gold" : "text-white/50")}>DE</a>
+        {['nl', 'en', 'fr', 'de'].map((l) => {
+            const languages = ['en', 'fr', 'de'];
+            let pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+            const baseSegments = baseUrl.split('/').filter(Boolean);
+            if (pathSegments.slice(0, baseSegments.length).join('/') === baseSegments.join('/')) {
+                pathSegments = pathSegments.slice(baseSegments.length);
+            }
+            if (languages.includes(pathSegments[0])) {
+                pathSegments.shift();
+            }
+            const finalSegments = l === 'nl' ? pathSegments : [l, ...pathSegments];
+            const newPath = `${baseUrl}/${finalSegments.join('/')}`.replace(/\/+$/, '') || `${baseUrl}/`;
+
+            return (
+                <a 
+                    href={newPath} 
+                    class={twMerge(
+                        "text-lg font-bold px-3 py-2 rounded border border-white/10 transition-all lang-switch", 
+                        lang === l ? "bg-lux-gold text-obsidian border-lux-gold" : "text-white/50 hover:bg-white/5"
+                    )}
+                >
+                    {l.toUpperCase()}
+                </a>
+            );
+        })}
     </div>
 
     <div class="flex flex-col items-center gap-6 mb-10">
@@ -233,19 +282,28 @@ const navItems = [
         }
 
         function handleScrollSpy() {
-            let currentSection = 'home';
+            let currentSection = null;
             const scrollY = isMenuOpen ? scrollPosition : window.scrollY;
             
             if (isMenuOpen) return; 
 
             const sections = ['home', 'projects', 'services', 'about', 'contact'];
-            for (const sectionId of sections) {
-                const element = document.getElementById(sectionId);
-                if (element) {
-                    const rect = element.getBoundingClientRect();
-                    if (rect.top <= window.innerHeight / 3 && rect.bottom >= 100) {
-                        currentSection = sectionId;
-                        break;
+            
+            // Determine if we are on the landing page by checking if sections exist
+            const hasSections = sections.some(id => !!document.getElementById(id));
+            
+            if (hasSections) {
+                // Default to home if on landing page but not scrolled to other sections
+                currentSection = 'home';
+                
+                for (const sectionId of sections) {
+                    const element = document.getElementById(sectionId);
+                    if (element) {
+                        const rect = element.getBoundingClientRect();
+                        if (rect.top <= window.innerHeight / 3 && rect.bottom >= 100) {
+                            currentSection = sectionId;
+                            break;
+                        }
                     }
                 }
             }
@@ -256,7 +314,7 @@ const navItems = [
                 const section = item.getAttribute('data-section');
                 const underline = item.querySelector('.nav-underline');
                 
-                if (section === currentSection) {
+                if (currentSection && section === currentSection) {
                     item.classList.add('text-lux-gold');
                     item.classList.remove('text-white/70');
                     if (underline) underline.classList.remove('scale-x-0');
@@ -300,6 +358,20 @@ const navItems = [
             } else {
                  window.location.href = href;
             }
+        }
+
+        // Language Switch Scroll Persistence
+        const langSwitches = document.querySelectorAll('.lang-switch');
+        langSwitches.forEach(link => {
+            link.addEventListener('click', () => {
+                sessionStorage.setItem('scrollPos', window.scrollY.toString());
+            });
+        });
+
+        const savedScroll = sessionStorage.getItem('scrollPos');
+        if (savedScroll) {
+            window.scrollTo(0, parseInt(savedScroll));
+            sessionStorage.removeItem('scrollPos');
         }
 
         if (!scrollHandlerAttached) {

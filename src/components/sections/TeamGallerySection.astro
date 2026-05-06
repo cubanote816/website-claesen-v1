@@ -13,22 +13,22 @@ const t = ui[lang] || ui[defaultLang];
 const gallery = [
     {
         src: '/assets/team/installation.png',
-        title: 'Installation',
-        desc: 'Precision mast installation with heavy machinery.',
+        title: t['team.gallery.install.title'],
+        desc: t['team.gallery.install.desc'],
         icon: HardHat,
         size: 'md:col-span-2'
     },
     {
         src: '/assets/team/engineering.png',
-        title: 'Engineering',
-        desc: 'Advanced light studies and technical planning.',
+        title: t['team.gallery.eng.title'],
+        desc: t['team.gallery.eng.desc'],
         icon: Microscope,
         size: 'md:col-span-1'
     },
     {
         src: '/assets/team/logistics.png',
-        title: 'Logistics',
-        desc: 'Fully equipped fleet for rapid on-site intervention.',
+        title: t['team.gallery.log.title'],
+        desc: t['team.gallery.log.desc'],
         icon: Drill,
         size: 'md:col-span-3'
     }
@@ -73,7 +73,7 @@ const gallery = [
             <div class="inline-block p-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
                 <div class="px-6 py-2 flex items-center gap-3">
                     <span class="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
-                    <p class="text-xs text-white/50 uppercase tracking-widest font-semibold">100% Eigen Beheer (In-house Execution)</p>
+                    <p class="text-xs text-white/50 uppercase tracking-widest font-semibold">{t['team.inhouse']}</p>
                 </div>
             </div>
         </div>

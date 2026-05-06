@@ -1,12 +1,21 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Footer from '../components/Footer.astro';
-import PageHeader from '../components/PageHeader';
-import { legalContent } from '../i18n/legal';
-import { ui } from '../i18n/ui';
+import Layout from '../../layouts/Layout.astro';
+import Footer from '../../components/Footer.astro';
+import PageHeader from '../../components/PageHeader';
+import { legalContent } from '../../i18n/legal';
+import { ui } from '../../i18n/ui';
 
-const lang = 'nl';
-const content = legalContent[lang].cookies;
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'nl' } },
+  ];
+}
+
+const { lang } = Astro.params;
+const content = legalContent[lang as keyof typeof legalContent].privacy;
 ---
 
 <Layout title={`${content.title} - Claesen Verlichting`} lang={lang}>
@@ -28,21 +37,29 @@ const content = legalContent[lang].cookies;
     <section class="py-20 px-6 relative z-10">
         <div class="max-w-4xl mx-auto glass-panel rounded-3xl p-8 md:p-12">
             <div class="prose prose-invert prose-lg max-w-none prose-headings:font-display prose-headings:text-white prose-p:text-cool-slate prose-a:text-lux-gold hover:prose-a:text-white transition-colors">
-                <p class="text-sm text-cool-slate/60 mb-8 border-b border-white/10 pb-4">Last updated: {new Date().toLocaleDateString()}</p>
+                <p class="text-sm text-cool-slate/60 mb-8 border-b border-white/10 pb-4">{content.lastUpdated}: {new Date().toLocaleDateString()}</p>
 
-                <p>{content.content}</p>
+                <h3>{content.intro.title}</h3>
+                <p>{content.intro.content}</p>
 
-                <h3>{content.types.title}</h3>
+                <h3>{content.collection.title}</h3>
+                <p>{content.collection.content}</p>
                 <ul>
-                    {content.types.items.map(item => (
+                    {content.collection.items.map(item => (
                         <li><strong>{item.label}:</strong> {item.text}</li>
                     ))}
                 </ul>
 
-                <h3>Contact Us</h3>
-                <p>
-                    If you have questions about this policy, please contact us at info@claesen-verlichting.be.
-                </p>
+                <h3>{content.usage.title}</h3>
+                <p>{content.usage.content}</p>
+                <ul>
+                    {content.usage.items.map(item => (
+                        <li>{item}</li>
+                    ))}
+                </ul>
+
+                <h3>{content.contact.title}</h3>
+                <p>{content.contact.content}</p>
                 <p>
                     <strong>Claesen Verlichting</strong><br/>
                     Benoit Jansenstraat 4<br/>

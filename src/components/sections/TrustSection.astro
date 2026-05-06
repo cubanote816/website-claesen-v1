@@ -1,7 +1,10 @@
 ---
-import PageHeader from '../PageHeader';
-import { ui, defaultLang } from '../../i18n/ui';
-import { Trophy, CheckCircle2, ShieldCheck, Award } from 'lucide-react';
+import PageHeader from "../PageHeader";
+import { ui, defaultLang } from "../../i18n/ui";
+import { Trophy, CheckCircle2, ShieldCheck, Award } from "lucide-react";
+
+import fs from "node:fs";
+import path from "node:path";
 
 export interface Props {
     lang?: keyof typeof ui;
@@ -10,86 +13,179 @@ export interface Props {
 const { lang = defaultLang } = Astro.props;
 const t = ui[lang] || ui[defaultLang];
 
-// Placeholder for client logos - in a real scenario, these would be SVG/PNG files in public/assets/logos/
-const clients = [
-    { name: 'Infrabel', logo: '/assets/logos/logo2.png' },
-    { name: 'KRC Genk', logo: '/assets/logos/logo1.png' },
-    { name: 'STVV', logo: '/assets/logos/logo1.png' },
-    { name: 'KAA Gent', logo: '/assets/logos/logo1.png' },
-    { name: 'Sport Vlaanderen', logo: '/assets/logos/logo2.png' },
-    { name: 'Limburg.be', logo: '/assets/logos/logo2.png' },
-    { name: 'Standard Liège', logo: '/assets/logos/logo1.png' },
-    { name: 'Club Brugge', logo: '/assets/logos/logo1.png' },
-];
+// Dynamic logo detection
+const logosDir = path.join(process.cwd(), "public/assets/logo_partner");
+let files: string[] = [];
+try {
+    if (fs.existsSync(logosDir)) {
+        files = fs
+            .readdirSync(logosDir)
+            .filter((f) => /\.(png|jpg|jpeg|webp|svg)$/i.test(f));
+    }
+} catch (e) {
+    console.warn("TrustSection: Could not read logos directory", e);
+}
+
+// Known mappings for legacy generic names
+const nameMapping: Record<string, string> = {
+    "Picture02.png": "Brussels Airport",
+    "Picture12.png": "Zulte Waregem",
+    "Picture03.png": "KRC Genk",
+    "Picture04.png": "STVV",
+    "Picture05.png": "KAA Gent",
+    "Picture06.png": "Infrabel",
+    "Picture07.png": "Sport Vlaanderen",
+    "Picture08.jpg": "Limburg.be",
+    "Picture09.jpg": "Standard Liège",
+    "Picture10.jpg": "Club Brugge",
+    "Picture11.png": "KV Mechelen",
+    "Picture13.png": "RSC Anderlecht",
+    "Picture14.png": "Royal Antwerp FC",
+    "Picture15.png": "Cercle Brugge",
+    "Picture16.png": "KAS Eupen",
+    "Picture17.png": "KV Kortrijk",
+};
+
+const clients = files.map((file) => {
+    // 1. Check explicit mapping
+    if (nameMapping[file])
+        return {
+            name: nameMapping[file],
+            logo: `/assets/logo_partner/${file}`,
+        };
+
+    // 2. Format filename (e.g., anderlecht.png -> Anderlecht)
+    let name = file
+        .replace(/\.[^/.]+$/, "") // remove extension
+        .replace(/[-_]/g, " ") // replace dashes/underscores with space
+        .replace(/\b\w/g, (l) => l.toUpperCase()); // capitalize
+
+    // 3. Fallback for "PictureXX" names
+    if (name.startsWith("Picture")) {
+        name = name.replace("Picture", "Partner ");
+    }
+
+    return { name, logo: `/assets/logo_partner/${file}` };
+});
 
 const certifications = [
-    { name: 'ISO 9001', icon: ShieldCheck, desc: 'Quality Management' },
-    { name: 'VCA**', icon: CheckCircle2, desc: 'Safety Certified' },
-    { name: 'CE Certified', icon: Award, desc: 'EU Standards' },
+    { name: "ISO 9001", icon: ShieldCheck, desc: "Quality Management" },
+    { name: "VCA**", icon: CheckCircle2, desc: "Safety Certified" },
+    { name: "CE Certified", icon: Award, desc: "EU Standards" },
 ];
 ---
 
-<section id="trust" class="py-24 bg-gunmetal/30 relative overflow-hidden border-y border-white/5">
+<section id="trust" class="py-24 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 relative z-10">
-        <PageHeader 
-            client:visible 
-            title={t['trust.title']} 
-            subtitle={t['trust.subtitle']}
+        <PageHeader
+            client:visible
+            title={t["trust.title"]}
+            subtitle={t["trust.subtitle"]}
         />
 
         {/* Authority Highlights Row */}
         <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-            <div class="p-6 rounded-2xl bg-white/5 border border-white/5 flex flex-col items-center text-center group hover:bg-lux-gold/10 hover:border-lux-gold/30 transition-all duration-500">
-                <div class="text-lux-gold mb-4 group-hover:scale-110 transition-transform">
+            <div
+                class="p-6 rounded-2xl bg-white/5 border border-white/5 flex flex-col items-center text-center group hover:bg-lux-gold/10 hover:border-lux-gold/30 transition-all duration-500"
+            >
+                <div
+                    class="text-lux-gold mb-4 group-hover:scale-110 transition-transform"
+                >
                     <Trophy className="w-8 h-8" />
                 </div>
-                <h3 class="font-bold text-3xl mb-1 text-white">50+</h3>
-                <p class="text-[10px] uppercase tracking-widest text-lux-gold/70 font-bold">{t['about.stats.years']}</p>
+                <h3 class="font-bold text-3xl mb-1 text-white">85+</h3>
+                <p
+                    class="text-[10px] uppercase tracking-widest text-lux-gold/70 font-bold"
+                >
+                    {t["about.stats.years"]}
+                </p>
             </div>
 
-            <div class="p-6 rounded-2xl bg-white/5 border border-white/5 flex flex-col items-center text-center group hover:bg-lux-gold/10 hover:border-lux-gold/30 transition-all duration-500">
-                <div class="text-blue-400 mb-4 group-hover:scale-110 transition-transform">
+            <div
+                class="p-6 rounded-2xl bg-white/5 border border-white/5 flex flex-col items-center text-center group hover:bg-lux-gold/10 hover:border-lux-gold/30 transition-all duration-500"
+            >
+                <div
+                    class="text-blue-400 mb-4 group-hover:scale-110 transition-transform"
+                >
                     <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 class="font-bold text-3xl mb-1 text-white">1000+</h3>
-                <p class="text-[10px] uppercase tracking-widest text-blue-400/70 font-bold">{t['about.stats.projects']}</p>
+                <h3 class="font-bold text-3xl mb-1 text-white">500+</h3>
+                <p
+                    class="text-[10px] uppercase tracking-widest text-blue-400/70 font-bold"
+                >
+                    {t["about.stats.projects"]}
+                </p>
             </div>
 
-            <div class="p-6 rounded-2xl bg-white/5 border border-white/5 flex flex-col items-center text-center group hover:bg-lux-gold/10 hover:border-lux-gold/30 transition-all duration-500">
-                <div class="text-green-400 mb-4 group-hover:scale-110 transition-transform">
+            <div
+                class="p-6 rounded-2xl bg-white/5 border border-white/5 flex flex-col items-center text-center group hover:bg-lux-gold/10 hover:border-lux-gold/30 transition-all duration-500"
+            >
+                <div
+                    class="text-green-400 mb-4 group-hover:scale-110 transition-transform"
+                >
                     <ShieldCheck className="w-8 h-8" />
                 </div>
-                <h3 class="font-bold text-3xl mb-1 text-white">EU</h3>
-                <p class="text-[10px] uppercase tracking-widest text-green-400/70 font-bold">{t['about.stats.cert']}</p>
+                <h3 class="font-bold text-3xl mb-1 text-white">VCA*</h3>
+                <p
+                    class="text-[10px] uppercase tracking-widest text-green-400/70 font-bold"
+                >
+                    {t["about.stats.cert"]}
+                </p>
             </div>
 
-            <div class="p-6 rounded-2xl bg-white/5 border border-white/5 flex flex-col items-center text-center group hover:bg-lux-gold/10 hover:border-lux-gold/30 transition-all duration-500">
-                <div class="text-purple-400 mb-4 group-hover:scale-110 transition-transform">
+            <div
+                class="p-6 rounded-2xl bg-white/5 border border-white/5 flex flex-col items-center text-center group hover:bg-lux-gold/10 hover:border-lux-gold/30 transition-all duration-500"
+            >
+                <div
+                    class="text-purple-400 mb-4 group-hover:scale-110 transition-transform"
+                >
                     <Award className="w-8 h-8" />
                 </div>
                 <h3 class="font-bold text-3xl mb-1 text-white">10Yr</h3>
-                <p class="text-[10px] uppercase tracking-widest text-purple-400/70 font-bold">{t['about.stats.warranty']}</p>
+                <p
+                    class="text-[10px] uppercase tracking-widest text-purple-400/70 font-bold"
+                >
+                    {t["about.stats.warranty"]}
+                </p>
             </div>
         </div>
 
-        {/* Logo Marquee */}
-        <div class="mt-20 relative">
-            <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-obsidian to-transparent z-10"></div>
-            <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-obsidian to-transparent z-10"></div>
-            
-            <div class="flex overflow-hidden group">
-                <div class="flex animate-marquee whitespace-nowrap py-12 items-center">
-                    {[...clients, ...clients].map((client) => (
-                        <div class="mx-16 flex flex-col items-center justify-center grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-default">
-                            <img 
-                                src={`${import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL}${client.logo}`} 
-                                alt={client.name} 
-                                class="h-12 md:h-16 w-auto object-contain"
+        {/* Logo Marquee with Center Focus Effect */}
+        <div
+            class="relative py-12 marquee-container overflow-hidden bg-transparent"
+        >
+            {/* The single source of truth - One marquee, perfect sharpness */}
+            <div
+                class="animate-marquee flex whitespace-nowrap items-center bg-transparent"
+            >
+                {
+                    [...clients, ...clients, ...clients].map((client) => (
+                        <div class="mx-12 md:mx-16 flex flex-col items-center justify-center cursor-default shrink-0">
+                            <img
+                                src={`${
+                                    import.meta.env.BASE_URL === "/"
+                                        ? ""
+                                        : import.meta.env.BASE_URL
+                                }${client.logo}`}
+                                alt={client.name}
+                                class="h-10 md:h-14 w-auto object-contain logo-img"
                             />
-                            <span class="text-[10px] uppercase tracking-[0.3em] text-white/30 mt-4 font-bold">{client.name}</span>
+                            <span class="text-[10px] uppercase tracking-[0.3em] text-white/50 mt-4 font-bold">
+                                {client.name}
+                            </span>
                         </div>
-                    ))}
-                </div>
+                    ))
+                }
+            </div>
+
+            {/* Fixed Grayscale Overlays using backdrop-filter */}
+            <div
+                class="absolute inset-y-0 left-0 w-[42%] z-20 pointer-events-none backdrop-gray-left bg-transparent"
+            >
+            </div>
+            <div
+                class="absolute inset-y-0 right-0 w-[42%] z-20 pointer-events-none backdrop-gray-right bg-transparent"
+            >
             </div>
         </div>
     </div>
@@ -97,15 +193,52 @@ const certifications = [
 
 <style>
     @keyframes marquee {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-50%);
+        }
     }
 
     .animate-marquee {
-        animation: marquee 30s linear infinite;
+        animation: marquee 10s linear infinite;
+        will-change: transform;
     }
 
-    .animate-marquee:hover {
+    .marquee-container:hover .animate-marquee {
         animation-play-state: paused;
+    }
+
+    /* Backdrop Filter Overlays for perfect sync grayscale */
+    .backdrop-gray-left {
+        backdrop-filter: grayscale(100%);
+        -webkit-backdrop-filter: grayscale(100%);
+        -webkit-mask-image: linear-gradient(
+            to right,
+            black 60%,
+            transparent 100%
+        );
+        mask-image: linear-gradient(to right, black 60%, transparent 100%);
+    }
+
+    .backdrop-gray-right {
+        backdrop-filter: grayscale(100%);
+        -webkit-backdrop-filter: grayscale(100%);
+        -webkit-mask-image: linear-gradient(
+            to left,
+            black 60%,
+            transparent 100%
+        );
+        mask-image: linear-gradient(to left, black 60%, transparent 100%);
+    }
+
+    /* Sharpness and Rendering Optimization */
+    .logo-img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.05));
     }
 </style>
