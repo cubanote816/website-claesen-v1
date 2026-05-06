@@ -51,6 +51,13 @@ const downloadImage = (url, localPath) => {
             return;
         }
 
+        // Check if file already exists
+        if (fs.existsSync(localPath)) {
+            // console.log(`   ⏩ Skipping download (already exists): ${path.basename(localPath)}`);
+            resolve(true);
+            return;
+        }
+
         const file = fs.createWriteStream(localPath);
         https.get(url, (response) => {
             if (response.statusCode !== 200) {

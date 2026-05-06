@@ -9,6 +9,7 @@ on:
       - main
   repository_dispatch:
     types: [backend_update]
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -65,11 +66,12 @@ jobs:
           
           # NO --delete flag here to avoid permission errors on removals.
           # We simply overwrite and add new files.
-          # First, ensure the critical JSON is prioritize-uploaded.
-          put -O /v1/v1-media/ ./dist/v1-media/projects-static.json || echo 'Individual JSON upload failed, proceeding to mirror';
+          # Ensure directory exists and upload critical JSON
+          mkdir -p /v1/v1-media/ || true;
+          put -O /v1/v1-media/ ./dist/v1-media/projects-static.json || echo 'Individual JSON upload failed';
           
-          # Then, mirror everything else.
-          mirror -R --verbose --no-perms ./dist /v1;
+          # Mirror everything else, only newer files, in parallel
+          mirror -R --only-newer --parallel=10 --verbose --no-perms ./dist /v1;
           
           quit;
           "
