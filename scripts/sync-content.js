@@ -132,10 +132,16 @@ async function syncContent() {
 
             // Process Featured Image
             let featuredLocalPath = null;
-            const optimizedUrl = (project.featured_image && typeof project.featured_image === 'object' ? project.featured_image.optimized : null);
-            const originalUrl = project.featured_image_url || project.api_featured_image_url || project.featured_image;
+            const featuredImageObj = (project.featured_image && typeof project.featured_image === 'object') ? project.featured_image : null;
             
-            let featuredSourceUrl = optimizedUrl || originalUrl;
+            const optimizedUrl = featuredImageObj?.optimized || null;
+            const originalUrl = 
+                project.featured_image_url || 
+                project.api_featured_image_url || 
+                (typeof project.featured_image === 'string' ? project.featured_image : featuredImageObj?.original) ||
+                null;
+            
+            let featuredSourceUrl = (typeof optimizedUrl === 'string' ? optimizedUrl : null) || (typeof originalUrl === 'string' ? originalUrl : null);
 
             if (featuredSourceUrl) {
                 const ext = getExtension(featuredSourceUrl);
