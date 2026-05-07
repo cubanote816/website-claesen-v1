@@ -46,7 +46,7 @@ if (!fs.existsSync(path.dirname(DATA_FILE))) {
 // Helper to download image
 const downloadImage = (url, localPath) => {
     return new Promise((resolve, reject) => {
-        if (!url || !url.startsWith('http')) {
+        if (!url || typeof url !== 'string' || !url.startsWith('http')) {
             resolve(null);
             return;
         }
@@ -84,6 +84,10 @@ const downloadImage = (url, localPath) => {
 
 // Helper to get extension from URL (normalized to lowercase)
 const getExtension = (url) => {
+    if (typeof url !== 'string') {
+        // console.warn('⚠️ getExtension received non-string URL:', url);
+        return '.jpg';
+    }
     try {
         const ext = path.extname(new URL(url).pathname).toLowerCase();
         return ext || '.jpg';
