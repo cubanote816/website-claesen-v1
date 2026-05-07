@@ -54,8 +54,8 @@ const downloadImage = (url, localPath) => {
             return;
         }
 
-        // Check if file already exists
-        if (fs.existsSync(localPath)) {
+        // Check if file already exists and is not empty
+        if (fs.existsSync(localPath) && fs.statSync(localPath).size > 0) {
             // console.log(`   ⏩ Skipping download (already exists): ${path.basename(localPath)}`);
             resolve(true);
             return;
@@ -70,6 +70,8 @@ const downloadImage = (url, localPath) => {
         const file = fs.createWriteStream(localPath);
         https.get(url, options, (response) => {
             if (response.statusCode !== 200) {
+                file.close();
+                fs.unlink(localPath, () => { });
                 reject(new Error(`Failed to download ${url}: ${response.statusCode}`));
                 return;
             }

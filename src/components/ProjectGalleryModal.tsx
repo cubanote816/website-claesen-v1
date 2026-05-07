@@ -201,12 +201,6 @@ export default function ProjectGalleryModal({ isOpen, onClose, project, lang = d
                                             >
                                                 <img
                                                     src={img.thumb}
-                                                    onError={(e) => {
-                                                        const target = e.currentTarget as HTMLImageElement;
-                                                        if (target.src !== img.url) {
-                                                            target.src = img.url;
-                                                        }
-                                                    }}
                                                     alt={img.alt || ''}
                                                     className="w-full h-full object-cover"
                                                 />
