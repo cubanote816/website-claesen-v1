@@ -76,9 +76,14 @@ const downloadImage = (url, localPath) => {
     });
 };
 
-// Helper to get extension from URL
+// Helper to get extension from URL (normalized to lowercase)
 const getExtension = (url) => {
-    return path.extname(new URL(url).pathname) || '.jpg';
+    try {
+        const ext = path.extname(new URL(url).pathname).toLowerCase();
+        return ext || '.jpg';
+    } catch (e) {
+        return '.jpg';
+    }
 };
 
 async function syncContent() {
