@@ -183,7 +183,7 @@ async function syncContent() {
 
             if (gallerySource.length > 0) {
                 for (const img of gallerySource) {
-                    const optUrlCandidate = img.optimized || img.url || img.original_url || '';
+                    const optUrlCandidate = img.optimized || img.url || img.original_url || img.original || '';
                     const optUrl = (typeof optUrlCandidate === 'string') ? optUrlCandidate : (optUrlCandidate?.optimized || optUrlCandidate?.url || '');
                     
                     if (!optUrl || typeof optUrl !== 'string') continue;
@@ -202,7 +202,7 @@ async function syncContent() {
                     } catch (e) {
                         console.warn(`   ⚠️ Gallery img ${img.id} failed: ${e.message}. Skipping...`);
                         
-                        const fallbackCandidate = img.url || img.original_url;
+                        const fallbackCandidate = img.original || img.url || img.original_url;
                         const fallbackUrl = (typeof fallbackCandidate === 'string') ? fallbackCandidate : (fallbackCandidate?.original || fallbackCandidate?.url);
                         
                         if (fallbackUrl && typeof fallbackUrl === 'string' && fallbackUrl !== optUrl) {
