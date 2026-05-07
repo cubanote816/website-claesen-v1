@@ -3,6 +3,9 @@ import path from 'path';
 import https from 'https';
 import { fileURLToPath } from 'url';
 
+console.log('🚀 --- SYNC CONTENT SCRIPT VERSION: 2.1 (Hardened) ---');
+console.log('📅 Timestamp:', new Date().toISOString());
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
