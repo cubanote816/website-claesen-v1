@@ -70,8 +70,8 @@ jobs:
           mkdir -p /v1/v1-media/ || true;
           put -O /v1/v1-media/ ./dist/v1-media/projects-static.json || echo 'Individual JSON upload failed';
           
-          # Mirror everything else, only newer files, in parallel
-          mirror -R --only-newer --parallel=10 --verbose --no-perms ./dist /v1;
+          # Mirror everything else, only newer files, in parallel (safer count)
+          mirror -R --only-newer --parallel=2 --verbose --no-perms ./dist /v1;
           
           quit;
           "

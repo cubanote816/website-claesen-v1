@@ -58,8 +58,14 @@ const downloadImage = (url, localPath) => {
             return;
         }
 
+        const options = {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+            }
+        };
+
         const file = fs.createWriteStream(localPath);
-        https.get(url, (response) => {
+        https.get(url, options, (response) => {
             if (response.statusCode !== 200) {
                 reject(new Error(`Failed to download ${url}: ${response.statusCode}`));
                 return;
@@ -93,7 +99,12 @@ async function syncContent() {
     try {
         // Fetch Projects
         const projectsResponse = await new Promise((resolve, reject) => {
-            https.get(`${API_URL}/projects?per_page=100`, (res) => {
+            const options = {
+                headers: {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+                }
+            };
+            https.get(`${API_URL}/projects?per_page=100`, options, (res) => {
                 let data = '';
                 res.on('data', chunk => data += chunk);
                 res.on('end', () => resolve(JSON.parse(data)));
@@ -121,13 +132,34 @@ async function syncContent() {
 
             // Process Featured Image
             let featuredLocalPath = null;
-            const featuredSourceUrl = project.featured_image_url || project.api_featured_image_url || project.featured_image;
+            const optimizedUrl = (project.featured_image && typeof project.featured_image === 'object' ? project.featured_image.optimized : null);
+            const originalUrl = project.featured_image_url || project.api_featured_image_url || project.featured_image;
+            
+            let featuredSourceUrl = optimizedUrl || originalUrl;
+
             if (featuredSourceUrl) {
                 const ext = getExtension(featuredSourceUrl);
                 const filename = `${filenamePrefix}featured${ext}`;
                 const localFilePath = path.join(CACHE_DIR, filename);
-                await downloadImage(featuredSourceUrl, localFilePath);
-                featuredLocalPath = `/v1-media/${filename}`;
+                
+                try {
+                    await downloadImage(featuredSourceUrl, localFilePath);
+                } catch (e) {
+                    console.warn(`   ⚠️ Failed to download optimized: ${e.message}. Falling back to original...`);
+                    if (optimizedUrl && originalUrl && optimizedUrl !== originalUrl) {
+                        try {
+                            const origExt = getExtension(originalUrl);
+                            const origFilename = `${filenamePrefix}featured${origExt}`;
+                            const origLocalPath = path.join(CACHE_DIR, origFilename);
+                            await downloadImage(originalUrl, origLocalPath);
+                            featuredSourceUrl = originalUrl;
+                            featuredLocalPath = `/v1-media/${origFilename}`;
+                        } catch (e2) {
+                            console.error(`   ❌ Failed to download original too: ${e2.message}`);
+                        }
+                    }
+                }
+                if (!featuredLocalPath) featuredLocalPath = `/v1-media/${filename}`;
             }
 
             // Process Gallery Images
@@ -136,22 +168,46 @@ async function syncContent() {
 
             if (gallerySource.length > 0) {
                 for (const img of gallerySource) {
-                    const ext = getExtension(img.url || img.original_url || '');
+                    const optUrl = img.optimized || img.url || img.original_url || '';
+                    if (!optUrl) continue;
+
+                    const ext = getExtension(optUrl);
                     const filename = `${filenamePrefix}g_${img.id}${ext}`;
                     const localFilePath = path.join(CACHE_DIR, filename);
-                    await downloadImage(img.url || img.original_url, localFilePath);
-
-                    processedGallery.push({
-                        ...img,
-                        url: `/v1-media/${filename}`,
-                        thumb: `/v1-media/${filename}` // Use same for thumb in static mode
-                    });
+                    
+                    try {
+                        await downloadImage(optUrl, localFilePath);
+                        processedGallery.push({
+                            ...img,
+                            url: `/v1-media/${filename}`,
+                            thumb: `/v1-media/${filename}`
+                        });
+                    } catch (e) {
+                        console.warn(`   ⚠️ Gallery img ${img.id} failed: ${e.message}. Skipping...`);
+                        // Try fallback to original for gallery too?
+                        const fallbackUrl = img.url || img.original_url;
+                        if (fallbackUrl && fallbackUrl !== optUrl) {
+                             try {
+                                const fExt = getExtension(fallbackUrl);
+                                const fFilename = `${filenamePrefix}g_${img.id}${fExt}`;
+                                const fLocalPath = path.join(CACHE_DIR, fFilename);
+                                await downloadImage(fallbackUrl, fLocalPath);
+                                processedGallery.push({
+                                    ...img,
+                                    url: `/v1-media/${fFilename}`,
+                                    thumb: `/v1-media/${fFilename}`
+                                });
+                             } catch (e3) {
+                                console.error(`   ❌ Gallery fallback failed: ${e3.message}`);
+                             }
+                        }
+                    }
                 }
             }
 
             processedProjects.push({
                 ...project,
-                featured_image_url: featuredLocalPath || project.featured_image_url || project.api_featured_image_url,
+                featured_image_url: featuredLocalPath || project.featured_image_url,
                 gallery: processedGallery,
                 gallery_images: processedGallery // Keep compatibility
             });
