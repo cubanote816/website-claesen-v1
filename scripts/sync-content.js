@@ -174,8 +174,10 @@ async function syncContent() {
 
             if (gallerySource.length > 0) {
                 for (const img of gallerySource) {
-                    const optUrl = img.optimized || img.url || img.original_url || '';
-                    if (!optUrl) continue;
+                    const optUrlCandidate = img.optimized || img.url || img.original_url || '';
+                    const optUrl = (typeof optUrlCandidate === 'string') ? optUrlCandidate : (optUrlCandidate?.optimized || optUrlCandidate?.url || '');
+                    
+                    if (!optUrl || typeof optUrl !== 'string') continue;
 
                     const ext = getExtension(optUrl);
                     const filename = `${filenamePrefix}g_${img.id}${ext}`;
@@ -190,9 +192,11 @@ async function syncContent() {
                         });
                     } catch (e) {
                         console.warn(`   ⚠️ Gallery img ${img.id} failed: ${e.message}. Skipping...`);
-                        // Try fallback to original for gallery too?
-                        const fallbackUrl = img.url || img.original_url;
-                        if (fallbackUrl && fallbackUrl !== optUrl) {
+                        
+                        const fallbackCandidate = img.url || img.original_url;
+                        const fallbackUrl = (typeof fallbackCandidate === 'string') ? fallbackCandidate : (fallbackCandidate?.original || fallbackCandidate?.url);
+                        
+                        if (fallbackUrl && typeof fallbackUrl === 'string' && fallbackUrl !== optUrl) {
                              try {
                                 const fExt = getExtension(fallbackUrl);
                                 const fFilename = `${filenamePrefix}g_${img.id}${fExt}`;
