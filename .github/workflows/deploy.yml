@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: 20
           
-      - name: Install Dependencies
+      - name: Cache npm dependencies
         uses: actions/cache@v4
         with:
           path: ~/.npm
@@ -42,7 +42,8 @@ jobs:
       - name: Build Project
         run: |
           npm run build:prod
-          cp -r public/v1-media dist/v1-media || true
+          mkdir -p dist/v1-media
+          cp -r public/v1-media/. dist/v1-media/ || true
         env:
           PUBLIC_API_URL: ${{ secrets.PUBLIC_API_URL || 'https://backend.claesen-verlichting.be/v1/website' }}
           PUBLIC_USE_STATIC_CACHE: 'true'
@@ -55,23 +56,16 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -yqq lftp
-          lftp -c "
-          set sftp:auto-confirm yes;
-          set sftp:chmod-ignore yes;
-          set sftp:connect-program 'ssh -o StrictHostKeyChecking=no';
-          set net:timeout 60;
-          set net:max-retries 10;
-          set net:reconnect-interval-base 5;
-          open -u $FTP_USER,'$FTP_PASS' sftp://$FTP_HOST:2222;
-          
-          # NO --delete flag here to avoid permission errors on removals.
-          # We simply overwrite and add new files.
-          # Ensure directory exists and upload critical JSON
-          mkdir -p /v1/v1-media/ || true;
-          put -O /v1/v1-media/ ./dist/v1-media/projects-static.json || echo 'Individual JSON upload failed';
-          
-          # Mirror everything else, only newer files, in parallel (safer count)
-          mirror -R --only-newer --parallel=2 --verbose --no-perms ./dist /v1;
-          
-          quit;
-          "
+
+          LFTP_OPTS="set sftp:auto-confirm yes; set sftp:connect-program 'ssh -o StrictHostKeyChecking=no'; set net:timeout 60; set net:max-retries 10; set net:reconnect-interval-base 5;"
+          LFTP_OPEN="open -u $FTP_USER,'$FTP_PASS' sftp://$FTP_HOST:2222"
+
+          # Ensure target directory exists (non-fatal if already exists)
+          lftp -c "$LFTP_OPTS $LFTP_OPEN; mkdir -p /v1/v1-media/; quit;" || true
+
+          # Upload projects-static.json (non-fatal — mirror covers it if this fails)
+          lftp -c "$LFTP_OPTS $LFTP_OPEN; put -O /v1/v1-media/ ./dist/v1-media/projects-static.json; quit;" \
+            || echo 'Individual JSON upload failed, will be covered by mirror'
+
+          # Mirror everything: only newer files, parallel transfers, no chmod
+          lftp -c "$LFTP_OPTS $LFTP_OPEN; mirror -R --only-newer --parallel=2 --verbose --no-perms ./dist /v1; quit;"
