@@ -17,12 +17,12 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          
+
       - name: Cache npm dependencies
         uses: actions/cache@v4
         with:
@@ -30,7 +30,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      
+
       - name: Install dependencies
         run: npm ci
 
@@ -47,7 +47,7 @@ jobs:
         env:
           PUBLIC_API_URL: ${{ secrets.PUBLIC_API_URL || 'https://backend.claesen-verlichting.be/v1/website' }}
           PUBLIC_USE_STATIC_CACHE: 'true'
-        
+
       - name: Deploy via LFTP (Non-Destructive Sync)
         env:
           FTP_USER: ${{ secrets.FTP_USERNAME }}
@@ -67,5 +67,18 @@ jobs:
           lftp -c "$LFTP_OPTS $LFTP_OPEN; put -O /v1/v1-media/ ./dist/v1-media/projects-static.json; quit;" \
             || echo 'Individual JSON upload failed, will be covered by mirror'
 
-          # Mirror everything: only newer files, parallel transfers, no chmod
+          # CLA-113: chmod 755 on all route directories to prevent 403 Forbidden.
+          # sftp:chmod-ignore is not set, so these commands are effective.
+          # /v1/fr/ was returning 403 due to restrictive directory permissions from a prior deploy.
+          lftp -c "$LFTP_OPTS $LFTP_OPEN; \
+            chmod 755 /v1 || true; \
+            chmod 755 /v1/en || true; \
+            chmod 755 /v1/fr || true; \
+            chmod 755 /v1/de || true; \
+            chmod 755 /v1/privacy || true; \
+            chmod 755 /v1/terms || true; \
+            chmod 755 /v1/cookies || true; \
+            quit;" || true
+
+          # Mirror everything: only newer files, parallel transfers, no chmod on individual files
           lftp -c "$LFTP_OPTS $LFTP_OPEN; mirror -R --only-newer --parallel=2 --verbose --no-perms ./dist /v1; quit;"
