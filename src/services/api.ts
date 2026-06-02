@@ -5,9 +5,6 @@ const API_BASE_URL = import.meta.env.PUBLIC_API_URL || import.meta.env.PUBLIC_AP
 const baseUrl = import.meta.env.BASE_URL || '/'
 export const ASSET_URL = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`
 
-console.log('API_BASE_URL:', API_BASE_URL)
-console.log('Environment variables:', import.meta.env)
-
 export const apiClient = axios.create({
     baseURL: API_BASE_URL,
     headers: {
@@ -22,14 +19,6 @@ export const apiClient = axios.create({
 // Request interceptor
 apiClient.interceptors.request.use(
     (config) => {
-        console.log('API Request:', {
-            method: config.method?.toUpperCase(),
-            url: config.url,
-            baseURL: config.baseURL,
-            fullURL: `${config.baseURL}${config.url}`,
-            headers: config.headers
-        })
-
         const token = getToken()
         if (token) {
             config.headers.Authorization = `Bearer ${token}`

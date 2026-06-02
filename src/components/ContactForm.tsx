@@ -43,7 +43,6 @@ export default function ContactForm({ lang = defaultLang }: Props) {
                 preferredContact: 'email'
             });
         } catch (error: any) {
-            console.error('Submission error:', error);
             setStatus('error');
             setErrorMessage(error.message || t['form.error']);
         }

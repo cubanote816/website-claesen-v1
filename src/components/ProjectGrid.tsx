@@ -28,8 +28,7 @@ export default function ProjectGrid() {
                 const response = await portfolioService.getProjects({ published: true });
                 setProjects(response.projects);
                 setFilteredProjects(response.projects);
-            } catch (error) {
-                console.error('Failed to fetch projects:', error);
+            } catch {
             } finally {
                 setLoading(false);
             }

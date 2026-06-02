@@ -131,8 +131,7 @@ const t = ui[lang] || ui[defaultLang];
                     button.classList.replace('bg-green-500', 'bg-lux-gold');
                     button.classList.remove('text-white');
                 }, 5000);
-            } catch (error) {
-                console.error(error);
+            } catch {
                 button.innerHTML = 'Error! Probeer opnieuw';
                 button.classList.replace('bg-lux-gold', 'bg-red-500');
                 button.classList.add('text-white');

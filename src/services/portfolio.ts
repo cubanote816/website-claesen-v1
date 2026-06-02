@@ -98,7 +98,7 @@ export class PortfolioService {
                         }
                     }
                 } catch (e) {
-                    console.warn('⚠️ Static cache fetch failed, falling back to API:', e);
+                    console.warn('⚠️ Static cache fetch failed, falling back to API');
                 }
             }
 
@@ -109,7 +109,6 @@ export class PortfolioService {
 
             params.append('per_page', '12')
 
-            console.log('portfolioService.getProjects: Making request to', `/projects?${params}`)
             const response = await apiClient.get(`/projects?${params}`)
 
             const data = response.data.data || response.data
@@ -134,8 +133,7 @@ export class PortfolioService {
                     years: Array.isArray(data?.filters?.years) ? data.filters.years : []
                 }
             }
-        } catch (error) {
-            console.error('Portfolio endpoint failed:', error)
+        } catch {
             return {
                 projects: [],
                 filters: { categories: {}, years: [] }
@@ -160,8 +158,7 @@ export class PortfolioService {
                     caption: img.caption || ''
                 })),
             }))
-        } catch (error) {
-            console.error('Featured projects endpoint failed:', error)
+        } catch {
             return []
         }
     }
@@ -170,8 +167,7 @@ export class PortfolioService {
         try {
             const response = await apiClient.get('/projects/categories')
             return response.data.data || response.data || {}
-        } catch (error) {
-            console.error('Categories endpoint failed:', error)
+        } catch {
             return {}
         }
     }
@@ -180,8 +176,7 @@ export class PortfolioService {
         try {
             const response = await apiClient.get('/projects/years')
             return response.data.data || response.data || []
-        } catch (error) {
-            console.error('Years endpoint failed:', error)
+        } catch {
             return []
         }
     }

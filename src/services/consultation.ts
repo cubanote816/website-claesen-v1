@@ -22,19 +22,10 @@ export class ConsultationService {
             source: window.location.pathname
         }
 
-        console.log('ConsultationService: Sending payload:', payload)
-
         try {
             const response = await apiClient.post('/consultations', payload)
-            console.log('ConsultationService: Success response:', response.data)
             return response.data.data || response.data
         } catch (error: any) {
-            console.error('Consultation submission failed:', {
-                status: error.response?.status,
-                data: error.response?.data,
-                message: error.message
-            })
-
             // If validation error, throw the errors object
             if (error.response?.status === 422 && error.response.data?.errors) {
                 const validationError = new Error('Validation failed') as any
