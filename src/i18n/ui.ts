@@ -33,6 +33,7 @@ export const ui = {
         'offerte.name': 'Naam',
         'offerte.company': 'Bedrijf',
         'offerte.projectType': 'Project Type',
+        'offerte.disclaimer': '* Wij nemen binnen 24 uur contact met u op om uw wensen te bespreken.',
 
         // Why Us
         'why.title': 'Waarom Claesen?',
@@ -54,6 +55,8 @@ export const ui = {
         'services.studies.desc': 'Precisie staat voorop. Onze ingenieurs simuleren verlichtingsresultaten om te garanderen dat aan lokale regelgeving wordt voldaan.',
         'services.maintenance.title': 'Onderhoud & Support',
         'services.maintenance.desc': 'Levensduur en prestaties garanderen. Wij bieden onderhoudscontracten op maat.',
+        'services.cta.title': 'Een specifiek vraagstuk of technisch advies nodig?',
+        'services.cta.button': 'Plan een lichtstudie in',
 
         // Contact
         'contact.title': 'Neem Contact Op',
@@ -87,6 +90,13 @@ export const ui = {
         'form.success.button': 'Nog een bericht sturen',
         'form.error': 'Er is iets misgegaan. Probeer het opnieuw.',
 
+        // Cookie consent
+        'cookie.title': 'Wij gebruiken cookies',
+        'cookie.text': 'Om u de beste ervaring op onze website te bieden, gebruiken wij cookies voor analyses en prestaties.',
+        'cookie.policy': 'Lees ons beleid',
+        'cookie.accept': 'Alles accepteren',
+        'cookie.decline': 'Weigeren',
+
         // Portfolio & About & Contact Extras
         'portfolio.title': 'Ons Portaal',
         'portfolio.subtitle': 'Ontdek onze uitgebreide collectie van hoogwaardige verlichtingsprojecten in de sport-, industriële en publieke sector.',
@@ -97,6 +107,8 @@ export const ui = {
         'portfolio.empty.text': 'Geen projecten gevonden in deze categorie.',
         'portfolio.empty.btn': 'Toon Alle Projecten',
         'portfolio.modal.about': 'Over dit project',
+        'portfolio.modal.readmore': 'Lees meer',
+        'portfolio.modal.readless': 'Lees minder',
         'about.title': 'Onze Erfenis',
         'about.subtitle': 'Drie generaties technische uitmuntendheid in sport- en industriële verlichting.',
         'about.heading': 'Meer dan alleen licht',
@@ -135,7 +147,7 @@ export const ui = {
         'footer.licensed': 'Gelicentieerde Engineering',
 
         // 404
-        '404.title': 'l Lichten Uit!',
+        '404.title': 'Lichten Uit!',
         '404.text': 'Deze weergave staat momenteel in het donker. Gebruik je licht om te verkennen of ga terug naar de hoofdstructuren.',
         '404.button': 'Terug naar het Licht',
     },
@@ -164,6 +176,7 @@ export const ui = {
         'offerte.name': 'Name',
         'offerte.company': 'Company',
         'offerte.projectType': 'Project Type',
+        'offerte.disclaimer': '* We will contact you within 24 hours to discuss your needs.',
 
         // Why Us
         'why.title': 'Why Claesen?',
@@ -185,6 +198,8 @@ export const ui = {
         'services.studies.desc': 'Precision photometric studies compliant with industry standards. Our engineers conduct advanced simulations and calculations to guarantee optimal performance and strict regulatory compliance.',
         'services.maintenance.title': 'Maintenance & Support',
         'services.maintenance.desc': 'Long-term reliability and operational continuity. Through proactive maintenance contracts and rapid interventions, we maximize the lifespan and performance of your lighting systems.',
+        'services.cta.title': 'Have a specific question or need technical advice?',
+        'services.cta.button': 'Schedule a light study',
 
         // Contact
         'contact.title': 'Get in Touch',
@@ -218,6 +233,13 @@ export const ui = {
         'form.success.button': 'Send another message',
         'form.error': 'Something went wrong. Please try again.',
 
+        // Cookie consent
+        'cookie.title': 'We use cookies',
+        'cookie.text': 'To ensure you get the best experience on our website, we use cookies for analytics and performance.',
+        'cookie.policy': 'Read our policy',
+        'cookie.accept': 'Accept All',
+        'cookie.decline': 'Decline',
+
         // Portfolio & About & Contact Extras
         'portfolio.title': 'Our Portfolio',
         'portfolio.subtitle': 'Explore our extensive collection of high-performance lighting projects across sport, industrial, and public sectors.',
@@ -228,6 +250,8 @@ export const ui = {
         'portfolio.empty.text': 'No projects found in this category.',
         'portfolio.empty.btn': 'Show All Projects',
         'portfolio.modal.about': 'About Project',
+        'portfolio.modal.readmore': 'Read more',
+        'portfolio.modal.readless': 'Read less',
         'about.title': 'Our Legacy',
         'about.subtitle': 'Three generations of engineering excellence in sports and industrial lighting.',
         'about.heading': 'More Than Just Light',
@@ -295,6 +319,7 @@ export const ui = {
         'offerte.name': 'Nom',
         'offerte.company': 'Entreprise',
         'offerte.projectType': 'Type de Projet',
+        'offerte.disclaimer': '* Nous vous contacterons dans les 24 heures pour discuter de votre projet.',
 
         // Why Us
         'why.title': 'Pourquoi Claesen ?',
@@ -316,6 +341,8 @@ export const ui = {
         'services.studies.desc': 'Études d\'éclairage de précision conformes aux normes en vigueur. Nos ingénieurs simulent et calculent les espaces pour garantir des performances optimales et une stricte conformité réglementaire.',
         'services.maintenance.title': 'Maintenance & Assistance',
         'services.maintenance.desc': 'Fiabilité à long terme et continuité opérationnelle. Grâce à nos contrats de maintenance dédiés et à nos interventions rapides, nous maximisons la durée de vie et les performances de vos installations.',
+        'services.cta.title': 'Une question spécifique ou besoin d\'un conseil technique ?',
+        'services.cta.button': 'Planifier une étude d\'éclairage',
 
         // Contact
         'contact.title': 'Contactez-nous',
@@ -349,6 +376,13 @@ export const ui = {
         'form.success.button': 'Envoyer un autre message',
         'form.error': 'Une erreur est survenue. Veuillez réessayer.',
 
+        // Cookie consent
+        'cookie.title': 'Nous utilisons des cookies',
+        'cookie.text': 'Pour vous offrir la meilleure expérience sur notre site, nous utilisons des cookies pour les analyses et les performances.',
+        'cookie.policy': 'Lire notre politique',
+        'cookie.accept': 'Tout accepter',
+        'cookie.decline': 'Refuser',
+
         // Portfolio & About & Contact Extras
         'portfolio.title': 'Notre Portefeuille',
         'portfolio.subtitle': 'Découvrez notre vaste collection de projets d\'éclairage haute performance dans les secteurs sportif, industriel et public.',
@@ -359,6 +393,8 @@ export const ui = {
         'portfolio.empty.text': 'Aucun projet trouvé dans cette catégorie.',
         'portfolio.empty.btn': 'Voir Tous les Projets',
         'portfolio.modal.about': 'À Propos du Projet',
+        'portfolio.modal.readmore': 'Voir plus',
+        'portfolio.modal.readless': 'Voir moins',
         'about.title': 'Notre Héritage',
         'about.subtitle': 'Trois générations d\'excellence en ingénierie dans l\'éclairage sportif et industriel.',
         'about.heading': 'Bien plus que de la lumière',
@@ -426,6 +462,7 @@ export const ui = {
         'offerte.name': 'Name',
         'offerte.company': 'Unternehmen',
         'offerte.projectType': 'Projekttyp',
+        'offerte.disclaimer': '* Wir melden uns innerhalb von 24 Stunden, um Ihre Anforderungen zu besprechen.',
 
         // Why Us
         'why.title': 'Warum Claesen?',
@@ -447,6 +484,8 @@ export const ui = {
         'services.studies.desc': 'Präzise Lichtberechnungen gemäß den geltenden Branchenstandards. Unsere Ingenieure führen fortschrittliche Simulationen und Berechnungen durch, um optimale Leistung und strikte Einhaltung der Richtlinien zu garantieren.',
         'services.maintenance.title': 'Wartung & Support',
         'services.maintenance.desc': 'Langfristige Zuverlässigkeit und Betriebssicherheit. Mit maßgeschneiderten Wartungsverträgen und schnellen Reaktionszeiten maximieren wir die Lebensdauer und Leistung Ihrer Anlagen.',
+        'services.cta.title': 'Eine spezifische Frage oder technische Beratung benötigt?',
+        'services.cta.button': 'Lichtstudie planen',
 
         // Contact
         'contact.title': 'Kontaktieren Sie uns',
@@ -480,6 +519,13 @@ export const ui = {
         'form.success.button': 'Weitere Nachricht senden',
         'form.error': 'Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.',
 
+        // Cookie consent
+        'cookie.title': 'Wir verwenden Cookies',
+        'cookie.text': 'Um Ihnen das beste Erlebnis auf unserer Website zu bieten, verwenden wir Cookies für Analysen und Leistungsmessung.',
+        'cookie.policy': 'Unsere Richtlinie lesen',
+        'cookie.accept': 'Alle akzeptieren',
+        'cookie.decline': 'Ablehnen',
+
         // Portfolio & About & Contact Extras
         'portfolio.title': 'Unser Portfolio',
         'portfolio.subtitle': 'Entdecken Sie unsere umfangreiche Sammlung von Hochleistungs-Beleuchtungsprojekten in den Bereichen Sport, Industrie und im öffentlichen Sektor.',
@@ -490,6 +536,8 @@ export const ui = {
         'portfolio.empty.text': 'Keine Projekte in dieser Kategorie gefunden.',
         'portfolio.empty.btn': 'Alle Projekte anzeigen',
         'portfolio.modal.about': 'Über das Projekt',
+        'portfolio.modal.readmore': 'Mehr anzeigen',
+        'portfolio.modal.readless': 'Weniger anzeigen',
         'about.title': 'Unser Vermächtnis',
         'about.subtitle': 'Drei Generationen von Ingenieurleistungen in der Sport- und Industriebeleuchtung.',
         'about.heading': 'Mehr als nur Licht',

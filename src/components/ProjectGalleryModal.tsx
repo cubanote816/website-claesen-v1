@@ -182,9 +182,7 @@ export default function ProjectGalleryModal({ isOpen, onClose, project, lang = d
                                     onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
                                     className="mt-4 text-lux-gold text-sm font-semibold hover:text-white transition-colors self-start shrink-0"
                                 >
-                                    {isDescriptionExpanded 
-                                        ? (lang === 'nl' ? 'Lees minder' : lang === 'fr' ? 'Voir moins' : lang === 'de' ? 'Weniger anzeigen' : 'Read less') 
-                                        : (lang === 'nl' ? 'Lees meer' : lang === 'fr' ? 'Voir plus' : lang === 'de' ? 'Mehr anzeigen' : 'Read more')}
+                                    {isDescriptionExpanded ? t['portfolio.modal.readless'] : t['portfolio.modal.readmore']}
                                 </button>
                             </div>
 

@@ -45,7 +45,7 @@ const { title, lang = 'nl' } = Astro.props;
 	</head>
 	<body class="bg-obsidian text-white selection:bg-lux-gold selection:text-black">
 		<ClassicNav lang={lang} />
-		<CookieConsent client:load />
+		<CookieConsent client:load lang={lang} />
 		<main>
 			<slot />
 		</main>

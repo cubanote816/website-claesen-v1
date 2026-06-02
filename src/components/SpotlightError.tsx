@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Home } from 'lucide-react';
+import { ui, defaultLang } from '../i18n/ui';
 
-export default function SpotlightError() {
+interface Props {
+    lang?: keyof typeof ui;
+}
+
+// NOTE (CLA-114): 404.astro passes lang="nl" (the default).
+// Per-language 404 pages (/en/404, /fr/404, /de/404) do not exist as separate Astro routes.
+// Multilingual 404 is therefore partial: NL is served correctly; other languages
+// fall back to the server's generic 404 or to this page in NL if the server
+// routes all 404s to /v1/404.html. Full multilingual 404 requires separate
+// [lang]/404.astro pages — tracked as a follow-up task.
+export default function SpotlightError({ lang = defaultLang }: Props) {
+    const t = ui[lang] || ui[defaultLang];
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const baseUrl = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL;
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
@@ -16,10 +29,8 @@ export default function SpotlightError() {
 
     return (
         <div className="relative w-full h-screen bg-obsidian overflow-hidden flex flex-col items-center justify-center text-center">
-            {/* Dark Base Layer */}
             <div className="absolute inset-0 bg-obsidian z-0"></div>
 
-            {/* Revealed Image Layer (Masked by Spotlight) */}
             <motion.div
                 className="absolute inset-0 z-10 bg-[url('https://images.unsplash.com/photo-1504450758481-7338ba680586?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center grayscale-0"
                 animate={{
@@ -29,10 +40,8 @@ export default function SpotlightError() {
                 transition={{ type: "tween", ease: "backOut", duration: 0.2 }}
             />
 
-            {/* Overlay for Text Legibility */}
             <div className="absolute inset-0 z-20 bg-black/60 pointer-events-none"></div>
 
-            {/* Content */}
             <div className="relative z-30 px-6">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -52,20 +61,20 @@ export default function SpotlightError() {
                 >
                     <div className="inline-block relative">
                         <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4 relative drop-shadow-xl">
-                            Lights Out!
+                            {t['404.title']}
                         </h2>
                     </div>
 
                     <p className="text-gray-300 text-lg md:text-xl max-w-md mx-auto mb-10 drop-shadow-md">
-                        This view is currently in the dark. Use your light to explore or head back to the main luminous structures.
+                        {t['404.text']}
                     </p>
 
                     <a
-                        href="/"
+                        href={`${baseUrl}/`}
                         className="inline-flex items-center gap-2 bg-lux-gold text-obsidian px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform shadow-[0_0_30px_rgba(252,211,77,0.3)] hover:shadow-[0_0_50px_rgba(252,211,77,0.5)] cursor-pointer pointer-events-auto relative z-50"
                     >
                         <Home className="w-5 h-5" />
-                        Back to Light
+                        {t['404.button']}
                     </a>
                 </motion.div>
             </div>
