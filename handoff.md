@@ -10,19 +10,21 @@ Memoria viva del proyecto. Actualizar al abrir y cerrar cada ticket.
 | Item | Valor |
 |------|-------|
 | Rama | `main` |
-| Estado del repo | Limpio (sin cambios pendientes antes de este ticket) |
-| Último ticket completado | CLA-112 — WEB-DOCS-AI-001 (este mismo) |
-| Ticket activo | CLA-112 — En progreso |
+| Estado del repo | Limpio — hotfix pusheado, deploy en curso |
+| Último ticket completado | CLA-112 — WEB-DOCS-AI-001 ✅ |
+| Ticket activo | CLA-113 — In Progress — deploy en GitHub Actions |
 | Fase del proyecto | Finalización y optimización antes de entrega al cliente |
 
 ---
 
 ## Ticket activo
 
-**CLA-112 — WEB-DOCS-AI-001 — Crear AI harnesses del proyecto web**
-Estado: `In Progress`
-Scope: Solo documentación — `docs/ai/`, `handoff.md`, `AGENTS.md`, `.agents/rules/`
-Link: https://linear.app/claesen-verlichting/issue/CLA-112
+**CLA-113 — WEB-BUG-FR-403 — Hotfix: /v1/fr/ devuelve 403 Forbidden**
+Estado: `In Progress` — commit `c42f1bb` pusheado, deploy automático en curso
+Scope: Solo `.github/workflows/deploy.yml` — removido `sftp:chmod-ignore yes`, añadidos `chmod 755` para rutas de idioma
+Link: https://linear.app/claesen-verlichting/issue/CLA-113
+
+**Smoke test pendiente:** `GET https://claesen-verlichting.be/v1/fr/` → debe pasar de 403 a 200
 
 ---
 
@@ -54,21 +56,26 @@ Lista completa: `docs/ai/known-risks.md`
 
 ---
 
-## Próximos pasos sugeridos
+## Backlog ordenado (plan ajustado 2026-06-02)
 
-1. **Cerrar CLA-112** — commit de los harnesses que se están creando ahora
-2. **WEB-BUG-I18N-001** — Corregir strings hardcodeados en NL (PROD-002, CODE-003): ServicesSection, QuickOfferte, CookieConsent, SpotlightError, ProjectGalleryModal
-3. **WEB-BUG-VIDEO-001** — Corregir `<video>` tag malformado + preload="auto" (CODE-001, TECH-008)
-4. **WEB-BUG-FR-403** — Investigar y corregir 403 en /v1/fr/ (PROD-001)
-5. **WEB-SEO-001** — Añadir hreflang, canonical, meta description localizada, og-image (PROD-005, CODE-006, CODE-007)
-6. **WEB-BUG-CONSOLE** — Eliminar console.log de producción (CODE-004)
+**Criterio de oro: los 4 idiomas deben responder 200 antes de cualquier mejora visual.**
+
+| # | Ticket | Título | Estado |
+|---|--------|--------|--------|
+| 1 | **CLA-113** | WEB-BUG-FR-403 — /v1/fr/ 403 (servidor + permisos) | `In Progress` — smoke test pendiente post-deploy |
+| 2 | **CLA-114** | WEB-BUG-I18N-001 — Strings hardcodeados NL/EN | Backlog |
+| 3 | **CLA-115** | WEB-SEC-LOGS-001 — Logs con env vars y payloads | Backlog |
+| 4 | **CLA-116** | WEB-BUG-HERO-001 — HTML inválido video + paths /v1 | Backlog |
+| 5 | **CLA-119** | WEB-FORM-001 — QuickOfferte: campos sin name, email falso | Backlog |
+| 6 | **CLA-117** | WEB-SEO-001 — hreflang, canonical, OG, metadata | Backlog |
+| 7 | **CLA-120** | WEB-SERVER-001 — Config servidor: cache, 404, TLS, monitoreo | Backlog |
 
 ---
 
 ## Bloqueantes
 
-- **PROD-001 (403 FR)** requiere diagnóstico de permisos en el servidor — puede necesitar acceso SSH directo al hosting.
-- **Sin lint/test/typecheck** — no hay barrera automática para errores antes del deploy. Añadir `npm run typecheck` sería valioso.
+- **CLA-113 (PROD-001)**: si `chmod 755` no resuelve el 403, escalar a configuración del servidor web (Nginx/Apache vhost, logs, owner). Ver árbol de causas en `docs/ai/known-risks.md` PROD-001.
+- **Sin lint/test/typecheck** — no hay barrera automática para errores antes del deploy.
 
 ---
 

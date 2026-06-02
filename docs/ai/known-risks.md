@@ -11,11 +11,26 @@ Estos bugs fueron verificados directamente en `https://claesen-verlichting.be/v1
 ### PROD-001 — /v1/fr/ devuelve 403 Forbidden
 **Severidad:** CRÍTICO  
 **Verificado:** 2026-06-02 via WebFetch  
-**Síntoma:** La ruta francesa `/v1/fr/` devuelve HTTP 403. El sitio en francés es inaccesible.  
-**Causa probable:** El deploy LFTP usa `sftp:chmod-ignore yes` + `mirror -R --only-newer` sin `--chmod` explícito. El directorio `fr/` generado por Astro puede haber quedado con permisos 700/000 en el servidor en algún deploy anterior.  
-**Impacto:** Todos los usuarios francófonos (mercado belga importante) no pueden acceder al sitio.  
-**Archivo relacionado:** `.github/workflows/deploy.yml:58-77`  
-**Ticket sugerido:** WEB-BUG-FR-403
+**Estado del fix:** CLA-113 In Progress — `chmod 755` vía LFTP pusheado (`c42f1bb`), resultado del deploy pendiente de smoke test  
+**Síntoma:** La ruta francesa `/v1/fr/` devuelve HTTP 403. El sitio en francés es inaccesible. `/v1/en/` y `/v1/de/` sirven 200 con el mismo build.  
+**Impacto:** Todos los usuarios francófonos (mercado belga importante) no pueden acceder al sitio.
+
+**Árbol de causas a investigar (de más a menos probable):**
+
+1. **Permisos de directorio en servidor** — `fr/` creado con umask restrictivo (700 o 750) y no corregido. El `chmod 755` del deploy (`c42f1bb`) resuelve esto si el servidor permite chmod vía SFTP.
+2. **Configuración Nginx/Apache** — Regla `deny`, `location` que no cubre `/v1/fr/`, falta de `try_files`, alias o rewrite roto solo para esa ruta. Explicaría por qué `en/` y `de/` funcionan pero `fr/` no.
+3. **Owner incorrecto** — El directorio `fr/` puede tener owner diferente al process user del servidor web, haciendo el chmod inefectivo.
+4. **index.html ausente o corrupto** — El mirror `--only-newer` podría haber omitido `fr/index.html` en algún deploy si el archivo no se detectó como "nuevo".
+5. **Caché del servidor/CDN** — Una respuesta 403 cacheada puede persistir aunque se corrija la causa real.
+
+**Protocolo de investigación si el chmod no resuelve:**
+- Comparar permisos y owner de `/v1/en/`, `/v1/fr/`, `/v1/de/` en el servidor (requiere acceso SSH o panel de hosting)
+- Revisar logs de acceso del servidor web para el 403 (Apache: `access.log`, Nginx: `access.log`)
+- Revisar configuración del vhost: `location /v1/fr/`, `.htaccess` en `/v1/fr/`, reglas `deny`
+- Verificar que `/v1/fr/index.html` existe en el servidor y tiene permisos 644
+
+**Archivos relacionados:** `.github/workflows/deploy.yml`, configuración del servidor web
+**Ticket:** CLA-113
 
 ### PROD-002 — Textos en holandés visibles en la versión inglesa
 **Severidad:** ALTO  
@@ -161,19 +176,46 @@ Estos bugs fueron verificados directamente en `https://claesen-verlichting.be/v1
 
 ---
 
-## SECCIÓN 4: Riesgos de deploy
+## SECCIÓN 4: Riesgos de servidor propio
+
+El proyecto migró (o está en proceso de migrar) de hosting compartido/LFTP a servidor propio. El riesgo principal ya no es "LFTP deja permisos mal" sino "la configuración del servidor puede servir unos idiomas y bloquear otros".
+
+### SERVER-001 — Configuración del vhost puede discriminar rutas de idioma
+**Riesgo PRINCIPAL activo**  
+**Evidencia:** `/v1/fr/` → 403, `/v1/en/` y `/v1/de/` → 200 con el mismo build.  
+**Causas posibles:** `location` de Nginx sin cobertura de `/v1/fr/`, regla `deny` específica, falta de `try_files $uri $uri/ /v1/fr/index.html`, `.htaccess` con `deny from all`.  
+**Investigar:** Logs del servidor, config del vhost, comparación directa de permisos entre directorios de idioma.
+
+### SERVER-002 — Fallback 404 del servidor vs página 404 de Astro
+**Riesgo:** Si el servidor no está configurado para redirigir rutas no encontradas a `/v1/404.html`, el servidor devuelve su propio 404 en lugar de la página custom SpotlightError.  
+**Fix requerido:** Configurar en Nginx `error_page 404 /v1/404.html` o equivalente en Apache.
+
+### SERVER-003 — Cache headers sin configurar
+**Riesgo:** Sin cache headers explícitos, assets estáticos (JS, CSS, imágenes) no se benefician de caché del navegador. Impacto en performance.  
+**Recomendado:** `Cache-Control: max-age=31536000, immutable` para assets con hash. `Cache-Control: no-cache` para HTML.
+
+### SERVER-004 — Compresión Gzip/Brotli no verificada
+**Riesgo:** Sin compresión, el JS/CSS del bundle se sirve sin comprimir. Impacto directo en LCP.
+
+### SERVER-005 — Certificado TLS y renovación
+**Riesgo:** Sin monitoreo del certificado, una expiración corta el HTTPS silenciosamente.
+
+### SERVER-006 — Sin monitoreo de disponibilidad por idioma
+**Riesgo:** Un 403 como el de `/v1/fr/` puede pasar desapercibido durante días sin monitoreo.  
+**Recomendado:** Uptime monitor que verifique los 4 idiomas: `/v1/`, `/v1/en/`, `/v1/fr/`, `/v1/de/`.
+
+## SECCIÓN 5: Riesgos de deploy (pipeline LFTP/SFTP)
 
 ### DEPLOY-001 — Deploy no destructivo: archivos obsoletos persisten
-**Workflow:** `.github/workflows/deploy.yml:74`  
+**Workflow:** `.github/workflows/deploy.yml`  
 **Riesgo:** El flag `--only-newer` sin `--delete` significa que archivos eliminados del build no se borran del servidor. Con el tiempo, el servidor acumula assets obsoletos.
 
-### DEPLOY-002 — Permisos de directorios en LFTP
-**Workflow:** `.github/workflows/deploy.yml:59` — `sftp:chmod-ignore yes`  
-**Riesgo:** Directorios nuevos creados por `mirror` pueden recibir permisos incorrectos del servidor (relacionado con PROD-001).
+### DEPLOY-002 — Permisos de directorios en LFTP *(rebajado — mitigado en CLA-113)*
+**Estado:** Mitigado parcialmente. `sftp:chmod-ignore yes` fue removido y se añadieron `chmod 755` explícitos en el deploy (`c42f1bb`). Si el 403 persiste, la causa raíz es SERVER-001 (config del servidor), no este riesgo.
 
 ### DEPLOY-003 — Paralelismo bajo en deploy
 **Workflow:** `--parallel=2`  
-**Riesgo:** Deploy muy lento si hay muchos assets nuevos. No es un bug, pero puede causar timeouts en deploys grandes.
+**Riesgo:** Deploy lento con muchos assets. Puede causar timeouts en deploys grandes.
 
 ### DEPLOY-004 — Rollback sin procedimiento definido
 **Estado:** No existe script ni documentación de rollback.  

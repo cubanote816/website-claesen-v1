@@ -158,13 +158,56 @@ Para rollback de emergencia de un archivo:
 
 **Recomendación:** Documentar la decisión de rollback en el ticket Linear correspondiente.
 
+## Checklist de operación del servidor propio
+
+Si el sitio corre en servidor propio (no hosting compartido), verificar adicionalmente:
+
+### Configuración del servidor web (Nginx/Apache)
+
+```
+[ ] vhost configurado para servir /v1/ como raíz o alias correcto
+[ ] try_files o DirectoryIndex configurado para SPA/SSG:
+    Nginx: try_files $uri $uri/ /v1/$uri/index.html =404
+    Apache: FallbackResource o RewriteRule equivalente
+[ ] error_page 404 apunta a /v1/404.html (página custom de Astro)
+[ ] Sin reglas deny que afecten rutas de idioma (/v1/en/, /v1/fr/, /v1/de/)
+[ ] Permisos de directorios de idioma son 755 (no 700 ni 750)
+[ ] Owner de directorios es el process user del servidor web
+```
+
+### Performance del servidor
+
+```
+[ ] Compresión Gzip o Brotli activa para text/html, text/css, application/javascript
+[ ] Cache-Control: max-age=31536000, immutable para assets con hash (JS/CSS)
+[ ] Cache-Control: no-cache para archivos HTML (para que deploy sea inmediato)
+[ ] Headers de seguridad básicos: X-Content-Type-Options, X-Frame-Options
+```
+
+### TLS y disponibilidad
+
+```
+[ ] Certificado TLS válido y sin expirar en < 30 días
+[ ] Redirección HTTP → HTTPS activa
+[ ] Los 4 idiomas responden 200: /v1/, /v1/en/, /v1/fr/, /v1/de/
+[ ] Monitoreo de uptime configurado para los 4 idiomas
+```
+
+### Logs del servidor
+
+```
+[ ] Acceso a logs de acceso (access.log) para verificar códigos HTTP
+[ ] Acceso a logs de error (error.log) para diagnosticar 403/500
+[ ] Rotación de logs configurada (logrotate o equivalente)
+```
+
 ## Issues de producción activos
 
 Ver `docs/ai/known-risks.md` SECCIÓN 1 para los bugs confirmados en producción que afectan la experiencia actual.
 
 Resumen rápido:
-- PROD-001: `/v1/fr/` → 403 Forbidden
-- PROD-002: Textos NL en versión EN
-- PROD-003: Página 404 custom no se sirve
-- PROD-004: Logo partner con nombre vacío
-- PROD-005: Sin hreflang tags
+- PROD-001: `/v1/fr/` → 403 Forbidden — CLA-113 In Progress (chmod 755 deployed, smoke test pendiente; puede requerir investigación de servidor si persiste)
+- PROD-002: Textos NL en versión EN — CLA-114 Backlog
+- PROD-003: Página 404 custom no se sirve — pendiente ticket
+- PROD-004: Logo partner con nombre vacío — pendiente ticket
+- PROD-005: Sin hreflang tags — CLA-117 Backlog
