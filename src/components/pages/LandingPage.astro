@@ -42,8 +42,9 @@ const t = ui[lang] || ui[defaultLang];
       loop
       muted
       playsinline
-      preload="auto"
+      preload="metadata"
       autoplay
+    >
       <source src="/v1/assets/hero-video.mp4" type="video/mp4" />
     </video>
 
@@ -151,15 +152,19 @@ const t = ui[lang] || ui[defaultLang];
 
   <script>
     document.addEventListener("astro:page-load", () => {
-      const heroVideo = document.getElementById(
-        "hero-video"
-      ) as HTMLVideoElement;
+      const heroVideo = document.getElementById("hero-video") as HTMLVideoElement;
+      const heroBgImage = document.getElementById("hero-bg-image") as HTMLElement;
 
       if (heroVideo) {
-        heroVideo.play().catch((e) => console.log("Video autoplay failed", e));
+        heroVideo.play().catch(() => {
+          heroVideo.classList.remove("opacity-100");
+          heroVideo.classList.add("opacity-0");
+          if (heroBgImage) {
+            heroBgImage.classList.remove("opacity-0");
+            heroBgImage.classList.add("opacity-100");
+          }
+        });
       }
-
-      // Logic for Showreel Button Event (Moved to PortfolioSection)
     });
   </script>
 
