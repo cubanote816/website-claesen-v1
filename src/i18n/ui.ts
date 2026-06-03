@@ -9,6 +9,10 @@ export const defaultLang = 'nl';
 
 export const ui = {
     nl: {
+        // Meta SEO
+        'meta.description': 'Claesen Verlichting – Totaaloplossingen voor terrein- en industrieverlichting. Dé Belgische specialist in gecertificeerde sport- en buitenverlichting sinds 1936.',
+        'meta.og.description': 'Dé Belgische specialist in gecertificeerde sport- en industrieverlichting. VCA*-gecertificeerd, actief sinds 1936.',
+
         // Nav
         'nav.home': 'Home',
         'nav.projects': 'Projecten',
@@ -152,6 +156,10 @@ export const ui = {
         '404.button': 'Terug naar het Licht',
     },
     en: {
+        // Meta SEO
+        'meta.description': 'Claesen Verlichting – Complete solutions for field and industrial lighting. Belgium\'s specialist in certified sports and outdoor lighting since 1936.',
+        'meta.og.description': 'Belgium\'s certified specialist in sports and industrial lighting. VCA-certified, active since 1936.',
+
         // Nav
         'nav.home': 'Home',
         'nav.projects': 'Projects',
@@ -295,6 +303,10 @@ export const ui = {
         '404.button': 'Back to Light',
     },
     fr: {
+        // Meta SEO
+        'meta.description': 'Claesen Verlichting – Solutions complètes pour l\'éclairage extérieur et industriel. Le spécialiste belge en éclairage sportif certifié depuis 1936.',
+        'meta.og.description': 'Le spécialiste belge en éclairage sportif et industriel certifié depuis 1936.',
+
         // Nav
         'nav.home': 'Accueil',
         'nav.projects': 'Projets',
@@ -438,6 +450,10 @@ export const ui = {
         '404.button': 'Retour à la Lumière',
     },
     de: {
+        // Meta SEO
+        'meta.description': 'Claesen Verlichting – Komplettlösungen für Außen- und Industriebeleuchtung. Belgiens Spezialist für zertifizierte Sport- und Außenbeleuchtung seit 1936.',
+        'meta.og.description': 'Belgiens zertifizierter Spezialist für Sport- und Industriebeleuchtung. VCA-zertifiziert, aktiv seit 1936.',
+
         // Nav
         'nav.home': 'Startseite',
         'nav.projects': 'Projekte',

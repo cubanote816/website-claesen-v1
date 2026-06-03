@@ -5,13 +5,46 @@ import '@fontsource/inter';
 import ClassicNav from '../components/ClassicNav.astro';
 import CookieConsent from '../components/CookieConsent';
 import { ClientRouter } from 'astro:transitions';
+import { ui, defaultLang } from '../i18n/ui';
 
 interface Props {
 	title: string;
     lang?: string;
+    pageSlug?: string;
+    description?: string;
 }
 
-const { title, lang = 'nl' } = Astro.props;
+const { title, lang = 'nl', pageSlug = '', description } = Astro.props;
+const t = ui[lang as keyof typeof ui] || ui[defaultLang];
+
+const SITE_URL = (import.meta.env.PUBLIC_SITE_URL || 'https://claesen-verlichting.be').replace(/\/$/, '');
+const basePath = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL.replace(/\/$/, '');
+
+function buildUrl(l: string, slug: string): string {
+    const isDefault = l === defaultLang;
+    return isDefault
+        ? `${SITE_URL}${basePath}${slug || '/'}`
+        : `${SITE_URL}${basePath}/${l}${slug || '/'}`;
+}
+
+const canonicalUrl = buildUrl(lang, pageSlug);
+const ogImage = `${SITE_URL}${basePath}/og-image.jpg`;
+
+const hreflangLinks = [
+    { hreflang: 'nl', href: buildUrl('nl', pageSlug) },
+    { hreflang: 'en', href: buildUrl('en', pageSlug) },
+    { hreflang: 'fr', href: buildUrl('fr', pageSlug) },
+    { hreflang: 'de', href: buildUrl('de', pageSlug) },
+    { hreflang: 'x-default', href: buildUrl('nl', pageSlug) },
+];
+
+const ogLocaleMap: Record<string, string> = {
+    nl: 'nl_BE', en: 'en_GB', fr: 'fr_BE', de: 'de_DE',
+};
+const ogLocale = ogLocaleMap[lang] || 'nl_BE';
+
+const metaDescription = description || t['meta.description'];
+const ogDescription = description || t['meta.og.description'];
 ---
 
 <!doctype html>
@@ -19,29 +52,38 @@ const { title, lang = 'nl' } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href="/v1/assets/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href={`${basePath}/assets/favicon.ico`} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
         <ClientRouter />
 
+        <!-- Canonical & Hreflang -->
+        <link rel="canonical" href={canonicalUrl} />
+        {hreflangLinks.map(link => (
+            <link rel="alternate" hreflang={link.hreflang} href={link.href} />
+        ))}
+
         <!-- SEO -->
-		<meta name="description" content="Claesen Verlichting - Licensed Engineering & Industrial Lighting Specialists. Creative technical solutions for sport, industry, and public spaces." />
-        <meta name="keywords" content="lighting, engineering, industrial lighting, sport lighting, architectural lighting, claesen" />
+		<meta name="description" content={metaDescription} />
+        <meta name="keywords" content="verlichting, engineering, industriële verlichting, sportverlichting, claesen" />
         <meta name="author" content="Claesen Verlichting" />
 
         <!-- Open Graph -->
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://claesen.be/" />
+        <meta property="og:locale" content={ogLocale} />
+        <meta property="og:url" content={canonicalUrl} />
         <meta property="og:title" content={title} />
-        <meta property="og:description" content="Licensed Engineering & Industrial Lighting Specialists. Creating high-performance illumination structures." />
-        <meta property="og:image" content="/v1/og-image.jpg" />
+        <meta property="og:description" content={ogDescription} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
 
         <!-- Twitter -->
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://claesen.be/" />
-        <meta property="twitter:title" content={title} />
-        <meta property="twitter:description" content="Licensed Engineering & Industrial Lighting Specialists." />
-        <meta property="twitter:image" content="/v1/og-image.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={canonicalUrl} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={ogDescription} />
+        <meta name="twitter:image" content={ogImage} />
 	</head>
 	<body class="bg-obsidian text-white selection:bg-lux-gold selection:text-black">
 		<ClassicNav lang={lang} />
