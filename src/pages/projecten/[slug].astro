@@ -1,0 +1,21 @@
+---
+import ProjectDetailPage from '../../components/pages/ProjectDetailPage.astro';
+import fs from 'node:fs';
+import path from 'node:path';
+
+export function getStaticPaths() {
+    const jsonPath = path.join(process.cwd(), 'public/v1-media/projects-static.json');
+    let projects: any[] = [];
+    try {
+        const data = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
+        projects = data.projects || data || [];
+    } catch {}
+    return projects
+        .filter((p: any) => p.slug)
+        .map((p: any) => ({ params: { slug: p.slug }, props: { project: p } }));
+}
+
+const { project } = Astro.props;
+---
+
+<ProjectDetailPage project={project} lang="nl" />

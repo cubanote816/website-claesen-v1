@@ -54,8 +54,9 @@ export default function CookieConsent({ lang = defaultLang }: Props) {
                                 <button
                                     onClick={() => setIsVisible(false)}
                                     className="text-cool-slate hover:text-white transition-colors"
+                                    aria-label="Sluiten"
                                 >
-                                    <X className="w-5 h-5" />
+                                    <X className="w-5 h-5" aria-hidden="true" />
                                 </button>
                             </div>
 

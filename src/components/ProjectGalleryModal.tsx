@@ -61,7 +61,6 @@ export default function ProjectGalleryModal({ isOpen, onClose, project, lang = d
     };
 
     const getLocalized = (content: any) => portfolioService.getLocalizedValue(content, lang);
-    const placeholderImg = `${import.meta.env.BASE_URL || ''}/placeholder-project.jpg`.replace(/\/\//g, '/');
 
     return (
         <AnimatePresence>
@@ -90,23 +89,35 @@ export default function ProjectGalleryModal({ isOpen, onClose, project, lang = d
                         {/* Image Section */}
                         <div className="relative h-[40vh] shrink-0 md:h-auto md:flex-1 bg-black flex items-center justify-center overflow-hidden group">
                             <AnimatePresence mode="wait">
-                                <motion.img
-                                    key={currentImage?.url}
-                                    src={currentImage?.url || placeholderImg}
-                                    alt={currentImage?.alt || getLocalized(project.title)}
-                                    drag="x"
-                                    dragConstraints={{ left: 0, right: 0 }}
-                                    dragElastic={0.5}
-                                    onDragEnd={(e, { offset }) => {
-                                        if (offset.x < -40) showNext();
-                                        if (offset.x > 40) showPrev();
-                                    }}
-                                    initial={{ opacity: 0, scale: 0.95 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    exit={{ opacity: 0, scale: 0.95 }}
-                                    transition={{ duration: 0.3 }}
-                                    className="relative max-w-full max-h-full object-contain touch-none cursor-grab active:cursor-grabbing z-20"
-                                />
+                                {currentImage?.url ? (
+                                    <motion.img
+                                        key={currentImage.url}
+                                        src={currentImage.url}
+                                        alt={currentImage.alt || getLocalized(project.title)}
+                                        drag="x"
+                                        dragConstraints={{ left: 0, right: 0 }}
+                                        dragElastic={0.5}
+                                        onDragEnd={(e, { offset }) => {
+                                            if (offset.x < -40) showNext();
+                                            if (offset.x > 40) showPrev();
+                                        }}
+                                        initial={{ opacity: 0, scale: 0.95 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        exit={{ opacity: 0, scale: 0.95 }}
+                                        transition={{ duration: 0.3 }}
+                                        className="relative max-w-full max-h-full object-contain touch-none cursor-grab active:cursor-grabbing z-20"
+                                    />
+                                ) : (
+                                    <motion.div
+                                        key="no-image"
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        className="flex flex-col items-center justify-center gap-4 text-white/20"
+                                    >
+                                        <Camera className="w-16 h-16" />
+                                    </motion.div>
+                                )}
                             </AnimatePresence>
 
                             {/* Navigation Arrows */}
@@ -185,6 +196,19 @@ export default function ProjectGalleryModal({ isOpen, onClose, project, lang = d
                                     {isDescriptionExpanded ? t['portfolio.modal.readless'] : t['portfolio.modal.readmore']}
                                 </button>
                             </div>
+
+                            {/* Full project link */}
+                            {project.slug && (
+                                <div className="px-6 md:px-8 pb-4 shrink-0">
+                                    <a
+                                        href={`${import.meta.env.BASE_URL}${lang !== 'nl' ? `${lang}/` : ''}projecten/${project.slug}`}
+                                        className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-lux-gold/10 border border-lux-gold/30 text-lux-gold font-bold text-sm rounded-xl hover:bg-lux-gold hover:text-obsidian transition-colors"
+                                    >
+                                        {t['project.view']}
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+                                    </a>
+                                </div>
+                            )}
 
                             {/* Thumbnails */}
                             {images.length > 1 && (

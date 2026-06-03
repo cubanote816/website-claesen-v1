@@ -13,7 +13,6 @@ interface ModernProjectCardProps {
 export default function ModernProjectCard({ project, onClick, index }: ModernProjectCardProps) {
     const getLocalized = (content: any) => portfolioService.getLocalizedValue(content);
     const categoryLabel = typeof project.category === 'string' ? project.category : 'Project';
-    const placeholderImg = `${import.meta.env.BASE_URL || ''}/placeholder-project.jpg`.replace(/\/\//g, '/');
 
     return (
         <motion.div
@@ -28,8 +27,8 @@ export default function ModernProjectCard({ project, onClick, index }: ModernPro
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl md:rounded-3xl">
                 {/* Background Image */}
                 <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110"
-                    style={{ backgroundImage: `url(${project.featured_image_url || placeholderImg})` }}
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110 bg-gunmetal/60"
+                    style={project.featured_image_url ? { backgroundImage: `url(${project.featured_image_url})` } : undefined}
                 />
 
                 {/* Overlays */}

@@ -26,47 +26,42 @@ try {
     console.warn("TrustSection: Could not read logos directory", e);
 }
 
-// Known mappings for legacy generic names
+// Mappings for files whose names don't format cleanly
 const nameMapping: Record<string, string> = {
-    "Picture02.png": "Brussels Airport",
-    "Picture12.png": "Zulte Waregem",
-    "Picture03.png": "KRC Genk",
-    "Picture04.png": "STVV",
-    "Picture05.png": "KAA Gent",
     "Picture06.png": "Infrabel",
-    "Picture07.png": "Sport Vlaanderen",
-    "Picture08.jpg": "Limburg.be",
-    "Picture09.jpg": "Standard Liège",
-    "Picture10.jpg": "Club Brugge",
-    "Picture11.png": "KV Mechelen",
-    "Picture13.png": "RSC Anderlecht",
-    "Picture14.png": "Royal Antwerp FC",
-    "Picture15.png": "Cercle Brugge",
-    "Picture16.png": "KAS Eupen",
-    "Picture17.png": "KV Kortrijk",
 };
 
-const clients = files.map((file) => {
-    // 1. Check explicit mapping
-    if (nameMapping[file])
-        return {
-            name: nameMapping[file],
-            logo: `/assets/logo_partner/${file}`,
-        };
+const seenNames = new Set<string>();
+const clients = files
+    // Remove duplicate files (e.g. "Club (2).png" duplicates "Club.png")
+    .filter((file) => !/ \(\d+\)\./.test(file))
+    .map((file) => {
+        // 1. Check explicit mapping
+        if (nameMapping[file])
+            return {
+                name: nameMapping[file],
+                logo: `/assets/logo_partner/${encodeURIComponent(file)}`,
+            };
 
-    // 2. Format filename (e.g., anderlecht.png -> Anderlecht)
-    let name = file
-        .replace(/\.[^/.]+$/, "") // remove extension
-        .replace(/[-_]/g, " ") // replace dashes/underscores with space
-        .replace(/\b\w/g, (l) => l.toUpperCase()); // capitalize
+        // 2. Format filename (e.g., anderlecht.png -> Anderlecht)
+        let name = file
+            .replace(/\.[^/.]+$/, "") // remove extension
+            .replace(/[-_]/g, " ") // replace dashes/underscores with space
+            .replace(/\b\w/g, (l) => l.toUpperCase()); // capitalize first letter of each word
 
-    // 3. Fallback for "PictureXX" names
-    if (name.startsWith("Picture")) {
-        name = name.replace("Picture", "Partner ");
-    }
+        // 3. Fallback for still-generic "PictureXX" names
+        if (name.startsWith("Picture")) {
+            name = name.replace("Picture", "Partner ");
+        }
 
-    return { name, logo: `/assets/logo_partner/${file}` };
-});
+        return { name, logo: `/assets/logo_partner/${encodeURIComponent(file)}` };
+    })
+    // Deduplicate by name (keeps first occurrence, alphabetical by filename)
+    .filter(({ name }) => {
+        if (seenNames.has(name)) return false;
+        seenNames.add(name);
+        return true;
+    });
 
 const certifications = [
     { name: "ISO 9001", icon: ShieldCheck, desc: "Quality Management" },
@@ -168,6 +163,8 @@ const certifications = [
                                         : import.meta.env.BASE_URL
                                 }${client.logo}`}
                                 alt={client.name}
+                                loading="lazy"
+                                decoding="async"
                                 class="h-10 md:h-14 w-auto object-contain logo-img"
                             />
                             <span class="text-[10px] uppercase tracking-[0.3em] text-white/50 mt-4 font-bold">
@@ -208,6 +205,12 @@ const certifications = [
 
     .marquee-container:hover .animate-marquee {
         animation-play-state: paused;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .animate-marquee {
+            animation: none;
+        }
     }
 
     /* Backdrop Filter Overlays for perfect sync grayscale */

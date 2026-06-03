@@ -1,6 +1,6 @@
 ---
 import PageHeader from '../PageHeader';
-import { Send, User, Building2, Lightbulb } from 'lucide-react';
+import { Send, User, Building2, Lightbulb, Mail } from 'lucide-react';
 import { ui, defaultLang } from '../../i18n/ui';
 
 export interface Props {
@@ -26,16 +26,38 @@ const t = ui[lang] || ui[defaultLang];
     />
 
     <div class="mt-12 bg-obsidian/40 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[40px] shadow-2xl">
-        <form class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+        <form
+            class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left"
+            data-msg-success={t['form.success.title']}
+            data-msg-error={t['form.error']}
+        >
             <div class="space-y-2">
                 <label class="block text-xs font-bold uppercase tracking-widest text-lux-gold/80 ml-1">{t['offerte.name']}</label>
                 <div class="relative group">
                     <div class="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-lux-gold transition-colors">
                         <User className="w-5 h-5" />
                     </div>
-                    <input 
-                        type="text" 
-                        placeholder="John Doe" 
+                    <input
+                        type="text"
+                        name="name"
+                        required
+                        placeholder={t['form.name.placeholder']}
+                        class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-lux-gold focus:bg-white/10 transition-all"
+                    />
+                </div>
+            </div>
+
+            <div class="space-y-2">
+                <label class="block text-xs font-bold uppercase tracking-widest text-lux-gold/80 ml-1">{t['form.email']}</label>
+                <div class="relative group">
+                    <div class="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-lux-gold transition-colors">
+                        <Mail className="w-5 h-5" />
+                    </div>
+                    <input
+                        type="email"
+                        name="email"
+                        required
+                        placeholder={t['form.email.placeholder']}
                         class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-lux-gold focus:bg-white/10 transition-all"
                     />
                 </div>
@@ -47,21 +69,26 @@ const t = ui[lang] || ui[defaultLang];
                     <div class="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-lux-gold transition-colors">
                         <Building2 className="w-5 h-5" />
                     </div>
-                    <input 
-                        type="text" 
-                        placeholder="Company Name" 
+                    <input
+                        type="text"
+                        name="company"
+                        placeholder={t['form.company.placeholder']}
                         class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-lux-gold focus:bg-white/10 transition-all"
                     />
                 </div>
             </div>
 
             <div class="space-y-2">
-                <label class="block text-xs font-bold uppercase tracking-widest text-lux-gold/80 ml-1">{t['offerte.projectType']}</label>
+                <label for="projectType" class="block text-xs font-bold uppercase tracking-widest text-lux-gold/80 ml-1">{t['offerte.projectType']}</label>
                 <div class="relative group">
                     <div class="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-lux-gold transition-colors">
                         <Lightbulb className="w-5 h-5" />
                     </div>
-                    <select class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-lux-gold focus:bg-white/10 transition-all appearance-none">
+                    <select
+                        id="projectType"
+                        name="projectType"
+                        class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-lux-gold focus:bg-white/10 transition-all appearance-none"
+                    >
                         <option value="" disabled selected>{t['form.projectType.placeholder']}</option>
                         <option value="sport" class="bg-obsidian">{t['form.projectType.sport']}</option>
                         <option value="industrial" class="bg-obsidian">{t['form.projectType.industrial']}</option>
@@ -73,7 +100,7 @@ const t = ui[lang] || ui[defaultLang];
                 </div>
             </div>
 
-            <div class="md:col-span-3 mt-4">
+            <div class="sm:col-span-2 mt-4">
                 <button 
                     type="submit"
                     class="w-full group relative overflow-hidden bg-lux-gold text-obsidian font-bold py-5 rounded-2xl transition-all hover:scale-[1.02] active:scale-[0.98] shadow-xl shadow-lux-gold/10 flex items-center justify-center gap-3"
@@ -105,23 +132,27 @@ const t = ui[lang] || ui[defaultLang];
             const button = form.querySelector('button[type="submit"]') as HTMLButtonElement;
             if (!button) return;
 
+            const msgSuccess = form.dataset.msgSuccess || 'Verzonden!';
+            const msgError = form.dataset.msgError || 'Probeer opnieuw';
+
             const originalContent = button.innerHTML;
             button.disabled = true;
             button.innerHTML = '<span class="animate-spin w-5 h-5 border-2 border-obsidian border-t-transparent rounded-full"></span>';
 
             const formData = new FormData(form);
             const data = {
-                name: (form.querySelector('input[placeholder="John Doe"]') as HTMLInputElement)?.value,
-                company: (form.querySelector('input[placeholder="Company Name"]') as HTMLInputElement)?.value,
-                projectType: (form.querySelector('select') as HTMLSelectElement)?.value,
-                email: 'lead-from-quick-form@claesen.be', // Placeholder since it's not in this simplified form but required by service
+                name: formData.get('name') as string,
+                email: formData.get('email') as string,
+                company: formData.get('company') as string,
+                projectType: formData.get('projectType') as string,
+                preferredContact: 'email',
                 message: 'Quick Quote Request from Landing Page',
                 type: 'quick_offerte'
             };
 
             try {
                 await consultationService.sendConsultation(data);
-                button.innerHTML = '✓ Verzonden!';
+                button.innerHTML = `✓ ${msgSuccess}`;
                 button.classList.replace('bg-lux-gold', 'bg-green-500');
                 button.classList.add('text-white');
                 form.reset();
@@ -132,7 +163,7 @@ const t = ui[lang] || ui[defaultLang];
                     button.classList.remove('text-white');
                 }, 5000);
             } catch {
-                button.innerHTML = 'Error! Probeer opnieuw';
+                button.innerHTML = `✗ ${msgError}`;
                 button.classList.replace('bg-lux-gold', 'bg-red-500');
                 button.classList.add('text-white');
                 setTimeout(() => {

@@ -71,8 +71,8 @@ const socialLinks = [
           {t['footer.legacy']}
         </p>
         <div class="flex gap-4">
-          {socialLinks.map(social => (
-            <a href={social.href} class="p-2 rounded-full border border-white/10 text-cool-slate hover:text-lux-gold hover:border-lux-gold/30 hover:bg-lux-gold/5 transition-all duration-300 group">
+          {socialLinks.filter(s => s.href !== '#').map(social => (
+            <a href={social.href} target="_blank" rel="noopener noreferrer" class="p-2 rounded-full border border-white/10 text-cool-slate hover:text-lux-gold hover:border-lux-gold/30 hover:bg-lux-gold/5 transition-all duration-300 group">
               <social.icon className="w-5 h-5" />
               <span class="sr-only">{social.name}</span>
             </a>

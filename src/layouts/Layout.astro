@@ -12,9 +12,10 @@ interface Props {
     lang?: string;
     pageSlug?: string;
     description?: string;
+    ogImage?: string;
 }
 
-const { title, lang = 'nl', pageSlug = '', description } = Astro.props;
+const { title, lang = 'nl', pageSlug = '', description, ogImage: ogImageProp } = Astro.props;
 const t = ui[lang as keyof typeof ui] || ui[defaultLang];
 
 const SITE_URL = (import.meta.env.PUBLIC_SITE_URL || 'https://claesen-verlichting.be').replace(/\/$/, '');
@@ -28,7 +29,7 @@ function buildUrl(l: string, slug: string): string {
 }
 
 const canonicalUrl = buildUrl(lang, pageSlug);
-const ogImage = `${SITE_URL}${basePath}/og-image.jpg`;
+const ogImage = ogImageProp || `${SITE_URL}${basePath}/assets/hero-bg.jpg`;
 
 const hreflangLinks = [
     { hreflang: 'nl', href: buildUrl('nl', pageSlug) },
@@ -84,10 +85,63 @@ const ogDescription = description || t['meta.og.description'];
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={ogDescription} />
         <meta name="twitter:image" content={ogImage} />
+        <slot name="head" />
+
+        <!-- JSON-LD Structured Data -->
+        <script type="application/ld+json" set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "@id": `${SITE_URL}/#organization`,
+                    "name": "Claesen Verlichting",
+                    "url": SITE_URL,
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": `${SITE_URL}${basePath}/assets/logo.png`
+                    },
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "telephone": "+32473536591",
+                        "email": "info@claesen-verlichting.be",
+                        "contactType": "customer service",
+                        "availableLanguage": ["Dutch", "French", "English", "German"]
+                    },
+                    "sameAs": []
+                },
+                {
+                    "@type": "LocalBusiness",
+                    "@id": `${SITE_URL}/#localbusiness`,
+                    "name": "Claesen Verlichting",
+                    "url": SITE_URL,
+                    "telephone": "+32473536591",
+                    "email": "info@claesen-verlichting.be",
+                    "foundingDate": "1936",
+                    "image": `${SITE_URL}${basePath}/assets/hero-bg.jpg`,
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Benoit Jansenstraat 4",
+                        "addressLocality": "Balen",
+                        "postalCode": "2490",
+                        "addressCountry": "BE"
+                    },
+                    "geo": {
+                        "@type": "GeoCoordinates",
+                        "latitude": 51.1645201,
+                        "longitude": 5.1654219
+                    },
+                    "areaServed": {
+                        "@type": "Country",
+                        "name": "Belgium"
+                    },
+                    "priceRange": "€€"
+                }
+            ]
+        })} />
 	</head>
 	<body class="bg-obsidian text-white selection:bg-lux-gold selection:text-black">
 		<ClassicNav lang={lang} />
-		<CookieConsent client:load lang={lang} />
+		<CookieConsent client:idle lang={lang} />
 		<main>
 			<slot />
 		</main>

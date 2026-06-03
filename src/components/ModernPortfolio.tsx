@@ -17,31 +17,50 @@ export default function ModernPortfolio({ lang = defaultLang }: ModernPortfolioP
     const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
     const [loading, setLoading] = useState(true);
     const [activeCategory, setActiveCategory] = useState('all');
+    const [categories, setCategories] = useState([
+        { id: 'all', label: t['portfolio.cat.all'] },
+        { id: 'sport', label: t['portfolio.cat.sport'] },
+        { id: 'industrial', label: t['portfolio.cat.industrial'] },
+        { id: 'public', label: t['portfolio.cat.public'] },
+    ]);
 
     // Modal State
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const categories = [
-        { id: 'all', label: t['portfolio.cat.all'] },
-        { id: 'sport', label: t['portfolio.cat.sport'] },
-        { id: 'industrial', label: t['portfolio.cat.industrial'] },
-        { id: 'public', label: t['portfolio.cat.public'] },
-    ];
-
     useEffect(() => {
+        let mounted = true;
+
         const fetchProjects = async () => {
             try {
                 const response = await portfolioService.getProjects({ published: true });
+                if (!mounted) return;
                 setProjects(response.projects);
                 setFilteredProjects(response.projects);
             } catch {
             } finally {
-                setLoading(false);
+                if (mounted) setLoading(false);
             }
         };
 
         fetchProjects();
+
+        portfolioService.getCategories().then(cats => {
+            const ids = Object.keys(cats).filter(k => !!k);
+            if (ids.length > 0) {
+                const labelMap: Record<string, string> = {
+                    sport: t['portfolio.cat.sport'],
+                    industrial: t['portfolio.cat.industrial'],
+                    public: t['portfolio.cat.public'],
+                };
+                setCategories([
+                    { id: 'all', label: t['portfolio.cat.all'] },
+                    ...ids.map(id => ({ id, label: labelMap[id] || id })),
+                ]);
+            }
+        }).catch(() => {});
+
+        return () => { mounted = false; };
     }, []);
 
     useEffect(() => {
@@ -72,7 +91,7 @@ export default function ModernPortfolio({ lang = defaultLang }: ModernPortfolioP
                             relative px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 border backdrop-blur-md
                             ${activeCategory === category.id
                                 ? 'bg-lux-gold text-obsidian border-lux-gold shadow-lg shadow-lux-gold/20'
-                                : 'bg-white/5 text-cool-slate border-white/5 hover:bg-white/10 hover:text-white hover:border-white/20'}
+                                : 'bg-white/5 text-white/70 border-white/10 hover:bg-white/10 hover:text-white hover:border-white/20'}
                         `}
                     >
                         {category.label}

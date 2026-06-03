@@ -1,20 +1,33 @@
 @import "tailwindcss";
 
 @theme {
+    /* ── Base palette ── */
     --color-obsidian: #0B0B0F;
     --color-gunmetal: #1A1A22;
     --color-lux-gold: #FCD34D;
+    --color-gold-bright: #FFE082;
+    --color-gold-deep: #E0B431;
     --color-electric-amber: #F59E0B;
     --color-cool-slate: #64748B;
 
+    /* ── Brand spectrum (use sparingly — logo, tags, data viz) ── */
     --color-logo-pink: #E6007E;
     --color-logo-salmon: #FFB5D1;
     --color-logo-lime: #A5D610;
     --color-logo-cyan: #00AEEF;
     --color-logo-teal: #0082B4;
 
+    /* ── Fonts ── */
     --font-display: "Unbounded", sans-serif;
     --font-body: "Inter", sans-serif;
+
+    /* ── Type scale (fluid) ── */
+    --text-hero:    clamp(3rem, 6vw, 5.5rem);
+    --text-h1:      clamp(2.5rem, 4.5vw, 4rem);
+    --text-h2:      clamp(2rem, 3vw, 2.75rem);
+    --text-h3:      1.75rem;
+    --text-h4:      1.375rem;
+    --text-eyebrow: 0.8125rem;
 
     --animate-float: float 6s ease-in-out infinite;
     --animate-spotlight: spotlight 2s ease-in-out infinite alternate;
@@ -82,6 +95,73 @@
     .mask-gradient {
         mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
     }
+}
+
+:root {
+    /* Gold with alpha (excluded from @theme — not compatible with Tailwind opacity modifiers) */
+    --color-gold-soft: rgba(252, 211, 77, 0.12);
+
+    /* Semantic aliases */
+    --bg:            var(--color-obsidian);
+    --fg1:           #ffffff;
+    --fg2:           rgba(255, 255, 255, 0.72);
+    --fg3:           var(--color-cool-slate);
+    --fg-on-gold:    var(--color-obsidian);
+    --accent:        var(--color-lux-gold);
+    --border:        rgba(255, 255, 255, 0.10);
+    --border-strong: rgba(255, 255, 255, 0.15);
+    --tint-white-05: rgba(255, 255, 255, 0.05);
+    --tint-white-10: rgba(255, 255, 255, 0.10);
+    --tint-white-15: rgba(255, 255, 255, 0.15);
+
+    /* Line heights */
+    --lh-tight:   1.04;
+    --lh-snug:    1.18;
+    --lh-normal:  1.5;
+    --lh-relaxed: 1.7;
+
+    /* Letter spacing */
+    --ls-display: -0.03em;
+    --ls-tight:   -0.01em;
+    --ls-normal:  0;
+    --ls-eyebrow: 0.18em;
+
+    /* Font weights */
+    --fw-regular:  400;
+    --fw-semibold: 600;
+    --fw-bold:     700;
+
+    /* Spacing scale — 8px base */
+    --space-1:  4px;
+    --space-2:  8px;
+    --space-3:  12px;
+    --space-4:  16px;
+    --space-5:  24px;
+    --space-6:  32px;
+    --space-7:  48px;
+    --space-8:  64px;
+    --space-9:  96px;
+    --space-10: 128px;
+
+    /* Radii */
+    --radius-sm:   8px;
+    --radius-md:   16px;
+    --radius-lg:   24px;
+    --radius-xl:   32px;
+    --radius-pill: 999px;
+
+    /* Shadows */
+    --shadow-sm:   0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md:   0 8px 24px rgba(0, 0, 0, 0.45);
+    --shadow-lg:   0 24px 60px rgba(0, 0, 0, 0.55);
+    --shadow-gold: 0 8px 30px rgba(252, 211, 77, 0.25);
+
+    /* Motion */
+    --dur-fast: 200ms;
+    --dur-base: 300ms;
+    --dur-slow: 500ms;
+    --dur-cine: 700ms;
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 html,

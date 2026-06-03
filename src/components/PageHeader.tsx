@@ -12,7 +12,7 @@ export default function PageHeader({ title, subtitle }: PageHeaderProps) {
             {/* Glow Effect */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-lux-gold/5 blur-[100px] rounded-full opacity-50 pointer-events-none" />
 
-            <motion.h1
+            <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
@@ -21,7 +21,7 @@ export default function PageHeader({ title, subtitle }: PageHeaderProps) {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/60">
                     {title}
                 </span>
-            </motion.h1>
+            </motion.h2>
 
             {subtitle && (
                 <motion.p

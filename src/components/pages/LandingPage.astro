@@ -22,6 +22,13 @@ const t = ui[lang] || ui[defaultLang];
 ---
 
 <Layout title="Claesen Verlichting" lang={lang}>
+  <link
+    slot="head"
+    rel="preload"
+    as="image"
+    href="/v1/assets/hero-bg.jpg"
+    fetchpriority="high"
+  />
   {/* Hero Section */}
   <section
     id="home"
@@ -91,7 +98,7 @@ const t = ui[lang] || ui[defaultLang];
 
       <div class="max-w-6xl mx-auto mb-10 md:mb-16 space-y-6 md:space-y-8">
         <h1
-          class="font-display text-4xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[1.1] md:leading-[1] animate-fade-in"
+          class="font-display text-hero font-bold tracking-tighter leading-[1.1] animate-fade-in"
         >
           <span
             class="block text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 drop-shadow-2xl"
@@ -179,7 +186,7 @@ const t = ui[lang] || ui[defaultLang];
   <Footer lang={lang} />
 
   <VideoModal
-    client:load
+    client:idle
     videoUrl={`${
       import.meta.env.BASE_URL === "/" ? "" : import.meta.env.BASE_URL
     }/assets/hero-video.mp4`}

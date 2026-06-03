@@ -39,6 +39,9 @@ jobs:
         env:
           PUBLIC_API_URL: ${{ secrets.PUBLIC_API_URL || 'https://backend.claesen-verlichting.be/v1/website' }}
 
+      - name: Type Check
+        run: npx astro check
+
       - name: Build Project
         run: |
           npm run build:prod
@@ -78,6 +81,10 @@ jobs:
             chmod 755 /v1/privacy || true; \
             chmod 755 /v1/terms || true; \
             chmod 755 /v1/cookies || true; \
+            chmod 755 /v1/projecten || true; \
+            chmod 755 /v1/en/projecten || true; \
+            chmod 755 /v1/fr/projecten || true; \
+            chmod 755 /v1/de/projecten || true; \
             quit;" || true
 
           # Mirror everything: only newer files, parallel transfers, no chmod on individual files

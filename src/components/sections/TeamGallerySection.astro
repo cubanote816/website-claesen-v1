@@ -59,14 +59,14 @@ const gallery = [
                     />
                     <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
                     
-                    <div class="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                    <div class="absolute bottom-0 left-0 p-8 w-full transform md:translate-y-4 md:group-hover:translate-y-0 transition-transform">
                         <div class="flex items-center gap-3 mb-3">
                             <div class="p-2 rounded-lg bg-lux-gold text-obsidian">
                                 <item.icon className="w-5 h-5" />
                             </div>
                             <h3 class="text-xl font-bold text-white">{item.title}</h3>
                         </div>
-                        <p class="text-white/70 text-sm max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                        <p class="text-white/70 text-sm max-w-md md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 delay-100">
                             {item.desc}
                         </p>
                     </div>

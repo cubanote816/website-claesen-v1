@@ -48,6 +48,8 @@ export class PortfolioService {
             params.append('filter[year]', filters.year.toString())
         if (filters?.featured)
             params.append('filter[featured]', '1')
+        if (filters?.published)
+            params.append('filter[published]', '1')
         params.append('per_page', '12')
         return params
     }
@@ -58,19 +60,19 @@ export class PortfolioService {
             : (Array.isArray(raw.api_gallery) ? raw.api_gallery : [])
         return imgs.map((img: any) => ({
             id: img.id,
-            url: this.formatImageUrl(img.url || img.original_url),
-            thumb: this.formatImageUrl(img.thumb || img.url || img.thumb_url || img.original_url),
+            url: this.formatImageUrl(img.url || img.original_url || img.optimized || img.original),
+            thumb: this.formatImageUrl(img.thumb || img.thumb_url || img.optimized || img.url || img.original_url || img.original),
             alt: img.alt || '',
             caption: img.caption || ''
         }))
     }
 
     private mapProject(raw: any): Project {
+        const fi = raw.featured_image_url || raw.api_featured_image_url || raw.featured_image
+        const fiStr = typeof fi === 'string' ? fi : (fi?.optimized || fi?.original || fi?.url || fi?.thumb || '')
         return {
             ...raw,
-            featured_image_url: this.formatImageUrl(
-                raw.featured_image_url || raw.api_featured_image_url || raw.featured_image
-            ),
+            featured_image_url: this.formatImageUrl(fiStr),
             gallery_images: this.mapGalleryImages(raw)
         }
     }
@@ -92,7 +94,6 @@ export class PortfolioService {
             const projects = data.projects || data.data || data || []
             return Array.isArray(projects) ? projects : []
         } catch {
-            console.warn('⚠️ Static fallback unavailable')
             return []
         }
     }
@@ -144,11 +145,11 @@ export class PortfolioService {
     async getProjects(filters?: PortfolioFilters, locale: string = 'nl'): Promise<ProjectsResponse> {
         const params = this.buildParams(filters)
 
-        // API-first
-        try {
-            const response = await apiClient.get(`/projects?${params}`)
-            const { raw, filterData } = this.extractRawFromApiResponse(response)
-            if (raw.length > 0) {
+        // API-first — return API result even when empty; retry once on cancel/network
+        for (let attempt = 0; attempt <= 1; attempt++) {
+            try {
+                const response = await apiClient.get(`/projects?${params}`)
+                const { raw, filterData } = this.extractRawFromApiResponse(response)
                 return {
                     projects: raw.map(p => this.mapProject(p)),
                     filters: {
@@ -156,9 +157,14 @@ export class PortfolioService {
                         years: Array.isArray(filterData?.filters?.years) ? filterData.filters.years : []
                     }
                 }
+            } catch (err: any) {
+                // No HTTP response = canceled or network error → retry once after transition settles
+                if (attempt === 0 && !err?.response) {
+                    await new Promise(r => setTimeout(r, 400))
+                    continue
+                }
+                break
             }
-        } catch {
-            // API unavailable — fall through to static fallback
         }
 
         // Static fallback
@@ -171,11 +177,11 @@ export class PortfolioService {
     }
 
     async getFeaturedProjects(): Promise<Project[]> {
-        // API-first
+        // API-first — return API result even when empty; only fall through on error
         try {
             const response = await apiClient.get('/projects?filter[featured]=1')
             const { raw } = this.extractRawFromApiResponse(response)
-            if (raw.length > 0) return raw.map(p => this.mapProject(p))
+            return raw.map(p => this.mapProject(p))
         } catch {
             // fall through to static fallback
         }
@@ -187,11 +193,10 @@ export class PortfolioService {
     }
 
     async getCategories(): Promise<Record<string, string[]>> {
-        // API-first
+        // API-first — return API result even when empty; only fall through on error
         try {
             const response = await apiClient.get('/projects/categories')
-            const data = response.data.data || response.data || {}
-            if (Object.keys(data).length > 0) return data
+            return response.data.data || response.data || {}
         } catch {
             // fall through to static fallback
         }
@@ -206,11 +211,11 @@ export class PortfolioService {
     }
 
     async getYears(): Promise<number[]> {
-        // API-first
+        // API-first — return API result even when empty; only fall through on error
         try {
             const response = await apiClient.get('/projects/years')
             const data = response.data.data || response.data || []
-            if (Array.isArray(data) && data.length > 0) return data
+            if (Array.isArray(data)) return data
         } catch {
             // fall through to static fallback
         }
