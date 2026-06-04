@@ -3,21 +3,25 @@ import path from 'path';
 import https from 'https';
 import { fileURLToPath } from 'url';
 
-console.log('🚀 --- SYNC CONTENT SCRIPT VERSION: 2.1 (Hardened) ---');
+console.log('🚀 --- SYNC CONTENT SCRIPT VERSION: 2.2 ---');
 console.log('📅 Timestamp:', new Date().toISOString());
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Disable SSL verification for build script
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
-
 // Configuration
 const args = process.argv.slice(2);
 const modeIndex = args.indexOf('--mode');
 const mode = modeIndex !== -1 ? args[modeIndex + 1] : 'production';
+const shouldClean = args.includes('--clean');
 
-console.log(`ℹ️ Running in ${mode} mode`);
+// SSL bypass only when explicitly requested (e.g. self-signed cert on dev server)
+if (process.env.SYNC_DISABLE_SSL === 'true') {
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+    console.warn('⚠️  SSL verification disabled (SYNC_DISABLE_SSL=true)');
+}
+
+console.log(`ℹ️ Running in ${mode} mode${shouldClean ? ' [--clean]' : ''}`);
 
 let envApiUrl = '';
 try {
@@ -44,6 +48,21 @@ if (!fs.existsSync(CACHE_DIR)) {
 }
 if (!fs.existsSync(path.dirname(DATA_FILE))) {
     fs.mkdirSync(path.dirname(DATA_FILE), { recursive: true });
+}
+
+// --clean: remove all cached images before syncing (preserves the JSON manifest)
+if (shouldClean && fs.existsSync(CACHE_DIR)) {
+    console.log('🧹 Cleaning cached images in', CACHE_DIR);
+    const IMAGE_EXTS = new Set(['.jpg', '.jpeg', '.png', '.gif', '.webp', '.avif', '.svg']);
+    const files = fs.readdirSync(CACHE_DIR);
+    let removed = 0;
+    for (const file of files) {
+        if (IMAGE_EXTS.has(path.extname(file).toLowerCase())) {
+            fs.unlinkSync(path.join(CACHE_DIR, file));
+            removed++;
+        }
+    }
+    console.log(`   ✅ Removed ${removed} image file(s).`);
 }
 
 // Helper to download image

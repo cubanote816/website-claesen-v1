@@ -7,9 +7,11 @@
     "sync": "node scripts/sync-content.js",
     "sync:dev": "node scripts/sync-content.js --mode development",
     "sync:prod": "node scripts/sync-content.js --mode production",
+    "sync:clean": "node scripts/sync-content.js --clean --mode production",
     "build": "astro build",
     "build:dev": "npm run sync:dev && astro build --mode development",
     "build:prod": "npm run sync:prod && astro build --mode production",
+    "build:fresh": "npm run sync:clean && astro build --mode production",
     "preview": "astro preview",
     "astro": "astro"
   },
