@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { ui, defaultLang } from '../../i18n/ui';
+import DetailGallery from '../DetailGallery';
 
 interface Props {
     project: any;
@@ -22,13 +23,20 @@ function getImageUrl(val: any): string {
     return val.optimized || val.original || val.url || val.original_url || val.thumb || '';
 }
 
+const basePath = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL.replace(/\/$/, '');
+
+function resolveImageUrl(url: string): string {
+    if (!url || url.startsWith('http')) return url;
+    return `${basePath}${url}`;
+}
+
 const title      = getStr(raw.title);
 const description = getStr(raw.description);
 const location   = getStr(raw.location);
 const client     = getStr(raw.client);
 const category   = raw.category || '';
 const year       = raw.year;
-const featuredUrl = getImageUrl(raw.featured_image_url || raw.featured_image);
+const featuredUrl = resolveImageUrl(getImageUrl(raw.featured_image_url || raw.featured_image));
 
 const rawGallery: any[] = Array.isArray(raw.gallery) && raw.gallery.length > 0
     ? raw.gallery
@@ -36,13 +44,11 @@ const rawGallery: any[] = Array.isArray(raw.gallery) && raw.gallery.length > 0
 
 const gallery = rawGallery
     .map((img: any) => ({
-        url:   getImageUrl(img),
-        thumb: img.thumb || img.thumb_url || getImageUrl(img),
+        url:   resolveImageUrl(img.url || img.thumb || img.optimized || img.original || ''),
+        thumb: resolveImageUrl(img.thumb || img.url || img.optimized || img.original || ''),
         alt:   img.alt || title,
     }))
     .filter((img: any) => img.url);
-
-const basePath = import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL.replace(/\/$/, '');
 const backUrl  = lang === defaultLang
     ? `${basePath}/#projects`
     : `${basePath}/${lang}/#projects`;
@@ -189,25 +195,7 @@ const l = (key: string) => sidebarLabels[key]?.[lang] || key;
             {gallery.length > 0 && (
                 <div class="mt-20">
                     <h2 class="font-display text-2xl font-bold text-white mb-8">{t['project.gallery']}</h2>
-                    <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-                        {gallery.map((img: any, i: number) => (
-                            <a
-                                href={img.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="block overflow-hidden rounded-xl border border-white/10 hover:border-lux-gold/40 transition-colors group break-inside-avoid"
-                                aria-label={img.alt}
-                            >
-                                <img
-                                    src={img.thumb || img.url}
-                                    alt={img.alt}
-                                    loading={i < 6 ? 'eager' : 'lazy'}
-                                    decoding="async"
-                                    class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
-                                />
-                            </a>
-                        ))}
-                    </div>
+                    <DetailGallery client:visible gallery={gallery} title={title} />
                 </div>
             )}
 
