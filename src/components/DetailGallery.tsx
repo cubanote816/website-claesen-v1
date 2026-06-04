@@ -52,23 +52,22 @@ export default function DetailGallery({ gallery, title }: Props) {
 
     return (
         <>
-            {/* Thumbnail grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+            {/* Thumbnail grid — masonry */}
+            <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
                 {gallery.map((img, i) => (
                     <button
                         key={i}
                         onClick={() => setActiveIndex(i)}
-                        className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-white/10 hover:border-lux-gold/40 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-lux-gold"
+                        className="group block w-full overflow-hidden rounded-xl border border-white/10 hover:border-lux-gold/40 transition-colors break-inside-avoid focus:outline-none focus-visible:ring-2 focus-visible:ring-lux-gold"
                         aria-label={img.alt || `${title} — foto ${i + 1}`}
                     >
                         <img
                             src={img.thumb || img.url}
                             alt={img.alt || title}
-                            loading={i < 8 ? 'eager' : 'lazy'}
+                            loading={i < 6 ? 'eager' : 'lazy'}
                             decoding="async"
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            className="w-full h-auto max-h-56 object-cover group-hover:scale-105 transition-transform duration-500"
                         />
-                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
                     </button>
                 ))}
             </div>
