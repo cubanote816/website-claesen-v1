@@ -12,6 +12,7 @@
     "build:dev": "npm run sync:dev && astro build --mode development",
     "build:prod": "npm run sync:prod && astro build --mode production",
     "build:fresh": "npm run sync:clean && astro build --mode production",
+    "webhook": "node scripts/webhook-server.js",
     "preview": "astro preview",
     "astro": "astro"
   },
