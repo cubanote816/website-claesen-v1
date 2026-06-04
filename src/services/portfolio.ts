@@ -67,13 +67,25 @@ export class PortfolioService {
         }))
     }
 
+    private mapDetailGallery(raw: any): GalleryImage[] {
+        if (!Array.isArray(raw.detail_gallery) || raw.detail_gallery.length === 0) return []
+        return raw.detail_gallery.map((img: any) => ({
+            id: img.id,
+            url: this.formatImageUrl(img.url || img.optimized || img.original_url || img.original || ''),
+            thumb: this.formatImageUrl(img.thumb || img.thumb_url || img.optimized || img.url || img.original_url || img.original || ''),
+            alt: img.alt || '',
+            caption: img.caption || ''
+        })).filter((img: any) => img.url)
+    }
+
     private mapProject(raw: any): Project {
         const fi = raw.featured_image_url || raw.api_featured_image_url || raw.featured_image
         const fiStr = typeof fi === 'string' ? fi : (fi?.optimized || fi?.original || fi?.url || fi?.thumb || '')
         return {
             ...raw,
             featured_image_url: this.formatImageUrl(fiStr),
-            gallery_images: this.mapGalleryImages(raw)
+            gallery_images: this.mapGalleryImages(raw),
+            detail_gallery: this.mapDetailGallery(raw),
         }
     }
 
@@ -193,10 +205,11 @@ export class PortfolioService {
     }
 
     async getCategories(): Promise<Record<string, string[]>> {
-        // API-first — return API result even when empty; only fall through on error
+        // API-first — only use result if it's a plain object (not array)
         try {
             const response = await apiClient.get('/projects/categories')
-            return response.data.data || response.data || {}
+            const data = response.data.data || response.data || {}
+            if (!Array.isArray(data) && typeof data === 'object') return data
         } catch {
             // fall through to static fallback
         }

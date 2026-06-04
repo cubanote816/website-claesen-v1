@@ -162,6 +162,7 @@ async function syncContent() {
                 : (Array.isArray(project.api_gallery) ? project.api_gallery : []);
 
             for (const img of gallerySource) {
+
                 const optUrlCandidate = img.optimized || img.url || img.original_url || img.original || '';
                 const optUrl = (typeof optUrlCandidate === 'string') ? optUrlCandidate : (optUrlCandidate?.optimized || optUrlCandidate?.url || '');
 
@@ -194,11 +195,33 @@ async function syncContent() {
                 }
             }
 
+            // Process Detail Gallery Images (website-work-details fields)
+            const processedDetailGallery = [];
+            const detailGallerySource = Array.isArray(project.detail_gallery) ? project.detail_gallery : [];
+
+            for (const img of detailGallerySource) {
+                const urlCandidate = img.optimized || img.url || img.original_url || img.original || '';
+                const imgUrl = (typeof urlCandidate === 'string') ? urlCandidate : '';
+                if (!imgUrl) continue;
+
+                const ext = getExtension(imgUrl);
+                const filename = `${filenamePrefix}dg_${img.id}${ext}`;
+                const localFilePath = path.join(CACHE_DIR, filename);
+
+                try {
+                    await downloadImage(imgUrl, localFilePath);
+                    processedDetailGallery.push({ ...img, url: `/v1-media/${filename}`, thumb: `/v1-media/${filename}` });
+                } catch (e) {
+                    console.warn(`   ⚠️ Detail gallery img ${img.id} failed: ${e.message}. Skipping...`);
+                }
+            }
+
             processedProjects.push({
                 ...project,
                 featured_image_url: featuredLocalPath || project.featured_image_url,
                 gallery: processedGallery,
-                gallery_images: processedGallery
+                gallery_images: processedGallery,
+                detail_gallery: processedDetailGallery,
             });
         }
 

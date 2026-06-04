@@ -49,6 +49,24 @@ const gallery = rawGallery
         alt:   img.alt || title,
     }))
     .filter((img: any) => img.url);
+
+// Work-details fields (website-work-details API)
+// Texts may contain HTML — rendered with set:html, same pattern as description.
+const workStory  = getStr(raw.work_story);
+const challenge  = getStr(raw.challenge);
+const solution   = getStr(raw.solution);
+const result     = getStr(raw.result);
+
+const rawDetailGallery: any[] = Array.isArray(raw.detail_gallery) ? raw.detail_gallery : [];
+const detailGallery = rawDetailGallery
+    .map((img: any) => ({
+        url:   resolveImageUrl(img.url || img.optimized || img.original_url || img.original || ''),
+        thumb: resolveImageUrl(img.thumb || img.thumb_url || img.url || img.optimized || img.original || ''),
+        alt:   img.alt || title,
+    }))
+    .filter((img: any) => img.url);
+
+const hasWorkDetails = !!(workStory || challenge || solution || result || detailGallery.length > 0);
 const backUrl  = lang === defaultLang
     ? `${basePath}/#projects`
     : `${basePath}/${lang}/#projects`;
@@ -190,6 +208,72 @@ const l = (key: string) => sidebarLabels[key]?.[lang] || key;
                     </div>
                 </aside>
             </div>
+
+            <!-- Work Details Section (only when API returns work-detail data) -->
+            {hasWorkDetails && (
+                <div class="mt-20">
+                    <h2 class="font-display text-2xl font-bold text-white mb-8">{t['project.workdetails.title']}</h2>
+
+                    {workStory && (
+                        <div class="mb-10">
+                            <p class="text-xs font-bold uppercase tracking-widest text-lux-gold/70 mb-3">
+                                {t['project.workdetails.story']}
+                            </p>
+                            <div
+                                class="prose prose-invert prose-lg max-w-none text-white/70 leading-relaxed [&_p]:mb-4 [&_p:last-child]:mb-0"
+                                set:html={workStory}
+                            />
+                        </div>
+                    )}
+
+                    {(challenge || solution || result) && (
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+                            {challenge && (
+                                <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+                                    <h3 class="font-bold text-xs uppercase tracking-widest text-lux-gold/70 mb-3">
+                                        {t['project.workdetails.challenge']}
+                                    </h3>
+                                    <div
+                                        class="text-white/70 text-sm leading-relaxed [&_p]:mb-2 [&_p:last-child]:mb-0"
+                                        set:html={challenge}
+                                    />
+                                </div>
+                            )}
+                            {solution && (
+                                <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+                                    <h3 class="font-bold text-xs uppercase tracking-widest text-lux-gold/70 mb-3">
+                                        {t['project.workdetails.solution']}
+                                    </h3>
+                                    <div
+                                        class="text-white/70 text-sm leading-relaxed [&_p]:mb-2 [&_p:last-child]:mb-0"
+                                        set:html={solution}
+                                    />
+                                </div>
+                            )}
+                            {result && (
+                                <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+                                    <h3 class="font-bold text-xs uppercase tracking-widest text-lux-gold/70 mb-3">
+                                        {t['project.workdetails.result']}
+                                    </h3>
+                                    <div
+                                        class="text-white/70 text-sm leading-relaxed [&_p]:mb-2 [&_p:last-child]:mb-0"
+                                        set:html={result}
+                                    />
+                                </div>
+                            )}
+                        </div>
+                    )}
+
+                    {detailGallery.length > 0 && (
+                        <div>
+                            <h3 class="font-display text-xl font-bold text-white mb-6">
+                                {t['project.workdetails.gallery']}
+                            </h3>
+                            <DetailGallery client:visible gallery={detailGallery} title={title} />
+                        </div>
+                    )}
+                </div>
+            )}
 
             <!-- Gallery -->
             {gallery.length > 0 && (

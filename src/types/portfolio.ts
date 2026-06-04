@@ -28,6 +28,12 @@ export interface Project {
     published: boolean | number | string
     created_at?: string
     updated_at?: string
+    // Work-details fields (website-work-details API, may contain HTML)
+    work_story?: LocalizedContent | string | null
+    challenge?: LocalizedContent | string | null
+    solution?: LocalizedContent | string | null
+    result?: LocalizedContent | string | null
+    detail_gallery?: GalleryImage[] // Secondary execution gallery, always array
 }
 
 export interface PortfolioFilters {
