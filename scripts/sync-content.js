@@ -1,9 +1,8 @@
 import fs from 'fs';
 import path from 'path';
-import https from 'https';
 import { fileURLToPath } from 'url';
 
-console.log('🚀 --- SYNC CONTENT SCRIPT VERSION: 2.2 ---');
+console.log('🚀 --- SYNC CONTENT SCRIPT VERSION: 2.3 ---');
 console.log('📅 Timestamp:', new Date().toISOString());
 
 const __filename = fileURLToPath(import.meta.url);
@@ -15,7 +14,7 @@ const modeIndex = args.indexOf('--mode');
 const mode = modeIndex !== -1 ? args[modeIndex + 1] : 'production';
 const shouldClean = args.includes('--clean');
 
-// SSL bypass only when explicitly requested (e.g. self-signed cert on dev server)
+// SSL bypass only when explicitly requested (e.g. self-signed cert on own server)
 if (process.env.SYNC_DISABLE_SSL === 'true') {
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
     console.warn('⚠️  SSL verification disabled (SYNC_DISABLE_SSL=true)');
@@ -42,12 +41,11 @@ const API_URL = process.env.PUBLIC_API_URL || envApiUrl || 'https://backend.clae
 const CACHE_DIR = path.join(__dirname, '../public/v1-media');
 const DATA_FILE = path.join(__dirname, '../public/v1-media/projects-static.json');
 
+const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
+
 // Ensure directories exist
 if (!fs.existsSync(CACHE_DIR)) {
     fs.mkdirSync(CACHE_DIR, { recursive: true });
-}
-if (!fs.existsSync(path.dirname(DATA_FILE))) {
-    fs.mkdirSync(path.dirname(DATA_FILE), { recursive: true });
 }
 
 // --clean: remove all cached images before syncing (preserves the JSON manifest)
@@ -65,57 +63,26 @@ if (shouldClean && fs.existsSync(CACHE_DIR)) {
     console.log(`   ✅ Removed ${removed} image file(s).`);
 }
 
-// Helper to download image
-const downloadImage = (url, localPath) => {
-    return new Promise((resolve, reject) => {
-        if (!url || typeof url !== 'string' || !url.startsWith('http')) {
-            resolve(null);
-            return;
-        }
+// Download an image via fetch — works with both http:// and https://
+const downloadImage = async (url, localPath) => {
+    if (!url || typeof url !== 'string' || !url.startsWith('http')) return null;
 
-        // Check if file already exists and is not empty
-        if (fs.existsSync(localPath) && fs.statSync(localPath).size > 0) {
-            // console.log(`   ⏩ Skipping download (already exists): ${path.basename(localPath)}`);
-            resolve(true);
-            return;
-        }
+    if (fs.existsSync(localPath) && fs.statSync(localPath).size > 0) return true;
 
-        const options = {
-            headers: {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-            }
-        };
-
-        const file = fs.createWriteStream(localPath);
-        https.get(url, options, (response) => {
-            if (response.statusCode !== 200) {
-                file.close();
-                fs.unlink(localPath, () => { });
-                reject(new Error(`Failed to download ${url}: ${response.statusCode}`));
-                return;
-            }
-            response.pipe(file);
-            file.on('finish', () => {
-                file.close();
-                resolve(true);
-            });
-        }).on('error', (err) => {
-            fs.unlink(localPath, () => { });
-            reject(err);
-        });
-    });
+    const res = await fetch(url, { headers: { 'User-Agent': UA } });
+    if (!res.ok) throw new Error(`HTTP ${res.status} — ${url}`);
+    const buffer = await res.arrayBuffer();
+    fs.writeFileSync(localPath, Buffer.from(buffer));
+    return true;
 };
 
 // Helper to get extension from URL (normalized to lowercase)
 const getExtension = (url) => {
-    if (typeof url !== 'string') {
-        // console.warn('⚠️ getExtension received non-string URL:', url);
-        return '.jpg';
-    }
+    if (typeof url !== 'string') return '.jpg';
     try {
         const ext = path.extname(new URL(url).pathname).toLowerCase();
         return ext || '.jpg';
-    } catch (e) {
+    } catch {
         return '.jpg';
     }
 };
@@ -125,20 +92,12 @@ async function syncContent() {
     console.log(`📡 Fetching data from ${API_URL}/projects...`);
 
     try {
-        // Fetch Projects
-        const projectsResponse = await new Promise((resolve, reject) => {
-            const options = {
-                headers: {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-                }
-            };
-            https.get(`${API_URL}/projects?per_page=100`, options, (res) => {
-                let data = '';
-                res.on('data', chunk => data += chunk);
-                res.on('end', () => resolve(JSON.parse(data)));
-                res.on('error', reject);
-            });
+        // Fetch project list via fetch (supports http:// and https://)
+        const apiRes = await fetch(`${API_URL}/projects?per_page=100`, {
+            headers: { 'User-Agent': UA }
         });
+        if (!apiRes.ok) throw new Error(`API returned ${apiRes.status}`);
+        const projectsResponse = await apiRes.json();
 
         const projects = Array.isArray(projectsResponse?.data?.data)
             ? projectsResponse.data.data
@@ -161,25 +120,25 @@ async function syncContent() {
             // Process Featured Image
             let featuredLocalPath = null;
             const featuredImageObj = (project.featured_image && typeof project.featured_image === 'object') ? project.featured_image : null;
-            
+
             const optimizedUrl = featuredImageObj?.optimized || null;
-            const originalUrl = 
-                project.featured_image_url || 
-                project.api_featured_image_url || 
+            const originalUrl =
+                project.featured_image_url ||
+                project.api_featured_image_url ||
                 (typeof project.featured_image === 'string' ? project.featured_image : featuredImageObj?.original) ||
                 null;
-            
+
             let featuredSourceUrl = (typeof optimizedUrl === 'string' ? optimizedUrl : null) || (typeof originalUrl === 'string' ? originalUrl : null);
 
             if (featuredSourceUrl) {
                 const ext = getExtension(featuredSourceUrl);
                 const filename = `${filenamePrefix}featured${ext}`;
                 const localFilePath = path.join(CACHE_DIR, filename);
-                
+
                 try {
                     await downloadImage(featuredSourceUrl, localFilePath);
                 } catch (e) {
-                    console.warn(`   ⚠️ Failed to download optimized: ${e.message}. Falling back to original...`);
+                    console.warn(`   ⚠️ Failed to download featured: ${e.message}. Trying original...`);
                     if (optimizedUrl && originalUrl && optimizedUrl !== originalUrl) {
                         try {
                             const origExt = getExtension(originalUrl);
@@ -198,46 +157,38 @@ async function syncContent() {
 
             // Process Gallery Images
             const processedGallery = [];
-            const gallerySource = Array.isArray(project.gallery) && project.gallery.length > 0 ? project.gallery : (Array.isArray(project.api_gallery) ? project.api_gallery : []);
+            const gallerySource = Array.isArray(project.gallery) && project.gallery.length > 0
+                ? project.gallery
+                : (Array.isArray(project.api_gallery) ? project.api_gallery : []);
 
-            if (gallerySource.length > 0) {
-                for (const img of gallerySource) {
-                    const optUrlCandidate = img.optimized || img.url || img.original_url || img.original || '';
-                    const optUrl = (typeof optUrlCandidate === 'string') ? optUrlCandidate : (optUrlCandidate?.optimized || optUrlCandidate?.url || '');
-                    
-                    if (!optUrl || typeof optUrl !== 'string') continue;
+            for (const img of gallerySource) {
+                const optUrlCandidate = img.optimized || img.url || img.original_url || img.original || '';
+                const optUrl = (typeof optUrlCandidate === 'string') ? optUrlCandidate : (optUrlCandidate?.optimized || optUrlCandidate?.url || '');
 
-                    const ext = getExtension(optUrl);
-                    const filename = `${filenamePrefix}g_${img.id}${ext}`;
-                    const localFilePath = path.join(CACHE_DIR, filename);
-                    
-                    try {
-                        await downloadImage(optUrl, localFilePath);
-                        processedGallery.push({
-                            ...img,
-                            url: `/v1-media/${filename}`,
-                            thumb: `/v1-media/${filename}`
-                        });
-                    } catch (e) {
-                        console.warn(`   ⚠️ Gallery img ${img.id} failed: ${e.message}. Skipping...`);
-                        
-                        const fallbackCandidate = img.original || img.url || img.original_url;
-                        const fallbackUrl = (typeof fallbackCandidate === 'string') ? fallbackCandidate : (fallbackCandidate?.original || fallbackCandidate?.url);
-                        
-                        if (fallbackUrl && typeof fallbackUrl === 'string' && fallbackUrl !== optUrl) {
-                             try {
-                                const fExt = getExtension(fallbackUrl);
-                                const fFilename = `${filenamePrefix}g_${img.id}${fExt}`;
-                                const fLocalPath = path.join(CACHE_DIR, fFilename);
-                                await downloadImage(fallbackUrl, fLocalPath);
-                                processedGallery.push({
-                                    ...img,
-                                    url: `/v1-media/${fFilename}`,
-                                    thumb: `/v1-media/${fFilename}`
-                                });
-                             } catch (e3) {
-                                console.error(`   ❌ Gallery fallback failed: ${e3.message}`);
-                             }
+                if (!optUrl || typeof optUrl !== 'string') continue;
+
+                const ext = getExtension(optUrl);
+                const filename = `${filenamePrefix}g_${img.id}${ext}`;
+                const localFilePath = path.join(CACHE_DIR, filename);
+
+                try {
+                    await downloadImage(optUrl, localFilePath);
+                    processedGallery.push({ ...img, url: `/v1-media/${filename}`, thumb: `/v1-media/${filename}` });
+                } catch (e) {
+                    console.warn(`   ⚠️ Gallery img ${img.id} failed: ${e.message}. Skipping...`);
+
+                    const fallbackCandidate = img.original || img.url || img.original_url;
+                    const fallbackUrl = (typeof fallbackCandidate === 'string') ? fallbackCandidate : (fallbackCandidate?.original || fallbackCandidate?.url);
+
+                    if (fallbackUrl && typeof fallbackUrl === 'string' && fallbackUrl !== optUrl) {
+                        try {
+                            const fExt = getExtension(fallbackUrl);
+                            const fFilename = `${filenamePrefix}g_${img.id}${fExt}`;
+                            const fLocalPath = path.join(CACHE_DIR, fFilename);
+                            await downloadImage(fallbackUrl, fLocalPath);
+                            processedGallery.push({ ...img, url: `/v1-media/${fFilename}`, thumb: `/v1-media/${fFilename}` });
+                        } catch (e3) {
+                            console.error(`   ❌ Gallery fallback failed: ${e3.message}`);
                         }
                     }
                 }
@@ -247,17 +198,15 @@ async function syncContent() {
                 ...project,
                 featured_image_url: featuredLocalPath || project.featured_image_url,
                 gallery: processedGallery,
-                gallery_images: processedGallery // Keep compatibility
+                gallery_images: processedGallery
             });
         }
 
-        // Save Cache File
-        const cacheData = {
+        // Save cache file
+        fs.writeFileSync(DATA_FILE, JSON.stringify({
             projects: processedProjects,
             generatedAt: new Date().toISOString()
-        };
-
-        fs.writeFileSync(DATA_FILE, JSON.stringify(cacheData, null, 2));
+        }, null, 2));
         console.log(`💾 Saved cache to ${DATA_FILE}`);
         console.log('✨ Sync Complete!');
 
