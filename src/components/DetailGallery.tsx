@@ -53,7 +53,7 @@ export default function DetailGallery({ gallery, title }: Props) {
     return (
         <>
             {/* Thumbnail grid — masonry */}
-            <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+            <div className="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3">
                 {gallery.map((img, i) => (
                     <button
                         key={i}
@@ -66,7 +66,7 @@ export default function DetailGallery({ gallery, title }: Props) {
                             alt={img.alt || title}
                             loading={i < 6 ? 'eager' : 'lazy'}
                             decoding="async"
-                            className="w-full h-auto max-h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+                            className="w-full h-auto block group-hover:scale-105 transition-transform duration-500"
                         />
                     </button>
                 ))}
