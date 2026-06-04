@@ -8,7 +8,7 @@ interface PageHeaderProps {
 
 export default function PageHeader({ title, subtitle }: PageHeaderProps) {
     return (
-        <div className="text-center mb-20 relative pointer-events-none">
+        <div className="text-center mb-16 relative pointer-events-none">
             {/* Glow Effect */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-lux-gold/5 blur-[100px] rounded-full opacity-50 pointer-events-none" />
 

@@ -22,7 +22,7 @@
     --font-body: "Inter", sans-serif;
 
     /* ── Type scale (fluid) ── */
-    --text-hero:    clamp(3rem, 6vw, 5.5rem);
+    --text-hero:    clamp(1.5rem, 7.5vw, 5.5rem);
     --text-h1:      clamp(2.5rem, 4.5vw, 4rem);
     --text-h2:      clamp(2rem, 3vw, 2.75rem);
     --text-h3:      1.75rem;
