@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { getToken, removeToken } from '../utils/storage'
 
-const API_BASE_URL = import.meta.env.PUBLIC_API_URL || import.meta.env.PUBLIC_API_BASE_URL || 'http://localhost:8001/v1/website'
+const API_BASE_URL = import.meta.env.PUBLIC_API_URL || import.meta.env.PUBLIC_API_BASE_URL || 'http://localhost:8000/v1/website'
 const baseUrl = import.meta.env.BASE_URL || '/'
 export const ASSET_URL = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`
 
