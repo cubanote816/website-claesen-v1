@@ -46,16 +46,16 @@ export default function ModernPortfolio({ lang = defaultLang }: ModernPortfolioP
         fetchProjects();
 
         portfolioService.getCategories().then(cats => {
-            const ids = Object.keys(cats).filter(k => !!k);
-            if (ids.length > 0) {
-                const labelMap: Record<string, string> = {
-                    sport: t['portfolio.cat.sport'],
-                    industrial: t['portfolio.cat.industrial'],
-                    public: t['portfolio.cat.public'],
-                };
+            const labelMap: Record<string, string> = {
+                sport: t['portfolio.cat.sport'],
+                industrial: t['portfolio.cat.industrial'],
+                public: t['portfolio.cat.public'],
+            };
+            const validIds = Object.keys(cats).filter(id => id in labelMap);
+            if (validIds.length > 0) {
                 setCategories([
                     { id: 'all', label: t['portfolio.cat.all'] },
-                    ...ids.map(id => ({ id, label: labelMap[id] || id })),
+                    ...validIds.map(id => ({ id, label: labelMap[id] })),
                 ]);
             }
         }).catch(() => {});
