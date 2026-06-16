@@ -195,11 +195,45 @@ async function syncContent() {
                 }
             }
 
+            // Extract work-details fields.
+            // Post-migration the list endpoint includes these fields directly — use them if present
+            // ('work_story' in project distinguishes null-but-present from absent).
+            // If absent (pre-migration or legacy list response) fall back to GET /projects/{slug}.
+            let workStory = null, challenge = null, solution = null, result = null;
+            let detailGallerySourceRaw = Array.isArray(project.detail_gallery) ? project.detail_gallery : [];
+
+            if ('work_story' in project) {
+                // List already has work-details — no extra request needed
+                workStory = project.work_story ?? null;
+                challenge = project.challenge  ?? null;
+                solution  = project.solution   ?? null;
+                result    = project.result     ?? null;
+            } else {
+                // Pre-migration list — fetch individual detail endpoint
+                try {
+                    const detailRes = await fetch(`${API_URL}/projects/${project.slug}`, {
+                        headers: { 'User-Agent': UA }
+                    });
+                    if (detailRes.ok) {
+                        const detailJson = await detailRes.json();
+                        const detail = detailJson.data || detailJson;
+                        workStory = detail.work_story ?? null;
+                        challenge = detail.challenge  ?? null;
+                        solution  = detail.solution   ?? null;
+                        result    = detail.result     ?? null;
+                        if (Array.isArray(detail.detail_gallery) && detail.detail_gallery.length > 0) {
+                            detailGallerySourceRaw = detail.detail_gallery;
+                        }
+                    }
+                } catch (e) {
+                    console.warn(`   ⚠️ Work-details fetch failed for ${project.slug}: ${e.message}`);
+                }
+            }
+
             // Process Detail Gallery Images (website-work-details fields)
             const processedDetailGallery = [];
-            const detailGallerySource = Array.isArray(project.detail_gallery) ? project.detail_gallery : [];
 
-            for (const img of detailGallerySource) {
+            for (const img of detailGallerySourceRaw) {
                 const urlCandidate = img.optimized || img.url || img.original_url || img.original || '';
                 const imgUrl = (typeof urlCandidate === 'string') ? urlCandidate : '';
                 if (!imgUrl) continue;
@@ -222,6 +256,10 @@ async function syncContent() {
                 gallery: processedGallery,
                 gallery_images: processedGallery,
                 detail_gallery: processedDetailGallery,
+                work_story: workStory,
+                challenge:  challenge,
+                solution:   solution,
+                result:     result,
             });
         }
 
