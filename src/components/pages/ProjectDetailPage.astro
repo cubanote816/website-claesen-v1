@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { ui, defaultLang } from '../../i18n/ui';
 import DetailGallery from '../DetailGallery';
+import WerfGallery from '../WerfGallery';
 
 interface Props {
     project: any;
@@ -97,7 +98,9 @@ const sidebarLabels: Record<string, Record<string, string>> = {
 const l = (key: string) => sidebarLabels[key]?.[lang] || key;
 
 // Plain-text hero intro (strip HTML tags from description)
-const heroIntro = description.replace(/<[^>]*>/g, '').replace(/&[a-z]+;/gi, ' ').trim().slice(0, 260);
+// Suppress if the stripped text is just the title restated (degenerate API data)
+const _heroIntroRaw = description.replace(/<[^>]*>/g, '').replace(/&[a-z]+;/gi, ' ').trim().slice(0, 260);
+const heroIntro = _heroIntroRaw.toLowerCase() === title.toLowerCase() ? '' : _heroIntroRaw;
 
 // Editorial body: work_story preferred, description as fallback
 const bodyText = workStory || description;
@@ -141,8 +144,8 @@ const werfImages: WerfPhoto[] = [
             class="absolute inset-0 scale-[1.02] bg-cover bg-center bg-[#0f1014]"
             style={featuredUrl ? `background-image:url('${featuredUrl}')` : undefined}
         ></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-[#07080b]/95 via-[#07080b]/75 to-[#07080b]/55"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-[#07080b] via-transparent to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#07080b]/75 via-[#07080b]/45 to-[#07080b]/15"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#07080b]/85 via-transparent to-transparent"></div>
         <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-obsidian to-transparent"></div>
 
         <!-- Two-column hero layout -->
@@ -156,8 +159,6 @@ const werfImages: WerfPhoto[] = [
                     <a href={backUrl} class="hover:text-white/70 transition-colors">{t['nav.projects']}</a>
                     <span aria-hidden="true">/</span>
                     {categoryLabel && <span class="text-white/45">{categoryLabel}</span>}
-                    <span aria-hidden="true">/</span>
-                    <span class="text-white/65">{title}</span>
                 </nav>
 
                 <!-- Category + year tag -->
@@ -169,8 +170,8 @@ const werfImages: WerfPhoto[] = [
                 </div>
 
                 <!-- Title -->
-                <h1 class="font-display font-black text-white leading-[0.93] mt-2 mb-5
-                           text-[52px] sm:text-[68px] lg:text-[86px]">
+                <h1 class="font-display font-black text-white leading-[1.1] mt-2 mb-5
+                           text-[36px] sm:text-[46px] lg:text-[56px]">
                     {title}
                 </h1>
 
@@ -181,50 +182,14 @@ const werfImages: WerfPhoto[] = [
                     </p>
                 )}
 
-                <!-- CTAs -->
-                <div class="flex flex-wrap items-center gap-3 mb-10">
-                    <a href={ctaUrl}
-                       class="inline-flex items-center gap-2 px-5 py-3 rounded-full
-                              bg-lux-gold text-obsidian font-bold text-[12px] uppercase tracking-wide
-                              shadow-[0_12px_30px_rgba(252,211,77,0.18)] hover:bg-lux-gold/90 transition-colors">
-                        <span class="w-1.5 h-1.5 rounded-full bg-obsidian/40" aria-hidden="true"></span>
-                        {t['nav.cta']}
-                    </a>
-                    <a href={backUrl}
-                       class="inline-flex items-center gap-2 px-5 py-3 rounded-full
-                              bg-white/6 border border-white/12 text-white font-bold text-[12px]
-                              uppercase tracking-wide hover:bg-white/10 transition-colors">
-                        {t['project.back']}
-                    </a>
-                </div>
+               
 
-                <!-- Meta bar: category · location · year -->
-                <div class="grid grid-cols-3 max-w-[580px] border border-white/8 rounded-lg overflow-hidden divide-x divide-white/8">
-                    <div class="px-4 py-4 bg-black/40 backdrop-blur-sm">
-                        <span class="block text-lux-gold text-[10px] font-bold uppercase tracking-widest mb-1.5">
-                            {l('category')}
-                        </span>
-                        <span class="block text-white font-semibold text-[15px]">{categoryLabel || '—'}</span>
-                    </div>
-                    <div class="px-4 py-4 bg-black/40 backdrop-blur-sm">
-                        <span class="block text-lux-gold text-[10px] font-bold uppercase tracking-widest mb-1.5">
-                            {l('location')}
-                        </span>
-                        <span class="block text-white font-semibold text-[15px]">{location || '—'}</span>
-                    </div>
-                    <div class="px-4 py-4 bg-black/40 backdrop-blur-sm">
-                        <span class="block text-lux-gold text-[10px] font-bold uppercase tracking-widest mb-1.5">
-                            {l('year')}
-                        </span>
-                        <span class="block text-white font-semibold text-[15px]">{year || '—'}</span>
-                    </div>
-                </div>
             </div>
 
             <!-- RIGHT: project info card -->
             <aside class="self-end lg:self-end">
-                <div class="bg-[#11131a]/90 border border-white/12 rounded-lg p-6
-                            backdrop-blur-xl shadow-[0_24px_80px_rgba(0,0,0,0.4)]">
+                <div class="bg-[#080a0e]/[0.68] border border-white/12 rounded-lg p-6
+                            backdrop-blur-md shadow-[0_24px_80px_rgba(0,0,0,0.4)]">
                     <p class="text-lux-gold text-[11px] font-bold uppercase tracking-widest mb-5">
                         {t['project.info.title']}
                     </p>
@@ -254,12 +219,6 @@ const werfImages: WerfPhoto[] = [
                         </div>
                     )}
 
-                    <a href={ctaUrl}
-                       class="block w-full text-center mt-5 px-4 py-3 rounded-lg
-                              bg-lux-gold text-obsidian font-bold text-[12px] uppercase tracking-wide
-                              hover:bg-lux-gold/90 transition-colors">
-                        {t['nav.cta']}
-                    </a>
                 </div>
             </aside>
         </div>
@@ -392,38 +351,7 @@ const werfImages: WerfPhoto[] = [
                     </div>
                 </div>
 
-                <!--
-                    Photo grid layout:
-                    Desktop (lg): 3 cols — big photo (col 1, rows 1-2) + 4 smaller (cols 2-3)
-                    Mobile:       2 cols — big photo (col-span-2, rows 1-2) + 4 smaller in 2x2
-                -->
-                <div class="grid grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr]
-                            auto-rows-[180px] lg:auto-rows-[210px] gap-3 lg:gap-4">
-                    {werfImages.map((img, i) => (
-                        <div
-                            class:list={[
-                                "relative overflow-hidden rounded-lg border border-white/8 bg-[#181b21] isolate",
-                                i === 0 && "col-span-2 row-span-2 lg:col-span-1",
-                            ]}
-                        >
-                            <img
-                                src={img.url}
-                                alt={img.label}
-                                loading={i === 0 ? 'eager' : 'lazy'}
-                                decoding="async"
-                                class="w-full h-full object-cover"
-                            />
-                            <!-- gradient + label overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-[1]"
-                                 aria-hidden="true"></div>
-                            <span class="absolute bottom-3.5 left-4 z-[2]
-                                         text-[11px] font-extrabold uppercase tracking-wide text-white
-                                         drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
-                                {img.label}
-                            </span>
-                        </div>
-                    ))}
-                </div>
+                <WerfGallery client:visible images={werfImages} title={title} />
             </section>
 
             <!-- ── GALERIJ: main project gallery ───────────────────────── -->

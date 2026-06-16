@@ -2,38 +2,33 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
-interface GalleryItem {
+interface WerfImage {
     url: string;
-    thumb: string;
-    alt: string;
+    label: string;
 }
 
 interface Props {
-    gallery: GalleryItem[];
+    images: WerfImage[];
     title: string;
 }
 
-export default function DetailGallery({ gallery, title }: Props) {
+export default function WerfGallery({ images, title }: Props) {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
     const isOpen = activeIndex !== null;
 
     const showPrev = useCallback(() => {
-        setActiveIndex(i => (i === null || i === 0 ? gallery.length - 1 : i - 1));
-    }, [gallery.length]);
+        setActiveIndex(i => (i === null || i === 0 ? images.length - 1 : i - 1));
+    }, [images.length]);
 
     const showNext = useCallback(() => {
-        setActiveIndex(i => (i === null || i === gallery.length - 1 ? 0 : i + 1));
-    }, [gallery.length]);
+        setActiveIndex(i => (i === null || i === images.length - 1 ? 0 : i + 1));
+    }, [images.length]);
 
     const close = useCallback(() => setActiveIndex(null), []);
 
     useEffect(() => {
-        if (isOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
+        document.body.style.overflow = isOpen ? 'hidden' : '';
         return () => { document.body.style.overflow = ''; };
     }, [isOpen]);
 
@@ -48,31 +43,43 @@ export default function DetailGallery({ gallery, title }: Props) {
         return () => window.removeEventListener('keydown', onKey);
     }, [isOpen, showPrev, showNext, close]);
 
-    const current = activeIndex !== null ? gallery[activeIndex] : null;
+    const current = activeIndex !== null ? images[activeIndex] : null;
 
     return (
         <>
-            {/* Thumbnail grid — masonry */}
-            <div className="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3">
-                {gallery.map((img, i) => (
+            {/* Werf photo grid: desktop 3 cols — big (col1 rows1-2) + 4 small; mobile 2 cols */}
+            <div className="grid grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr] auto-rows-[180px] lg:auto-rows-[210px] gap-3 lg:gap-4">
+                {images.map((img, i) => (
                     <button
                         key={i}
                         onClick={() => setActiveIndex(i)}
-                        className="group block w-full cursor-pointer overflow-hidden rounded-xl border border-white/10 hover:border-lux-gold/40 transition-colors break-inside-avoid focus:outline-none focus-visible:ring-2 focus-visible:ring-lux-gold"
-                        aria-label={img.alt || `${title} — foto ${i + 1}`}
+                        className={[
+                            'relative overflow-hidden rounded-lg border border-white/8 bg-[#181b21] isolate',
+                            'cursor-pointer group',
+                            'focus:outline-none focus-visible:ring-2 focus-visible:ring-lux-gold',
+                            i === 0 ? 'col-span-2 row-span-2 lg:col-span-1' : '',
+                        ].filter(Boolean).join(' ')}
+                        aria-label={img.label || `${title} — foto ${i + 1}`}
                     >
                         <img
-                            src={img.thumb || img.url}
-                            alt={img.alt || title}
-                            loading={i < 6 ? 'eager' : 'lazy'}
+                            src={img.url}
+                            alt={img.label}
+                            loading={i === 0 ? 'eager' : 'lazy'}
                             decoding="async"
-                            className="w-full h-auto block group-hover:scale-105 transition-transform duration-500"
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         />
+                        <div
+                            className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent z-[1]"
+                            aria-hidden="true"
+                        />
+                        <span className="absolute bottom-3.5 left-4 z-[2] text-[11px] font-extrabold uppercase tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]">
+                            {img.label}
+                        </span>
                     </button>
                 ))}
             </div>
 
-            {/* Lightbox */}
+            {/* Lightbox — identical behaviour to DetailGallery */}
             <AnimatePresence>
                 {isOpen && current && (
                     <motion.div
@@ -83,7 +90,6 @@ export default function DetailGallery({ gallery, title }: Props) {
                         className="fixed inset-0 z-[200] bg-black/95 backdrop-blur-sm flex items-center justify-center"
                         onClick={close}
                     >
-                        {/* Close */}
                         <button
                             onClick={close}
                             className="absolute top-4 right-4 z-10 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
@@ -92,12 +98,10 @@ export default function DetailGallery({ gallery, title }: Props) {
                             <X className="w-6 h-6 text-white" />
                         </button>
 
-                        {/* Counter */}
                         <div className="absolute top-4 left-4 z-10 px-3 py-1 bg-black/50 backdrop-blur-md rounded-lg text-xs font-mono text-white/70 border border-white/10">
-                            {(activeIndex ?? 0) + 1} / {gallery.length}
+                            {(activeIndex ?? 0) + 1} / {images.length}
                         </div>
 
-                        {/* Image */}
                         <motion.div
                             key={activeIndex}
                             initial={{ opacity: 0, scale: 0.97 }}
@@ -109,13 +113,15 @@ export default function DetailGallery({ gallery, title }: Props) {
                         >
                             <img
                                 src={current.url}
-                                alt={current.alt || title}
+                                alt={current.label || title}
                                 className="w-full h-full max-h-[85vh] object-contain rounded-lg"
                             />
+                            {current.label && (
+                                <p className="text-center text-white/60 text-[13px] mt-3">{current.label}</p>
+                            )}
                         </motion.div>
 
-                        {/* Prev / Next */}
-                        {gallery.length > 1 && (
+                        {images.length > 1 && (
                             <>
                                 <button
                                     onClick={e => { e.stopPropagation(); showPrev(); }}
@@ -134,13 +140,12 @@ export default function DetailGallery({ gallery, title }: Props) {
                             </>
                         )}
 
-                        {/* Thumbnail strip */}
-                        {gallery.length > 1 && (
+                        {images.length > 1 && (
                             <div
                                 className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 px-4 py-2 bg-black/50 backdrop-blur-md rounded-xl border border-white/10 max-w-[90vw] overflow-x-auto"
                                 onClick={e => e.stopPropagation()}
                             >
-                                {gallery.map((img, idx) => (
+                                {images.map((img, idx) => (
                                     <button
                                         key={idx}
                                         onClick={() => setActiveIndex(idx)}
@@ -152,7 +157,7 @@ export default function DetailGallery({ gallery, title }: Props) {
                                         aria-label={`Foto ${idx + 1}`}
                                     >
                                         <img
-                                            src={img.thumb || img.url}
+                                            src={img.url}
                                             alt=""
                                             className="w-full h-full object-cover"
                                         />
