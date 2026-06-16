@@ -1,4 +1,4 @@
-name: Build and Deploy Astro to FTP
+name: Build and Deploy
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -8,84 +8,53 @@ on:
     branches:
       - main
   repository_dispatch:
-    types: [backend_update]
-  workflow_dispatch:
+    types: [backend_update]   # triggered by Django webhook calling GitHub API
+  workflow_dispatch:          # manual run from GitHub UI
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-
-      - name: Cache npm dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Sync Backend Content
+      - name: Sync backend content
         run: npm run sync:prod
         env:
-          PUBLIC_API_URL: ${{ secrets.PUBLIC_API_URL || 'https://backend.claesen-verlichting.be/v1/website' }}
+          PUBLIC_API_URL: ${{ secrets.PUBLIC_API_URL }}
 
-      - name: Type Check
+      - name: Type check
         run: npx astro check
 
-      - name: Build Project
+      - name: Build
         run: |
           npm run build:prod
           mkdir -p dist/v1-media
           cp -r public/v1-media/. dist/v1-media/ || true
         env:
-          PUBLIC_API_URL: ${{ secrets.PUBLIC_API_URL || 'https://backend.claesen-verlichting.be/v1/website' }}
+          PUBLIC_API_URL: ${{ secrets.PUBLIC_API_URL }}
+          PUBLIC_SITE_URL: ${{ secrets.PUBLIC_SITE_URL }}
           PUBLIC_USE_STATIC_CACHE: 'true'
 
-      - name: Deploy via LFTP (Non-Destructive Sync)
-        env:
-          FTP_USER: ${{ secrets.FTP_USERNAME }}
-          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
-          FTP_HOST: ${{ secrets.FTP_SERVER }}
+      - name: Setup SSH
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -yqq lftp
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H "${{ secrets.VPS_HOST }}" >> ~/.ssh/known_hosts
 
-          LFTP_OPTS="set sftp:auto-confirm yes; set sftp:connect-program 'ssh -o StrictHostKeyChecking=no'; set net:timeout 60; set net:max-retries 10; set net:reconnect-interval-base 5;"
-          LFTP_OPEN="open -u $FTP_USER,'$FTP_PASS' sftp://$FTP_HOST:2222"
-
-          # Ensure target directory exists (non-fatal if already exists)
-          lftp -c "$LFTP_OPTS $LFTP_OPEN; mkdir -p /v1/v1-media/; quit;" || true
-
-          # Upload projects-static.json (non-fatal — mirror covers it if this fails)
-          lftp -c "$LFTP_OPTS $LFTP_OPEN; put -O /v1/v1-media/ ./dist/v1-media/projects-static.json; quit;" \
-            || echo 'Individual JSON upload failed, will be covered by mirror'
-
-          # CLA-113: chmod 755 on all route directories to prevent 403 Forbidden.
-          # sftp:chmod-ignore is not set, so these commands are effective.
-          # /v1/fr/ was returning 403 due to restrictive directory permissions from a prior deploy.
-          lftp -c "$LFTP_OPTS $LFTP_OPEN; \
-            chmod 755 /v1 || true; \
-            chmod 755 /v1/en || true; \
-            chmod 755 /v1/fr || true; \
-            chmod 755 /v1/de || true; \
-            chmod 755 /v1/privacy || true; \
-            chmod 755 /v1/terms || true; \
-            chmod 755 /v1/cookies || true; \
-            chmod 755 /v1/projecten || true; \
-            chmod 755 /v1/en/projecten || true; \
-            chmod 755 /v1/fr/projecten || true; \
-            chmod 755 /v1/de/projecten || true; \
-            quit;" || true
-
-          # Mirror everything: only newer files, parallel transfers, no chmod on individual files
-          lftp -c "$LFTP_OPTS $LFTP_OPEN; mirror -R --only-newer --parallel=2 --verbose --no-perms ./dist /v1; quit;"
+      - name: Deploy via rsync
+        run: |
+          rsync -az --delete \
+            --exclude='.well-known' \
+            dist/ \
+            ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:${{ secrets.VPS_DEPLOY_PATH }}
