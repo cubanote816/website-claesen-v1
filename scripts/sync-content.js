@@ -195,39 +195,34 @@ async function syncContent() {
                 }
             }
 
-            // Extract work-details fields.
-            // Post-migration the list endpoint includes these fields directly — use them if present
-            // ('work_story' in project distinguishes null-but-present from absent).
-            // If absent (pre-migration or legacy list response) fall back to GET /projects/{slug}.
-            let workStory = null, challenge = null, solution = null, result = null;
-            let detailGallerySourceRaw = Array.isArray(project.detail_gallery) ? project.detail_gallery : [];
+            // Extract work-details fields from list response (if already included).
+            let workStory = 'work_story' in project ? (project.work_story ?? null) : null;
+            let challenge = 'challenge'  in project ? (project.challenge  ?? null) : null;
+            let solution  = 'solution'   in project ? (project.solution   ?? null) : null;
+            let result    = 'result'     in project ? (project.result     ?? null) : null;
 
-            if ('work_story' in project) {
-                // List already has work-details — no extra request needed
-                workStory = project.work_story ?? null;
-                challenge = project.challenge  ?? null;
-                solution  = project.solution   ?? null;
-                result    = project.result     ?? null;
-            } else {
-                // Pre-migration list — fetch individual detail endpoint
-                try {
-                    const detailRes = await fetch(`${API_URL}/projects/${project.slug}`, {
-                        headers: { 'User-Agent': UA }
-                    });
-                    if (detailRes.ok) {
-                        const detailJson = await detailRes.json();
-                        const detail = detailJson.data || detailJson;
+            // detail_gallery never comes from the list endpoint — always fetch the individual
+            // project to get it. Also use this call to fill work-details if not in the list.
+            let detailGallerySourceRaw = [];
+            try {
+                const detailRes = await fetch(`${API_URL}/projects/${project.slug}`, {
+                    headers: { 'User-Agent': UA }
+                });
+                if (detailRes.ok) {
+                    const detailJson = await detailRes.json();
+                    const detail = detailJson.data || detailJson;
+                    if (!('work_story' in project)) {
                         workStory = detail.work_story ?? null;
                         challenge = detail.challenge  ?? null;
                         solution  = detail.solution   ?? null;
                         result    = detail.result     ?? null;
-                        if (Array.isArray(detail.detail_gallery) && detail.detail_gallery.length > 0) {
-                            detailGallerySourceRaw = detail.detail_gallery;
-                        }
                     }
-                } catch (e) {
-                    console.warn(`   ⚠️ Work-details fetch failed for ${project.slug}: ${e.message}`);
+                    if (Array.isArray(detail.detail_gallery)) {
+                        detailGallerySourceRaw = detail.detail_gallery;
+                    }
                 }
+            } catch (e) {
+                console.warn(`   ⚠️ Detail fetch failed for ${project.slug}: ${e.message}`);
             }
 
             // Process Detail Gallery Images (website-work-details fields)
