@@ -48,12 +48,12 @@ export default function ModernProjectCard({ project, onClick, index }: ModernPro
 
                     {/* Text Content */}
                     <div className="transform md:translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                        <div className="flex items-center gap-2 mb-1 md:mb-2 md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                        <div className="flex items-center gap-2 mb-1 md:mb-2">
                             <span className="text-[8px] md:text-[10px] font-bold tracking-widest uppercase text-lux-gold">
                                 {categoryLabel}
                             </span>
-                            <span className="hidden md:block w-1 h-1 rounded-full bg-white/40"></span>
-                            <span className="hidden md:block text-[10px] font-mono tracking-wider text-cool-slate">
+                            <span className="w-1 h-1 rounded-full bg-white/40"></span>
+                            <span className="text-[10px] font-mono tracking-wider text-white/55">
                                 {project.year}
                             </span>
                         </div>
