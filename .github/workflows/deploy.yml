@@ -25,6 +25,7 @@ jobs:
         run: npm run sync:prod
         env:
           PUBLIC_API_URL: ${{ secrets.PUBLIC_API_URL }}
+          SYNC_DISABLE_SSL: 'true'
 
       - name: Type check
         run: npx astro check
