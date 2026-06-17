@@ -181,10 +181,9 @@ export class PortfolioService {
         // API-first — return API result even when empty; retry once on cancel/network
         for (let attempt = 0; attempt <= 1; attempt++) {
             try {
-                const response = await apiClient.get(`/projects?${params}`)
-                const { raw, filterData } = this.extractRawFromApiResponse(response)
+                const { allRaw, filterData } = await this.fetchAllPages(params)
                 return {
-                    projects: raw.map(p => this.mapProject(p)),
+                    projects: allRaw.map(p => this.mapProject(p)),
                     filters: {
                         categories: filterData?.filters?.categories || {},
                         years: Array.isArray(filterData?.filters?.years) ? filterData.filters.years : []
