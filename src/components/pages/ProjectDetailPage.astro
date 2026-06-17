@@ -105,30 +105,20 @@ const heroIntro = _heroIntroRaw.toLowerCase() === title.toLowerCase() ? '' : _he
 // Editorial body: work_story preferred, description as fallback
 const bodyText = workStory || description;
 
-// Werf photo grid — 5 slots, data-driven with team asset fallback
+// Werf photo grid — only real detailGallery entries, no fallback placeholders
 type WerfPhoto = { url: string; label: string };
-const werfImages: WerfPhoto[] = [
-    {
-        url:   detailGallery[0]?.url || featuredUrl || resolveImageUrl('/assets/hero-bg.jpg'),
-        label: detailGallery[0]?.alt || t['project.werf.label.overview'],
-    },
-    {
-        url:   detailGallery[1]?.url || resolveImageUrl('/assets/team/engineering.png'),
-        label: detailGallery[1]?.alt || t['project.werf.label.study'],
-    },
-    {
-        url:   detailGallery[2]?.url || resolveImageUrl('/assets/team/installation.png'),
-        label: detailGallery[2]?.alt || t['project.werf.label.install'],
-    },
-    {
-        url:   detailGallery[3]?.url || resolveImageUrl('/assets/team/logistics.png'),
-        label: detailGallery[3]?.alt || t['project.werf.label.logistics'],
-    },
-    {
-        url:   detailGallery[4]?.url || resolveImageUrl('/assets/hero-bg.jpg'),
-        label: detailGallery[4]?.alt || t['project.werf.label.deliver'],
-    },
-];
+const werfImages: WerfPhoto[] = detailGallery
+    .filter((img: any) => img?.url)
+    .map((img: any, i: number) => ({
+        url:   img.url,
+        label: img.alt || [
+            t['project.werf.label.overview'],
+            t['project.werf.label.study'],
+            t['project.werf.label.install'],
+            t['project.werf.label.logistics'],
+            t['project.werf.label.deliver'],
+        ][i] || '',
+    }));
 ---
 
 <Layout title={pageTitle} lang={lang} pageSlug={pageSlug} description={pageMeta} ogImage={pageOgImage}>
@@ -339,6 +329,7 @@ const werfImages: WerfPhoto[] = [
             )}
 
             <!-- ── WERFDETAILS: photo grid ──────────────────────────────── -->
+            {werfImages.length > 0 && (
             <section class="py-16 border-b border-white/[0.06]">
                 <div class="flex flex-wrap items-end justify-between gap-6 mb-6">
                     <div>
@@ -353,6 +344,7 @@ const werfImages: WerfPhoto[] = [
 
                 <WerfGallery client:visible images={werfImages} title={title} />
             </section>
+            )}
 
             <!-- ── GALERIJ: main project gallery ───────────────────────── -->
             {gallery.length > 0 && (
