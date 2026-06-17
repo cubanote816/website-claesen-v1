@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { ui, defaultLang } from '../../i18n/ui';
 import DetailGallery from '../DetailGallery';
 import WerfGallery from '../WerfGallery';
+import ProjectLiveContent from '../ProjectLiveContent';
 
 interface Props {
     project: any;
@@ -218,115 +219,18 @@ const werfImages: WerfPhoto[] = detailGallery
     <main class="bg-obsidian">
         <div class="max-w-[1180px] mx-auto px-6">
 
-            <!-- ── IN ACTIE: two-column editorial ──────────────────────── -->
-            {bodyText && (
-                <section class="py-16 border-b border-white/[0.06]">
-                    <div class="grid grid-cols-1 lg:grid-cols-[1fr_330px] gap-10 lg:gap-14 items-start">
-
-                        <!-- Left: editorial text -->
-                        <article>
-                            <p class="text-lux-gold text-[11px] font-bold uppercase tracking-widest mb-3">
-                                {t['project.workdetails.story']}
-                            </p>
-                            <h2 class="font-display text-[32px] font-bold text-white mb-6 leading-tight">
-                                {t['project.workdetails.title']}
-                            </h2>
-                            <div
-                                class="text-white/70 text-[17px] leading-[1.85] max-w-[720px]
-                                       [&_p]:mb-4 [&_p:last-child]:mb-0 [&_strong]:text-white"
-                                set:html={bodyText}
-                            />
-                        </article>
-
-                        <!-- Right: sticky CTA panel -->
-                        <aside class="lg:sticky lg:top-24">
-                            <div class="border border-white/10 bg-[#121419] rounded-lg p-6">
-                                <h3 class="font-bold text-[15px] text-white mb-3 leading-snug">
-                                    {t['services.cta.title']}
-                                </h3>
-                                <p class="text-white/50 text-[14px] leading-relaxed mb-5">
-                                    {t['contact.subtitle']}
-                                </p>
-                                <a href={ctaUrl}
-                                   class="block w-full text-center px-4 py-3 rounded-lg
-                                          bg-white/6 border border-white/12 text-white
-                                          font-bold text-[12px] uppercase tracking-wide
-                                          hover:border-lux-gold/40 hover:text-lux-gold transition-colors">
-                                    {t['nav.cta']}
-                                </a>
-                            </div>
-                        </aside>
-                    </div>
-                </section>
-            )}
-
-            <!-- ── HIGHLIGHTS: uitdaging · oplossing · resultaat ─────────── -->
-            {(challenge || solution || result) && (
-                <section class="py-16 border-b border-white/[0.06]">
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
-
-                        {challenge && (
-                            <div class="border border-white/8 bg-gradient-to-b from-white/[0.05] to-white/[0.02]
-                                        rounded-lg p-6 min-h-[220px]">
-                                <div class="w-[38px] h-[38px] grid place-items-center mb-7
-                                            border border-lux-gold/30 rounded-lg bg-lux-gold/8">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                         class="w-5 h-5 text-lux-gold" aria-hidden="true">
-                                        <path d="M12 3v18M3 12h18"/>
-                                        <path d="m5 5 14 14M19 5 5 19"/>
-                                    </svg>
-                                </div>
-                                <h3 class="text-lux-gold text-[11px] font-bold uppercase tracking-widest mb-3">
-                                    {t['project.workdetails.challenge']}
-                                </h3>
-                                <div class="text-white/65 text-[14px] leading-[1.72]
-                                            [&_p]:mb-2 [&_p:last-child]:mb-0"
-                                     set:html={challenge} />
-                            </div>
-                        )}
-
-                        {solution && (
-                            <div class="border border-white/8 bg-gradient-to-b from-white/[0.05] to-white/[0.02]
-                                        rounded-lg p-6 min-h-[220px]">
-                                <div class="w-[38px] h-[38px] grid place-items-center mb-7
-                                            border border-lux-gold/30 rounded-lg bg-lux-gold/8">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                         class="w-5 h-5 text-lux-gold" aria-hidden="true">
-                                        <path d="M4 13a8 8 0 1 1 16 0"/>
-                                        <path d="M12 21v-8"/>
-                                        <path d="M8 17h8"/>
-                                    </svg>
-                                </div>
-                                <h3 class="text-lux-gold text-[11px] font-bold uppercase tracking-widest mb-3">
-                                    {t['project.workdetails.solution']}
-                                </h3>
-                                <div class="text-white/65 text-[14px] leading-[1.72]
-                                            [&_p]:mb-2 [&_p:last-child]:mb-0"
-                                     set:html={solution} />
-                            </div>
-                        )}
-
-                        {result && (
-                            <div class="border border-white/8 bg-gradient-to-b from-white/[0.05] to-white/[0.02]
-                                        rounded-lg p-6 min-h-[220px]">
-                                <div class="w-[38px] h-[38px] grid place-items-center mb-7
-                                            border border-lux-gold/30 rounded-lg bg-lux-gold/8">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                         class="w-5 h-5 text-lux-gold" aria-hidden="true">
-                                        <path d="m20 6-11 11-5-5"/>
-                                    </svg>
-                                </div>
-                                <h3 class="text-lux-gold text-[11px] font-bold uppercase tracking-widest mb-3">
-                                    {t['project.workdetails.result']}
-                                </h3>
-                                <div class="text-white/65 text-[14px] leading-[1.72]
-                                            [&_p]:mb-2 [&_p:last-child]:mb-0"
-                                     set:html={result} />
-                            </div>
-                        )}
-                    </div>
-                </section>
-            )}
+            <!-- ── LIVE CONTENT: body + highlights (client-side hydration) ── -->
+            <ProjectLiveContent
+                client:load
+                slug={raw.slug}
+                lang={lang}
+                initial={{
+                    bodyText,
+                    challenge,
+                    solution,
+                    result,
+                }}
+            />
 
             <!-- ── WERFDETAILS: photo grid ──────────────────────────────── -->
             {werfImages.length > 0 && (
