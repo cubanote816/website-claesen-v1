@@ -45,4 +45,4 @@ jobs:
           rsync -az --delete \
             --exclude='.well-known' \
             dist/ \
-            bert@192.168.60.10:/var/www/backend.claesen-verlichting.be/public/
+            bert@192.168.60.10:/var/www/www.claesen-verlichting.be/public/
