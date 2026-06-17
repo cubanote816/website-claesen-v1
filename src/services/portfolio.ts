@@ -50,7 +50,6 @@ export class PortfolioService {
             params.append('filter[featured]', '1')
         if (filters?.published)
             params.append('filter[published]', '1')
-        params.append('per_page', '12')
         return params
     }
 
@@ -128,6 +127,28 @@ export class PortfolioService {
             result = result.filter((p: any) => Boolean(p.featured || p.is_featured))
         }
         return result
+    }
+
+
+    private async fetchAllPages(baseParams: URLSearchParams): Promise<{ allRaw: any[], filterData: any }> {
+        const params = new URLSearchParams(baseParams)
+        params.set('per_page', '50')
+
+        const firstRes = await apiClient.get(`/projects?${params}`)
+        const { raw: firstRaw, filterData } = this.extractRawFromApiResponse(firstRes)
+        const lastPage: number = filterData?.last_page ?? 1
+
+        if (lastPage <= 1) return { allRaw: firstRaw, filterData }
+
+        const rest = await Promise.all(
+            Array.from({ length: lastPage - 1 }, (_, i) => {
+                const p = new URLSearchParams(params)
+                p.set('page', String(i + 2))
+                return apiClient.get(`/projects?${p}`)
+            })
+        )
+        const moreRaw = rest.flatMap(res => this.extractRawFromApiResponse(res).raw)
+        return { allRaw: [...firstRaw, ...moreRaw], filterData }
     }
 
     // ── Public methods ────────────────────────────────────────────────────
