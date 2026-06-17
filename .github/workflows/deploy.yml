@@ -38,6 +38,7 @@ jobs:
           PUBLIC_API_URL: ${{ secrets.PUBLIC_API_URL }}
           PUBLIC_SITE_URL: ${{ secrets.PUBLIC_SITE_URL }}
           PUBLIC_USE_STATIC_CACHE: 'true'
+          ASTRO_BASE_PATH: /
 
       - name: Deploy via rsync
         run: |
