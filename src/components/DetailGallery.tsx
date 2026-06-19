@@ -15,6 +15,7 @@ interface Props {
 
 export default function DetailGallery({ gallery, title }: Props) {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
+    const [autoplayPaused, setAutoplayPaused] = useState(false);
 
     const isOpen = activeIndex !== null;
 
@@ -48,6 +49,12 @@ export default function DetailGallery({ gallery, title }: Props) {
         return () => window.removeEventListener('keydown', onKey);
     }, [isOpen, showPrev, showNext, close]);
 
+
+    useEffect(() => {
+        if (!isOpen || autoplayPaused || gallery.length <= 1) return;
+        const id = setInterval(showNext, 4000);
+        return () => clearInterval(id);
+    }, [isOpen, activeIndex, autoplayPaused, showNext, gallery.length]);
     const current = activeIndex !== null ? gallery[activeIndex] : null;
 
     return (
@@ -82,6 +89,8 @@ export default function DetailGallery({ gallery, title }: Props) {
                         transition={{ duration: 0.25 }}
                         className="fixed inset-0 z-[200] bg-black/95 backdrop-blur-sm flex items-center justify-center"
                         onClick={close}
+                        onMouseEnter={() => setAutoplayPaused(true)}
+                        onMouseLeave={() => setAutoplayPaused(false)}
                     >
                         {/* Close */}
                         <button
