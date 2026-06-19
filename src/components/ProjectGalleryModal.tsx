@@ -15,6 +15,7 @@ interface ProjectGalleryModalProps {
 export default function ProjectGalleryModal({ isOpen, onClose, project, lang = defaultLang }: ProjectGalleryModalProps) {
     const t = ui[lang as keyof typeof ui] || ui[defaultLang];
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [autoplayPaused, setAutoplayPaused] = useState(false);
     const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
     const scrollPositionRef = useRef<number>(0);
 
@@ -46,6 +47,18 @@ export default function ProjectGalleryModal({ isOpen, onClose, project, lang = d
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
     }, [isOpen, project, currentImageIndex]);
+
+
+    // Autoplay every 4s; resets on manual nav; pauses on hover
+    useEffect(() => {
+        if (!isOpen || autoplayPaused || !project) return;
+        const imgs = project.gallery_images || [];
+        if (imgs.length <= 1) return;
+        const id = setInterval(() => {
+            setCurrentImageIndex(prev => (prev === imgs.length - 1 ? 0 : prev + 1));
+        }, 4000);
+        return () => clearInterval(id);
+    }, [isOpen, currentImageIndex, autoplayPaused, project]);
 
     if (!project) return null;
 
@@ -87,7 +100,9 @@ export default function ProjectGalleryModal({ isOpen, onClose, project, lang = d
                         </button>
 
                         {/* Image Section */}
-                        <div className="relative h-[40vh] shrink-0 md:h-auto md:flex-1 bg-black flex items-center justify-center overflow-hidden group">
+                        <div className="relative h-[40vh] shrink-0 md:h-auto md:flex-1 bg-black flex items-center justify-center overflow-hidden group"
+                        onMouseEnter={() => setAutoplayPaused(true)}
+                        onMouseLeave={() => setAutoplayPaused(false)}>
                             <AnimatePresence mode="wait">
                                 {currentImage?.url ? (
                                     <motion.img
