@@ -24,10 +24,10 @@ const t = ui[lang] || ui[defaultLang];
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div class="relative group rounded-3xl overflow-hidden border border-white/5">
               <div class="absolute inset-0 bg-lux-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <img 
-                  src={`${import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL}/assets/owners.jpg`} 
-                  alt="Claesen Engineering Team" 
-                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0"
+              <img
+                  src={`${import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL}/assets/owners.jpg`}
+                  alt="Claesen Engineering Team"
+                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0 about-img"
               />
           </div>
           
@@ -48,3 +48,12 @@ const t = ui[lang] || ui[defaultLang];
 
   </div>
 </section>
+
+<style>
+  /* Touch/mobile: always show full color — hover doesn't apply */
+  @media (hover: none), (pointer: coarse) {
+    .about-img {
+      filter: none;
+    }
+  }
+</style>
