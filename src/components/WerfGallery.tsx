@@ -14,6 +14,7 @@ interface Props {
 
 export default function WerfGallery({ images, title }: Props) {
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
+    const [autoplayPaused, setAutoplayPaused] = useState(false);
 
     const isOpen = activeIndex !== null;
 
@@ -43,6 +44,12 @@ export default function WerfGallery({ images, title }: Props) {
         return () => window.removeEventListener('keydown', onKey);
     }, [isOpen, showPrev, showNext, close]);
 
+
+    useEffect(() => {
+        if (!isOpen || autoplayPaused || images.length <= 1) return;
+        const id = setInterval(showNext, 4000);
+        return () => clearInterval(id);
+    }, [isOpen, activeIndex, autoplayPaused, showNext, images.length]);
     const current = activeIndex !== null ? images[activeIndex] : null;
 
     return (
@@ -89,6 +96,8 @@ export default function WerfGallery({ images, title }: Props) {
                         transition={{ duration: 0.25 }}
                         className="fixed inset-0 z-[200] bg-black/95 backdrop-blur-sm flex items-center justify-center"
                         onClick={close}
+                        onMouseEnter={() => setAutoplayPaused(true)}
+                        onMouseLeave={() => setAutoplayPaused(false)}
                     >
                         <button
                             onClick={close}

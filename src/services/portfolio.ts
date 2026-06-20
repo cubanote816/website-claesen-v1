@@ -50,6 +50,7 @@ export class PortfolioService {
             params.append('filter[featured]', '1')
         if (filters?.published)
             params.append('filter[published]', '1')
+        params.append('per_page', '100')
         return params
     }
 
@@ -129,28 +130,6 @@ export class PortfolioService {
         return result
     }
 
-
-    private async fetchAllPages(baseParams: URLSearchParams): Promise<{ allRaw: any[], filterData: any }> {
-        const params = new URLSearchParams(baseParams)
-        params.set('per_page', '50')
-
-        const firstRes = await apiClient.get(`/projects?${params}`)
-        const { raw: firstRaw, filterData } = this.extractRawFromApiResponse(firstRes)
-        const lastPage: number = filterData?.last_page ?? 1
-
-        if (lastPage <= 1) return { allRaw: firstRaw, filterData }
-
-        const rest = await Promise.all(
-            Array.from({ length: lastPage - 1 }, (_, i) => {
-                const p = new URLSearchParams(params)
-                p.set('page', String(i + 2))
-                return apiClient.get(`/projects?${p}`)
-            })
-        )
-        const moreRaw = rest.flatMap(res => this.extractRawFromApiResponse(res).raw)
-        return { allRaw: [...firstRaw, ...moreRaw], filterData }
-    }
-
     // ── Public methods ────────────────────────────────────────────────────
 
     // Not in route:list — kept for interface compatibility, fails gracefully.
@@ -181,9 +160,10 @@ export class PortfolioService {
         // API-first — return API result even when empty; retry once on cancel/network
         for (let attempt = 0; attempt <= 1; attempt++) {
             try {
-                const { allRaw, filterData } = await this.fetchAllPages(params)
+                const response = await apiClient.get(`/projects?${params}`)
+                const { raw, filterData } = this.extractRawFromApiResponse(response)
                 return {
-                    projects: allRaw.map(p => this.mapProject(p)),
+                    projects: raw.map(p => this.mapProject(p)),
                     filters: {
                         categories: filterData?.filters?.categories || {},
                         years: Array.isArray(filterData?.filters?.years) ? filterData.filters.years : []
