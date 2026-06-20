@@ -1333,7 +1333,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/hero-bg.jpg",
+            "url": "http://localhost:4321/assets/hero-bg.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 183.28700000047684,
@@ -1470,7 +1470,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/brand-logo-dark.png",
+            "url": "http://localhost:4321/assets/brand-logo-dark.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 205.34599995613098,
@@ -1588,7 +1588,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/hero-video.mp4",
+            "url": "http://localhost:4321/assets/hero-video.mp4",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 339.4539999961853,
@@ -1639,7 +1639,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/owners.jpg",
+            "url": "http://localhost:4321/assets/owners.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 346.1319999694824,
@@ -1741,7 +1741,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/hero-video.mp4",
+            "url": "http://localhost:4321/assets/hero-video.mp4",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 521.5159999728203,
@@ -1979,7 +1979,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/favicon.ico",
+            "url": "http://localhost:4321/assets/favicon.ico",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 727.3050000071526,
@@ -3180,7 +3180,7 @@
                       "width": 55,
                       "height": 24
                     },
-                    "snippet": "<img src=\"/v1/assets/brand-logo-dark.png\" alt=\"Claesen Verlichting\" class=\"h-6 md:h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity\" data-astro-cid-ki3ejbwn=\"\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/Class…\" data-astro-source-loc=\"37:14\">",
+                    "snippet": "<img src=\"/assets/brand-logo-dark.png\" alt=\"Claesen Verlichting\" class=\"h-6 md:h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity\" data-astro-cid-ki3ejbwn=\"\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/Class…\" data-astro-source-loc=\"37:14\">",
                     "nodeLabel": "Claesen Verlichting"
                   },
                   "cause": "Media element lacking an explicit size"
@@ -3502,7 +3502,7 @@
         ],
         "items": [
           {
-            "url": "http://localhost:4321/v1/assets/brand-logo-dark.png",
+            "url": "http://localhost:4321/assets/brand-logo-dark.png",
             "node": {
               "type": "node",
               "lhId": "1-113-IMG",
@@ -3516,12 +3516,12 @@
                 "width": 55,
                 "height": 24
               },
-              "snippet": "<img src=\"/v1/assets/brand-logo-dark.png\" alt=\"Claesen Verlichting\" class=\"h-6 md:h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity\" data-astro-cid-ki3ejbwn=\"\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/Class…\" data-astro-source-loc=\"37:14\">",
+              "snippet": "<img src=\"/assets/brand-logo-dark.png\" alt=\"Claesen Verlichting\" class=\"h-6 md:h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity\" data-astro-cid-ki3ejbwn=\"\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/Class…\" data-astro-source-loc=\"37:14\">",
               "nodeLabel": "Claesen Verlichting"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/brand-logo-dark.png",
+            "url": "http://localhost:4321/assets/brand-logo-dark.png",
             "node": {
               "type": "node",
               "lhId": "1-247-IMG",
@@ -3535,7 +3535,7 @@
                 "width": 92,
                 "height": 40
               },
-              "snippet": "<img src=\"/v1/assets/brand-logo-dark.png\" alt=\"Claesen Verlichting\" class=\"h-10 w-auto opacity-90 hover:opacity-100 transition-opacity\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/Foote…\" data-astro-source-loc=\"68:15\">",
+              "snippet": "<img src=\"/assets/brand-logo-dark.png\" alt=\"Claesen Verlichting\" class=\"h-10 w-auto opacity-90 hover:opacity-100 transition-opacity\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/Foote…\" data-astro-source-loc=\"68:15\">",
               "nodeLabel": "Claesen Verlichting"
             }
           },
@@ -17697,7 +17697,7 @@
         ],
         "items": [
           {
-            "url": "http://localhost:4321/v1/assets/hero-video.mp4",
+            "url": "http://localhost:4321/assets/hero-video.mp4",
             "totalBytes": 3146074
           },
           {
@@ -17717,7 +17717,7 @@
             "totalBytes": 347478
           },
           {
-            "url": "http://localhost:4321/v1/assets/hero-bg.jpg",
+            "url": "http://localhost:4321/assets/hero-bg.jpg",
             "totalBytes": 301953
           },
           {
@@ -17725,7 +17725,7 @@
             "totalBytes": 295229
           },
           {
-            "url": "http://localhost:4321/v1/assets/owners.jpg",
+            "url": "http://localhost:4321/assets/owners.jpg",
             "totalBytes": 168519
           },
           {
@@ -17796,10 +17796,10 @@
                 "width": 362,
                 "height": 242
               },
-              "snippet": "<img src=\"/v1/assets/owners.jpg\" alt=\"Claesen Engineering Team\" class=\"w-full h-full object-cover transform group-hover:scale-105 transition-tran…\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/secti…\" data-astro-source-loc=\"27:16\">",
+              "snippet": "<img src=\"/assets/owners.jpg\" alt=\"Claesen Engineering Team\" class=\"w-full h-full object-cover transform group-hover:scale-105 transition-tran…\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/secti…\" data-astro-source-loc=\"27:16\">",
               "nodeLabel": "Claesen Engineering Team"
             },
-            "url": "http://localhost:4321/v1/assets/owners.jpg",
+            "url": "http://localhost:4321/assets/owners.jpg",
             "requestStartTime": 297428503.121,
             "totalBytes": 168249,
             "wastedBytes": 168249,
@@ -18366,10 +18366,10 @@
                 "width": 412,
                 "height": 823
               },
-              "snippet": "<div id=\"hero-bg-image\" class=\"absolute inset-0 z-0 bg-cover bg-center transition-opacity duration-1000 e…\" style=\"background-image: url('/v1/assets/hero-bg.jpg');\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/pages…\" data-astro-source-loc=\"42:6\">",
+              "snippet": "<div id=\"hero-bg-image\" class=\"absolute inset-0 z-0 bg-cover bg-center transition-opacity duration-1000 e…\" style=\"background-image: url('/assets/hero-bg.jpg');\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/pages…\" data-astro-source-loc=\"42:6\">",
               "nodeLabel": "body.bg-obsidian > main > section#home > div#hero-bg-image"
             },
-            "url": "http://localhost:4321/v1/assets/hero-bg.jpg",
+            "url": "http://localhost:4321/assets/hero-bg.jpg",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 301683,
@@ -18390,10 +18390,10 @@
                 "width": 362,
                 "height": 242
               },
-              "snippet": "<img src=\"/v1/assets/owners.jpg\" alt=\"Claesen Engineering Team\" class=\"w-full h-full object-cover transform group-hover:scale-105 transition-tran…\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/secti…\" data-astro-source-loc=\"27:16\">",
+              "snippet": "<img src=\"/assets/owners.jpg\" alt=\"Claesen Engineering Team\" class=\"w-full h-full object-cover transform group-hover:scale-105 transition-tran…\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/secti…\" data-astro-source-loc=\"27:16\">",
               "nodeLabel": "Claesen Engineering Team"
             },
-            "url": "http://localhost:4321/v1/assets/owners.jpg",
+            "url": "http://localhost:4321/assets/owners.jpg",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 168249,
@@ -18414,10 +18414,10 @@
                 "width": 92,
                 "height": 40
               },
-              "snippet": "<img src=\"/v1/assets/brand-logo-dark.png\" alt=\"Claesen Verlichting\" class=\"h-10 w-auto opacity-90 hover:opacity-100 transition-opacity\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/Foote…\" data-astro-source-loc=\"68:15\">",
+              "snippet": "<img src=\"/assets/brand-logo-dark.png\" alt=\"Claesen Verlichting\" class=\"h-10 w-auto opacity-90 hover:opacity-100 transition-opacity\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/Foote…\" data-astro-source-loc=\"68:15\">",
               "nodeLabel": "Claesen Verlichting"
             },
-            "url": "http://localhost:4321/v1/assets/brand-logo-dark.png",
+            "url": "http://localhost:4321/assets/brand-logo-dark.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 56994,
@@ -18493,10 +18493,10 @@
                 "width": 412,
                 "height": 823
               },
-              "snippet": "<div id=\"hero-bg-image\" class=\"absolute inset-0 z-0 bg-cover bg-center transition-opacity duration-1000 e…\" style=\"background-image: url('/v1/assets/hero-bg.jpg');\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/pages…\" data-astro-source-loc=\"42:6\">",
+              "snippet": "<div id=\"hero-bg-image\" class=\"absolute inset-0 z-0 bg-cover bg-center transition-opacity duration-1000 e…\" style=\"background-image: url('/assets/hero-bg.jpg');\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/pages…\" data-astro-source-loc=\"42:6\">",
               "nodeLabel": "body.bg-obsidian > main > section#home > div#hero-bg-image"
             },
-            "url": "http://localhost:4321/v1/assets/hero-bg.jpg",
+            "url": "http://localhost:4321/assets/hero-bg.jpg",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 301683,
@@ -18799,10 +18799,10 @@
                 "width": 362,
                 "height": 242
               },
-              "snippet": "<img src=\"/v1/assets/owners.jpg\" alt=\"Claesen Engineering Team\" class=\"w-full h-full object-cover transform group-hover:scale-105 transition-tran…\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/secti…\" data-astro-source-loc=\"27:16\">",
+              "snippet": "<img src=\"/assets/owners.jpg\" alt=\"Claesen Engineering Team\" class=\"w-full h-full object-cover transform group-hover:scale-105 transition-tran…\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/secti…\" data-astro-source-loc=\"27:16\">",
               "nodeLabel": "Claesen Engineering Team"
             },
-            "url": "http://localhost:4321/v1/assets/owners.jpg",
+            "url": "http://localhost:4321/assets/owners.jpg",
             "totalBytes": 168249,
             "wastedBytes": 121288,
             "wastedPercent": 72.08830108198086
@@ -18821,10 +18821,10 @@
                 "width": 92,
                 "height": 40
               },
-              "snippet": "<img src=\"/v1/assets/brand-logo-dark.png\" alt=\"Claesen Verlichting\" class=\"h-10 w-auto opacity-90 hover:opacity-100 transition-opacity\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/Foote…\" data-astro-source-loc=\"68:15\">",
+              "snippet": "<img src=\"/assets/brand-logo-dark.png\" alt=\"Claesen Verlichting\" class=\"h-10 w-auto opacity-90 hover:opacity-100 transition-opacity\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/Foote…\" data-astro-source-loc=\"68:15\">",
               "nodeLabel": "Claesen Verlichting"
             },
-            "url": "http://localhost:4321/v1/assets/brand-logo-dark.png",
+            "url": "http://localhost:4321/assets/brand-logo-dark.png",
             "totalBytes": 56994,
             "wastedBytes": 53317,
             "wastedPercent": 93.5492364402317
@@ -19553,7 +19553,7 @@
                           "width": 55,
                           "height": 24
                         },
-                        "snippet": "<img src=\"/v1/assets/brand-logo-dark.png\" alt=\"Claesen Verlichting\" class=\"h-6 md:h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity\" data-astro-cid-ki3ejbwn=\"\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/Class…\" data-astro-source-loc=\"37:14\">",
+                        "snippet": "<img src=\"/assets/brand-logo-dark.png\" alt=\"Claesen Verlichting\" class=\"h-6 md:h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity\" data-astro-cid-ki3ejbwn=\"\" data-astro-source-file=\"D:/Proyectos/claesen-verlichting/claese-velichting-v1/src/components/Class…\" data-astro-source-loc=\"37:14\">",
                         "nodeLabel": "Claesen Verlichting"
                       },
                       "cause": "Unsized image element"
@@ -19855,7 +19855,7 @@
         ],
         "items": [
           {
-            "url": "http://localhost:4321/v1/assets/owners.jpg",
+            "url": "http://localhost:4321/assets/owners.jpg",
             "totalBytes": 168249,
             "wastedBytes": 153671,
             "subItems": {
@@ -19873,7 +19873,7 @@
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/hero-bg.jpg",
+            "url": "http://localhost:4321/assets/hero-bg.jpg",
             "totalBytes": 301683,
             "wastedBytes": 150433,
             "subItems": {
@@ -19887,7 +19887,7 @@
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/brand-logo-dark.png",
+            "url": "http://localhost:4321/assets/brand-logo-dark.png",
             "totalBytes": 56994,
             "wastedBytes": 56774,
             "subItems": {

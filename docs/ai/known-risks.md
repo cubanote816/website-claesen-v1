@@ -55,7 +55,7 @@ Estos bugs fueron verificados directamente en `https://claesen-verlichting.be/v1
 ### PROD-004 — Logo de partner con nombre vacío en marquee
 **Severidad:** MEDIO  
 **Verificado:** 2026-06-02 via WebFetch  
-**Síntoma:** El marquee de logos incluye una imagen rota: `![](/v1/assets/logo_partner/.jpg)` — nombre de archivo vacío.  
+**Síntoma:** El marquee de logos incluye una imagen rota: `![](/assets/logo_partner/.jpg)` — nombre de archivo vacío.  
 **Causa:** El directorio `public/assets/logo_partner/` tiene algún archivo con nombre inválido o hay un archivo oculto que pasa el filtro de extensión en `TrustSection.astro`.  
 **Impacto:** Imagen rota visible en la sección de clientes.  
 **Archivo:** `src/components/sections/TrustSection.astro:17-27`  
@@ -82,7 +82,7 @@ Estos bugs fueron verificados directamente en `https://claesen-verlichting.be/v1
 ### CODE-002 — Paths de hero hardcodeados con `/v1/`
 **Severidad:** ALTO  
 **Archivos:** `src/components/pages/LandingPage.astro:35,47`  
-**Problema:** `background-image: url('/v1/assets/hero-bg.jpg')` y `src="/v1/assets/hero-video.mp4"` — paths hardcodeados que ignoran `BASE_URL`.  
+**Problema:** `background-image: url('/assets/hero-bg.jpg')` y `src="/assets/hero-video.mp4"` — paths hardcodeados que ignoran `BASE_URL`.  
 **Impacto:** Se rompe si el base path cambia en `astro.config.mjs`.
 
 ### CODE-003 — CookieConsent hardcodeado en inglés

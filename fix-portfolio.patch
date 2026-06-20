@@ -1,0 +1,72 @@
+﻿From b35ed6a1de67406e9663f1c2aa4beb5d48a58cd9 Mon Sep 17 00:00:00 2001
+From: Bert <cubanote816@gmail.com>
+Date: Wed, 17 Jun 2026 15:10:49 +0200
+Subject: [PATCH] fix(portfolio): fetch all pages instead of capped per_page=12
+
+Replace hard-coded per_page=12 with fetchAllPages() that loads page 1
+(per_page=50), reads last_page from the response, then fetches remaining
+pages in parallel via Promise.all. getProjects() now returns all
+published projects regardless of total count.
+---
+ src/services/portfolio.ts | 29 ++++++++++++++++++++++++-----
+ 1 file changed, 24 insertions(+), 5 deletions(-)
+
+diff --git a/src/services/portfolio.ts b/src/services/portfolio.ts
+index 9712b53..f626015 100644
+--- a/src/services/portfolio.ts
++++ b/src/services/portfolio.ts
+@@ -50,7 +50,6 @@ export class PortfolioService {
+             params.append('filter[featured]', '1')
+         if (filters?.published)
+             params.append('filter[published]', '1')
+-        params.append('per_page', '12')
+         return params
+     }
+
+@@ -130,6 +129,27 @@ export class PortfolioService {
+         return result
+     }
+
++    private async fetchAllPages(baseParams: URLSearchParams): Promise<{ allRaw: any[], filterData: any }> {
++        const params = new URLSearchParams(baseParams)
++        params.set('per_page', '50')
++
++        const firstRes = await apiClient.get(`/projects?${params}`)
++        const { raw: firstRaw, filterData } = this.extractRawFromApiResponse(firstRes)
++        const lastPage: number = filterData?.last_page ?? 1
++
++        if (lastPage <= 1) return { allRaw: firstRaw, filterData }
++
++        const rest = await Promise.all(
++            Array.from({ length: lastPage - 1 }, (_, i) => {
++                const p = new URLSearchParams(params)
++                p.set('page', String(i + 2))
++                return apiClient.get(`/projects?${p}`)
++            })
++        )
++        const moreRaw = rest.flatMap(res => this.extractRawFromApiResponse(res).raw)
++        return { allRaw: [...firstRaw, ...moreRaw], filterData }
++    }
++
+     // ── Public methods ────────────────────────────────────────────────────
+
+     // Not in route:list — kept for interface compatibility, fails gracefully.
+@@ -157,13 +177,12 @@ export class PortfolioService {
+     async getProjects(filters?: PortfolioFilters, locale: string = 'nl'): Promise<ProjectsResponse> {
+         const params = this.buildParams(filters)
+
+-        // API-first — return API result even when empty; retry once on cancel/network
++        // API-first — fetch all pages in parallel; retry once on cancel/network
+         for (let attempt = 0; attempt <= 1; attempt++) {
+             try {
+-                const response = await apiClient.get(`/projects?${params}`)
+-                const { raw, filterData } = this.extractRawFromApiResponse(response)
++                const { allRaw, filterData } = await this.fetchAllPages(params)
+                 return {
+-                    projects: raw.map(p => this.mapProject(p)),
++                    projects: allRaw.map(p => this.mapProject(p)),
+                     filters: {
+                         categories: filterData?.filters?.categories || {},
+                         years: Array.isArray(filterData?.filters?.years) ? filterData.filters.years : []
+--
+2.43.0

@@ -1759,7 +1759,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/brand-logo-dark.png",
+            "url": "http://localhost:4321/assets/brand-logo-dark.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 289.28999999165535,
@@ -1844,7 +1844,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/owners.jpg",
+            "url": "http://localhost:4321/assets/owners.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 290.1739999651909,
@@ -1861,7 +1861,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 290.3419999778271,
@@ -1878,7 +1878,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/anderlecht.png",
+            "url": "http://localhost:4321/assets/logo_partner/anderlecht.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 290.5029999911785,
@@ -1895,7 +1895,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/ARBH%20-%20KBHB.png",
+            "url": "http://localhost:4321/assets/logo_partner/ARBH%20-%20KBHB.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 290.69899997115135,
@@ -1912,7 +1912,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/AZ-Alkmaar.png",
+            "url": "http://localhost:4321/assets/logo_partner/AZ-Alkmaar.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 290.8449999690056,
@@ -1929,7 +1929,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/BMW.png",
+            "url": "http://localhost:4321/assets/logo_partner/BMW.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 290.9849999845028,
@@ -1946,7 +1946,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Boris%20Becker.png",
+            "url": "http://localhost:4321/assets/logo_partner/Boris%20Becker.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 291.125,
@@ -1963,7 +1963,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Brugge.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 291.2619999945164,
@@ -1980,7 +1980,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Brussels%20Airport.png",
+            "url": "http://localhost:4321/assets/logo_partner/Brussels%20Airport.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 291.41400000452995,
@@ -1997,7 +1997,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Cercle%20Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Cercle%20Brugge.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 291.5460000038147,
@@ -2014,7 +2014,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Club%20Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Club%20Brugge.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 291.69200000166893,
@@ -2031,7 +2031,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Defense.png",
+            "url": "http://localhost:4321/assets/logo_partner/Defense.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 291.8329999744892,
@@ -2048,7 +2048,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Euro%20Hockey.png",
+            "url": "http://localhost:4321/assets/logo_partner/Euro%20Hockey.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 291.97500002384186,
@@ -2065,7 +2065,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/FC%20Viktoria.png",
+            "url": "http://localhost:4321/assets/logo_partner/FC%20Viktoria.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 292.1350000202656,
@@ -2082,7 +2082,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Ghelamco.png",
+            "url": "http://localhost:4321/assets/logo_partner/Ghelamco.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 292.3270000219345,
@@ -2099,7 +2099,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Infrabel.png",
+            "url": "http://localhost:4321/assets/logo_partner/Infrabel.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 292.4729999601841,
@@ -2116,7 +2116,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/K.V.%20Oostende.png",
+            "url": "http://localhost:4321/assets/logo_partner/K.V.%20Oostende.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 292.6129999756813,
@@ -2133,7 +2133,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/KMSK.png",
+            "url": "http://localhost:4321/assets/logo_partner/KMSK.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 292.7559999525547,
@@ -2150,7 +2150,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Krc%20Genk.png",
+            "url": "http://localhost:4321/assets/logo_partner/Krc%20Genk.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 292.9150000214577,
@@ -2167,7 +2167,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/KV%20Kortrijk.png",
+            "url": "http://localhost:4321/assets/logo_partner/KV%20Kortrijk.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 293.078999966383,
@@ -2184,7 +2184,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/KVK.png",
+            "url": "http://localhost:4321/assets/logo_partner/KVK.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 293.22699999809265,
@@ -2201,7 +2201,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Leuven.png",
+            "url": "http://localhost:4321/assets/logo_partner/Leuven.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 293.3469999730587,
@@ -2218,7 +2218,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Limburg.be.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Limburg.be.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 293.52199998497963,
@@ -2235,7 +2235,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Lommel%20United.png",
+            "url": "http://localhost:4321/assets/logo_partner/Lommel%20United.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 293.64599999785423,
@@ -2252,7 +2252,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/OH%20Leuven.png",
+            "url": "http://localhost:4321/assets/logo_partner/OH%20Leuven.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 293.772999972105,
@@ -2269,7 +2269,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/OSTEND-BRUGES.jpeg",
+            "url": "http://localhost:4321/assets/logo_partner/OSTEND-BRUGES.jpeg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 293.97899997234344,
@@ -2286,7 +2286,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture102.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture102.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 294.12099999189377,
@@ -2303,7 +2303,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture103.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture103.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 294.25799998641014,
@@ -2320,7 +2320,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture190.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Picture190.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 294.38300001621246,
@@ -2337,7 +2337,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture22.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture22.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 294.5349999964237,
@@ -2354,7 +2354,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture25.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture25.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 294.6599999666214,
@@ -2371,7 +2371,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture5.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture5.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 294.82199996709824,
@@ -2388,7 +2388,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Proximus.png",
+            "url": "http://localhost:4321/assets/logo_partner/Proximus.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 294.96499997377396,
@@ -2405,7 +2405,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/RBFA.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/RBFA.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 295.0940000116825,
@@ -2422,7 +2422,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Royal%20Antwerp%20FC.png",
+            "url": "http://localhost:4321/assets/logo_partner/Royal%20Antwerp%20FC.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 295.2349999845028,
@@ -2439,7 +2439,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Royal%20Excel.png",
+            "url": "http://localhost:4321/assets/logo_partner/Royal%20Excel.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 295.46000000834465,
@@ -2456,7 +2456,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/RSC%20Anderlecht.png",
+            "url": "http://localhost:4321/assets/logo_partner/RSC%20Anderlecht.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 295.813000023365,
@@ -2473,7 +2473,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/RWDM.png",
+            "url": "http://localhost:4321/assets/logo_partner/RWDM.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 296.0270000100136,
@@ -2490,7 +2490,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Sint-Truidense%20V.V..png",
+            "url": "http://localhost:4321/assets/logo_partner/Sint-Truidense%20V.V..png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 296.1870000064373,
@@ -2507,7 +2507,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Sport%20Vlaanderen.png",
+            "url": "http://localhost:4321/assets/logo_partner/Sport%20Vlaanderen.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 296.32699996232986,
@@ -2524,7 +2524,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Standard%20Li%C3%A8ge.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Standard%20Li%C3%A8ge.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 296.7549999654293,
@@ -2541,7 +2541,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Telenet.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Telenet.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 297.9039999842644,
@@ -2558,7 +2558,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Visit%20Brussels.png",
+            "url": "http://localhost:4321/assets/logo_partner/Visit%20Brussels.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 298.2059999704361,
@@ -2575,7 +2575,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Zulte%20Waregem.png",
+            "url": "http://localhost:4321/assets/logo_partner/Zulte%20Waregem.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 298.41100001335144,
@@ -2677,7 +2677,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/hero-bg.jpg",
+            "url": "http://localhost:4321/assets/hero-bg.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 489.07199996709824,
@@ -2710,7 +2710,7 @@
             "experimentalFromMainFrame": true
           },
           {
-            "url": "http://localhost:4321/v1/assets/hero-video.mp4",
+            "url": "http://localhost:4321/assets/hero-video.mp4",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 587.8339999616146,
@@ -3798,7 +3798,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/hero-video.mp4",
+            "url": "http://localhost:4321/assets/hero-video.mp4",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2321.25,
@@ -3815,7 +3815,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/brand-logo-dark.png",
+            "url": "http://localhost:4321/assets/brand-logo-dark.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2627.15600001812,
@@ -3832,7 +3832,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/hero-video.mp4",
+            "url": "http://localhost:4321/assets/hero-video.mp4",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2633.776999950409,
@@ -3849,7 +3849,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/favicon.ico",
+            "url": "http://localhost:4321/assets/favicon.ico",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2654.4359999895096,
@@ -3866,7 +3866,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/owners.jpg",
+            "url": "http://localhost:4321/assets/owners.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2655.2649999558926,
@@ -3883,7 +3883,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2701.594999998808,
@@ -3900,7 +3900,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/anderlecht.png",
+            "url": "http://localhost:4321/assets/logo_partner/anderlecht.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2718.7769999802113,
@@ -3917,7 +3917,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/ARBH%20-%20KBHB.png",
+            "url": "http://localhost:4321/assets/logo_partner/ARBH%20-%20KBHB.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2745.222000002861,
@@ -3934,7 +3934,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/AZ-Alkmaar.png",
+            "url": "http://localhost:4321/assets/logo_partner/AZ-Alkmaar.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2788.113999992609,
@@ -3951,7 +3951,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/BMW.png",
+            "url": "http://localhost:4321/assets/logo_partner/BMW.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2823.927000015974,
@@ -3968,7 +3968,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Boris%20Becker.png",
+            "url": "http://localhost:4321/assets/logo_partner/Boris%20Becker.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2850.3399999439716,
@@ -3985,7 +3985,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Brugge.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2867.263000011444,
@@ -4002,7 +4002,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Brussels%20Airport.png",
+            "url": "http://localhost:4321/assets/logo_partner/Brussels%20Airport.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2887.302999973297,
@@ -4019,7 +4019,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Cercle%20Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Cercle%20Brugge.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2902.399999976158,
@@ -4036,7 +4036,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Club%20Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Club%20Brugge.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2912.871999979019,
@@ -4053,7 +4053,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Defense.png",
+            "url": "http://localhost:4321/assets/logo_partner/Defense.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2920.9800000190735,
@@ -4070,7 +4070,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Euro%20Hockey.png",
+            "url": "http://localhost:4321/assets/logo_partner/Euro%20Hockey.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2935.039999961853,
@@ -4087,7 +4087,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/FC%20Viktoria.png",
+            "url": "http://localhost:4321/assets/logo_partner/FC%20Viktoria.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2942.0609999895096,
@@ -4104,7 +4104,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Ghelamco.png",
+            "url": "http://localhost:4321/assets/logo_partner/Ghelamco.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2951.322999984026,
@@ -4121,7 +4121,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Infrabel.png",
+            "url": "http://localhost:4321/assets/logo_partner/Infrabel.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2957.0840000212193,
@@ -4138,7 +4138,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/K.V.%20Oostende.png",
+            "url": "http://localhost:4321/assets/logo_partner/K.V.%20Oostende.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2963.932999998331,
@@ -4155,7 +4155,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/KMSK.png",
+            "url": "http://localhost:4321/assets/logo_partner/KMSK.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2970.0099999904633,
@@ -4172,7 +4172,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Krc%20Genk.png",
+            "url": "http://localhost:4321/assets/logo_partner/Krc%20Genk.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2975.569000005722,
@@ -4189,7 +4189,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/KV%20Kortrijk.png",
+            "url": "http://localhost:4321/assets/logo_partner/KV%20Kortrijk.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2982.1599999666214,
@@ -4206,7 +4206,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/KVK.png",
+            "url": "http://localhost:4321/assets/logo_partner/KVK.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2988.1189999878407,
@@ -4223,7 +4223,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Leuven.png",
+            "url": "http://localhost:4321/assets/logo_partner/Leuven.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 2998.5589999854565,
@@ -4240,7 +4240,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Limburg.be.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Limburg.be.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3008.4429999887943,
@@ -4257,7 +4257,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Lommel%20United.png",
+            "url": "http://localhost:4321/assets/logo_partner/Lommel%20United.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3017.934000015259,
@@ -4274,7 +4274,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/OH%20Leuven.png",
+            "url": "http://localhost:4321/assets/logo_partner/OH%20Leuven.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3022.707999974489,
@@ -4291,7 +4291,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/OSTEND-BRUGES.jpeg",
+            "url": "http://localhost:4321/assets/logo_partner/OSTEND-BRUGES.jpeg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3038.5040000081062,
@@ -4308,7 +4308,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture102.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture102.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3047.2170000076294,
@@ -4325,7 +4325,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture103.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture103.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3053.729999989271,
@@ -4342,7 +4342,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture190.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Picture190.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3066.86599996686,
@@ -4359,7 +4359,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture22.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture22.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3073.4769999980927,
@@ -4376,7 +4376,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture25.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture25.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3084.3789999485016,
@@ -4393,7 +4393,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture5.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture5.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3089.8709999918938,
@@ -4410,7 +4410,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Proximus.png",
+            "url": "http://localhost:4321/assets/logo_partner/Proximus.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3099.1729999780655,
@@ -4427,7 +4427,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/RBFA.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/RBFA.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3106.7039999961853,
@@ -4444,7 +4444,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Royal%20Antwerp%20FC.png",
+            "url": "http://localhost:4321/assets/logo_partner/Royal%20Antwerp%20FC.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3116.7750000059605,
@@ -4461,7 +4461,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Royal%20Excel.png",
+            "url": "http://localhost:4321/assets/logo_partner/Royal%20Excel.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3127.2529999911785,
@@ -4478,7 +4478,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/RSC%20Anderlecht.png",
+            "url": "http://localhost:4321/assets/logo_partner/RSC%20Anderlecht.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3136.9529999792576,
@@ -4495,7 +4495,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/RWDM.png",
+            "url": "http://localhost:4321/assets/logo_partner/RWDM.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3142.2600000202656,
@@ -4512,7 +4512,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Sint-Truidense%20V.V..png",
+            "url": "http://localhost:4321/assets/logo_partner/Sint-Truidense%20V.V..png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3153.3859999775887,
@@ -4529,7 +4529,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Sport%20Vlaanderen.png",
+            "url": "http://localhost:4321/assets/logo_partner/Sport%20Vlaanderen.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3165.7489999830723,
@@ -4546,7 +4546,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Standard%20Li%C3%A8ge.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Standard%20Li%C3%A8ge.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3175.0219999849796,
@@ -4563,7 +4563,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Telenet.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Telenet.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3190.6769999861717,
@@ -4580,7 +4580,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Visit%20Brussels.png",
+            "url": "http://localhost:4321/assets/logo_partner/Visit%20Brussels.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3202.716999977827,
@@ -4597,7 +4597,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Zulte%20Waregem.png",
+            "url": "http://localhost:4321/assets/logo_partner/Zulte%20Waregem.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3210.310000002384,
@@ -4614,7 +4614,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3219.854999989271,
@@ -4631,7 +4631,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/anderlecht.png",
+            "url": "http://localhost:4321/assets/logo_partner/anderlecht.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3225.1410000026226,
@@ -4648,7 +4648,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/ARBH%20-%20KBHB.png",
+            "url": "http://localhost:4321/assets/logo_partner/ARBH%20-%20KBHB.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3233.5499999523163,
@@ -4665,7 +4665,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/AZ-Alkmaar.png",
+            "url": "http://localhost:4321/assets/logo_partner/AZ-Alkmaar.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3239.3169999718666,
@@ -4682,7 +4682,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/BMW.png",
+            "url": "http://localhost:4321/assets/logo_partner/BMW.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3245.175000011921,
@@ -4699,7 +4699,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Boris%20Becker.png",
+            "url": "http://localhost:4321/assets/logo_partner/Boris%20Becker.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3268.5869999825954,
@@ -4716,7 +4716,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Brugge.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3276.0089999735355,
@@ -4733,7 +4733,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Brussels%20Airport.png",
+            "url": "http://localhost:4321/assets/logo_partner/Brussels%20Airport.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3286.3689999878407,
@@ -4750,7 +4750,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Cercle%20Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Cercle%20Brugge.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3298.74099996686,
@@ -4767,7 +4767,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Club%20Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Club%20Brugge.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3304.571000009775,
@@ -4784,7 +4784,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Defense.png",
+            "url": "http://localhost:4321/assets/logo_partner/Defense.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3318.893999993801,
@@ -4801,7 +4801,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Euro%20Hockey.png",
+            "url": "http://localhost:4321/assets/logo_partner/Euro%20Hockey.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3330.625999957323,
@@ -4818,7 +4818,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/FC%20Viktoria.png",
+            "url": "http://localhost:4321/assets/logo_partner/FC%20Viktoria.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3336.580000013113,
@@ -4835,7 +4835,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Ghelamco.png",
+            "url": "http://localhost:4321/assets/logo_partner/Ghelamco.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3344.113999992609,
@@ -4852,7 +4852,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Infrabel.png",
+            "url": "http://localhost:4321/assets/logo_partner/Infrabel.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3350.416000008583,
@@ -4869,7 +4869,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/K.V.%20Oostende.png",
+            "url": "http://localhost:4321/assets/logo_partner/K.V.%20Oostende.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3355.6649999916553,
@@ -4886,7 +4886,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/KMSK.png",
+            "url": "http://localhost:4321/assets/logo_partner/KMSK.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3361.2529999911785,
@@ -4903,7 +4903,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Krc%20Genk.png",
+            "url": "http://localhost:4321/assets/logo_partner/Krc%20Genk.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3377.011999964714,
@@ -4920,7 +4920,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/KV%20Kortrijk.png",
+            "url": "http://localhost:4321/assets/logo_partner/KV%20Kortrijk.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3391.6299999952316,
@@ -4937,7 +4937,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/KVK.png",
+            "url": "http://localhost:4321/assets/logo_partner/KVK.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3400.809999972582,
@@ -4954,7 +4954,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Leuven.png",
+            "url": "http://localhost:4321/assets/logo_partner/Leuven.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3414.9090000092983,
@@ -4971,7 +4971,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Limburg.be.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Limburg.be.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3423.0389999747276,
@@ -4988,7 +4988,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Lommel%20United.png",
+            "url": "http://localhost:4321/assets/logo_partner/Lommel%20United.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3436.246999949217,
@@ -5005,7 +5005,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/OH%20Leuven.png",
+            "url": "http://localhost:4321/assets/logo_partner/OH%20Leuven.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3450.0349999964237,
@@ -5022,7 +5022,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/OSTEND-BRUGES.jpeg",
+            "url": "http://localhost:4321/assets/logo_partner/OSTEND-BRUGES.jpeg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3455.4790000021458,
@@ -5039,7 +5039,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture102.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture102.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3461.552999973297,
@@ -5056,7 +5056,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture103.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture103.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3467.145000010729,
@@ -5073,7 +5073,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture190.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Picture190.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3472.025999993086,
@@ -5090,7 +5090,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture22.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture22.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3480.6709999740124,
@@ -5107,7 +5107,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture25.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture25.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3486.5920000076294,
@@ -5124,7 +5124,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture5.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture5.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3491.875999957323,
@@ -5141,7 +5141,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Proximus.png",
+            "url": "http://localhost:4321/assets/logo_partner/Proximus.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3512.162000000477,
@@ -5158,7 +5158,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/RBFA.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/RBFA.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3519.4179999530315,
@@ -5175,7 +5175,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Royal%20Antwerp%20FC.png",
+            "url": "http://localhost:4321/assets/logo_partner/Royal%20Antwerp%20FC.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3525.0299999713898,
@@ -5192,7 +5192,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Royal%20Excel.png",
+            "url": "http://localhost:4321/assets/logo_partner/Royal%20Excel.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3533.6879999935627,
@@ -5209,7 +5209,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/RSC%20Anderlecht.png",
+            "url": "http://localhost:4321/assets/logo_partner/RSC%20Anderlecht.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3538.6749999821186,
@@ -5226,7 +5226,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/RWDM.png",
+            "url": "http://localhost:4321/assets/logo_partner/RWDM.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3556.069000005722,
@@ -5243,7 +5243,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Sint-Truidense%20V.V..png",
+            "url": "http://localhost:4321/assets/logo_partner/Sint-Truidense%20V.V..png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3611.456999987364,
@@ -5260,7 +5260,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Sport%20Vlaanderen.png",
+            "url": "http://localhost:4321/assets/logo_partner/Sport%20Vlaanderen.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3621.423999965191,
@@ -5277,7 +5277,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Standard%20Li%C3%A8ge.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Standard%20Li%C3%A8ge.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3628.53100001812,
@@ -5294,7 +5294,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Telenet.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Telenet.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3671.3129999935627,
@@ -5311,7 +5311,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Visit%20Brussels.png",
+            "url": "http://localhost:4321/assets/logo_partner/Visit%20Brussels.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3735.8650000095367,
@@ -5328,7 +5328,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Zulte%20Waregem.png",
+            "url": "http://localhost:4321/assets/logo_partner/Zulte%20Waregem.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3758.485000014305,
@@ -5345,7 +5345,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3796.5499999821186,
@@ -5362,7 +5362,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/anderlecht.png",
+            "url": "http://localhost:4321/assets/logo_partner/anderlecht.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3811.2450000047684,
@@ -5379,7 +5379,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/ARBH%20-%20KBHB.png",
+            "url": "http://localhost:4321/assets/logo_partner/ARBH%20-%20KBHB.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3830.7780000269413,
@@ -5396,7 +5396,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/AZ-Alkmaar.png",
+            "url": "http://localhost:4321/assets/logo_partner/AZ-Alkmaar.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3871.197999984026,
@@ -5413,7 +5413,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/BMW.png",
+            "url": "http://localhost:4321/assets/logo_partner/BMW.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3886.087999969721,
@@ -5430,7 +5430,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Boris%20Becker.png",
+            "url": "http://localhost:4321/assets/logo_partner/Boris%20Becker.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3905.6599999964237,
@@ -5447,7 +5447,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Brugge.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3960.2040000259876,
@@ -5464,7 +5464,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Brussels%20Airport.png",
+            "url": "http://localhost:4321/assets/logo_partner/Brussels%20Airport.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 3978.4169999957085,
@@ -5481,7 +5481,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Cercle%20Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Cercle%20Brugge.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4013.515000015497,
@@ -5498,7 +5498,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Club%20Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Club%20Brugge.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4109.539999991655,
@@ -5515,7 +5515,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Defense.png",
+            "url": "http://localhost:4321/assets/logo_partner/Defense.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4123.841999977827,
@@ -5532,7 +5532,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Euro%20Hockey.png",
+            "url": "http://localhost:4321/assets/logo_partner/Euro%20Hockey.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4136.979999959469,
@@ -5549,7 +5549,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/FC%20Viktoria.png",
+            "url": "http://localhost:4321/assets/logo_partner/FC%20Viktoria.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4148.647999972105,
@@ -5566,7 +5566,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Ghelamco.png",
+            "url": "http://localhost:4321/assets/logo_partner/Ghelamco.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4154.124000012875,
@@ -5583,7 +5583,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Infrabel.png",
+            "url": "http://localhost:4321/assets/logo_partner/Infrabel.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4183.956999987364,
@@ -5600,7 +5600,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/K.V.%20Oostende.png",
+            "url": "http://localhost:4321/assets/logo_partner/K.V.%20Oostende.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4190.582999974489,
@@ -5617,7 +5617,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/KMSK.png",
+            "url": "http://localhost:4321/assets/logo_partner/KMSK.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4208.316999971867,
@@ -5634,7 +5634,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Krc%20Genk.png",
+            "url": "http://localhost:4321/assets/logo_partner/Krc%20Genk.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4225.49200001359,
@@ -5651,7 +5651,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/KV%20Kortrijk.png",
+            "url": "http://localhost:4321/assets/logo_partner/KV%20Kortrijk.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4242.18599998951,
@@ -5668,7 +5668,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/KVK.png",
+            "url": "http://localhost:4321/assets/logo_partner/KVK.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4280.526999980211,
@@ -5685,7 +5685,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Leuven.png",
+            "url": "http://localhost:4321/assets/logo_partner/Leuven.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4303.994999974966,
@@ -5702,7 +5702,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Limburg.be.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Limburg.be.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4320.879999965429,
@@ -5719,7 +5719,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Lommel%20United.png",
+            "url": "http://localhost:4321/assets/logo_partner/Lommel%20United.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4326.177999973297,
@@ -5736,7 +5736,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/OH%20Leuven.png",
+            "url": "http://localhost:4321/assets/logo_partner/OH%20Leuven.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4337.9059999883175,
@@ -5753,7 +5753,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/OSTEND-BRUGES.jpeg",
+            "url": "http://localhost:4321/assets/logo_partner/OSTEND-BRUGES.jpeg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4358.294999986887,
@@ -5770,7 +5770,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture102.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture102.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4374.551999986172,
@@ -5787,7 +5787,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture103.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture103.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4382.1669999957085,
@@ -5804,7 +5804,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture190.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Picture190.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4388.824999988079,
@@ -5821,7 +5821,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture22.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture22.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4428.54699999094,
@@ -5838,7 +5838,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture25.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture25.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4451.208999961615,
@@ -5855,7 +5855,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture5.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture5.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4465.562000006437,
@@ -5872,7 +5872,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Proximus.png",
+            "url": "http://localhost:4321/assets/logo_partner/Proximus.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4480.07800000906,
@@ -5889,7 +5889,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/RBFA.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/RBFA.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4512.136999994516,
@@ -5906,7 +5906,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Royal%20Antwerp%20FC.png",
+            "url": "http://localhost:4321/assets/logo_partner/Royal%20Antwerp%20FC.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4528.033999979496,
@@ -5923,7 +5923,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Royal%20Excel.png",
+            "url": "http://localhost:4321/assets/logo_partner/Royal%20Excel.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4541.998000025749,
@@ -5940,7 +5940,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/RSC%20Anderlecht.png",
+            "url": "http://localhost:4321/assets/logo_partner/RSC%20Anderlecht.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4558.562000006437,
@@ -5957,7 +5957,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/RWDM.png",
+            "url": "http://localhost:4321/assets/logo_partner/RWDM.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4619.9059999883175,
@@ -5974,7 +5974,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Sint-Truidense%20V.V..png",
+            "url": "http://localhost:4321/assets/logo_partner/Sint-Truidense%20V.V..png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4681.908999979496,
@@ -5991,7 +5991,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Sport%20Vlaanderen.png",
+            "url": "http://localhost:4321/assets/logo_partner/Sport%20Vlaanderen.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4693.830000013113,
@@ -6008,7 +6008,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Standard%20Li%C3%A8ge.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Standard%20Li%C3%A8ge.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4703.523000001907,
@@ -6025,7 +6025,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Telenet.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Telenet.jpg",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4710.770999968052,
@@ -6042,7 +6042,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Visit%20Brussels.png",
+            "url": "http://localhost:4321/assets/logo_partner/Visit%20Brussels.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4717.966999977827,
@@ -6059,7 +6059,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Zulte%20Waregem.png",
+            "url": "http://localhost:4321/assets/logo_partner/Zulte%20Waregem.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4725.217000007629,
@@ -6076,7 +6076,7 @@
             "entity": "localhost"
           },
           {
-            "url": "http://localhost:4321/v1/assets/brand-logo-dark.png",
+            "url": "http://localhost:4321/assets/brand-logo-dark.png",
             "sessionTargetType": "page",
             "protocol": "http/1.1",
             "rendererStartTime": 4733.27199998498,
@@ -7826,7 +7826,7 @@
         ],
         "items": [
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/K.V.%20Oostende.png",
+            "url": "http://localhost:4321/assets/logo_partner/K.V.%20Oostende.png",
             "node": {
               "type": "node",
               "lhId": "1-141-IMG",
@@ -7840,12 +7840,12 @@
                 "width": 110,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/K.V.%20Oostende.png\" alt=\"K.V. Oostende\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/K.V.%20Oostende.png\" alt=\"K.V. Oostende\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "K.V. Oostende"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/K.V.%20Oostende.png",
+            "url": "http://localhost:4321/assets/logo_partner/K.V.%20Oostende.png",
             "node": {
               "type": "node",
               "lhId": "1-184-IMG",
@@ -7859,12 +7859,12 @@
                 "width": 110,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/K.V.%20Oostende.png\" alt=\"K.V. Oostende\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/K.V.%20Oostende.png\" alt=\"K.V. Oostende\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "K.V. Oostende"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/K.V.%20Oostende.png",
+            "url": "http://localhost:4321/assets/logo_partner/K.V.%20Oostende.png",
             "node": {
               "type": "node",
               "lhId": "1-227-IMG",
@@ -7878,12 +7878,12 @@
                 "width": 110,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/K.V.%20Oostende.png\" alt=\"K.V. Oostende\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/K.V.%20Oostende.png\" alt=\"K.V. Oostende\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "K.V. Oostende"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Proximus.png",
+            "url": "http://localhost:4321/assets/logo_partner/Proximus.png",
             "node": {
               "type": "node",
               "lhId": "1-157-IMG",
@@ -7897,12 +7897,12 @@
                 "width": 112,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Proximus.png\" alt=\"Proximus\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Proximus.png\" alt=\"Proximus\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Proximus"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Proximus.png",
+            "url": "http://localhost:4321/assets/logo_partner/Proximus.png",
             "node": {
               "type": "node",
               "lhId": "1-200-IMG",
@@ -7916,12 +7916,12 @@
                 "width": 112,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Proximus.png\" alt=\"Proximus\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Proximus.png\" alt=\"Proximus\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Proximus"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Proximus.png",
+            "url": "http://localhost:4321/assets/logo_partner/Proximus.png",
             "node": {
               "type": "node",
               "lhId": "1-243-IMG",
@@ -7935,12 +7935,12 @@
                 "width": 112,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Proximus.png\" alt=\"Proximus\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Proximus.png\" alt=\"Proximus\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Proximus"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture5.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture5.png",
             "node": {
               "type": "node",
               "lhId": "1-156-IMG",
@@ -7954,12 +7954,12 @@
                 "width": 47,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Picture5.png\" alt=\"Partner 5\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Picture5.png\" alt=\"Partner 5\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Partner 5"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture5.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture5.png",
             "node": {
               "type": "node",
               "lhId": "1-199-IMG",
@@ -7973,12 +7973,12 @@
                 "width": 47,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Picture5.png\" alt=\"Partner 5\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Picture5.png\" alt=\"Partner 5\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Partner 5"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture5.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture5.png",
             "node": {
               "type": "node",
               "lhId": "1-242-IMG",
@@ -7992,12 +7992,12 @@
                 "width": 47,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Picture5.png\" alt=\"Partner 5\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Picture5.png\" alt=\"Partner 5\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Partner 5"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Club%20Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Club%20Brugge.png",
             "node": {
               "type": "node",
               "lhId": "1-135-IMG",
@@ -8011,12 +8011,12 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Club%20Brugge.png\" alt=\"Club Brugge\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Club%20Brugge.png\" alt=\"Club Brugge\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Club Brugge"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Club%20Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Club%20Brugge.png",
             "node": {
               "type": "node",
               "lhId": "1-178-IMG",
@@ -8030,12 +8030,12 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Club%20Brugge.png\" alt=\"Club Brugge\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Club%20Brugge.png\" alt=\"Club Brugge\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Club Brugge"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Club%20Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Club%20Brugge.png",
             "node": {
               "type": "node",
               "lhId": "1-221-IMG",
@@ -8049,12 +8049,12 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Club%20Brugge.png\" alt=\"Club Brugge\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Club%20Brugge.png\" alt=\"Club Brugge\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Club Brugge"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Defense.png",
+            "url": "http://localhost:4321/assets/logo_partner/Defense.png",
             "node": {
               "type": "node",
               "lhId": "1-136-IMG",
@@ -8068,12 +8068,12 @@
                 "width": 72,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Defense.png\" alt=\"Defense\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Defense.png\" alt=\"Defense\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Defense"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Defense.png",
+            "url": "http://localhost:4321/assets/logo_partner/Defense.png",
             "node": {
               "type": "node",
               "lhId": "1-179-IMG",
@@ -8087,12 +8087,12 @@
                 "width": 72,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Defense.png\" alt=\"Defense\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Defense.png\" alt=\"Defense\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Defense"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Defense.png",
+            "url": "http://localhost:4321/assets/logo_partner/Defense.png",
             "node": {
               "type": "node",
               "lhId": "1-222-IMG",
@@ -8106,12 +8106,12 @@
                 "width": 72,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Defense.png\" alt=\"Defense\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Defense.png\" alt=\"Defense\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Defense"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Sport%20Vlaanderen.png",
+            "url": "http://localhost:4321/assets/logo_partner/Sport%20Vlaanderen.png",
             "node": {
               "type": "node",
               "lhId": "1-164-IMG",
@@ -8125,12 +8125,12 @@
                 "width": 99,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Sport%20Vlaanderen.png\" alt=\"Sport Vlaanderen\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Sport%20Vlaanderen.png\" alt=\"Sport Vlaanderen\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Sport Vlaanderen"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Sport%20Vlaanderen.png",
+            "url": "http://localhost:4321/assets/logo_partner/Sport%20Vlaanderen.png",
             "node": {
               "type": "node",
               "lhId": "1-207-IMG",
@@ -8144,12 +8144,12 @@
                 "width": 99,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Sport%20Vlaanderen.png\" alt=\"Sport Vlaanderen\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Sport%20Vlaanderen.png\" alt=\"Sport Vlaanderen\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Sport Vlaanderen"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Sport%20Vlaanderen.png",
+            "url": "http://localhost:4321/assets/logo_partner/Sport%20Vlaanderen.png",
             "node": {
               "type": "node",
               "lhId": "1-250-IMG",
@@ -8163,12 +8163,12 @@
                 "width": 99,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Sport%20Vlaanderen.png\" alt=\"Sport Vlaanderen\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Sport%20Vlaanderen.png\" alt=\"Sport Vlaanderen\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Sport Vlaanderen"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Brussels%20Airport.png",
+            "url": "http://localhost:4321/assets/logo_partner/Brussels%20Airport.png",
             "node": {
               "type": "node",
               "lhId": "1-133-IMG",
@@ -8182,12 +8182,12 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Brussels%20Airport.png\" alt=\"Brussels Airport\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Brussels%20Airport.png\" alt=\"Brussels Airport\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Brussels Airport"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Brussels%20Airport.png",
+            "url": "http://localhost:4321/assets/logo_partner/Brussels%20Airport.png",
             "node": {
               "type": "node",
               "lhId": "1-176-IMG",
@@ -8201,12 +8201,12 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Brussels%20Airport.png\" alt=\"Brussels Airport\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Brussels%20Airport.png\" alt=\"Brussels Airport\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Brussels Airport"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Brussels%20Airport.png",
+            "url": "http://localhost:4321/assets/logo_partner/Brussels%20Airport.png",
             "node": {
               "type": "node",
               "lhId": "1-219-IMG",
@@ -8220,12 +8220,12 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Brussels%20Airport.png\" alt=\"Brussels Airport\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Brussels%20Airport.png\" alt=\"Brussels Airport\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Brussels Airport"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/RBFA.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/RBFA.jpg",
             "node": {
               "type": "node",
               "lhId": "1-158-IMG",
@@ -8239,12 +8239,12 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/RBFA.jpg\" alt=\"RBFA\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/RBFA.jpg\" alt=\"RBFA\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "RBFA"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/RBFA.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/RBFA.jpg",
             "node": {
               "type": "node",
               "lhId": "1-201-IMG",
@@ -8258,12 +8258,12 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/RBFA.jpg\" alt=\"RBFA\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/RBFA.jpg\" alt=\"RBFA\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "RBFA"
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/RBFA.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/RBFA.jpg",
             "node": {
               "type": "node",
               "lhId": "1-244-IMG",
@@ -8277,7 +8277,7 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/RBFA.jpg\" alt=\"RBFA\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/RBFA.jpg\" alt=\"RBFA\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "RBFA"
             }
           }
@@ -24153,7 +24153,7 @@
         ],
         "items": [
           {
-            "url": "http://localhost:4321/v1/assets/hero-video.mp4",
+            "url": "http://localhost:4321/assets/hero-video.mp4",
             "totalBytes": 3932511
           },
           {
@@ -24173,7 +24173,7 @@
             "totalBytes": 425320
           },
           {
-            "url": "http://localhost:4321/v1/assets/logo_partner/Club%20Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Club%20Brugge.png",
             "totalBytes": 382432
           },
           {
@@ -24181,7 +24181,7 @@
             "totalBytes": 342057
           },
           {
-            "url": "http://localhost:4321/v1/assets/hero-bg.jpg",
+            "url": "http://localhost:4321/assets/hero-bg.jpg",
             "totalBytes": 301953
           },
           {
@@ -24275,10 +24275,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Club%20Brugge.png\" alt=\"Club Brugge\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Club%20Brugge.png\" alt=\"Club Brugge\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Club Brugge"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Club%20Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Club%20Brugge.png",
             "requestStartTime": 262614456.909,
             "totalBytes": 382163,
             "wastedBytes": 382163,
@@ -24298,10 +24298,10 @@
                 "width": 614,
                 "height": 410
               },
-              "snippet": "<img src=\"/v1/assets/owners.jpg\" alt=\"Claesen Engineering Team\" class=\"w-full h-full object-cover transform group-hover:scale-105 transition-tran…\">",
+              "snippet": "<img src=\"/assets/owners.jpg\" alt=\"Claesen Engineering Team\" class=\"w-full h-full object-cover transform group-hover:scale-105 transition-tran…\">",
               "nodeLabel": "Claesen Engineering Team"
             },
-            "url": "http://localhost:4321/v1/assets/owners.jpg",
+            "url": "http://localhost:4321/assets/owners.jpg",
             "requestStartTime": 262614283.628,
             "totalBytes": 168249,
             "wastedBytes": 168249,
@@ -24321,10 +24321,10 @@
                 "width": 47,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Picture5.png\" alt=\"Partner 5\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Picture5.png\" alt=\"Partner 5\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Partner 5"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture5.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture5.png",
             "requestStartTime": 262614935.44899997,
             "totalBytes": 117926,
             "wastedBytes": 117926,
@@ -24344,10 +24344,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Krc%20Genk.png\" alt=\"Krc Genk\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Krc%20Genk.png\" alt=\"Krc Genk\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Krc Genk"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Krc%20Genk.png",
+            "url": "http://localhost:4321/assets/logo_partner/Krc%20Genk.png",
             "requestStartTime": 262614752.402,
             "totalBytes": 106313,
             "wastedBytes": 106313,
@@ -24367,10 +24367,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Lommel%20United.png\" alt=\"Lommel United\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Lommel%20United.png\" alt=\"Lommel United\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Lommel United"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Lommel%20United.png",
+            "url": "http://localhost:4321/assets/logo_partner/Lommel%20United.png",
             "requestStartTime": 262614794.42599997,
             "totalBytes": 105074,
             "wastedBytes": 105074,
@@ -24390,10 +24390,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Sint-Truidense%20V.V..png\" alt=\"Sint Truidense V.V.\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Sint-Truidense%20V.V..png\" alt=\"Sint Truidense V.V.\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Sint Truidense V.V."
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Sint-Truidense%20V.V..png",
+            "url": "http://localhost:4321/assets/logo_partner/Sint-Truidense%20V.V..png",
             "requestStartTime": 262615008.379,
             "totalBytes": 87064,
             "wastedBytes": 87064,
@@ -24413,10 +24413,10 @@
                 "width": 110,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/K.V.%20Oostende.png\" alt=\"K.V. Oostende\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/K.V.%20Oostende.png\" alt=\"K.V. Oostende\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "K.V. Oostende"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/K.V.%20Oostende.png",
+            "url": "http://localhost:4321/assets/logo_partner/K.V.%20Oostende.png",
             "requestStartTime": 262614725.063,
             "totalBytes": 81227,
             "wastedBytes": 81227,
@@ -24436,10 +24436,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/KVK.png\" alt=\"KVK\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/KVK.png\" alt=\"KVK\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "KVK"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/KVK.png",
+            "url": "http://localhost:4321/assets/logo_partner/KVK.png",
             "requestStartTime": 262614759.59700003,
             "totalBytes": 77433,
             "wastedBytes": 77433,
@@ -24459,10 +24459,10 @@
                 "width": 112,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Proximus.png\" alt=\"Proximus\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Proximus.png\" alt=\"Proximus\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Proximus"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Proximus.png",
+            "url": "http://localhost:4321/assets/logo_partner/Proximus.png",
             "requestStartTime": 262614943.01,
             "totalBytes": 73916,
             "wastedBytes": 73916,
@@ -24482,10 +24482,10 @@
                 "width": 72,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Defense.png\" alt=\"Defense\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Defense.png\" alt=\"Defense\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Defense"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Defense.png",
+            "url": "http://localhost:4321/assets/logo_partner/Defense.png",
             "requestStartTime": 262614486.582,
             "totalBytes": 71595,
             "wastedBytes": 71595,
@@ -24505,10 +24505,10 @@
                 "width": 99,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Sport%20Vlaanderen.png\" alt=\"Sport Vlaanderen\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Sport%20Vlaanderen.png\" alt=\"Sport Vlaanderen\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Sport Vlaanderen"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Sport%20Vlaanderen.png",
+            "url": "http://localhost:4321/assets/logo_partner/Sport%20Vlaanderen.png",
             "requestStartTime": 262615008.774,
             "totalBytes": 66497,
             "wastedBytes": 66497,
@@ -24528,10 +24528,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/AZ-Alkmaar.png\" alt=\"AZ Alkmaar\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/AZ-Alkmaar.png\" alt=\"AZ Alkmaar\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "AZ Alkmaar"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/AZ-Alkmaar.png",
+            "url": "http://localhost:4321/assets/logo_partner/AZ-Alkmaar.png",
             "requestStartTime": 262614386.20499998,
             "totalBytes": 55997,
             "wastedBytes": 55997,
@@ -24551,10 +24551,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/ARBH%20-%20KBHB.png\" alt=\"ARBH   KBHB\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/ARBH%20-%20KBHB.png\" alt=\"ARBH   KBHB\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "ARBH   KBHB"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/ARBH%20-%20KBHB.png",
+            "url": "http://localhost:4321/assets/logo_partner/ARBH%20-%20KBHB.png",
             "requestStartTime": 262614386.02199998,
             "totalBytes": 52421,
             "wastedBytes": 52421,
@@ -24574,10 +24574,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/OH%20Leuven.png\" alt=\"OH Leuven\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/OH%20Leuven.png\" alt=\"OH Leuven\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "OH Leuven"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/OH%20Leuven.png",
+            "url": "http://localhost:4321/assets/logo_partner/OH%20Leuven.png",
             "requestStartTime": 262614799.04200003,
             "totalBytes": 49587,
             "wastedBytes": 49587,
@@ -24597,10 +24597,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/anderlecht.png\" alt=\"Anderlecht\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/anderlecht.png\" alt=\"Anderlecht\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Anderlecht"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/anderlecht.png",
+            "url": "http://localhost:4321/assets/logo_partner/anderlecht.png",
             "requestStartTime": 262614371.54999998,
             "totalBytes": 45814,
             "wastedBytes": 45814,
@@ -24620,10 +24620,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/KV%20Kortrijk.png\" alt=\"KV Kortrijk\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/KV%20Kortrijk.png\" alt=\"KV Kortrijk\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "KV Kortrijk"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/KV%20Kortrijk.png",
+            "url": "http://localhost:4321/assets/logo_partner/KV%20Kortrijk.png",
             "requestStartTime": 262614753.26500002,
             "totalBytes": 44148,
             "wastedBytes": 44148,
@@ -24643,10 +24643,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/RBFA.jpg\" alt=\"RBFA\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/RBFA.jpg\" alt=\"RBFA\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "RBFA"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/RBFA.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/RBFA.jpg",
             "requestStartTime": 262614953.50100002,
             "totalBytes": 38826,
             "wastedBytes": 38826,
@@ -24666,10 +24666,10 @@
                 "width": 219,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Telenet.jpg\" alt=\"Telenet\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Telenet.jpg\" alt=\"Telenet\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Telenet"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Telenet.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Telenet.jpg",
             "requestStartTime": 262615028.873,
             "totalBytes": 33403,
             "wastedBytes": 33403,
@@ -24689,10 +24689,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/BMW.png\" alt=\"BMW\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/BMW.png\" alt=\"BMW\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "BMW"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/BMW.png",
+            "url": "http://localhost:4321/assets/logo_partner/BMW.png",
             "requestStartTime": 262614422.47,
             "totalBytes": 28328,
             "wastedBytes": 28328,
@@ -24712,10 +24712,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Zulte%20Waregem.png\" alt=\"Zulte Waregem\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Zulte%20Waregem.png\" alt=\"Zulte Waregem\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Zulte Waregem"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Zulte%20Waregem.png",
+            "url": "http://localhost:4321/assets/logo_partner/Zulte%20Waregem.png",
             "requestStartTime": 262615317.86200002,
             "totalBytes": 23982,
             "wastedBytes": 23982,
@@ -24735,10 +24735,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Brussels%20Airport.png\" alt=\"Brussels Airport\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Brussels%20Airport.png\" alt=\"Brussels Airport\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Brussels Airport"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Brussels%20Airport.png",
+            "url": "http://localhost:4321/assets/logo_partner/Brussels%20Airport.png",
             "requestStartTime": 262614434.36999997,
             "totalBytes": 22026,
             "wastedBytes": 22026,
@@ -24758,10 +24758,10 @@
                 "width": 43,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Royal%20Excel.png\" alt=\"Royal Excel\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Royal%20Excel.png\" alt=\"Royal Excel\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Royal Excel"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Royal%20Excel.png",
+            "url": "http://localhost:4321/assets/logo_partner/Royal%20Excel.png",
             "requestStartTime": 262614966.396,
             "totalBytes": 18976,
             "wastedBytes": 18976,
@@ -24781,10 +24781,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/RSC%20Anderlecht.png\" alt=\"RSC Anderlecht\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/RSC%20Anderlecht.png\" alt=\"RSC Anderlecht\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "RSC Anderlecht"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/RSC%20Anderlecht.png",
+            "url": "http://localhost:4321/assets/logo_partner/RSC%20Anderlecht.png",
             "requestStartTime": 262614977.334,
             "totalBytes": 18891,
             "wastedBytes": 18891,
@@ -24804,10 +24804,10 @@
                 "width": 115,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/FC%20Viktoria.png\" alt=\"FC Viktoria\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/FC%20Viktoria.png\" alt=\"FC Viktoria\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "FC Viktoria"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/FC%20Viktoria.png",
+            "url": "http://localhost:4321/assets/logo_partner/FC%20Viktoria.png",
             "requestStartTime": 262614701.96699998,
             "totalBytes": 17999,
             "wastedBytes": 17999,
@@ -24827,10 +24827,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Picture22.png\" alt=\"Partner 22\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Picture22.png\" alt=\"Partner 22\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Partner 22"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture22.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture22.png",
             "requestStartTime": 262614870.077,
             "totalBytes": 16832,
             "wastedBytes": 16832,
@@ -24850,10 +24850,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/KMSK.png\" alt=\"KMSK\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/KMSK.png\" alt=\"KMSK\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "KMSK"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/KMSK.png",
+            "url": "http://localhost:4321/assets/logo_partner/KMSK.png",
             "requestStartTime": 262614752.256,
             "totalBytes": 16297,
             "wastedBytes": 16297,
@@ -24873,10 +24873,10 @@
                 "width": 117,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Ghelamco.png\" alt=\"Ghelamco\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Ghelamco.png\" alt=\"Ghelamco\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Ghelamco"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Ghelamco.png",
+            "url": "http://localhost:4321/assets/logo_partner/Ghelamco.png",
             "requestStartTime": 262614724.232,
             "totalBytes": 15588,
             "wastedBytes": 15588,
@@ -24896,10 +24896,10 @@
                 "width": 112,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Euro%20Hockey.png\" alt=\"Euro Hockey\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Euro%20Hockey.png\" alt=\"Euro Hockey\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Euro Hockey"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Euro%20Hockey.png",
+            "url": "http://localhost:4321/assets/logo_partner/Euro%20Hockey.png",
             "requestStartTime": 262614486.717,
             "totalBytes": 14733,
             "wastedBytes": 14733,
@@ -24919,10 +24919,10 @@
                 "width": 112,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Leuven.png\" alt=\"Leuven\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Leuven.png\" alt=\"Leuven\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Leuven"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Leuven.png",
+            "url": "http://localhost:4321/assets/logo_partner/Leuven.png",
             "requestStartTime": 262614759.824,
             "totalBytes": 13143,
             "wastedBytes": 13143,
@@ -24942,10 +24942,10 @@
                 "width": 155,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Infrabel.png\" alt=\"Infrabel\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Infrabel.png\" alt=\"Infrabel\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Infrabel"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Infrabel.png",
+            "url": "http://localhost:4321/assets/logo_partner/Infrabel.png",
             "requestStartTime": 262614724.702,
             "totalBytes": 11601,
             "wastedBytes": 11601,
@@ -24965,10 +24965,10 @@
                 "width": 73,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Picture102.png\" alt=\"Partner 102\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Picture102.png\" alt=\"Partner 102\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Partner 102"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture102.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture102.png",
             "requestStartTime": 262614812.74199998,
             "totalBytes": 11341,
             "wastedBytes": 11341,
@@ -24988,10 +24988,10 @@
                 "width": 112,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Brugge.png\" alt=\"Brugge\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Brugge.png\" alt=\"Brugge\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Brugge"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Brugge.png",
             "requestStartTime": 262614434.21899998,
             "totalBytes": 9785,
             "wastedBytes": 9785,
@@ -25011,10 +25011,10 @@
                 "width": 45,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Royal%20Antwerp%20FC.png\" alt=\"Royal Antwerp FC\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Royal%20Antwerp%20FC.png\" alt=\"Royal Antwerp FC\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Royal Antwerp FC"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Royal%20Antwerp%20FC.png",
+            "url": "http://localhost:4321/assets/logo_partner/Royal%20Antwerp%20FC.png",
             "requestStartTime": 262614957.322,
             "totalBytes": 8878,
             "wastedBytes": 8878,
@@ -25034,10 +25034,10 @@
                 "width": 177,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/OSTEND-BRUGES.jpeg\" alt=\"OSTEND BRUGES\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/OSTEND-BRUGES.jpeg\" alt=\"OSTEND BRUGES\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "OSTEND BRUGES"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/OSTEND-BRUGES.jpeg",
+            "url": "http://localhost:4321/assets/logo_partner/OSTEND-BRUGES.jpeg",
             "requestStartTime": 262614804.38599998,
             "totalBytes": 8389,
             "wastedBytes": 8389,
@@ -25057,10 +25057,10 @@
                 "width": 110,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Limburg.be.jpg\" alt=\"Limburg.Be\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Limburg.be.jpg\" alt=\"Limburg.Be\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Limburg.Be"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Limburg.be.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Limburg.be.jpg",
             "requestStartTime": 262614778.093,
             "totalBytes": 7426,
             "wastedBytes": 7426,
@@ -25080,10 +25080,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Visit%20Brussels.png\" alt=\"Visit Brussels\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Visit%20Brussels.png\" alt=\"Visit Brussels\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Visit Brussels"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Visit%20Brussels.png",
+            "url": "http://localhost:4321/assets/logo_partner/Visit%20Brussels.png",
             "requestStartTime": 262615041.347,
             "totalBytes": 7249,
             "wastedBytes": 7249,
@@ -25103,10 +25103,10 @@
                 "width": 39,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Cercle%20Brugge.png\" alt=\"Cercle Brugge\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Cercle%20Brugge.png\" alt=\"Cercle Brugge\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Cercle Brugge"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Cercle%20Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Cercle%20Brugge.png",
             "requestStartTime": 262614439.50500003,
             "totalBytes": 5854,
             "wastedBytes": 5854,
@@ -25126,10 +25126,10 @@
                 "width": 68,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Picture25.png\" alt=\"Partner 25\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Picture25.png\" alt=\"Partner 25\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Partner 25"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture25.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture25.png",
             "requestStartTime": 262614925.77099997,
             "totalBytes": 5648,
             "wastedBytes": 5648,
@@ -25149,10 +25149,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Picture103.png\" alt=\"Partner 103\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Picture103.png\" alt=\"Partner 103\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Partner 103"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture103.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture103.png",
             "requestStartTime": 262614812.923,
             "totalBytes": 5632,
             "wastedBytes": 5632,
@@ -25172,10 +25172,10 @@
                 "width": 167,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Boris%20Becker.png\" alt=\"Boris Becker\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Boris%20Becker.png\" alt=\"Boris Becker\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Boris Becker"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Boris%20Becker.png",
+            "url": "http://localhost:4321/assets/logo_partner/Boris%20Becker.png",
             "requestStartTime": 262614432.477,
             "totalBytes": 5352,
             "wastedBytes": 5352,
@@ -25195,10 +25195,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/RWDM.png\" alt=\"RWDM\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/RWDM.png\" alt=\"RWDM\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "RWDM"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/RWDM.png",
+            "url": "http://localhost:4321/assets/logo_partner/RWDM.png",
             "requestStartTime": 262615007.99100003,
             "totalBytes": 5198,
             "wastedBytes": 5198,
@@ -25218,10 +25218,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Standard%20Li%C3%A8ge.jpg\" alt=\"Standard LièGe\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Standard%20Li%C3%A8ge.jpg\" alt=\"Standard LièGe\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Standard LièGe"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Standard%20Li%C3%A8ge.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Standard%20Li%C3%A8ge.jpg",
             "requestStartTime": 262615008.93,
             "totalBytes": 5139,
             "wastedBytes": 5139,
@@ -25241,10 +25241,10 @@
                 "width": 100,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Picture190.jpg\" alt=\"Partner 190\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Picture190.jpg\" alt=\"Partner 190\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Partner 190"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture190.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Picture190.jpg",
             "requestStartTime": 262614827.93600002,
             "totalBytes": 4682,
             "wastedBytes": 4682,
@@ -25264,10 +25264,10 @@
                 "width": 134,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/.jpg\" alt=\"\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/.jpg\" alt=\"\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "div.relative > div.animate-marquee > div.mx-12 > img.h-10"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/.jpg",
             "requestStartTime": 262614371.406,
             "totalBytes": 4498,
             "wastedBytes": 4498,
@@ -26037,10 +26037,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Club%20Brugge.png\" alt=\"Club Brugge\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Club%20Brugge.png\" alt=\"Club Brugge\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Club Brugge"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Club%20Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Club%20Brugge.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 382163,
@@ -26061,10 +26061,10 @@
                 "width": 1344,
                 "height": 940
               },
-              "snippet": "<div id=\"hero-bg-image\" class=\"absolute inset-0 z-0 bg-cover bg-center transition-opacity duration-1000 e…\" style=\"background-image: url('/v1/assets/hero-bg.jpg');\">",
+              "snippet": "<div id=\"hero-bg-image\" class=\"absolute inset-0 z-0 bg-cover bg-center transition-opacity duration-1000 e…\" style=\"background-image: url('/assets/hero-bg.jpg');\">",
               "nodeLabel": "body.bg-obsidian > main > section#home > div#hero-bg-image"
             },
-            "url": "http://localhost:4321/v1/assets/hero-bg.jpg",
+            "url": "http://localhost:4321/assets/hero-bg.jpg",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 301683,
@@ -26085,10 +26085,10 @@
                 "width": 614,
                 "height": 410
               },
-              "snippet": "<img src=\"/v1/assets/owners.jpg\" alt=\"Claesen Engineering Team\" class=\"w-full h-full object-cover transform group-hover:scale-105 transition-tran…\">",
+              "snippet": "<img src=\"/assets/owners.jpg\" alt=\"Claesen Engineering Team\" class=\"w-full h-full object-cover transform group-hover:scale-105 transition-tran…\">",
               "nodeLabel": "Claesen Engineering Team"
             },
-            "url": "http://localhost:4321/v1/assets/owners.jpg",
+            "url": "http://localhost:4321/assets/owners.jpg",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 168249,
@@ -26109,10 +26109,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Krc%20Genk.png\" alt=\"Krc Genk\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Krc%20Genk.png\" alt=\"Krc Genk\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Krc Genk"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Krc%20Genk.png",
+            "url": "http://localhost:4321/assets/logo_partner/Krc%20Genk.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 106313,
@@ -26133,10 +26133,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Lommel%20United.png\" alt=\"Lommel United\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Lommel%20United.png\" alt=\"Lommel United\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Lommel United"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Lommel%20United.png",
+            "url": "http://localhost:4321/assets/logo_partner/Lommel%20United.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 105074,
@@ -26157,10 +26157,10 @@
                 "width": 47,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Picture5.png\" alt=\"Partner 5\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Picture5.png\" alt=\"Partner 5\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Partner 5"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture5.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture5.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 117926,
@@ -26181,10 +26181,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Sint-Truidense%20V.V..png\" alt=\"Sint Truidense V.V.\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Sint-Truidense%20V.V..png\" alt=\"Sint Truidense V.V.\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Sint Truidense V.V."
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Sint-Truidense%20V.V..png",
+            "url": "http://localhost:4321/assets/logo_partner/Sint-Truidense%20V.V..png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 87064,
@@ -26205,10 +26205,10 @@
                 "width": 72,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Defense.png\" alt=\"Defense\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Defense.png\" alt=\"Defense\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Defense"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Defense.png",
+            "url": "http://localhost:4321/assets/logo_partner/Defense.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 71595,
@@ -26229,10 +26229,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/KVK.png\" alt=\"KVK\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/KVK.png\" alt=\"KVK\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "KVK"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/KVK.png",
+            "url": "http://localhost:4321/assets/logo_partner/KVK.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 77433,
@@ -26253,10 +26253,10 @@
                 "width": 99,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Sport%20Vlaanderen.png\" alt=\"Sport Vlaanderen\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Sport%20Vlaanderen.png\" alt=\"Sport Vlaanderen\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Sport Vlaanderen"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Sport%20Vlaanderen.png",
+            "url": "http://localhost:4321/assets/logo_partner/Sport%20Vlaanderen.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 66497,
@@ -26277,10 +26277,10 @@
                 "width": 112,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Proximus.png\" alt=\"Proximus\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Proximus.png\" alt=\"Proximus\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Proximus"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Proximus.png",
+            "url": "http://localhost:4321/assets/logo_partner/Proximus.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 73916,
@@ -26301,10 +26301,10 @@
                 "width": 92,
                 "height": 40
               },
-              "snippet": "<img src=\"/v1/assets/brand-logo-dark.png\" alt=\"Claesen Verlichting\" class=\"h-10 w-auto opacity-90 hover:opacity-100 transition-opacity\">",
+              "snippet": "<img src=\"/assets/brand-logo-dark.png\" alt=\"Claesen Verlichting\" class=\"h-10 w-auto opacity-90 hover:opacity-100 transition-opacity\">",
               "nodeLabel": "Claesen Verlichting"
             },
-            "url": "http://localhost:4321/v1/assets/brand-logo-dark.png",
+            "url": "http://localhost:4321/assets/brand-logo-dark.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 56994,
@@ -26325,10 +26325,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/AZ-Alkmaar.png\" alt=\"AZ Alkmaar\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/AZ-Alkmaar.png\" alt=\"AZ Alkmaar\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "AZ Alkmaar"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/AZ-Alkmaar.png",
+            "url": "http://localhost:4321/assets/logo_partner/AZ-Alkmaar.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 55997,
@@ -26349,10 +26349,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/OH%20Leuven.png\" alt=\"OH Leuven\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/OH%20Leuven.png\" alt=\"OH Leuven\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "OH Leuven"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/OH%20Leuven.png",
+            "url": "http://localhost:4321/assets/logo_partner/OH%20Leuven.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 49587,
@@ -26373,10 +26373,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/ARBH%20-%20KBHB.png\" alt=\"ARBH   KBHB\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/ARBH%20-%20KBHB.png\" alt=\"ARBH   KBHB\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "ARBH   KBHB"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/ARBH%20-%20KBHB.png",
+            "url": "http://localhost:4321/assets/logo_partner/ARBH%20-%20KBHB.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 52421,
@@ -26397,10 +26397,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/KV%20Kortrijk.png\" alt=\"KV Kortrijk\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/KV%20Kortrijk.png\" alt=\"KV Kortrijk\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "KV Kortrijk"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/KV%20Kortrijk.png",
+            "url": "http://localhost:4321/assets/logo_partner/KV%20Kortrijk.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 44148,
@@ -26421,10 +26421,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/RBFA.jpg\" alt=\"RBFA\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/RBFA.jpg\" alt=\"RBFA\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "RBFA"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/RBFA.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/RBFA.jpg",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 38826,
@@ -26445,10 +26445,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/anderlecht.png\" alt=\"Anderlecht\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/anderlecht.png\" alt=\"Anderlecht\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Anderlecht"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/anderlecht.png",
+            "url": "http://localhost:4321/assets/logo_partner/anderlecht.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 45814,
@@ -26469,10 +26469,10 @@
                 "width": 219,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Telenet.jpg\" alt=\"Telenet\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Telenet.jpg\" alt=\"Telenet\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Telenet"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Telenet.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Telenet.jpg",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 33403,
@@ -26493,10 +26493,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/BMW.png\" alt=\"BMW\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/BMW.png\" alt=\"BMW\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "BMW"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/BMW.png",
+            "url": "http://localhost:4321/assets/logo_partner/BMW.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 28328,
@@ -26517,10 +26517,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/RSC%20Anderlecht.png\" alt=\"RSC Anderlecht\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/RSC%20Anderlecht.png\" alt=\"RSC Anderlecht\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "RSC Anderlecht"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/RSC%20Anderlecht.png",
+            "url": "http://localhost:4321/assets/logo_partner/RSC%20Anderlecht.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 18891,
@@ -26541,10 +26541,10 @@
                 "width": 43,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Royal%20Excel.png\" alt=\"Royal Excel\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Royal%20Excel.png\" alt=\"Royal Excel\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Royal Excel"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Royal%20Excel.png",
+            "url": "http://localhost:4321/assets/logo_partner/Royal%20Excel.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 18976,
@@ -26565,10 +26565,10 @@
                 "width": 115,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/FC%20Viktoria.png\" alt=\"FC Viktoria\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/FC%20Viktoria.png\" alt=\"FC Viktoria\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "FC Viktoria"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/FC%20Viktoria.png",
+            "url": "http://localhost:4321/assets/logo_partner/FC%20Viktoria.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 17999,
@@ -26589,10 +26589,10 @@
                 "width": 112,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Euro%20Hockey.png\" alt=\"Euro Hockey\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Euro%20Hockey.png\" alt=\"Euro Hockey\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Euro Hockey"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Euro%20Hockey.png",
+            "url": "http://localhost:4321/assets/logo_partner/Euro%20Hockey.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 14733,
@@ -26613,10 +26613,10 @@
                 "width": 117,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Ghelamco.png\" alt=\"Ghelamco\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Ghelamco.png\" alt=\"Ghelamco\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Ghelamco"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Ghelamco.png",
+            "url": "http://localhost:4321/assets/logo_partner/Ghelamco.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 15588,
@@ -26637,10 +26637,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Zulte%20Waregem.png\" alt=\"Zulte Waregem\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Zulte%20Waregem.png\" alt=\"Zulte Waregem\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Zulte Waregem"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Zulte%20Waregem.png",
+            "url": "http://localhost:4321/assets/logo_partner/Zulte%20Waregem.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 23982,
@@ -26661,10 +26661,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Brussels%20Airport.png\" alt=\"Brussels Airport\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Brussels%20Airport.png\" alt=\"Brussels Airport\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Brussels Airport"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Brussels%20Airport.png",
+            "url": "http://localhost:4321/assets/logo_partner/Brussels%20Airport.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 22026,
@@ -26685,10 +26685,10 @@
                 "width": 112,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Leuven.png\" alt=\"Leuven\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Leuven.png\" alt=\"Leuven\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Leuven"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Leuven.png",
+            "url": "http://localhost:4321/assets/logo_partner/Leuven.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 13143,
@@ -26709,10 +26709,10 @@
                 "width": 155,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Infrabel.png\" alt=\"Infrabel\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Infrabel.png\" alt=\"Infrabel\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Infrabel"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Infrabel.png",
+            "url": "http://localhost:4321/assets/logo_partner/Infrabel.png",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 11601,
@@ -26788,10 +26788,10 @@
                 "width": 1344,
                 "height": 940
               },
-              "snippet": "<div id=\"hero-bg-image\" class=\"absolute inset-0 z-0 bg-cover bg-center transition-opacity duration-1000 e…\" style=\"background-image: url('/v1/assets/hero-bg.jpg');\">",
+              "snippet": "<div id=\"hero-bg-image\" class=\"absolute inset-0 z-0 bg-cover bg-center transition-opacity duration-1000 e…\" style=\"background-image: url('/assets/hero-bg.jpg');\">",
               "nodeLabel": "body.bg-obsidian > main > section#home > div#hero-bg-image"
             },
-            "url": "http://localhost:4321/v1/assets/hero-bg.jpg",
+            "url": "http://localhost:4321/assets/hero-bg.jpg",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 301683,
@@ -26811,10 +26811,10 @@
                 "width": 219,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Telenet.jpg\" alt=\"Telenet\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Telenet.jpg\" alt=\"Telenet\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Telenet"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Telenet.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Telenet.jpg",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 33403,
@@ -26834,10 +26834,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/RBFA.jpg\" alt=\"RBFA\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/RBFA.jpg\" alt=\"RBFA\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "RBFA"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/RBFA.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/RBFA.jpg",
             "fromProtocol": true,
             "isCrossOrigin": false,
             "totalBytes": 38826,
@@ -27295,10 +27295,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Club%20Brugge.png\" alt=\"Club Brugge\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Club%20Brugge.png\" alt=\"Club Brugge\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Club Brugge"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Club%20Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Club%20Brugge.png",
             "totalBytes": 382163,
             "wastedBytes": 380444,
             "wastedPercent": 99.55021693140664
@@ -27317,10 +27317,10 @@
                 "width": 614,
                 "height": 410
               },
-              "snippet": "<img src=\"/v1/assets/owners.jpg\" alt=\"Claesen Engineering Team\" class=\"w-full h-full object-cover transform group-hover:scale-105 transition-tran…\">",
+              "snippet": "<img src=\"/assets/owners.jpg\" alt=\"Claesen Engineering Team\" class=\"w-full h-full object-cover transform group-hover:scale-105 transition-tran…\">",
               "nodeLabel": "Claesen Engineering Team"
             },
-            "url": "http://localhost:4321/v1/assets/owners.jpg",
+            "url": "http://localhost:4321/assets/owners.jpg",
             "totalBytes": 168249,
             "wastedBytes": 124184,
             "wastedPercent": 73.80982105701207
@@ -27339,10 +27339,10 @@
                 "width": 47,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Picture5.png\" alt=\"Partner 5\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Picture5.png\" alt=\"Partner 5\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Partner 5"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture5.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture5.png",
             "totalBytes": 117926,
             "wastedBytes": 117489,
             "wastedPercent": 99.62942104077494
@@ -27361,10 +27361,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Krc%20Genk.png\" alt=\"Krc Genk\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Krc%20Genk.png\" alt=\"Krc Genk\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Krc Genk"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Krc%20Genk.png",
+            "url": "http://localhost:4321/assets/logo_partner/Krc%20Genk.png",
             "totalBytes": 106313,
             "wastedBytes": 105070,
             "wastedPercent": 98.83126369612856
@@ -27383,10 +27383,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Lommel%20United.png\" alt=\"Lommel United\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Lommel%20United.png\" alt=\"Lommel United\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Lommel United"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Lommel%20United.png",
+            "url": "http://localhost:4321/assets/logo_partner/Lommel%20United.png",
             "totalBytes": 105074,
             "wastedBytes": 103846,
             "wastedPercent": 98.83126369612856
@@ -27405,10 +27405,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Sint-Truidense%20V.V..png\" alt=\"Sint Truidense V.V.\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Sint-Truidense%20V.V..png\" alt=\"Sint Truidense V.V.\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Sint Truidense V.V."
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Sint-Truidense%20V.V..png",
+            "url": "http://localhost:4321/assets/logo_partner/Sint-Truidense%20V.V..png",
             "totalBytes": 87064,
             "wastedBytes": 85972,
             "wastedPercent": 98.7456
@@ -27427,10 +27427,10 @@
                 "width": 110,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/K.V.%20Oostende.png\" alt=\"K.V. Oostende\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/K.V.%20Oostende.png\" alt=\"K.V. Oostende\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "K.V. Oostende"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/K.V.%20Oostende.png",
+            "url": "http://localhost:4321/assets/logo_partner/K.V.%20Oostende.png",
             "totalBytes": 81227,
             "wastedBytes": 81165,
             "wastedPercent": 99.9239490399307
@@ -27449,10 +27449,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/KVK.png\" alt=\"KVK\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/KVK.png\" alt=\"KVK\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "KVK"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/KVK.png",
+            "url": "http://localhost:4321/assets/logo_partner/KVK.png",
             "totalBytes": 77433,
             "wastedBytes": 76462,
             "wastedPercent": 98.7456
@@ -27471,10 +27471,10 @@
                 "width": 112,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Proximus.png\" alt=\"Proximus\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Proximus.png\" alt=\"Proximus\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Proximus"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Proximus.png",
+            "url": "http://localhost:4321/assets/logo_partner/Proximus.png",
             "totalBytes": 73916,
             "wastedBytes": 73684,
             "wastedPercent": 99.68639999999999
@@ -27493,10 +27493,10 @@
                 "width": 72,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Defense.png\" alt=\"Defense\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Defense.png\" alt=\"Defense\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Defense"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Defense.png",
+            "url": "http://localhost:4321/assets/logo_partner/Defense.png",
             "totalBytes": 71595,
             "wastedBytes": 71046,
             "wastedPercent": 99.23384024276926
@@ -27515,10 +27515,10 @@
                 "width": 99,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Sport%20Vlaanderen.png\" alt=\"Sport Vlaanderen\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Sport%20Vlaanderen.png\" alt=\"Sport Vlaanderen\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Sport Vlaanderen"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Sport%20Vlaanderen.png",
+            "url": "http://localhost:4321/assets/logo_partner/Sport%20Vlaanderen.png",
             "totalBytes": 66497,
             "wastedBytes": 65485,
             "wastedPercent": 98.47780962735989
@@ -27537,10 +27537,10 @@
                 "width": 92,
                 "height": 40
               },
-              "snippet": "<img src=\"/v1/assets/brand-logo-dark.png\" alt=\"Claesen Verlichting\" class=\"h-10 w-auto opacity-90 hover:opacity-100 transition-opacity\">",
+              "snippet": "<img src=\"/assets/brand-logo-dark.png\" alt=\"Claesen Verlichting\" class=\"h-10 w-auto opacity-90 hover:opacity-100 transition-opacity\">",
               "nodeLabel": "Claesen Verlichting"
             },
-            "url": "http://localhost:4321/v1/assets/brand-logo-dark.png",
+            "url": "http://localhost:4321/assets/brand-logo-dark.png",
             "totalBytes": 56994,
             "wastedBytes": 55793,
             "wastedPercent": 97.89362822538178
@@ -27559,10 +27559,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/AZ-Alkmaar.png\" alt=\"AZ Alkmaar\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/AZ-Alkmaar.png\" alt=\"AZ Alkmaar\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "AZ Alkmaar"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/AZ-Alkmaar.png",
+            "url": "http://localhost:4321/assets/logo_partner/AZ-Alkmaar.png",
             "totalBytes": 55997,
             "wastedBytes": 54899,
             "wastedPercent": 98.04
@@ -27581,10 +27581,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/ARBH%20-%20KBHB.png\" alt=\"ARBH   KBHB\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/ARBH%20-%20KBHB.png\" alt=\"ARBH   KBHB\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "ARBH   KBHB"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/ARBH%20-%20KBHB.png",
+            "url": "http://localhost:4321/assets/logo_partner/ARBH%20-%20KBHB.png",
             "totalBytes": 52421,
             "wastedBytes": 51762,
             "wastedPercent": 98.74308617234469
@@ -27603,10 +27603,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/OH%20Leuven.png\" alt=\"OH Leuven\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/OH%20Leuven.png\" alt=\"OH Leuven\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "OH Leuven"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/OH%20Leuven.png",
+            "url": "http://localhost:4321/assets/logo_partner/OH%20Leuven.png",
             "totalBytes": 49587,
             "wastedBytes": 48965,
             "wastedPercent": 98.7456
@@ -27625,10 +27625,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/anderlecht.png\" alt=\"Anderlecht\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/anderlecht.png\" alt=\"Anderlecht\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Anderlecht"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/anderlecht.png",
+            "url": "http://localhost:4321/assets/logo_partner/anderlecht.png",
             "totalBytes": 45814,
             "wastedBytes": 44916,
             "wastedPercent": 98.04
@@ -27647,10 +27647,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/KV%20Kortrijk.png\" alt=\"KV Kortrijk\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/KV%20Kortrijk.png\" alt=\"KV Kortrijk\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "KV Kortrijk"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/KV%20Kortrijk.png",
+            "url": "http://localhost:4321/assets/logo_partner/KV%20Kortrijk.png",
             "totalBytes": 44148,
             "wastedBytes": 42317,
             "wastedPercent": 95.85322314049587
@@ -27669,10 +27669,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/RBFA.jpg\" alt=\"RBFA\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/RBFA.jpg\" alt=\"RBFA\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "RBFA"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/RBFA.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/RBFA.jpg",
             "totalBytes": 38826,
             "wastedBytes": 38423,
             "wastedPercent": 98.96330578512396
@@ -27691,10 +27691,10 @@
                 "width": 219,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Telenet.jpg\" alt=\"Telenet\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Telenet.jpg\" alt=\"Telenet\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Telenet"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Telenet.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Telenet.jpg",
             "totalBytes": 33403,
             "wastedBytes": 30905,
             "wastedPercent": 92.5219512195122
@@ -27713,10 +27713,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/BMW.png\" alt=\"BMW\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/BMW.png\" alt=\"BMW\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "BMW"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/BMW.png",
+            "url": "http://localhost:4321/assets/logo_partner/BMW.png",
             "totalBytes": 28328,
             "wastedBytes": 27639,
             "wastedPercent": 97.56674761989743
@@ -27735,10 +27735,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Zulte%20Waregem.png\" alt=\"Zulte Waregem\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Zulte%20Waregem.png\" alt=\"Zulte Waregem\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Zulte Waregem"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Zulte%20Waregem.png",
+            "url": "http://localhost:4321/assets/logo_partner/Zulte%20Waregem.png",
             "totalBytes": 23982,
             "wastedBytes": 23512,
             "wastedPercent": 98.04
@@ -27757,10 +27757,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Brussels%20Airport.png\" alt=\"Brussels Airport\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Brussels%20Airport.png\" alt=\"Brussels Airport\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Brussels Airport"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Brussels%20Airport.png",
+            "url": "http://localhost:4321/assets/logo_partner/Brussels%20Airport.png",
             "totalBytes": 22026,
             "wastedBytes": 21834,
             "wastedPercent": 99.1288888888889
@@ -27779,10 +27779,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/KMSK.png\" alt=\"KMSK\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/KMSK.png\" alt=\"KMSK\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "KMSK"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/KMSK.png",
+            "url": "http://localhost:4321/assets/logo_partner/KMSK.png",
             "totalBytes": 16297,
             "wastedBytes": 15978,
             "wastedPercent": 98.04
@@ -27801,10 +27801,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Picture22.png\" alt=\"Partner 22\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Picture22.png\" alt=\"Partner 22\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Partner 22"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture22.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture22.png",
             "totalBytes": 16832,
             "wastedBytes": 15646,
             "wastedPercent": 92.95613306080277
@@ -27823,10 +27823,10 @@
                 "width": 43,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Royal%20Excel.png\" alt=\"Royal Excel\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Royal%20Excel.png\" alt=\"Royal Excel\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Royal Excel"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Royal%20Excel.png",
+            "url": "http://localhost:4321/assets/logo_partner/Royal%20Excel.png",
             "totalBytes": 18976,
             "wastedBytes": 14915,
             "wastedPercent": 78.60126188571937
@@ -27845,10 +27845,10 @@
                 "width": 117,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Ghelamco.png\" alt=\"Ghelamco\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Ghelamco.png\" alt=\"Ghelamco\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Ghelamco"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Ghelamco.png",
+            "url": "http://localhost:4321/assets/logo_partner/Ghelamco.png",
             "totalBytes": 15588,
             "wastedBytes": 14663,
             "wastedPercent": 94.06521739130434
@@ -27867,10 +27867,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/RSC%20Anderlecht.png\" alt=\"RSC Anderlecht\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/RSC%20Anderlecht.png\" alt=\"RSC Anderlecht\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "RSC Anderlecht"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/RSC%20Anderlecht.png",
+            "url": "http://localhost:4321/assets/logo_partner/RSC%20Anderlecht.png",
             "totalBytes": 18891,
             "wastedBytes": 13995,
             "wastedPercent": 74.08264462809917
@@ -27889,10 +27889,10 @@
                 "width": 73,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Picture102.png\" alt=\"Partner 102\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Picture102.png\" alt=\"Partner 102\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Partner 102"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture102.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture102.png",
             "totalBytes": 11341,
             "wastedBytes": 10971,
             "wastedPercent": 96.7358671351006
@@ -27911,10 +27911,10 @@
                 "width": 115,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/FC%20Viktoria.png\" alt=\"FC Viktoria\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/FC%20Viktoria.png\" alt=\"FC Viktoria\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "FC Viktoria"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/FC%20Viktoria.png",
+            "url": "http://localhost:4321/assets/logo_partner/FC%20Viktoria.png",
             "totalBytes": 17999,
             "wastedBytes": 9784,
             "wastedPercent": 54.35861091424521
@@ -27933,10 +27933,10 @@
                 "width": 112,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Euro%20Hockey.png\" alt=\"Euro Hockey\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Euro%20Hockey.png\" alt=\"Euro Hockey\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Euro Hockey"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Euro%20Hockey.png",
+            "url": "http://localhost:4321/assets/logo_partner/Euro%20Hockey.png",
             "totalBytes": 14733,
             "wastedBytes": 9154,
             "wastedPercent": 62.130177514792905
@@ -27955,10 +27955,10 @@
                 "width": 112,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Leuven.png\" alt=\"Leuven\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Leuven.png\" alt=\"Leuven\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Leuven"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Leuven.png",
+            "url": "http://localhost:4321/assets/logo_partner/Leuven.png",
             "totalBytes": 13143,
             "wastedBytes": 8576,
             "wastedPercent": 65.25207756232687
@@ -27977,10 +27977,10 @@
                 "width": 112,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Brugge.png\" alt=\"Brugge\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Brugge.png\" alt=\"Brugge\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Brugge"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Brugge.png",
             "totalBytes": 9785,
             "wastedBytes": 7202,
             "wastedPercent": 73.60491541116068
@@ -27999,10 +27999,10 @@
                 "width": 155,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Infrabel.png\" alt=\"Infrabel\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Infrabel.png\" alt=\"Infrabel\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Infrabel"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Infrabel.png",
+            "url": "http://localhost:4321/assets/logo_partner/Infrabel.png",
             "totalBytes": 11601,
             "wastedBytes": 7108,
             "wastedPercent": 61.26729138777331
@@ -28021,10 +28021,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Visit%20Brussels.png\" alt=\"Visit Brussels\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Visit%20Brussels.png\" alt=\"Visit Brussels\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Visit Brussels"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Visit%20Brussels.png",
+            "url": "http://localhost:4321/assets/logo_partner/Visit%20Brussels.png",
             "totalBytes": 7249,
             "wastedBytes": 7074,
             "wastedPercent": 97.58024691358025
@@ -28043,10 +28043,10 @@
                 "width": 177,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/OSTEND-BRUGES.jpeg\" alt=\"OSTEND BRUGES\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/OSTEND-BRUGES.jpeg\" alt=\"OSTEND BRUGES\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "OSTEND BRUGES"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/OSTEND-BRUGES.jpeg",
+            "url": "http://localhost:4321/assets/logo_partner/OSTEND-BRUGES.jpeg",
             "totalBytes": 8389,
             "wastedBytes": 6735,
             "wastedPercent": 80.28404344193818
@@ -28065,10 +28065,10 @@
                 "width": 45,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Royal%20Antwerp%20FC.png\" alt=\"Royal Antwerp FC\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Royal%20Antwerp%20FC.png\" alt=\"Royal Antwerp FC\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Royal Antwerp FC"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Royal%20Antwerp%20FC.png",
+            "url": "http://localhost:4321/assets/logo_partner/Royal%20Antwerp%20FC.png",
             "totalBytes": 8878,
             "wastedBytes": 6497,
             "wastedPercent": 73.18007662835248
@@ -28087,10 +28087,10 @@
                 "width": 110,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Limburg.be.jpg\" alt=\"Limburg.Be\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Limburg.be.jpg\" alt=\"Limburg.Be\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Limburg.Be"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Limburg.be.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Limburg.be.jpg",
             "totalBytes": 7426,
             "wastedBytes": 5501,
             "wastedPercent": 74.07407407407408
@@ -28109,10 +28109,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Picture103.png\" alt=\"Partner 103\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Picture103.png\" alt=\"Partner 103\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Partner 103"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Picture103.png",
+            "url": "http://localhost:4321/assets/logo_partner/Picture103.png",
             "totalBytes": 5632,
             "wastedBytes": 5402,
             "wastedPercent": 95.91288821697141
@@ -28131,10 +28131,10 @@
                 "width": 39,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Cercle%20Brugge.png\" alt=\"Cercle Brugge\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Cercle%20Brugge.png\" alt=\"Cercle Brugge\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Cercle Brugge"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Cercle%20Brugge.png",
+            "url": "http://localhost:4321/assets/logo_partner/Cercle%20Brugge.png",
             "totalBytes": 5854,
             "wastedBytes": 4740,
             "wastedPercent": 80.97726678860727
@@ -28153,10 +28153,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/Standard%20Li%C3%A8ge.jpg\" alt=\"Standard LièGe\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/Standard%20Li%C3%A8ge.jpg\" alt=\"Standard LièGe\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "Standard LièGe"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/Standard%20Li%C3%A8ge.jpg",
+            "url": "http://localhost:4321/assets/logo_partner/Standard%20Li%C3%A8ge.jpg",
             "totalBytes": 5139,
             "wastedBytes": 4642,
             "wastedPercent": 90.32098765432099
@@ -28175,10 +28175,10 @@
                 "width": 56,
                 "height": 56
               },
-              "snippet": "<img src=\"/v1/assets/logo_partner/RWDM.png\" alt=\"RWDM\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
+              "snippet": "<img src=\"/assets/logo_partner/RWDM.png\" alt=\"RWDM\" class=\"h-10 md:h-14 w-auto object-contain logo-img\" data-astro-cid-jujwe3as=\"\">",
               "nodeLabel": "RWDM"
             },
-            "url": "http://localhost:4321/v1/assets/logo_partner/RWDM.png",
+            "url": "http://localhost:4321/assets/logo_partner/RWDM.png",
             "totalBytes": 5198,
             "wastedBytes": 4112,
             "wastedPercent": 79.10169265627083
@@ -29192,7 +29192,7 @@
         ],
         "items": [
           {
-            "url": "http://localhost:4321/v1/assets/hero-bg.jpg",
+            "url": "http://localhost:4321/assets/hero-bg.jpg",
             "totalBytes": 301683,
             "wastedBytes": 150433,
             "subItems": {
@@ -29206,7 +29206,7 @@
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/owners.jpg",
+            "url": "http://localhost:4321/assets/owners.jpg",
             "totalBytes": 168249,
             "wastedBytes": 126308,
             "subItems": {
@@ -29224,7 +29224,7 @@
             }
           },
           {
-            "url": "http://localhost:4321/v1/assets/brand-logo-dark.png",
+            "url": "http://localhost:4321/assets/brand-logo-dark.png",
             "totalBytes": 56994,
             "wastedBytes": 56603,
             "subItems": {
