@@ -158,4 +158,11 @@ const t = ui[lang] || ui[defaultLang];
   .map-card:hover .map-img {
     filter: grayscale(0%) brightness(0.85);
   }
+
+  /* Touch/mobile: always show full color — hover doesn't apply */
+  @media (hover: none), (pointer: coarse) {
+    .map-img {
+      filter: grayscale(0%) brightness(0.85);
+    }
+  }
 </style>
